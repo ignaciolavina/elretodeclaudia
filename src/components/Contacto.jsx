@@ -56,27 +56,27 @@ export default function Contacto() {
     const motivoLabel = MOTIVOS.find((m) => m.value === form.motivo)?.label ?? form.motivo
 
     try {
-      // Email de notificación → llega a claudialavinabermejo@gmail.com
-      await emailjs.send(
-        EMAILJS_CONFIG.serviceId,
-        EMAILJS_CONFIG.notificationTemplateId,
-        {
-          to_email:     'claudialavinabermejo@gmail.com',
-          nombre:       form.nombre,
-          email:        form.email,
-          motivo_label: motivoLabel,
-          mensaje:      form.mensaje,
-        },
-        EMAILJS_CONFIG.publicKey
-      )
+      // NO ELIMINAR ESTO — descomentar cuando esté listo el email de notificación
+      // await emailjs.send(
+      //   EMAILJS_CONFIG.serviceId,
+      //   EMAILJS_CONFIG.notificationTemplateId,
+      //   {
+      //     to_email:     'claudialavinabermejo@gmail.com',
+      //     nombre:       form.nombre,
+      //     email:        form.email,
+      //     motivo_label: motivoLabel,
+      //     mensaje:      form.mensaje,
+      //   },
+      //   EMAILJS_CONFIG.publicKey
+      // )
 
       // Email de confirmación → llega al remitente
       await emailjs.send(
         EMAILJS_CONFIG.serviceId,
         EMAILJS_CONFIG.confirmationTemplateId,
         {
-          nombre: form.nombre,
-          email:  form.email,
+          to_email: form.email,
+          nombre:   form.nombre,
         },
         EMAILJS_CONFIG.publicKey
       )

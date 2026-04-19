@@ -34,7 +34,7 @@ export default function Navbar() {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
           ? 'bg-white/95 backdrop-blur-sm shadow-md py-3'
-          : 'bg-transparent py-5'
+          : 'bg-white/80 backdrop-blur-sm py-5'
       }`}
       role="navigation"
       aria-label="Navegación principal"
@@ -45,9 +45,7 @@ export default function Navbar() {
           <a
             href="#inicio"
             onClick={(e) => handleLink(e, '#inicio')}
-            className={`font-serif font-bold text-xl tracking-tight transition-colors duration-300 ${
-              scrolled ? 'text-brand-800' : 'text-white'
-            }`}
+            className="font-serif font-bold text-xl tracking-tight text-brand-800 hover:text-brand-600 transition-colors duration-300"
           >
             El Reto de Claudia
           </a>
@@ -59,9 +57,7 @@ export default function Navbar() {
                 <a
                   href={link.href}
                   onClick={(e) => handleLink(e, link.href)}
-                  className={`text-sm font-medium transition-colors duration-200 hover:text-warm-400 ${
-                    scrolled ? 'text-gray-700' : 'text-white/90'
-                  }`}
+                  className="text-sm font-medium text-gray-600 hover:text-warm-500 transition-colors duration-200"
                 >
                   {link.label}
                 </a>
@@ -71,11 +67,7 @@ export default function Navbar() {
 
           {/* Botón hamburguesa */}
           <button
-            className={`md:hidden p-2 rounded-xl transition-colors focus:outline-none focus:ring-2 focus:ring-brand-400 ${
-              scrolled
-                ? 'text-gray-700 hover:bg-gray-100'
-                : 'text-white hover:bg-white/20'
-            }`}
+            className="md:hidden p-2 rounded-xl text-gray-600 hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-brand-400"
             onClick={() => setMenuOpen((o) => !o)}
             aria-expanded={menuOpen}
             aria-label={menuOpen ? 'Cerrar menú' : 'Abrir menú'}
