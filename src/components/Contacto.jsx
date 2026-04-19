@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import emailjs from '@emailjs/browser'
+import { EMAILJS_CONFIG } from '../config/emailjs'
 import { useScrollAnimation } from '../hooks/useScrollAnimation'
 
 const MOTIVOS = [
@@ -13,10 +15,11 @@ const MOTIVOS = [
 const EMPTY = { nombre: '', email: '', motivo: '', mensaje: '' }
 
 export default function Contacto() {
-  const [form,        setForm]        = useState(EMPTY)
-  const [errors,      setErrors]      = useState({})
-  const [submitted,   setSubmitted]   = useState(false)
-  const [submitting,  setSubmitting]  = useState(false)
+  const [form,       setForm]       = useState(EMPTY)
+  const [errors,     setErrors]     = useState({})
+  const [submitted,  setSubmitted]  = useState(false)
+  const [submitting, setSubmitting] = useState(false)
+  const [sendError,  setSendError]  = useState(false)
 
   const { ref: titleRef, isVisible: titleVisible } = useScrollAnimation()
   const { ref: formRef,  isVisible: formVisible  } = useScrollAnimation()
@@ -36,21 +39,55 @@ export default function Contacto() {
     const { name, value } = e.target
     setForm((f) => ({ ...f, [name]: value }))
     if (errors[name]) setErrors((err) => ({ ...err, [name]: '' }))
+    if (sendError) setSendError(false)
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    const e_ = validate()
-    if (Object.keys(e_).length > 0) {
-      setErrors(e_)
+    const fieldErrors = validate()
+    if (Object.keys(fieldErrors).length > 0) {
+      setErrors(fieldErrors)
       return
     }
+
     setSubmitting(true)
-    setTimeout(() => {
-      setSubmitting(false)
-      setSubmitted(true)
+    setSendError(false)
+
+    const motivoLabel = MOTIVOS.find((m) => m.value === form.motivo)?.label ?? form.motivo
+
+    try {
+      // Email de notificación → llega a claudialavinabermejo@gmail.com
+      await emailjs.send(
+        EMAILJS_CONFIG.serviceId,
+        EMAILJS_CONFIG.notificationTemplateId,
+        {
+          nombre:       form.nombre,
+          email:        form.email,
+          motivo_label: motivoLabel,
+          mensaje:      form.mensaje,
+        },
+        EMAILJS_CONFIG.publicKey
+      )
+
+      // Email de confirmación → llega al remitente
+      await emailjs.send(
+        EMAILJS_CONFIG.serviceId,
+        EMAILJS_CONFIG.confirmationTemplateId,
+        {
+          nombre: form.nombre,
+          email:  form.email,
+        },
+        EMAILJS_CONFIG.publicKey
+      )
+
       setForm(EMPTY)
-    }, 1200)
+      setSubmitted(true)
+    } catch (err) {
+      console.error('Error al enviar el formulario:', err)
+      setSendError(true)
+    } finally {
+      setSubmitting(false)
+    }
   }
 
   const inputClass = (field) =>
@@ -104,7 +141,6 @@ export default function Contacto() {
               </div>
             </div>
 
-            {/* Texto adicional */}
             <div className="bg-white rounded-2xl p-6 border border-brand-100 shadow-sm">
               <p className="text-gray-600 text-sm leading-relaxed">
                 <strong className="text-gray-800">Si eres investigador o médico,</strong>{' '}
@@ -132,8 +168,8 @@ export default function Contacto() {
                   ¡Mensaje enviado!
                 </h3>
                 <p className="text-gray-600 mb-6">
-                  Gracias por escribirnos. Te responderemos lo antes posible.
-                  Tu apoyo es muy importante para nosotros.
+                  Gracias por escribirnos. En breve recibirás un email de
+                  confirmación. Intentaremos responderte lo antes posible.
                 </p>
                 <button
                   onClick={() => setSubmitted(false)}
@@ -239,6 +275,19 @@ export default function Contacto() {
                       <p id="mensaje-error" className="mt-1 text-sm text-red-500" role="alert">{errors.mensaje}</p>
                     )}
                   </div>
+
+                  {/* Error de envío */}
+                  {sendError && (
+                    <div className="bg-red-50 border border-red-200 rounded-xl px-4 py-3" role="alert">
+                      <p className="text-red-700 text-sm">
+                        Hubo un problema al enviar el mensaje. Por favor, inténtalo de nuevo
+                        o escríbenos directamente a{' '}
+                        <a href="mailto:hola@elretodeclaudia.org" className="font-semibold underline">
+                          hola@elretodeclaudia.org
+                        </a>.
+                      </p>
+                    </div>
+                  )}
 
                   {/* Submit */}
                   <button
