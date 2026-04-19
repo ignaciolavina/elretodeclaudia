@@ -61,6 +61,7 @@ export default function Contacto() {
         EMAILJS_CONFIG.serviceId,
         EMAILJS_CONFIG.notificationTemplateId,
         {
+          to_email:     'claudialavinabermejo@gmail.com',
           nombre:       form.nombre,
           email:        form.email,
           motivo_label: motivoLabel,
