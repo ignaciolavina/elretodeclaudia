@@ -133,10 +133,10 @@ export default function Contacto() {
               <div>
                 <p className="text-xs text-gray-500 font-medium">Email de contacto</p>
                 <a
-                  href="mailto:hola@elretodeclaudia.org"
+                  href="mailto:info@elretodeclaudia.org"
                   className="text-brand-700 font-semibold hover:text-brand-900 transition-colors"
                 >
-                  hola@elretodeclaudia.org
+                  info@elretodeclaudia.org
                 </a>
               </div>
             </div>
@@ -282,8 +282,8 @@ export default function Contacto() {
                       <p className="text-red-700 text-sm">
                         Hubo un problema al enviar el mensaje. Por favor, inténtalo de nuevo
                         o escríbenos directamente a{' '}
-                        <a href="mailto:hola@elretodeclaudia.org" className="font-semibold underline">
-                          hola@elretodeclaudia.org
+                        <a href="mailto:info@elretodeclaudia.org" className="font-semibold underline">
+                          info@elretodeclaudia.org
                         </a>.
                       </p>
                     </div>
