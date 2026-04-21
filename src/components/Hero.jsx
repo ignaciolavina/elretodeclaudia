@@ -21,85 +21,87 @@ export default function Hero() {
   return (
     <section
       id="inicio"
-      className="relative min-h-screen flex items-center overflow-hidden bg-white"
+      className="min-h-screen flex items-center bg-[#f3f4f6]"
       aria-label="Sección principal"
     >
-      {/* Manchas decorativas de fondo */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
-        <div className="absolute -top-20 -right-20 w-[750px] h-[750px] bg-brand-200/70 rounded-full blur-3xl" />
-        <div className="absolute top-1/4 -left-40 w-[600px] h-[600px] bg-brand-100/80 rounded-full blur-3xl" />
-        <div className="absolute -bottom-48 right-1/4 translate-x-1/4 w-[750px] h-[750px] bg-brand-200/60 rounded-full blur-3xl" />
-      </div>
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 w-full py-24 md:py-32">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-32 md:py-44">
-        <div className="max-w-3xl">
-          {/* Etiqueta */}
-          <div className={fade('delay-100')}>
-            <span className="inline-flex items-center gap-2 bg-brand-100 text-brand-700 text-sm font-semibold px-4 py-1.5 rounded-full mb-8">
-              <span className="w-2 h-2 bg-brand-500 rounded-full animate-pulse" aria-hidden="true" />
-              Enfermedad ultrarrara · DBP · España
-            </span>
+          {/* Columna izquierda */}
+          <div>
+            {/* Badge */}
+            <div className={fade('delay-100')}>
+              <span className="inline-flex items-center gap-2 border border-brand-950/30 text-brand-950 text-xs font-semibold tracking-widest uppercase px-4 py-2 rounded-full mb-10">
+                <span className="w-1.5 h-1.5 bg-brand-950 rounded-full" aria-hidden="true" />
+                Caso clínico · Convocatoria abierta
+              </span>
+            </div>
+
+            {/* Titular */}
+            <h1
+              className={`font-serif text-5xl sm:text-6xl md:text-7xl font-bold text-brand-950 leading-[1.05] mb-7 ${fade('delay-150')}`}
+            >
+              Buscamos investigadores para empezar la{' '}
+              <em className="not-italic italic text-brand-500">terapia génica</em>{' '}
+              de Claudia.
+            </h1>
+
+            {/* Párrafo principal */}
+            <p className={`text-brand-950/70 text-lg leading-relaxed mb-4 ${fade('delay-300')}`}>
+              Claudia tiene 2 años y medio. Padece la deficiencia de la proteína D-bifuncional (DBP),
+              una enfermedad neurodegenerativa ultrarrara sin tratamiento curativo. La terapia génica
+              es hoy la vía con más potencial — y necesitamos conectar con quienes puedan explorarla.
+            </p>
+
+            {/* Párrafo secundario */}
+            <p className={`text-brand-950/45 text-sm leading-relaxed mb-12 ${fade('delay-[400ms]')}`}>
+              Si trabajas en terapia génica, enfermedades metabólicas o peroxisomales, o conoces a
+              alguien que lo haga, hay un lugar en este reto para ti.
+            </p>
+
+            {/* Botones */}
+            <div className={`flex flex-col sm:flex-row items-start gap-4 ${fade('delay-500')}`}>
+              <a
+                href="#ayudar"
+                onClick={(e) => { e.preventDefault(); scrollTo('#ayudar') }}
+                className="inline-flex items-center gap-2 bg-brand-950 hover:bg-brand-900 text-white font-semibold px-7 py-3.5 rounded-lg transition-all duration-200 shadow-sm hover:shadow-md focus:outline-none focus:ring-2 focus:ring-brand-950 focus:ring-offset-2"
+              >
+                Cómo puedes ayudar
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+
+              <a
+                href="#dbp"
+                onClick={(e) => { e.preventDefault(); scrollTo('#dbp') }}
+                className="inline-flex items-center gap-2 bg-white border border-brand-950/20 hover:border-brand-950/50 text-brand-950 font-semibold px-7 py-3.5 rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-brand-950 focus:ring-offset-2"
+              >
+                Conoce la enfermedad
+              </a>
+            </div>
           </div>
 
-          {/* Titular principal */}
-          <h1 className={`font-serif text-4xl sm:text-5xl md:text-6xl font-bold text-brand-950 leading-[1.1] mb-6 ${fade('delay-150')}`}>
-            Buscamos investigadores para empezar la{' '}
-            <span className="text-brand-700">terapia génica</span>{' '}
-            de Claudia.
-          </h1>
-
-          {/* Subtítulo */}
-          <p className={`text-gray-500 text-lg sm:text-xl leading-relaxed max-w-2xl mb-4 ${fade('delay-300')}`}>
-            Claudia tiene 2 años y medio. Padece la deficiencia de la proteína
-            D-bifuncional (DBP), una enfermedad neurodegenerativa ultrarrara sin
-            tratamiento curativo. La terapia génica es hoy la vía con más
-            potencial — y necesitamos conectar con quienes puedan explorarla.
-          </p>
-
-          <p className={`text-gray-400 text-base leading-relaxed max-w-xl mb-12 ${fade('delay-[400ms]')}`}>
-            Si trabajas en terapia génica, enfermedades metabólicas o
-            peroxisomales, o conoces a alguien que lo haga, hay un lugar en
-            este reto para ti.
-          </p>
-
-          {/* CTA único */}
-          <div className={`flex flex-col sm:flex-row items-start gap-4 ${fade('delay-500')}`}>
-            <a
-              href="#ayudar"
-              onClick={(e) => { e.preventDefault(); scrollTo('#ayudar') }}
-              className="inline-flex items-center gap-2 bg-warm-400 hover:bg-warm-500 text-white font-semibold px-8 py-4 rounded-2xl transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-warm-400 focus:ring-offset-2"
-            >
-              Cómo puedes ayudar
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          {/* Columna derecha — placeholder imagen */}
+          <div className={`relative h-[480px] lg:h-[560px] rounded-xl overflow-hidden ${fade('delay-200')}`}>
+            <div
+              className="absolute inset-0"
+              style={{
+                background: 'repeating-linear-gradient(-45deg, #d9dde6 0px, #d9dde6 1px, #e8ebf0 1px, #e8ebf0 16px)',
+              }}
+              aria-hidden="true"
+            />
+            <div className="absolute bottom-5 right-5 flex items-center gap-2 bg-white/90 backdrop-blur-sm border border-white/60 text-brand-950/60 text-xs font-semibold tracking-widest uppercase px-3 py-2 rounded">
+              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="2" strokeWidth={1.5} />
+                <path strokeLinecap="round" strokeWidth={1.5} d="M3 16l5-5 4 4 3-3 6 6" />
               </svg>
-            </a>
-
-            <a
-              href="#dbp"
-              onClick={(e) => { e.preventDefault(); scrollTo('#dbp') }}
-              className="inline-flex items-center gap-2 text-brand-700 hover:text-brand-900 font-semibold px-4 py-4 transition-colors group"
-            >
-              Conoce la enfermedad
-              <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </a>
+              Retrato de Claudia
+            </div>
           </div>
+
         </div>
       </div>
-
-      {/* Indicador de scroll */}
-      <button
-        onClick={() => scrollTo('#dbp')}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-gray-300 hover:text-brand-400 transition-colors animate-bounce focus:outline-none"
-        aria-label="Desplazarse hacia abajo"
-        tabIndex="-1"
-      >
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 9l-7 7-7-7" />
-        </svg>
-      </button>
     </section>
   )
 }
