@@ -109,7 +109,7 @@ export default function HistoriaClaudia() {
               <img
                 src="/images/claudia2.jpeg"
                 alt="Claudia"
-                className="w-full rounded-3xl object-cover aspect-[4/3] mb-8 shadow-lg"
+                className="w-full rounded-3xl object-cover aspect-[4/3] mb-8 shadow-lg" style={{ objectPosition: '50% 25%' }}
               />
             </div>
 
