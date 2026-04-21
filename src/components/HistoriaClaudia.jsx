@@ -20,13 +20,13 @@ const TIMELINE = [
     color: 'bg-brand-600',
   },
   {
-    year: '2024',
+    year: '2025',
     label: 'Seguimiento multidisciplinar',
     text: 'Claudia empieza a recibir atención de varios especialistas: neurología, logopedia, fisioterapia, oftalmología... Un equipo que trabaja cada día para darle la mejor calidad de vida posible.',
     color: 'bg-brand-700',
   },
   {
-    year: '2025',
+    year: '2026',
     label: 'Nace la asociación',
     text: 'Decidimos que el silencio no era una opción. Creamos El Reto de Claudia para que otras familias no se sientan solas y para acercar la DBP a quienes pueden marcar la diferencia.',
     color: 'bg-warm-400',
@@ -129,7 +129,7 @@ export default function HistoriaClaudia() {
               </p>
               <p>
                 Pronto comenzamos a notar señales que no encajaban. Una hipotonía que no
-                mejoraba, dificultades para alimentarse, un desarrollo que se alejaba poco
+                mejoraba, dificultad para escuchar, un desarrollo que se alejaba poco
                 a poco de los hitos esperados. Los médicos miraban, investigaban,
                 descartaban. Y nosotros esperábamos, sin saber bien qué.
               </p>
