@@ -25,7 +25,7 @@ export default function Hero() {
       aria-label="Sección principal"
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-12 w-full py-24 md:py-32">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center lg:items-stretch">
 
           {/* Columna izquierda */}
           <div>
@@ -82,22 +82,13 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Columna derecha — placeholder imagen */}
-          <div className={`relative h-[480px] lg:h-[560px] rounded-xl overflow-hidden ${fade('delay-200')}`}>
-            <div
-              className="absolute inset-0"
-              style={{
-                background: 'repeating-linear-gradient(-45deg, #d9dde6 0px, #d9dde6 1px, #e8ebf0 1px, #e8ebf0 16px)',
-              }}
-              aria-hidden="true"
+          {/* Columna derecha — foto de Claudia */}
+          <div className={`relative h-[480px] lg:h-auto lg:min-h-[560px] rounded-xl overflow-hidden ${fade('delay-200')}`}>
+            <img
+              src="/images/claudia.jpeg"
+              alt="Claudia en la playa, sonriendo"
+              className="absolute inset-0 w-full h-full object-cover object-top"
             />
-            <div className="absolute bottom-5 right-5 flex items-center gap-2 bg-white/90 backdrop-blur-sm border border-white/60 text-brand-950/60 text-xs font-semibold tracking-widest uppercase px-3 py-2 rounded">
-              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <rect x="3" y="3" width="18" height="18" rx="2" strokeWidth={1.5} />
-                <path strokeLinecap="round" strokeWidth={1.5} d="M3 16l5-5 4 4 3-3 6 6" />
-              </svg>
-              Retrato de Claudia
-            </div>
           </div>
 
         </div>
