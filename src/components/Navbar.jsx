@@ -1,21 +1,21 @@
 import { useState, useEffect } from 'react'
+import { Link, useNavigate, useLocation } from 'react-router-dom'
+import { useLanguage } from '../context/LanguageContext'
 
-const NAV_LINKS = [
-  { label: 'Inicio',              href: '#inicio'   },
-  { label: 'Qué es la DBP',       href: '#dbp'      },
-  { label: 'Historia de Claudia', href: '#historia' },
-  { label: 'Cómo ayudar',         href: '#ayudar'   },
-  { label: 'Contacto',            href: '#contacto' },
+const NAV_KEYS = [
+  { key: 'inicio', href: '#inicio' },
+  { key: 'dbp',    href: '#dbp'    },
+  { key: 'historia', href: '#historia' },
+  { key: 'ayudar',  href: '#ayudar'  },
+  { key: 'contacto', href: '#contacto' },
 ]
 
-function scrollTo(href) {
-  const el = document.querySelector(href)
-  if (el) el.scrollIntoView({ behavior: 'smooth' })
-}
-
-export default function Navbar() {
+export default function Navbar({ donatePage = false }) {
   const [scrolled,  setScrolled]  = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const navigate = useNavigate()
+  const location = useLocation()
+  const { t, lang, toggleLang } = useLanguage()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60)
@@ -26,7 +26,12 @@ export default function Navbar() {
   const handleLink = (e, href) => {
     e.preventDefault()
     setMenuOpen(false)
-    scrollTo(href)
+    if (location.pathname !== '/') {
+      navigate('/' + href)
+    } else {
+      const el = document.querySelector(href)
+      if (el) el.scrollIntoView({ behavior: 'smooth' })
+    }
   }
 
   return (
@@ -41,28 +46,37 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          {/* Logotipo textual */}
-          <a
-            href="#inicio"
-            onClick={(e) => handleLink(e, '#inicio')}
+          {/* Logotipo */}
+          <Link
+            to="/"
             className="font-serif font-bold text-xl tracking-tight text-brand-800 hover:text-brand-600 transition-colors duration-300"
           >
             El Reto de Claudia
-          </a>
+          </Link>
 
           {/* Navegación desktop */}
           <ul className="hidden md:flex items-center gap-8 list-none m-0 p-0">
-            {NAV_LINKS.map((link) => (
+            {NAV_KEYS.map((link) => (
               <li key={link.href}>
                 <a
                   href={link.href}
                   onClick={(e) => handleLink(e, link.href)}
                   className="text-sm font-medium text-gray-600 hover:text-warm-500 transition-colors duration-200"
                 >
-                  {link.label}
+                  {t.nav[link.key]}
                 </a>
               </li>
             ))}
+            {/* Toggle idioma */}
+            <li>
+              <button
+                onClick={toggleLang}
+                className="text-xs font-bold tracking-widest text-gray-400 hover:text-brand-600 transition-colors border border-gray-200 rounded-lg px-2.5 py-1.5"
+                aria-label="Cambiar idioma"
+              >
+                {lang === 'es' ? 'EN' : 'ES'}
+              </button>
+            </li>
           </ul>
 
           {/* Botón hamburguesa */}
@@ -87,22 +101,30 @@ export default function Navbar() {
         {/* Menú móvil */}
         <div
           className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-            menuOpen ? 'max-h-80 opacity-100 mt-3' : 'max-h-0 opacity-0'
+            menuOpen ? 'max-h-96 opacity-100 mt-3' : 'max-h-0 opacity-0'
           }`}
           aria-hidden={!menuOpen}
         >
           <ul className="bg-white rounded-2xl shadow-xl py-3 px-2 list-none m-0">
-            {NAV_LINKS.map((link) => (
+            {NAV_KEYS.map((link) => (
               <li key={link.href}>
                 <a
                   href={link.href}
                   onClick={(e) => handleLink(e, link.href)}
                   className="block px-4 py-3 text-gray-700 hover:text-brand-700 hover:bg-brand-50 rounded-xl font-medium transition-colors"
                 >
-                  {link.label}
+                  {t.nav[link.key]}
                 </a>
               </li>
             ))}
+            <li className="flex items-center gap-2 px-2 pt-2">
+              <button
+                onClick={toggleLang}
+                className="flex-1 text-center text-xs font-bold tracking-widest text-gray-500 border border-gray-200 rounded-xl py-3 hover:text-brand-600 transition-colors"
+              >
+                {lang === 'es' ? '🇬🇧 English' : '🇪🇸 Español'}
+              </button>
+            </li>
           </ul>
         </div>
       </div>

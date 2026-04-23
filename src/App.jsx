@@ -1,3 +1,4 @@
+import { LanguageProvider } from './context/LanguageContext'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import QuEsDBP from './components/QuEsDBP'
@@ -8,16 +9,18 @@ import Footer from './components/Footer'
 
 export default function App() {
   return (
-    <div className="min-h-screen">
-      <Navbar />
-      <main>
-        <Hero />
-        <QuEsDBP />
-        <HistoriaClaudia />
-        <ComoAyudar />
-        <Contacto />
-      </main>
-      <Footer />
-    </div>
+    <LanguageProvider>
+      <div className="min-h-screen">
+        <Navbar />
+        <main>
+          <Hero />
+          <QuEsDBP />
+          <HistoriaClaudia />
+          <ComoAyudar />
+          <Contacto />
+        </main>
+        <Footer />
+      </div>
+    </LanguageProvider>
   )
 }

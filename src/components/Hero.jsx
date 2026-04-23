@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useLanguage } from '../context/LanguageContext'
 
 function scrollTo(href) {
   const el = document.querySelector(href)
@@ -7,10 +8,11 @@ function scrollTo(href) {
 
 export default function Hero() {
   const [loaded, setLoaded] = useState(false)
+  const { t } = useLanguage()
 
   useEffect(() => {
-    const t = setTimeout(() => setLoaded(true), 80)
-    return () => clearTimeout(t)
+    const timer = setTimeout(() => setLoaded(true), 80)
+    return () => clearTimeout(timer)
   }, [])
 
   const fade = (delay) =>
@@ -33,7 +35,7 @@ export default function Hero() {
             <div className={fade('delay-100')}>
               <span className="inline-flex items-center gap-2 border border-brand-950/30 text-brand-950 text-[10px] lg:text-xs font-semibold tracking-widest uppercase px-3 py-1.5 lg:px-4 lg:py-2 rounded-full mb-5 lg:mb-10">
                 <span className="w-1.5 h-1.5 bg-brand-950 rounded-full" aria-hidden="true" />
-                Caso clínico · Convocatoria abierta
+                {t.hero.badge}
               </span>
             </div>
 
@@ -41,9 +43,9 @@ export default function Hero() {
             <h1
               className={`font-serif text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-brand-950 leading-[1.05] mb-5 lg:mb-7 ${fade('delay-150')}`}
             >
-              Buscamos investigadores para empezar la{' '}
-              <em className="not-italic italic text-brand-500">terapia génica</em>{' '}
-              de Claudia.
+              {t.hero.title1}{' '}
+              <em className="not-italic italic text-brand-500">{t.hero.titleEmphasis}</em>{' '}
+              {t.hero.title2}
             </h1>
 
             {/* Foto circular — solo mobile */}
@@ -59,15 +61,12 @@ export default function Hero() {
 
             {/* Párrafo principal */}
             <p className={`text-brand-950/70 text-lg leading-relaxed mb-4 ${fade('delay-300')}`}>
-              Claudia tiene 2 años y medio. Padece la deficiencia de la proteína D-bifuncional (DBP),
-              una enfermedad neurodegenerativa ultrarrara sin tratamiento curativo. La terapia génica
-              es hoy la vía con más potencial — y necesitamos conectar con quienes puedan explorarla.
+              {t.hero.p1}
             </p>
 
             {/* Párrafo secundario */}
             <p className={`text-brand-950/45 text-sm leading-relaxed mb-12 ${fade('delay-[400ms]')}`}>
-              Si trabajas en terapia génica, enfermedades metabólicas o peroxisomales, o conoces a
-              alguien que lo haga, hay un lugar en este reto para ti.
+              {t.hero.p2}
             </p>
 
             {/* Botones */}
@@ -77,18 +76,17 @@ export default function Hero() {
                 onClick={(e) => { e.preventDefault(); scrollTo('#ayudar') }}
                 className="inline-flex items-center gap-2 bg-brand-950 hover:bg-brand-900 text-white font-semibold px-7 py-3.5 rounded-lg transition-all duration-200 shadow-sm hover:shadow-md focus:outline-none focus:ring-2 focus:ring-brand-950 focus:ring-offset-2"
               >
-                Cómo puedes ayudar
+                {t.hero.cta1}
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </a>
-
               <a
                 href="#dbp"
                 onClick={(e) => { e.preventDefault(); scrollTo('#dbp') }}
                 className="inline-flex items-center gap-2 bg-white border border-brand-950/20 hover:border-brand-950/50 text-brand-950 font-semibold px-7 py-3.5 rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-brand-950 focus:ring-offset-2"
               >
-                Conoce la enfermedad
+                {t.hero.cta2}
               </a>
             </div>
           </div>
