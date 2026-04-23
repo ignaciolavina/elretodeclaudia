@@ -31,7 +31,7 @@ export default function Hero() {
           <div>
             {/* Badge */}
             <div className={fade('delay-100')}>
-              <span className="inline-flex items-center gap-2 border border-brand-950/30 text-brand-950 text-xs font-semibold tracking-widest uppercase px-4 py-2 rounded-full mb-10">
+              <span className="inline-flex items-center gap-2 border border-brand-950/30 text-brand-950 text-[10px] lg:text-xs font-semibold tracking-widest uppercase px-3 py-1.5 lg:px-4 lg:py-2 rounded-full mb-5 lg:mb-10">
                 <span className="w-1.5 h-1.5 bg-brand-950 rounded-full" aria-hidden="true" />
                 Caso clínico · Convocatoria abierta
               </span>
@@ -39,12 +39,23 @@ export default function Hero() {
 
             {/* Titular */}
             <h1
-              className={`font-serif text-5xl sm:text-6xl md:text-7xl font-bold text-brand-950 leading-[1.05] mb-7 ${fade('delay-150')}`}
+              className={`font-serif text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-brand-950 leading-[1.05] mb-5 lg:mb-7 ${fade('delay-150')}`}
             >
               Buscamos investigadores para empezar la{' '}
               <em className="not-italic italic text-brand-500">terapia génica</em>{' '}
               de Claudia.
             </h1>
+
+            {/* Foto circular — solo mobile */}
+            <div className={`flex justify-center mb-8 lg:hidden ${fade('delay-200')}`}>
+              <div className="w-64 h-64 rounded-full overflow-hidden shadow-xl">
+                <img
+                  src="/images/claudia.jpeg"
+                  alt="Claudia"
+                  className="w-full h-full object-cover object-top"
+                />
+              </div>
+            </div>
 
             {/* Párrafo principal */}
             <p className={`text-brand-950/70 text-lg leading-relaxed mb-4 ${fade('delay-300')}`}>
@@ -82,8 +93,8 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Columna derecha — foto de Claudia */}
-          <div className={`relative h-[480px] lg:h-auto lg:min-h-[560px] rounded-xl overflow-hidden ${fade('delay-200')}`}>
+          {/* Columna derecha — foto de Claudia (solo desktop) */}
+          <div className={`hidden lg:block relative lg:h-auto lg:min-h-[560px] rounded-xl overflow-hidden ${fade('delay-200')}`}>
             <img
               src="/images/claudia.jpeg"
               alt="Claudia en la playa, sonriendo"
