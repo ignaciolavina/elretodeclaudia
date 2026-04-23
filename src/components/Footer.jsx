@@ -12,7 +12,7 @@ const NAV_KEYS = [
 export default function Footer() {
   const navigate = useNavigate()
   const location = useLocation()
-  const { t } = useLanguage()
+  const { t, lang, toggleLang } = useLanguage()
   const d = t.footer
 
   const handleLink = (e, href) => {
@@ -103,10 +103,22 @@ export default function Footer() {
           <p className="text-gray-400 text-sm text-center sm:text-left">
             © {new Date().getFullYear()} El Reto de Claudia · {d.copyright}
           </p>
-          <p className="text-gray-500 text-xs text-center sm:text-right">
-            {d.domain}{' '}
-            <span className="text-gray-400">elretodeclaudia.org</span>
-          </p>
+          <div className="flex items-center gap-4">
+            <button
+              onClick={toggleLang}
+              className="flex items-center gap-1 text-sm font-medium text-gray-500 hover:text-gray-200 transition-colors"
+              aria-label="Cambiar idioma"
+            >
+              {lang === 'es' ? 'ES' : 'EN'}
+              <svg className="w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <p className="text-gray-500 text-xs text-center sm:text-right">
+              {d.domain}{' '}
+              <span className="text-gray-400">elretodeclaudia.org</span>
+            </p>
+          </div>
         </div>
       </div>
     </footer>

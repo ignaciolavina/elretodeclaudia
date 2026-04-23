@@ -61,7 +61,11 @@ export default function Navbar({ donatePage = false }) {
                 <a
                   href={link.href}
                   onClick={(e) => handleLink(e, link.href)}
-                  className="text-sm font-medium text-gray-600 hover:text-warm-500 transition-colors duration-200"
+                  className={
+                    link.key === 'contacto'
+                      ? 'text-sm font-semibold bg-brand-600 hover:bg-brand-700 text-white px-4 py-2 rounded-xl transition-colors duration-200 shadow-sm'
+                      : 'text-sm font-medium text-gray-600 hover:text-warm-500 transition-colors duration-200'
+                  }
                 >
                   {t.nav[link.key]}
                 </a>
@@ -71,10 +75,13 @@ export default function Navbar({ donatePage = false }) {
             <li>
               <button
                 onClick={toggleLang}
-                className="text-xs font-bold tracking-widest text-gray-400 hover:text-brand-600 transition-colors border border-gray-200 rounded-lg px-2.5 py-1.5"
+                className="flex items-center gap-1 text-sm font-medium text-gray-500 hover:text-gray-800 transition-colors"
                 aria-label="Cambiar idioma"
               >
-                {lang === 'es' ? 'EN' : 'ES'}
+                {lang === 'es' ? 'ES' : 'EN'}
+                <svg className="w-3.5 h-3.5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
               </button>
             </li>
           </ul>
