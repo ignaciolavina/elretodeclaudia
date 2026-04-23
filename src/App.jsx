@@ -1,3 +1,4 @@
+import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import QuEsDBP from './components/QuEsDBP'
@@ -5,8 +6,9 @@ import HistoriaClaudia from './components/HistoriaClaudia'
 import ComoAyudar from './components/ComoAyudar'
 import Contacto from './components/Contacto'
 import Footer from './components/Footer'
+import Donar from './pages/Donar'
 
-export default function App() {
+function Home() {
   return (
     <div className="min-h-screen">
       <Navbar />
@@ -19,5 +21,14 @@ export default function App() {
       </main>
       <Footer />
     </div>
+  )
+}
+
+export default function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/donar" element={<Donar />} />
+    </Routes>
   )
 }

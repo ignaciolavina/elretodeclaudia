@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Link, useNavigate, useLocation } from 'react-router-dom'
 
 const NAV_LINKS = [
   { label: 'Inicio',              href: '#inicio'   },
@@ -8,14 +9,11 @@ const NAV_LINKS = [
   { label: 'Contacto',            href: '#contacto' },
 ]
 
-function scrollTo(href) {
-  const el = document.querySelector(href)
-  if (el) el.scrollIntoView({ behavior: 'smooth' })
-}
-
-export default function Navbar() {
+export default function Navbar({ donatePage = false }) {
   const [scrolled,  setScrolled]  = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const navigate = useNavigate()
+  const location = useLocation()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60)
@@ -26,7 +24,12 @@ export default function Navbar() {
   const handleLink = (e, href) => {
     e.preventDefault()
     setMenuOpen(false)
-    scrollTo(href)
+    if (location.pathname !== '/') {
+      navigate('/' + href)
+    } else {
+      const el = document.querySelector(href)
+      if (el) el.scrollIntoView({ behavior: 'smooth' })
+    }
   }
 
   return (
@@ -42,13 +45,12 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logotipo textual */}
-          <a
-            href="#inicio"
-            onClick={(e) => handleLink(e, '#inicio')}
+          <Link
+            to="/"
             className="font-serif font-bold text-xl tracking-tight text-brand-800 hover:text-brand-600 transition-colors duration-300"
           >
             El Reto de Claudia
-          </a>
+          </Link>
 
           {/* Navegación desktop */}
           <ul className="hidden md:flex items-center gap-8 list-none m-0 p-0">
@@ -63,6 +65,14 @@ export default function Navbar() {
                 </a>
               </li>
             ))}
+            <li>
+              <Link
+                to="/donar"
+                className="bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold px-5 py-2.5 rounded-xl transition-colors shadow-sm"
+              >
+                Donar
+              </Link>
+            </li>
           </ul>
 
           {/* Botón hamburguesa */}
@@ -87,7 +97,7 @@ export default function Navbar() {
         {/* Menú móvil */}
         <div
           className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-            menuOpen ? 'max-h-80 opacity-100 mt-3' : 'max-h-0 opacity-0'
+            menuOpen ? 'max-h-96 opacity-100 mt-3' : 'max-h-0 opacity-0'
           }`}
           aria-hidden={!menuOpen}
         >
@@ -103,6 +113,15 @@ export default function Navbar() {
                 </a>
               </li>
             ))}
+            <li className="px-2 pt-2">
+              <Link
+                to="/donar"
+                onClick={() => setMenuOpen(false)}
+                className="block text-center bg-brand-600 hover:bg-brand-700 text-white font-semibold px-4 py-3 rounded-xl transition-colors"
+              >
+                Donar
+              </Link>
+            </li>
           </ul>
         </div>
       </div>

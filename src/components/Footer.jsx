@@ -1,3 +1,5 @@
+import { Link, useNavigate, useLocation } from 'react-router-dom'
+
 const NAV_LINKS = [
   { label: 'Inicio',              href: '#inicio'   },
   { label: 'Qué es la DBP',       href: '#dbp'      },
@@ -6,12 +8,19 @@ const NAV_LINKS = [
   { label: 'Contacto',            href: '#contacto' },
 ]
 
-function scrollTo(href) {
-  const el = document.querySelector(href)
-  if (el) el.scrollIntoView({ behavior: 'smooth' })
-}
-
 export default function Footer() {
+  const navigate = useNavigate()
+  const location = useLocation()
+
+  const handleLink = (e, href) => {
+    e.preventDefault()
+    if (location.pathname !== '/') {
+      navigate('/' + href)
+    } else {
+      const el = document.querySelector(href)
+      if (el) el.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
   return (
     <footer className="bg-brand-950 text-white" role="contentinfo">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -42,13 +51,18 @@ export default function Footer() {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    onClick={(e) => { e.preventDefault(); scrollTo(link.href) }}
+                    onClick={(e) => handleLink(e, link.href)}
                     className="text-gray-300 hover:text-white text-sm transition-colors"
                   >
                     {link.label}
                   </a>
                 </li>
               ))}
+              <li>
+                <Link to="/donar" className="text-brand-300 hover:text-white text-sm font-semibold transition-colors">
+                  Donar ❤️
+                </Link>
+              </li>
             </ul>
           </div>
 
