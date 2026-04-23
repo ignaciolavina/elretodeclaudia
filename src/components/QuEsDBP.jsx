@@ -65,9 +65,9 @@ const SYMPTOMS = [
           d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
       </svg>
     ),
-    title: 'Enfermedad ultrarrara',
+    title: 'Alta mortalidad infantil',
     text:
-      'Con menos de 100 casos documentados en todo el mundo, la DBP es una de las enfermedades más raras conocidas, lo que dificulta la investigación y el acceso a información contrastada.',
+      'Con menos de 100 casos documentados en todo el mundo, la mayoría de los niños afectados por la DBP no superan los primeros años de vida. Su extrema rareza dificulta la investigación y hace urgente encontrar un tratamiento.',
   },
 ]
 

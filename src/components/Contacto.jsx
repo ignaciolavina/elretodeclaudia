@@ -104,17 +104,17 @@ export default function Contacto() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-          {/* Columna izquierda: info */}
+          {/* Columna izquierda: info (en mobile va debajo del form) */}
           <div
             ref={titleRef}
-            className={`transition-all duration-700 ${
+            className={`order-last lg:order-first transition-all duration-700 ${
               titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
           >
-            <span className="text-brand-600 text-sm font-semibold uppercase tracking-widest">
+            <span className="hidden lg:inline text-brand-600 text-sm font-semibold uppercase tracking-widest">
               Hablemos
             </span>
-            <h2 id="contacto-title" className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mt-3 mb-6 leading-tight">
+            <h2 id="contacto-title" className="hidden lg:block font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mt-3 mb-6 leading-tight">
               Escríbenos
             </h2>
             <p className="text-gray-600 text-lg leading-relaxed mb-8">
@@ -170,10 +170,20 @@ export default function Contacto() {
             </div>
           </div>
 
-          {/* Columna derecha: formulario */}
+          {/* Título solo visible en mobile, encima del form */}
+          <div className="order-first lg:hidden mb-2">
+            <span className="text-brand-600 text-sm font-semibold uppercase tracking-widest">
+              Hablemos
+            </span>
+            <h2 className="font-serif text-3xl font-bold text-gray-900 mt-2">
+              Escríbenos
+            </h2>
+          </div>
+
+          {/* Columna derecha: formulario (en mobile va primero) */}
           <div
             ref={formRef}
-            className={`transition-all duration-700 delay-200 ${
+            className={`order-first lg:order-last transition-all duration-700 delay-200 ${
               formVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
           >

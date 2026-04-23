@@ -22,13 +22,13 @@ const TIMELINE = [
   {
     year: '2025',
     label: 'Seguimiento multidisciplinar',
-    text: 'Claudia empieza a recibir atención de varios especialistas: neurología, logopedia, fisioterapia, oftalmología... Un equipo que trabaja cada día para darle la mejor calidad de vida posible.',
+    text: 'Claudia empieza a recibir atención de varios especialistas: neurología, endocrino, otorrino, rehabilitador, traumatología, fisioterapia, estimulación... Un equipo que trabaja cada día para darle la mejor calidad de vida posible.',
     color: 'bg-brand-700',
   },
   {
     year: '2026',
     label: 'Nace la asociación',
-    text: 'Decidimos que el silencio no era una opción. Creamos El Reto de Claudia para que otras familias no se sientan solas y para acercar la DBP a quienes pueden marcar la diferencia.',
+    text: 'Decidimos que el silencio no era una opción. Creamos El Reto de Claudia para dar visibilidad a esta enfermedad ultrarrara, encontrar investigación y entrar en contacto con familias.',
     color: 'bg-warm-400',
   },
 ]
