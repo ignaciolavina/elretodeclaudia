@@ -11,27 +11,27 @@ import Donar from './pages/Donar'
 
 function Home() {
   return (
-    <LanguageProvider>
-      <div className="min-h-screen">
-        <Navbar />
-        <main>
-          <Hero />
-          <QuEsDBP />
-          <HistoriaClaudia />
-          <ComoAyudar />
-          <Contacto />
-        </main>
-        <Footer />
-      </div>
-    </LanguageProvider>
+    <div className="min-h-screen">
+      <Navbar />
+      <main>
+        <Hero />
+        <QuEsDBP />
+        <HistoriaClaudia />
+        <ComoAyudar />
+        <Contacto />
+      </main>
+      <Footer />
+    </div>
   )
 }
 
 export default function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/donar" element={<Donar />} />
-    </Routes>
+    <LanguageProvider>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/donar" element={<Donar />} />
+      </Routes>
+    </LanguageProvider>
   )
 }

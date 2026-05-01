@@ -147,6 +147,69 @@ const translations = {
       domain: 'Dominio:',
       copyright: 'Asociación sin ánimo de lucro · España',
     },
+
+    donar: {
+      badge: 'Ayuda a Claudia',
+      title: 'Cada donación importa',
+
+      research: {
+        title: 'En busca de un tratamiento',
+        intro: 'Estamos en contacto con expertos de todo el mundo, explorando cada vía posible hacia una terapia génica o tratamiento para Claudia. Estas son algunas de las líneas que estamos evaluando tras hablar con algunos expertos y laboratorios:',
+        lines: [
+          {
+            title: 'Terapia génica con ARN mensajero',
+            desc: 'Estamos tratando de apoyar un proyecto (actualmente en fase de aprobación) de investigación con ARN mensajero para estudiar la enfermedad de Claudia. En caso de aprobación, requerirá financiación para su desarrollo.',
+          },
+          {
+            title: 'Drug repurposing',
+            desc: 'Estamos en conversaciones con un laboratorio especializado para analizar cómo responden las células (fibroblastos) de Claudia a distintos fármacos ya existentes. El objetivo es identificar compuestos que puedan ayudar a ralentizar la enfermedad. Uno de los candidatos de interés es la leriglitazona, actualmente en estudio.',
+          },
+          {
+            title: 'Estudios en fase preclínica',
+            desc: 'Un laboratorio ha mostrado interés en avanzar hacia estudios en fase preclínica (modelos en ratón) para investigar la enfermedad de Claudia. Este tipo de estudios son un paso clave antes de cualquier posible tratamiento en humanos. El coste estimado se sitúa entre 50.000 € y 160.000 €.',
+            highlightCost: '50.000 € y 160.000 €',
+          },
+        ],
+      },
+
+      therapies: {
+        title: 'Terapias semanales',
+        subtitle: 'Ayuda a Claudia en sus terapias y tratamientos semanales.',
+        items: [
+          { label: 'Fisioterapia', sessions: '4 sesiones/semana' },
+          { label: 'Logopedia', sessions: 'Semanal' },
+          { label: 'Estimulación', sessions: 'Semanal' },
+        ],
+      },
+
+      material: {
+        title: 'Material que Claudia necesita',
+        subtitle: 'Los artículos marcados ya han sido comprados, parte de ellos subvencionados por ayudas de la Comunidad de Madrid.',
+        achieved: '✓ Conseguido',
+        total: 'Total',
+        items: [
+          { label: 'Silla ortopédica', desc: 'Adaptada a sus necesidades posturales específicas. Parcialmente subvencionada.' },
+          { label: 'Bipedestador', desc: 'Permite a Claudia mantenerse erguida y trabajar la postura.' },
+          { label: 'Audífonos', desc: 'Esenciales para su desarrollo del lenguaje y comunicación.' },
+          { label: 'DAFOs', desc: 'Ortesis que le ayudan a caminar y mantener la posición correcta del pie.' },
+        ],
+      },
+
+      transfer: {
+        title: 'Transferencia bancaria',
+        ibanLabel: 'Número de cuenta (IBAN)',
+        copyTitle: 'Copiar IBAN',
+        copiedTitle: 'Copiado',
+        assocText: 'El reto de Claudia es un proyecto de la Asociación para la Investigación y Tratamiento de Enfermedades Peroxisomales.',
+        soonText: 'Muy pronto podrás apoyar a través de la asociación, desgravando hasta un 80% de tu donación en la declaración de la renta.',
+      },
+
+      bizum: {
+        title: 'Donar por Bizum',
+        soon: 'Próximamente',
+        desc: 'Pronto podrás donar fácilmente a través de Bizum.',
+      },
+    },
   },
 
   en: {
@@ -296,6 +359,69 @@ const translations = {
       socialTitle: 'Social media',
       domain: 'Domain:',
       copyright: 'Non-profit association · Spain',
+    },
+
+    donar: {
+      badge: 'Help Claudia',
+      title: 'Every donation matters',
+
+      research: {
+        title: 'In search of a treatment',
+        intro: 'We are in contact with experts from around the world, exploring every possible path towards gene therapy or a treatment for Claudia. These are some of the lines we are evaluating after speaking with experts and laboratories:',
+        lines: [
+          {
+            title: 'mRNA gene therapy',
+            desc: 'We are trying to support a project (currently in the approval phase) of mRNA research to study Claudia\'s disease. If approved, it will require funding for its development.',
+          },
+          {
+            title: 'Drug repurposing',
+            desc: 'We are in talks with a specialised laboratory to analyse how Claudia\'s cells (fibroblasts) respond to various existing drugs. The goal is to identify compounds that may help slow the disease. One candidate of interest is leriglitazone, currently under study.',
+          },
+          {
+            title: 'Preclinical studies',
+            desc: 'A laboratory has shown interest in moving towards preclinical studies (mouse models) to investigate Claudia\'s disease. These studies are a key step before any possible treatment in humans. The estimated cost is between €50,000 and €160,000.',
+            highlightCost: '€50,000 and €160,000',
+          },
+        ],
+      },
+
+      therapies: {
+        title: 'Weekly therapies',
+        subtitle: 'Help Claudia with her weekly therapies and treatments.',
+        items: [
+          { label: 'Physiotherapy', sessions: '4 sessions/week' },
+          { label: 'Speech therapy', sessions: 'Weekly' },
+          { label: 'Stimulation', sessions: 'Weekly' },
+        ],
+      },
+
+      material: {
+        title: 'Equipment Claudia needs',
+        subtitle: 'The marked items have already been purchased, some of them subsidised by grants from the Community of Madrid.',
+        achieved: '✓ Achieved',
+        total: 'Total',
+        items: [
+          { label: 'Orthopaedic chair', desc: 'Adapted to her specific postural needs. Partially subsidised.' },
+          { label: 'Standing frame', desc: 'Allows Claudia to remain upright and work on her posture.' },
+          { label: 'Hearing aids', desc: 'Essential for her language development and communication.' },
+          { label: 'DAFOs', desc: 'Orthoses that help her walk and maintain the correct foot position.' },
+        ],
+      },
+
+      transfer: {
+        title: 'Bank transfer',
+        ibanLabel: 'Account number (IBAN)',
+        copyTitle: 'Copy IBAN',
+        copiedTitle: 'Copied',
+        assocText: 'El Reto de Claudia is a project of the Association for Research and Treatment of Peroxisomal Diseases.',
+        soonText: 'Very soon you will be able to support through the association, deducting up to 80% of your donation on your tax return.',
+      },
+
+      bizum: {
+        title: 'Donate by Bizum',
+        soon: 'Coming soon',
+        desc: 'You will soon be able to donate easily through Bizum.',
+      },
     },
   },
 }
