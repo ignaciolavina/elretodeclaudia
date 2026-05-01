@@ -66,10 +66,10 @@ const translations = {
       timelineTitle: 'El camino hasta aquí',
       timeline: [
         { year: '2023', label: 'Llegada de Claudia', text: 'Claudia nace llena de vida. Sus primeros meses transcurren con la normalidad que cualquier familia espera.' },
-        { year: '2023', label: 'Primeras señales', text: 'Comenzamos a notar un desarrollo más lento de lo esperado: dificultad para sostener la cabeza, hipotonía generalizada, una debilidad que no correspondía con su edad.' },
-        { year: '2024', label: 'El diagnóstico', text: 'Tras meses de incertidumbre y múltiples pruebas, llegó el diagnóstico: deficiencia de la proteína D-bifuncional. Un nombre desconocido para nosotros, una realidad que cambió todo.' },
+        { year: '2024', label: 'Primeras señales', text: 'Comenzamos a notar un desarrollo más lento de lo esperado: dificultad para sostener la cabeza, hipotonía generalizada, una debilidad que no correspondía con su edad.' },
+        { year: '2025', label: 'El diagnóstico', text: 'Tras meses de incertidumbre y múltiples pruebas, llegó el diagnóstico: deficiencia de la proteína D-bifuncional. Un nombre desconocido para nosotros, una realidad que cambió todo.' },
         { year: '2025', label: 'Seguimiento multidisciplinar', text: 'Claudia empieza a recibir atención de varios especialistas: neurología, endocrino, otorrino, rehabilitador, traumatología, fisioterapia, estimulación... Un equipo que trabaja cada día para darle la mejor calidad de vida posible.' },
-        { year: '2026', label: 'Nace la asociación', text: 'Decidimos que el silencio no era una opción. Creamos El Reto de Claudia para dar visibilidad a esta enfermedad ultrarrara, encontrar investigación y entrar en contacto con familias.' },
+        { year: '2026', label: 'Nace la asociación', text: 'Hemos creado El Reto de Claudia con el objetivo de encontrar una cura para esta enfermedad, encontrar a alguien que quiera investigar y, en ese tiempo, encontrar algún tratamiento que pueda ayudarla a frenar el avance devastador de la enfermedad. Además, acercarnos a familias que estén en situaciones similares.' },
       ],
     },
 
@@ -139,13 +139,13 @@ const translations = {
     },
 
     footer: {
-      description: 'Asociación sin ánimo de lucro dedicada a dar visibilidad a la deficiencia de la proteína D-bifuncional (DBP) y a conectar familias, investigadores y médicos.',
+      description: 'Un proyecto de la Asociación para la Investigación y Tratamiento de Enfermedades Peroxisomales, una entidad sin ánimo de lucro dedicada a dar visibilidad a la deficiencia de la proteína D-bifuncional (DBP), a favorecer la investigación, ayudar a familias afectadas y a conectar con investigadores y médicos.',
       chip: 'Enfermedades raras · España',
       navTitle: 'Navegación',
       contactTitle: 'Contacto',
       socialTitle: 'Redes sociales',
       domain: 'Dominio:',
-      copyright: 'Asociación sin ánimo de lucro · España',
+      copyright: 'Un proyecto de la Asociación para la Investigación y Tratamiento de Enfermedades Peroxisomales',
     },
 
     donar: {
@@ -279,10 +279,10 @@ const translations = {
       timelineTitle: 'The road so far',
       timeline: [
         { year: '2023', label: "Claudia's arrival", text: 'Claudia is born full of life. Her first months pass with the normality any family expects.' },
-        { year: '2023', label: 'First signs', text: 'We began to notice slower than expected development: difficulty holding her head, generalised hypotonia, a weakness that did not match her age.' },
-        { year: '2024', label: 'The diagnosis', text: 'After months of uncertainty and multiple tests, the diagnosis arrived: D-bifunctional protein deficiency. A name unknown to us, a reality that changed everything.' },
+        { year: '2024', label: 'First signs', text: 'We began to notice slower than expected development: difficulty holding her head, generalised hypotonia, a weakness that did not match her age.' },
+        { year: '2025', label: 'The diagnosis', text: 'After months of uncertainty and multiple tests, the diagnosis arrived: D-bifunctional protein deficiency. A name unknown to us, a reality that changed everything.' },
         { year: '2025', label: 'Multidisciplinary follow-up', text: 'Claudia begins receiving care from several specialists: neurology, endocrinology, ENT, rehabilitation, traumatology, physiotherapy, stimulation... A team working every day to give her the best possible quality of life.' },
-        { year: '2026', label: 'The association is born', text: 'We decided that silence was not an option. We created El Reto de Claudia to raise awareness of this ultra-rare disease, find research, and connect with affected families.' },
+        { year: '2026', label: 'The association is born', text: 'We created El Reto de Claudia with the goal of finding a cure for this disease, finding someone willing to research it and, in the meantime, finding a treatment that could help slow its devastating progression. We also want to reach out to families in similar situations.' },
       ],
     },
 
@@ -352,13 +352,13 @@ const translations = {
     },
 
     footer: {
-      description: 'Non-profit association dedicated to raising awareness of D-bifunctional protein (DBP) deficiency and connecting families, researchers and doctors.',
+      description: 'A project of the Association for Research and Treatment of Peroxisomal Diseases, a non-profit dedicated to raising awareness of D-bifunctional protein (DBP) deficiency, promoting research, supporting affected families and connecting with researchers and doctors.',
       chip: 'Rare diseases · Spain',
       navTitle: 'Navigation',
       contactTitle: 'Contact',
       socialTitle: 'Social media',
       domain: 'Domain:',
-      copyright: 'Non-profit association · Spain',
+      copyright: 'A project of the Association for Research and Treatment of Peroxisomal Diseases',
     },
 
     donar: {
