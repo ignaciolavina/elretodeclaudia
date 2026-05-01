@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
+import { LanguageProvider } from './context/LanguageContext'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import QuEsDBP from './components/QuEsDBP'
@@ -10,17 +11,19 @@ import Donar from './pages/Donar'
 
 function Home() {
   return (
-    <div className="min-h-screen">
-      <Navbar />
-      <main>
-        <Hero />
-        <QuEsDBP />
-        <HistoriaClaudia />
-        <ComoAyudar />
-        <Contacto />
-      </main>
-      <Footer />
-    </div>
+    <LanguageProvider>
+      <div className="min-h-screen">
+        <Navbar />
+        <main>
+          <Hero />
+          <QuEsDBP />
+          <HistoriaClaudia />
+          <ComoAyudar />
+          <Contacto />
+        </main>
+        <Footer />
+      </div>
+    </LanguageProvider>
   )
 }
 
