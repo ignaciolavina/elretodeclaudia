@@ -97,7 +97,7 @@ export default function QuEsDBP() {
           }`}
         >
           <div className="inline-block bg-brand-950 text-white rounded-3xl px-10 py-8 max-w-2xl">
-            <p className="font-serif text-4xl font-bold text-warm-300 mb-2">&lt;100 casos</p>
+            <p className="font-serif text-4xl font-bold text-warm-300 mb-2">{d.statBadge}</p>
             <p className="text-purple-200 text-lg leading-relaxed">{d.statText}</p>
           </div>
         </div>

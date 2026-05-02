@@ -26,7 +26,8 @@ const translations = {
       intro: 'La deficiencia de la proteína D-bifuncional (DBP) es un trastorno metabólico hereditario de origen genético causado por mutaciones en el gen HSD17B4. Esta proteína es esencial para el funcionamiento correcto de los peroxisomas, y cuando falla, las consecuencias son devastadoras para el sistema nervioso.',
       peroxTitle: '¿Qué son los peroxisomas y por qué importan?',
       peroxText: 'Los peroxisomas son pequeños orgánulos celulares presentes en prácticamente todas las células del organismo. Se encargan de descomponer las grasas de cadena muy larga y de eliminar sustancias tóxicas que se generan en el metabolismo. Cuando la proteína D-bifuncional no funciona correctamente, estas grasas no pueden procesarse y se acumulan de forma progresiva, causando un daño irreversible en el sistema nervioso, especialmente en el cerebro y la médula espinal.',
-      statText: 'documentados en todo el mundo. La DBP es una de las enfermedades más raras que existen, lo que hace que cada investigación y cada diagnóstico cuente más que nunca.',
+      statBadge: 'Enfermedad ultrarrara',
+      statText: 'La Deficiencia de la enzima D-Bifuncional es una enfermedad ultrarrara que afecta a muy pocos niños y, cuando lo hace, es devastadora. Lo que hace que cada investigación y cada diagnóstico cuente más que nunca.',
       symptoms: [
         {
           title: 'Hipotonía muscular severa',
@@ -59,6 +60,7 @@ const translations = {
       sectionLabel: 'Quiénes somos',
       title: 'La historia de Claudia',
       subtitle: 'Una historia de amor, de incertidumbre, de lucha y de esperanza. Una historia que todavía se está escribiendo.',
+      p0: 'Somos Ignacio y Elena, los papás de Claudia.',
       p1: 'Claudia llegó a nuestras vidas en 2023 llena de luz. Como cualquier familia, teníamos los sueños y los miedos propios de los primeros meses, pero también teníamos la certeza de que estaríamos ahí para lo que viniera.',
       p2: 'Pronto comenzamos a notar señales que no encajaban. Una hipotonía que no mejoraba, dificultad para escuchar, un desarrollo que se alejaba poco a poco de los hitos esperados. Los médicos miraban, investigaban, descartaban. Y nosotros esperábamos, sin saber bien qué.',
       p3: 'El diagnóstico llegó como un mapa en un terreno desconocido: por un lado puso nombre a lo que veíamos; por otro, nos abrió ante una realidad para la que nadie estaba preparado. La deficiencia de la proteína D-bifuncional. Casi nadie había oído hablar de ella. Casi nadie sabía qué hacer con ella.',
@@ -201,13 +203,19 @@ const translations = {
         copyTitle: 'Copiar IBAN',
         copiedTitle: 'Copiado',
         assocText: 'El reto de Claudia es un proyecto de la Asociación para la Investigación y Tratamiento de Enfermedades Peroxisomales.',
-        soonText: 'Muy pronto podrás apoyar a través de la asociación, desgravando hasta un 80% de tu donación en la declaración de la renta.',
+        soonText: 'Esta es la cuenta personal de Claudia, aunque muy pronto podrás apoyar a Claudia a través de la asociación, desgravando hasta un 80% de tu donación en la declaración de la renta.',
       },
 
       bizum: {
         title: 'Donar por Bizum',
         soon: 'Próximamente',
         desc: 'Pronto podrás donar fácilmente a través de Bizum.',
+      },
+
+      card: {
+        title: 'Donar con tarjeta',
+        soon: 'Próximamente',
+        desc: 'Pronto podrás donar con tarjeta de forma rápida y segura.',
       },
     },
   },
@@ -239,7 +247,8 @@ const translations = {
       intro: 'D-bifunctional protein (DBP) deficiency is a hereditary metabolic disorder caused by mutations in the HSD17B4 gene. This protein is essential for the correct functioning of peroxisomes, and when it fails, the consequences are devastating for the nervous system.',
       peroxTitle: 'What are peroxisomes and why do they matter?',
       peroxText: 'Peroxisomes are small cellular organelles present in virtually all cells of the body. They break down very long-chain fatty acids and eliminate toxic substances produced in metabolism. When the D-bifunctional protein does not work correctly, these fats cannot be processed and accumulate progressively, causing irreversible damage to the nervous system, especially the brain and spinal cord.',
-      statText: 'documented worldwide. DBP is one of the rarest diseases in existence, making every research effort and every diagnosis more important than ever.',
+      statBadge: 'Ultra-rare disease',
+      statText: 'D-Bifunctional enzyme deficiency is an ultra-rare disease that affects very few children and, when it does, it is devastating. This makes every research effort and every diagnosis more important than ever.',
       symptoms: [
         {
           title: 'Severe muscular hypotonia',
@@ -272,6 +281,7 @@ const translations = {
       sectionLabel: 'Who we are',
       title: "Claudia's story",
       subtitle: 'A story of love, uncertainty, struggle and hope. A story still being written.',
+      p0: 'We are Ignacio and Elena, Claudia\'s parents.',
       p1: 'Claudia came into our lives in 2023 full of light. Like any family, we had the dreams and fears of those first months, but also the certainty that we would be there for whatever came.',
       p2: 'We soon began to notice signs that did not fit. Hypotonia that was not improving, difficulty hearing, development that was slowly falling behind expected milestones. Doctors looked, investigated, ruled things out. And we waited, not quite knowing what for.',
       p3: 'The diagnosis arrived like a map in unknown territory: on one hand it named what we were seeing; on the other, it opened us up to a reality no one was prepared for. D-bifunctional protein deficiency. Almost no one had heard of it. Almost no one knew what to do with it.',
@@ -414,13 +424,19 @@ const translations = {
         copyTitle: 'Copy IBAN',
         copiedTitle: 'Copied',
         assocText: 'El Reto de Claudia is a project of the Association for Research and Treatment of Peroxisomal Diseases.',
-        soonText: 'Very soon you will be able to support through the association, deducting up to 80% of your donation on your tax return.',
+        soonText: 'This is Claudia\'s personal account, but very soon you will be able to support Claudia through the association, deducting up to 80% of your donation on your tax return.',
       },
 
       bizum: {
         title: 'Donate by Bizum',
         soon: 'Coming soon',
         desc: 'You will soon be able to donate easily through Bizum.',
+      },
+
+      card: {
+        title: 'Donate by card',
+        soon: 'Coming soon',
+        desc: 'You will soon be able to donate quickly and securely by card.',
       },
     },
   },

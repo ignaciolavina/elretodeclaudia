@@ -73,6 +73,7 @@ export default function HistoriaClaudia() {
             </div>
 
             <div className="space-y-5 text-gray-700 leading-relaxed">
+              <p className="font-semibold text-gray-900">{d.p0}</p>
               <p>{d.p1}</p>
               <p>{d.p2}</p>
               <p>{d.p3}</p>

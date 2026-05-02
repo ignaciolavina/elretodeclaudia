@@ -175,7 +175,7 @@ export default function Donar() {
 
                 <div className="bg-amber-50 border border-amber-100 rounded-2xl p-5 text-sm text-gray-700 leading-relaxed space-y-3">
                   <p>{d.transfer.assocText}</p>
-                  <p className="text-gray-500">🕐 {d.transfer.soonText}</p>
+                  <p>{d.transfer.soonText}</p>
                 </div>
               </div>
 
@@ -191,6 +191,21 @@ export default function Donar() {
                 </div>
                 <p className="text-gray-400 text-sm">
                   {d.bizum.desc}
+                </p>
+              </div>
+
+              {/* Tarjeta — próximamente */}
+              <div className="bg-white rounded-3xl shadow-sm p-8 border border-brand-100 opacity-60">
+                <div className="flex items-center justify-between mb-2">
+                  <h2 className="font-serif text-2xl font-semibold text-gray-900">
+                    {d.card.title}
+                  </h2>
+                  <span className="text-xs font-semibold text-gray-500 bg-gray-100 px-3 py-1 rounded-full uppercase tracking-widest">
+                    {d.card.soon}
+                  </span>
+                </div>
+                <p className="text-gray-400 text-sm">
+                  {d.card.desc}
                 </p>
               </div>
             </div>

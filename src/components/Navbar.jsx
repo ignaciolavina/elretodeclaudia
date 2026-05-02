@@ -61,7 +61,11 @@ export default function Navbar({ donatePage = false }) {
                 <a
                   href={link.href}
                   onClick={(e) => handleLink(e, link.href)}
-                  className="text-sm font-medium text-gray-600 hover:text-warm-500 transition-colors duration-200"
+                  className={
+                    link.key === 'contacto'
+                      ? 'text-sm font-bold text-brand-600 hover:text-brand-700 transition-colors duration-200'
+                      : 'text-sm font-medium text-gray-600 hover:text-warm-500 transition-colors duration-200'
+                  }
                 >
                   {t.nav[link.key]}
                 </a>
