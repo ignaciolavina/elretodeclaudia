@@ -51,7 +51,7 @@ const translations = {
         },
         {
           title: 'Alta mortalidad infantil',
-          text: 'Con menos de 100 casos documentados en todo el mundo, la mayoría de los niños afectados por la DBP no superan los primeros años de vida. Su extrema rareza dificulta la investigación y hace urgente encontrar un tratamiento.',
+          text: 'La DBP afecta a tan pocos niños en el mundo que apenas existe investigación dedicada a ella. La mayoría de los afectados no superan los primeros años de vida. Su extrema rareza hace urgente encontrar un tratamiento.',
         },
       ],
     },
@@ -272,7 +272,7 @@ const translations = {
         },
         {
           title: 'High infant mortality',
-          text: 'With fewer than 100 documented cases worldwide, most children affected by DBP do not survive the first years of life. Its extreme rarity makes research difficult and finding a treatment urgent.',
+          text: 'DBP affects so few children in the world that almost no research is dedicated to it. Most of those affected do not survive the first years of life. Its extreme rarity makes finding a treatment urgent.',
         },
       ],
     },
