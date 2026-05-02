@@ -71,7 +71,7 @@ const translations = {
         { year: '2024', label: 'Primeras señales', text: 'Comenzamos a notar un desarrollo más lento de lo esperado: dificultad para sostener la cabeza, hipotonía generalizada, una debilidad que no correspondía con su edad.' },
         { year: '2025', label: 'El diagnóstico', text: 'Tras meses de incertidumbre y múltiples pruebas, llegó el diagnóstico: deficiencia de la proteína D-bifuncional. Un nombre desconocido para nosotros, una realidad que cambió todo.' },
         { year: '2025', label: 'Seguimiento multidisciplinar', text: 'Claudia empieza a recibir atención de varios especialistas: neurología, endocrino, otorrino, rehabilitador, traumatología, fisioterapia, estimulación... Un equipo que trabaja cada día para darle la mejor calidad de vida posible.' },
-        { year: '2026', label: 'Nace la asociación', text: 'Hemos creado El Reto de Claudia con el objetivo de encontrar una cura para esta enfermedad, encontrar a alguien que quiera investigar y, en ese tiempo, encontrar algún tratamiento que pueda ayudarla a frenar el avance devastador de la enfermedad. Además, acercarnos a familias que estén en situaciones similares.' },
+        { year: '2026', label: 'Nace la asociación', text: 'Hemos creado la Asociación para la Investigación y Tratamiento de Enfermedades Peroxisomales con el objetivo de encontrar una cura para esta enfermedad, encontrar a alguien que quiera investigar y, en ese tiempo, encontrar algún tratamiento que pueda ayudarla a frenar el avance devastador de la enfermedad. Además, acercarnos a familias que estén en situaciones similares.' },
       ],
     },
 
@@ -292,7 +292,7 @@ const translations = {
         { year: '2024', label: 'First signs', text: 'We began to notice slower than expected development: difficulty holding her head, generalised hypotonia, a weakness that did not match her age.' },
         { year: '2025', label: 'The diagnosis', text: 'After months of uncertainty and multiple tests, the diagnosis arrived: D-bifunctional protein deficiency. A name unknown to us, a reality that changed everything.' },
         { year: '2025', label: 'Multidisciplinary follow-up', text: 'Claudia begins receiving care from several specialists: neurology, endocrinology, ENT, rehabilitation, traumatology, physiotherapy, stimulation... A team working every day to give her the best possible quality of life.' },
-        { year: '2026', label: 'The association is born', text: 'We created El Reto de Claudia with the goal of finding a cure for this disease, finding someone willing to research it and, in the meantime, finding a treatment that could help slow its devastating progression. We also want to reach out to families in similar situations.' },
+        { year: '2026', label: 'The association is born', text: 'We created the Association for Research and Treatment of Peroxisomal Diseases with the goal of finding a cure for this disease, finding someone willing to research it and, in the meantime, finding a treatment that could help slow its devastating progression. We also want to reach out to families in similar situations.' },
       ],
     },
 

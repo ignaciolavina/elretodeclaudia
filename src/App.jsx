@@ -1,4 +1,5 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, useLocation } from 'react-router-dom'
+import { useEffect } from 'react'
 import { LanguageProvider } from './context/LanguageContext'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
@@ -25,9 +26,20 @@ function Home() {
   )
 }
 
+function Analytics() {
+  const location = useLocation()
+  useEffect(() => {
+    if (typeof window.gtag === 'function') {
+      window.gtag('config', 'G-06X52MG7GN', { page_path: location.pathname })
+    }
+  }, [location])
+  return null
+}
+
 export default function App() {
   return (
     <LanguageProvider>
+      <Analytics />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/donar" element={<Donar />} />
