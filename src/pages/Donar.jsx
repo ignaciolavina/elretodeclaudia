@@ -25,6 +25,36 @@ export default function Donar() {
     setTimeout(() => setCopied(false), 2000)
   }
 
+  const TransferCard = () => (
+    <div className="bg-white rounded-3xl shadow-sm p-8 border border-brand-100">
+      <h2 className="font-serif text-2xl font-semibold text-gray-900 mb-5">
+        {d.transfer.title}
+      </h2>
+      <div className="bg-brand-50 rounded-2xl p-5 border border-brand-100 mb-6">
+        <p className="text-xs text-gray-500 uppercase tracking-widest font-semibold mb-2">{d.transfer.ibanLabel}</p>
+        <div className="flex items-center justify-between gap-3">
+          <p className="text-base font-bold text-brand-700 tracking-widest font-mono">
+            ES03 0182 6077 2302 0162 3835
+          </p>
+          <button
+            onClick={copyIban}
+            title={copied ? d.transfer.copiedTitle : d.transfer.copyTitle}
+            className={`flex-shrink-0 p-2 rounded-lg border transition-all ${copied ? 'border-green-300 bg-green-50 text-green-600' : 'border-brand-200 bg-white text-brand-600 hover:bg-brand-100'}`}
+          >
+            {copied
+              ? <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              : <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            }
+          </button>
+        </div>
+      </div>
+      <div className="bg-amber-50 border border-amber-100 rounded-2xl p-5 text-sm text-gray-700 leading-relaxed space-y-3">
+        <p>{d.transfer.assocText}</p>
+        <p>{d.transfer.soonText}</p>
+      </div>
+    </div>
+  )
+
   const needs = NEEDS_DATA.map((n, i) => ({ ...n, ...d.material.items[i] }))
 
   return (
@@ -41,6 +71,11 @@ export default function Donar() {
             <h1 className="font-serif text-4xl sm:text-5xl font-bold text-gray-900 mt-3 mb-4 leading-tight">
               {d.title}
             </h1>
+          </div>
+
+          {/* Transferencia bancaria — solo mobile, aparece primero */}
+          <div className="lg:hidden mb-8">
+            <TransferCard />
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
@@ -148,8 +183,8 @@ export default function Donar() {
             {/* ── Columna derecha: Pago ── */}
             <div className="space-y-6 sticky top-28">
 
-              {/* Transferencia bancaria */}
-              <div className="bg-white rounded-3xl shadow-sm p-8 border border-brand-100">
+              {/* Transferencia bancaria — solo desktop */}
+              <div className="hidden lg:block bg-white rounded-3xl shadow-sm p-8 border border-brand-100">
                 <h2 className="font-serif text-2xl font-semibold text-gray-900 mb-5">
                   {d.transfer.title}
                 </h2>

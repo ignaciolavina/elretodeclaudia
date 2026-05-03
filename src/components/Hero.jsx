@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { useLanguage } from '../context/LanguageContext'
 
 function scrollTo(href) {
@@ -71,23 +72,30 @@ export default function Hero() {
 
             {/* Botones */}
             <div className={`flex flex-col sm:flex-row items-start gap-4 ${fade('delay-500')}`}>
+              {/* CTA Donar — solo mobile */}
+              <Link
+                to="/donar"
+                className="sm:hidden w-full text-center bg-brand-600 hover:bg-brand-700 text-white font-bold px-7 py-3.5 rounded-lg transition-all duration-200 shadow-sm"
+              >
+                {t.nav.donar} ❤️
+              </Link>
               <a
                 href="#ayudar"
                 onClick={(e) => { e.preventDefault(); scrollTo('#ayudar') }}
-                className="inline-flex items-center gap-2 bg-brand-950 hover:bg-brand-900 text-white font-semibold px-7 py-3.5 rounded-lg transition-all duration-200 shadow-sm hover:shadow-md focus:outline-none focus:ring-2 focus:ring-brand-950 focus:ring-offset-2"
+                className="w-full sm:flex-1 text-center inline-flex items-center justify-center gap-2 bg-brand-950 hover:bg-brand-900 text-white font-semibold px-7 py-3.5 rounded-lg transition-all duration-200 shadow-sm hover:shadow-md focus:outline-none focus:ring-2 focus:ring-brand-950 focus:ring-offset-2"
               >
                 {t.hero.cta1}
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </a>
-              <a
-                href="#dbp"
-                onClick={(e) => { e.preventDefault(); scrollTo('#dbp') }}
-                className="inline-flex items-center gap-2 bg-white border border-brand-950/20 hover:border-brand-950/50 text-brand-950 font-semibold px-7 py-3.5 rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-brand-950 focus:ring-offset-2"
+              {/* CTA Donar — solo desktop */}
+              <Link
+                to="/donar"
+                className="hidden sm:flex sm:flex-1 items-center justify-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-semibold px-7 py-3.5 rounded-lg transition-all duration-200 shadow-sm hover:shadow-md focus:outline-none focus:ring-2 focus:ring-brand-600 focus:ring-offset-2"
               >
-                {t.hero.cta2}
-              </a>
+                {t.nav.donar} ❤️
+              </Link>
             </div>
           </div>
 
