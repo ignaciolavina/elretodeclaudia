@@ -10,7 +10,7 @@ const NEEDS_DATA = [
   { icon: '🦶', price: '900 €',   done: true },
 ]
 
-const IBAN = 'ES0301826077230201623835'
+const IBAN = 'ES0600495186912316155681'
 
 export default function Donar() {
   const [copied, setCopied] = useState(false)
@@ -34,7 +34,7 @@ export default function Donar() {
         <p className="text-xs text-gray-500 uppercase tracking-widest font-semibold mb-2">{d.transfer.ibanLabel}</p>
         <div className="flex items-center justify-between gap-3">
           <p className="text-base font-bold text-brand-700 tracking-widest font-mono">
-            ES03 0182 6077 2302 0162 3835
+            ES06 0049 5186 9123 1615 5681
           </p>
           <button
             onClick={copyIban}
@@ -193,7 +193,7 @@ export default function Donar() {
                   <p className="text-xs text-gray-500 uppercase tracking-widest font-semibold mb-2">{d.transfer.ibanLabel}</p>
                   <div className="flex items-center justify-between gap-3">
                     <p className="text-base font-bold text-brand-700 tracking-widest font-mono">
-                      ES03 0182 6077 2302 0162 3835
+                      ES06 0049 5186 9123 1615 5681
                     </p>
                     <button
                       onClick={copyIban}
