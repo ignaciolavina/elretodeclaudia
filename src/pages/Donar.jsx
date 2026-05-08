@@ -50,7 +50,12 @@ export default function Donar() {
       </div>
       <div className="bg-amber-50 border border-amber-100 rounded-2xl p-5 text-sm text-gray-700 leading-relaxed space-y-3">
         <p>{d.transfer.assocText}</p>
-        <p>{d.transfer.soonText}</p>
+        <p>
+          <strong>{d.transfer.fiscalTitle}</strong>{' '}
+          {d.transfer.fiscalPre}{' '}
+          <strong>{d.transfer.fiscalBold}</strong>{' '}
+          {d.transfer.fiscalPost}
+        </p>
       </div>
     </div>
   )
@@ -210,7 +215,12 @@ export default function Donar() {
 
                 <div className="bg-amber-50 border border-amber-100 rounded-2xl p-5 text-sm text-gray-700 leading-relaxed space-y-3">
                   <p>{d.transfer.assocText}</p>
-                  <p>{d.transfer.soonText}</p>
+                  <p>
+                    <strong>{d.transfer.fiscalTitle}</strong>{' '}
+                    {d.transfer.fiscalPre}{' '}
+                    <strong>{d.transfer.fiscalBold}</strong>{' '}
+                    {d.transfer.fiscalPost}
+                  </p>
                 </div>
               </div>
 

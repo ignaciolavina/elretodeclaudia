@@ -203,7 +203,10 @@ const translations = {
         copyTitle: 'Copiar IBAN',
         copiedTitle: 'Copiado',
         assocText: 'El reto de Claudia es un proyecto de la Asociación para la Investigación y Tratamiento de Enfermedades Peroxisomales.',
-        soonText: 'Esta es la cuenta personal de Claudia, aunque muy pronto podrás apoyar a Claudia a través de la asociación, desgravando hasta un 80% de tu donación en la declaración de la renta.',
+        fiscalTitle: 'Exenciones fiscales.',
+        fiscalPre: 'Si quieres desgravarte en tu declaración de la renta,',
+        fiscalBold: 'antes de donar',
+        fiscalPost: 'contacta con nuestro email o con el teléfono 677804196. Muy pronto estará esta opción disponible para todo el mundo.',
       },
 
       bizum: {
@@ -424,7 +427,10 @@ const translations = {
         copyTitle: 'Copy IBAN',
         copiedTitle: 'Copied',
         assocText: 'El Reto de Claudia is a project of the Association for Research and Treatment of Peroxisomal Diseases.',
-        soonText: 'This is Claudia\'s personal account, but very soon you will be able to support Claudia through the association, deducting up to 80% of your donation on your tax return.',
+        fiscalTitle: 'Tax exemptions.',
+        fiscalPre: 'If you would like to deduct your donation from your tax return,',
+        fiscalBold: 'before donating',
+        fiscalPost: 'please contact us by email or by phone at 677804196. This option will soon be available for everyone.',
       },
 
       bizum: {
