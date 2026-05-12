@@ -9,6 +9,7 @@ import ComoAyudar from './components/ComoAyudar'
 import Contacto from './components/Contacto'
 import Footer from './components/Footer'
 import Donar from './pages/Donar'
+import Privacidad from './pages/Privacidad'
 
 function Home() {
   return (
@@ -43,6 +44,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/donar" element={<Donar />} />
+        <Route path="/privacidad" element={<Privacidad />} />
       </Routes>
     </LanguageProvider>
   )

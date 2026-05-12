@@ -105,9 +105,17 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-brand-800 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-gray-400 text-sm text-center sm:text-left">
-            © {new Date().getFullYear()} El Reto de Claudia · {d.copyright}
-          </p>
+          <div className="flex flex-col sm:flex-row items-center gap-3 text-center sm:text-left">
+            <p className="text-gray-400 text-sm">
+              © {new Date().getFullYear()} El Reto de Claudia · {d.copyright}
+            </p>
+            <Link
+              to="/privacidad"
+              className="text-gray-500 hover:text-gray-300 text-xs underline underline-offset-2 transition-colors"
+            >
+              Aviso legal y privacidad
+            </Link>
+          </div>
           <div className="flex items-center gap-4">
             <button
               onClick={toggleLang}
