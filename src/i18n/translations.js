@@ -197,6 +197,22 @@ const translations = {
         ],
       },
 
+      members: {
+        badge: 'Suscripción mensual',
+        title: 'Acompaña a Claudia',
+        subtitle: 'Dona mes a mes',
+        desc: 'Apoya el proyecto con una aportación mensual y ayuda a que Claudia tenga una vida mejor.',
+        amountLabels: ['Una cena', 'Suscripción Netflix', 'Sesión de fisio'],
+        custom: 'Otra cantidad',
+      },
+
+      donation: {
+        title: 'Ayuda a Claudia',
+        subtitle: 'Donación puntual',
+        desc: 'Cualquier aportación, por pequeña que sea, marca la diferencia.',
+        cta: 'Donar ahora',
+      },
+
       transfer: {
         title: 'Transferencia bancaria',
         ibanLabel: 'Número de cuenta (IBAN)',
@@ -419,6 +435,22 @@ const translations = {
           { label: 'Hearing aids', desc: 'Essential for her language development and communication.' },
           { label: 'DAFOs', desc: 'Orthoses that help her walk and maintain the correct foot position.' },
         ],
+      },
+
+      members: {
+        badge: 'Monthly subscription',
+        title: 'Accompany Claudia',
+        subtitle: 'Donate month by month',
+        desc: 'Support the project with a monthly contribution and help Claudia have a better life.',
+        amountLabels: ['A dinner', 'Netflix subscription', 'Physio session'],
+        custom: 'Custom amount',
+      },
+
+      donation: {
+        title: 'Help Claudia',
+        subtitle: 'One-time donation',
+        desc: 'Every contribution, no matter how small, makes a difference.',
+        cta: 'Donate now',
       },
 
       transfer: {
