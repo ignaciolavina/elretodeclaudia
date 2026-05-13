@@ -4,7 +4,7 @@ import { EMAILJS_CONFIG } from '../config/emailjs'
 import { useScrollAnimation } from '../hooks/useScrollAnimation'
 import { useLanguage } from '../context/LanguageContext'
 
-const EMPTY = { nombre: '', email: '', motivo: '', mensaje: '' }
+const EMPTY = { nombre: '', email: '', motivo: '', mensaje: '', privacidad: false }
 
 export default function Contacto() {
   const [form,       setForm]       = useState(EMPTY)
@@ -27,12 +27,13 @@ export default function Contacto() {
       e.email = f.errors.emailInvalid
     if (!form.motivo)         e.motivo  = f.errors.motivo
     if (!form.mensaje.trim()) e.mensaje = f.errors.mensaje
+    if (!form.privacidad)     e.privacidad = f.errors.privacidad
     return e
   }
 
   const handleChange = (e) => {
-    const { name, value } = e.target
-    setForm((prev) => ({ ...prev, [name]: value }))
+    const { name, value, type, checked } = e.target
+    setForm((prev) => ({ ...prev, [name]: type === 'checkbox' ? checked : value }))
     if (errors[name]) setErrors((err) => ({ ...err, [name]: '' }))
     if (sendError) setSendError(false)
   }
@@ -209,6 +210,26 @@ export default function Contacto() {
                       rows={5} placeholder={f.mensajePlaceholder} aria-required="true"
                       className={`${inputClass('mensaje')} resize-none`} />
                     {errors.mensaje && <p className="mt-1 text-sm text-red-500" role="alert">{errors.mensaje}</p>}
+                  </div>
+
+                  <div>
+                    <label className="flex items-start gap-3 cursor-pointer">
+                      <input
+                        type="checkbox"
+                        name="privacidad"
+                        checked={form.privacidad}
+                        onChange={handleChange}
+                        aria-required="true"
+                        className="mt-0.5 h-4 w-4 flex-shrink-0 rounded border-gray-300 text-brand-600 focus:ring-brand-400 accent-brand-600"
+                      />
+                      <span className="text-sm text-gray-600">
+                        {f.privacidad}{' '}
+                        <a href="/privacidad" className="text-brand-700 font-semibold hover:text-brand-900 underline underline-offset-2 transition-colors">
+                          {f.privacidadLink}
+                        </a>
+                      </span>
+                    </label>
+                    {errors.privacidad && <p className="mt-1 text-sm text-red-500" role="alert">{errors.privacidad}</p>}
                   </div>
 
                   {sendError && (
