@@ -18,6 +18,15 @@
       gtag('js', new Date());
       gtag('config', 'G-06X52MG7GN');
     </script>
+    <script>
+      // Restore path from GitHub Pages SPA redirect
+      (function() {
+        var p = new URLSearchParams(window.location.search).get('p');
+        if (p) {
+          window.history.replaceState(null, null, p + window.location.hash);
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
