@@ -11,12 +11,6 @@ import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import { useLanguage } from '../context/LanguageContext'
 
-const NEEDS_DATA = [
-  { icon: '🪑', price: '3.600 €', done: true },
-  { icon: '🦽', price: '3.200 €', done: true },
-  { icon: '👂', price: '6.000 €', done: true },
-  { icon: '🦶', price: '900 €',   done: true },
-]
 
 const IBAN = 'ES0600495186912316155681'
 
@@ -139,8 +133,6 @@ export default function Donar() {
     </div>
   )
 
-  const needs = NEEDS_DATA.map((n, i) => ({ ...n, ...d.material.items[i] }))
-
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar donatePage />
@@ -168,100 +160,40 @@ export default function Donar() {
 
             {/* ── Columna izquierda ── */}
             <div className="space-y-8">
-
-              {/* 1. Investigación */}
               <div className="bg-white rounded-3xl shadow-sm p-8 border border-brand-100">
-                <h2 className="font-serif text-2xl font-semibold text-gray-900 mb-3">
+                <h2 className="font-serif text-2xl font-semibold text-gray-900 mb-4">
                   {d.research.title}
                 </h2>
-                <p className="text-gray-600 text-sm leading-relaxed mb-6">
+                <p className="text-gray-600 text-sm leading-relaxed mb-4">
                   {d.research.intro}
                 </p>
-                <div className="space-y-4">
-                  {d.research.lines.map((line, i) => (
-                    <div key={i} className="bg-brand-50 rounded-2xl p-5 border border-brand-100">
-                      <p className="font-semibold text-gray-900 text-sm mb-1">{line.title}</p>
-                      <p className="text-gray-500 text-xs leading-relaxed">
-                        {line.highlightCost
-                          ? line.desc.split(line.highlightCost).map((part, j, arr) => (
-                              <span key={j}>
-                                {part}
-                                {j < arr.length - 1 && (
-                                  <span className="font-semibold text-gray-700">{line.highlightCost}</span>
-                                )}
-                              </span>
-                            ))
-                          : line.desc
-                        }
-                      </p>
-                    </div>
-                  ))}
+                <div className="bg-brand-50 border border-brand-100 rounded-2xl px-5 py-4 mb-6">
+                  <p className="text-brand-800 text-sm font-medium leading-relaxed">
+                    {d.research.goal}
+                  </p>
                 </div>
-              </div>
 
-              {/* 2. Terapias */}
-              <div className="bg-white rounded-3xl shadow-sm p-8 border border-brand-100">
-                <h2 className="font-serif text-2xl font-semibold text-gray-900 mb-2">
-                  {d.therapies.title}
-                </h2>
-                <p className="text-gray-500 text-sm mb-5">
-                  {d.therapies.subtitle}
+                <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-4">
+                  {d.research.phasesTitle}
                 </p>
-                <div className="flex flex-wrap gap-3">
-                  {d.therapies.items.map((item) => (
-                    <div key={item.label} className="bg-brand-50 rounded-xl px-4 py-3 border border-brand-100">
-                      <p className="font-semibold text-gray-800 text-sm">{item.label}</p>
-                      <p className="text-brand-500 text-xs mt-0.5">{item.sessions}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* 3. Material */}
-              <div className="bg-white rounded-3xl shadow-sm p-8 border border-brand-100">
-                <h2 className="font-serif text-2xl font-semibold text-gray-900 mb-1">
-                  {d.material.title}
-                </h2>
-                <p className="text-gray-400 text-xs mb-5">
-                  {d.material.subtitle}
-                </p>
-                <div className="space-y-4">
-                  {needs.map((n) => (
-                    <div
-                      key={n.label}
-                      className={`flex gap-4 items-start rounded-2xl px-4 py-3 ${
-                        n.done ? 'bg-green-50 border border-green-100' : 'bg-brand-50 border border-brand-100'
-                      }`}
-                    >
-                      <span className={`text-2xl mt-0.5 ${n.done ? 'grayscale opacity-60' : ''}`}>{n.icon}</span>
-                      <div className="flex-1">
-                        <div className="flex items-center justify-between mb-1">
-                          <div className="flex items-center gap-2">
-                            <span className={`font-semibold text-sm ${n.done ? 'text-gray-400 line-through' : 'text-gray-900'}`}>
-                              {n.label}
-                            </span>
-                            {n.done && (
-                              <span className="text-xs text-green-600 font-semibold bg-green-100 px-2 py-0.5 rounded-full">
-                                {d.material.achieved}
-                              </span>
-                            )}
-                          </div>
-                          <span className={`font-bold text-sm ${n.done ? 'text-gray-300' : 'text-brand-600'}`}>
-                            {n.price}
-                          </span>
+                <div className="relative">
+                  <div className="absolute left-3 top-2 bottom-2 w-px bg-brand-100" />
+                  <div className="space-y-5">
+                    {d.research.phases.map((phase, i) => (
+                      <div key={i} className="flex gap-4 items-start">
+                        <div className="flex-shrink-0 w-6 h-6 rounded-full bg-brand-600 flex items-center justify-center z-10 mt-0.5">
+                          <span className="text-white text-[10px] font-bold">{i + 1}</span>
                         </div>
-                        <p className={`text-xs leading-relaxed ${n.done ? 'text-gray-400' : 'text-gray-500'}`}>
-                          {n.desc}
-                        </p>
+                        <div className="flex-1 pb-1">
+                          <div className="flex flex-wrap items-baseline gap-x-2 mb-1">
+                            <p className="font-semibold text-gray-900 text-sm">{phase.title}</p>
+                            <span className="text-xs font-semibold text-brand-600 bg-brand-50 border border-brand-100 rounded-full px-2 py-0.5 whitespace-nowrap">{phase.cost}</span>
+                          </div>
+                          <p className="text-gray-500 text-xs leading-relaxed">{phase.desc}</p>
+                        </div>
                       </div>
-                    </div>
-                  ))}
-                </div>
-                <div className="mt-5 pt-4 border-t border-gray-100 flex items-center justify-between">
-                  <span className="text-xs text-gray-400">{d.material.total}</span>
-                  <span className="text-xs font-semibold text-gray-400">
-                    {NEEDS_DATA.filter(n => n.done).reduce((sum, n) => sum + parseFloat(n.price.replace('.', '').replace(' €', '')), 0).toLocaleString('es-ES')} €
-                  </span>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
