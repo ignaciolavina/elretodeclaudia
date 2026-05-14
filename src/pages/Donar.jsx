@@ -4,7 +4,7 @@ const DONATION_LINK = 'https://www.migranodearena.org/reto/el-reto-de-claudia'
 const MEMBER_AMOUNTS = [
   { amount: '10 €', emoji: '🍽️', href: 'https://buy.stripe.com/7sY14haRwds4cWQeA54F200' },
   { amount: '20 €', emoji: '📺', href: 'https://buy.stripe.com/28EeV7gbQ9bO8GA4Zv4F202' },
-  { amount: '50 €', emoji: '💆', href: 'https://buy.stripe.com/9B63cpe3I1Jm8GA8bH4F203' },
+  { amount: '50 €', emoji: '💆', href: 'https://buy.stripe.com/eVqfZb5xcfAccWQdw14F204' },
 ]
 const STRIPE_CUSTOM = 'https://buy.stripe.com/8x2fZb8Jo73GcWQ63z4F201'
 import Footer from '../components/Footer'
