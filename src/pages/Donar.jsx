@@ -16,6 +16,7 @@ const IBAN = 'ES0600495186912316155681'
 
 export default function Donar() {
   const [copied, setCopied] = useState(false)
+  const [showModal, setShowModal] = useState(false)
   const { t } = useLanguage()
   const d = t.donar
 
@@ -49,14 +50,12 @@ export default function Donar() {
             <span className="text-base font-bold text-white">{amount}</span>
           </a>
         ))}
-        <a
-          href={STRIPE_CUSTOM}
-          target="_blank"
-          rel="noopener noreferrer"
+        <button
+          onClick={() => setShowModal(true)}
           className="rounded-xl py-3 px-1 bg-brand-600 hover:bg-brand-700 transition-colors text-center flex items-center justify-center"
         >
           <span className="text-xs sm:text-base font-bold text-white leading-tight">{d.members.custom}</span>
-        </a>
+        </button>
       </div>
 
       <div className="bg-amber-50 border border-amber-200 rounded-2xl px-4 py-3 mb-4">
@@ -134,6 +133,27 @@ export default function Donar() {
 
   return (
     <div className="min-h-screen flex flex-col">
+      {showModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40" onClick={() => setShowModal(false)}>
+          <div className="bg-white rounded-3xl shadow-xl p-8 max-w-sm w-full" onClick={e => e.stopPropagation()}>
+            <div className="bg-amber-50 border border-amber-200 rounded-2xl px-4 py-3 mb-3">
+              <p className="text-amber-800 text-sm leading-relaxed">
+                <strong>{d.members.modalImportant}</strong>{d.members.modalText1a}<strong>{d.members.modalText1b}</strong>{d.members.modalText1c}
+              </p>
+            </div>
+            <p className="text-gray-500 text-sm leading-relaxed mb-6">{d.members.modalText2}</p>
+            <a
+              href="https://buy.stripe.com/5kQ9ANbVAds47Cw2Rn4F206"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setShowModal(false)}
+              className="block w-full text-center bg-brand-600 hover:bg-brand-700 text-white font-semibold rounded-2xl py-3 text-sm transition-colors"
+            >
+              {d.members.modalCta}
+            </a>
+          </div>
+        </div>
+      )}
       <Navbar donatePage />
       <main className="flex-1 pt-24 pb-16 bg-brand-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
