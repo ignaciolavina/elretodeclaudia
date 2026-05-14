@@ -141,7 +141,7 @@ export default function Donar() {
                 <strong>{d.members.modalImportant}</strong>{d.members.modalText1a}<strong>{d.members.modalText1b}</strong>{d.members.modalText1c}
               </p>
             </div>
-            <p className="text-gray-500 text-sm leading-relaxed mb-6">{d.members.modalText2}</p>
+            <p className="text-gray-700 text-sm leading-relaxed mb-6">{d.members.modalText2}</p>
             <a
               href="https://buy.stripe.com/5kQ9ANbVAds47Cw2Rn4F206"
               target="_blank"
