@@ -61,11 +61,7 @@ export default function Donar() {
 
       <div className="bg-amber-50 border border-amber-200 rounded-2xl px-4 py-3 mb-4">
         <p className="text-xs text-amber-800 leading-relaxed">
-          {d.members.fiscalWarningPre}
-          <a href={DONATION_LINK} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-amber-900">
-            {d.members.fiscalWarningLink}
-          </a>
-          {d.members.fiscalWarningPost}
+          {d.members.fiscalWarningPre}{d.members.fiscalWarningLink}{d.members.fiscalWarningPost}
         </p>
       </div>
 
@@ -95,10 +91,15 @@ export default function Donar() {
         href={DONATION_LINK}
         target="_blank"
         rel="noopener noreferrer"
-        className="block w-full text-center bg-brand-600 hover:bg-brand-700 text-white font-semibold rounded-2xl py-4 text-sm transition-colors"
+        className="block w-full text-center bg-brand-600 hover:bg-brand-700 text-white font-semibold rounded-2xl py-4 text-sm transition-colors mb-4"
       >
         {d.donation.cta}
       </a>
+      <div className="bg-amber-50 border border-amber-200 rounded-2xl px-4 py-3">
+        <p className="text-xs text-amber-800 leading-relaxed">
+          {d.donation.warningPre}<strong>{d.donation.warningBold}</strong>
+        </p>
+      </div>
     </div>
   )
 
@@ -125,9 +126,9 @@ export default function Donar() {
           </button>
         </div>
       </div>
-      <div className="bg-amber-50 border border-amber-200 rounded-2xl p-5 text-sm text-amber-800 leading-relaxed">
-        <p>{d.transfer.note}</p>
-      </div>
+      <p className="text-sm text-gray-500 leading-relaxed">
+        {d.transfer.notePre}<strong className="text-gray-700">{d.transfer.noteBold}</strong>{d.transfer.notePost}
+      </p>
     </div>
   )
 
@@ -147,11 +148,11 @@ export default function Donar() {
             </h1>
           </div>
 
-          {/* Socios + Donación + Transferencia — solo mobile */}
+          {/* Socios + Transferencia + Donación — solo mobile */}
           <div className="lg:hidden space-y-6 mb-8">
             <MembersCard />
-            <DonationCard />
             <TransferCard />
+            <DonationCard />
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
@@ -163,7 +164,7 @@ export default function Donar() {
                   {d.research.title}
                 </h2>
                 <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                  {d.research.intro}
+                  {d.research.introPre}<strong className="text-gray-800">{d.research.introBold}</strong>{d.research.introPost}
                 </p>
                 <div className="bg-brand-50 border border-brand-100 rounded-2xl px-5 py-4 mb-6">
                   <p className="text-brand-800 text-sm font-medium leading-relaxed">
@@ -182,18 +183,13 @@ export default function Donar() {
                 <MembersCard />
               </div>
 
-              {/* Donación — solo desktop */}
-              <div className="hidden lg:block">
-                <DonationCard />
-              </div>
-
               {/* Transferencia bancaria — solo desktop */}
               <div className="hidden lg:block bg-white rounded-3xl shadow-sm p-8 border border-brand-100">
                 <h2 className="font-serif text-2xl font-semibold text-gray-900 mb-5">
                   {d.transfer.title}
                 </h2>
 
-                <div className="bg-brand-50 rounded-2xl p-5 border border-brand-100 mb-6">
+                <div className="bg-brand-50 rounded-2xl p-5 border border-brand-100 mb-4">
                   <p className="text-xs text-gray-500 uppercase tracking-widest font-semibold mb-2">{d.transfer.ibanLabel}</p>
                   <div className="flex items-center justify-between gap-3">
                     <p className="text-base font-bold text-brand-700 tracking-widest font-mono">
@@ -212,9 +208,14 @@ export default function Donar() {
                   </div>
                 </div>
 
-                <div className="bg-amber-50 border border-amber-200 rounded-2xl p-5 text-sm text-amber-800 leading-relaxed">
-                  <p>{d.transfer.note}</p>
-                </div>
+                <p className="text-sm text-gray-500 leading-relaxed">
+                  {d.transfer.notePre}<strong className="text-gray-700">{d.transfer.noteBold}</strong>{d.transfer.notePost}
+                </p>
+              </div>
+
+              {/* Donación — solo desktop */}
+              <div className="hidden lg:block">
+                <DonationCard />
               </div>
 
               {/* Bizum — próximamente */}

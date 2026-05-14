@@ -155,12 +155,14 @@ const translations = {
 
     donar: {
       badge: 'Ayuda a Claudia',
-      title: 'Cada donación importa',
+      title: 'Únete al reto',
 
       research: {
-        title: 'En busca de la cura',
-        intro: 'El Reto de Claudia es un proyecto de la Asociación para la Investigación y Tratamiento de Enfermedades Peroxisomales. Gracias a vuestro apoyo, investigadores de la Universidad CEU San Pablo han iniciado un proyecto de investigación de terapia génica para la deficiencia de la proteína D-bifuncional.',
-        goal: 'El proyecto necesita financiación privada para avanzar. Buscamos 1,6 millones de euros en diferentes fases para hacer posible esta investigación.',
+        title: 'En busca de una cura',
+        introPre: 'El Reto de Claudia es un proyecto de la ',
+        introBold: 'Asociación para la Investigación y Tratamiento de Enfermedades Peroxisomales',
+        introPost: '. Gracias a vuestro apoyo, investigadores de la Universidad CEU San Pablo han iniciado un proyecto de investigación de terapia génica para la deficiencia de la proteína D-bifuncional.',
+        goal: 'El proyecto necesita financiación privada para avanzar. Buscamos valientes que se unan al reto y nos ayuden a financiar su cura.',
         phasesTitle: 'Las fases del proyecto',
         phases: [
           {
@@ -209,8 +211,8 @@ const translations = {
         amountLabels: ['Una cena', 'Suscripción Netflix', 'Sesión de fisio'],
         custom: 'Otra cantidad',
         cancel: 'Cancelar suscripción',
-        fiscalWarningPre: 'Acompañar a Claudia mes a mes no permite desgravarte en hacienda. Si necesitas desgravarte, usa la opción de ',
-        fiscalWarningLink: 'donación única',
+        fiscalWarningPre: 'Acompañar a Claudia mes a mes no permite desgravarte en hacienda. Si necesitas desgravarte usa ',
+        fiscalWarningLink: 'la última opción',
         fiscalWarningPost: ' o escríbenos.',
       },
 
@@ -219,6 +221,8 @@ const translations = {
         subtitle: 'Donación puntual',
         desc: 'Cualquier aportación, por pequeña que sea, marca la diferencia.',
         cta: 'Dona ahora',
+        warningPre: 'Si necesitas desgravarte en hacienda, elige esta opción. ',
+        warningBold: 'Donar a través de esta opción supone una comisión del 5% para el proyecto.',
       },
 
       transfer: {
@@ -226,7 +230,9 @@ const translations = {
         ibanLabel: 'Número de cuenta (IBAN)',
         copyTitle: 'Copiar IBAN',
         copiedTitle: 'Copiado',
-        note: 'La transferencia (única o periódica) es el mejor método para el proyecto, ya que no tiene comisiones.',
+        notePre: 'La transferencia (única o periódica) es el ',
+        noteBold: 'mejor método para el proyecto',
+        notePost: ', ya que no tiene comisiones.',
       },
 
       bizum: {
@@ -399,12 +405,14 @@ const translations = {
 
     donar: {
       badge: 'Help Claudia',
-      title: 'Every donation matters',
+      title: 'Join the challenge',
 
       research: {
         title: 'In search of a cure',
-        intro: 'El Reto de Claudia is a project of the Association for Research and Treatment of Peroxisomal Diseases. Thanks to your support, researchers at CEU San Pablo University have started a gene therapy research project for D-bifunctional protein deficiency.',
-        goal: 'The project needs private funding to move forward. We are looking for €1.6 million in different phases to make this research possible.',
+        introPre: 'El Reto de Claudia is a project of the ',
+        introBold: 'Association for Research and Treatment of Peroxisomal Diseases',
+        introPost: '. Thanks to your support, researchers at CEU San Pablo University have started a gene therapy research project for D-bifunctional protein deficiency.',
+        goal: 'The project needs private funding to move forward. We are looking for brave people to join the challenge and help us fund her cure.',
         phasesTitle: 'Project phases',
         phases: [
           {
@@ -453,9 +461,9 @@ const translations = {
         amountLabels: ['A dinner', 'Netflix subscription', 'Physio session'],
         custom: 'Custom amount',
         cancel: 'Cancel subscription',
-        fiscalWarningPre: 'Monthly contributions are not tax-deductible. If you need a tax deduction, use the ',
-        fiscalWarningLink: 'one-time donation',
-        fiscalWarningPost: ' option or write to us.',
+        fiscalWarningPre: 'Monthly contributions are not tax-deductible. If you need a tax deduction, use ',
+        fiscalWarningLink: 'the last option',
+        fiscalWarningPost: ' or write to us.',
       },
 
       donation: {
@@ -463,6 +471,8 @@ const translations = {
         subtitle: 'One-time donation',
         desc: 'Every contribution, no matter how small, makes a difference.',
         cta: 'Donate now',
+        warningPre: 'If you need a tax deduction, choose this option. ',
+        warningBold: 'Donating through this option involves a 5% fee for the project.',
       },
 
       transfer: {
@@ -470,7 +480,9 @@ const translations = {
         ibanLabel: 'Account number (IBAN)',
         copyTitle: 'Copy IBAN',
         copiedTitle: 'Copied',
-        note: 'Bank transfer (one-time or recurring) is the best method for the project, as it has no fees.',
+        notePre: 'Bank transfer (one-time or recurring) is the ',
+        noteBold: 'best method for the project',
+        notePost: ', as it has no fees.',
       },
 
       bizum: {
