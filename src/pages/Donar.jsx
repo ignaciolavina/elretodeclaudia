@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-const STRIPE_LINK = 'https://buy.stripe.com/9AQ3e9clhbqCb9m9AA'
+const DONATION_LINK = 'https://www.migranodearena.org/reto/el-reto-de-claudia'
 const MEMBER_AMOUNTS = [
   { amount: '10 €', emoji: '🍽️', href: 'https://buy.stripe.com/7sY14haRwds4cWQeA54F200' },
   { amount: '20 €', emoji: '📺', href: 'https://buy.stripe.com/28EeV7gbQ9bO8GA4Zv4F202' },
@@ -61,7 +61,11 @@ export default function Donar() {
 
       <div className="bg-amber-50 border border-amber-200 rounded-2xl px-4 py-3 mb-4">
         <p className="text-xs text-amber-800 leading-relaxed">
-          {d.members.fiscalWarning}
+          {d.members.fiscalWarningPre}
+          <a href={DONATION_LINK} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-amber-900">
+            {d.members.fiscalWarningLink}
+          </a>
+          {d.members.fiscalWarningPost}
         </p>
       </div>
 
@@ -88,7 +92,7 @@ export default function Donar() {
         {d.donation.desc}
       </p>
       <a
-        href={STRIPE_LINK}
+        href={DONATION_LINK}
         target="_blank"
         rel="noopener noreferrer"
         className="block w-full text-center bg-brand-600 hover:bg-brand-700 text-white font-semibold rounded-2xl py-4 text-sm transition-colors"
@@ -121,14 +125,8 @@ export default function Donar() {
           </button>
         </div>
       </div>
-      <div className="bg-amber-50 border border-amber-100 rounded-2xl p-5 text-sm text-gray-700 leading-relaxed space-y-3">
-        <p>{d.transfer.assocText}</p>
-        <p>
-          <strong>{d.transfer.fiscalTitle}</strong>{' '}
-          {d.transfer.fiscalPre}{' '}
-          <strong>{d.transfer.fiscalBold}</strong>{' '}
-          {d.transfer.fiscalPost}
-        </p>
+      <div className="bg-amber-50 border border-amber-200 rounded-2xl p-5 text-sm text-amber-800 leading-relaxed">
+        <p>{d.transfer.note}</p>
       </div>
     </div>
   )
@@ -173,28 +171,6 @@ export default function Donar() {
                   </p>
                 </div>
 
-                <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-4">
-                  {d.research.phasesTitle}
-                </p>
-                <div className="relative">
-                  <div className="absolute left-3 top-2 bottom-2 w-px bg-brand-100" />
-                  <div className="space-y-5">
-                    {d.research.phases.map((phase, i) => (
-                      <div key={i} className="flex gap-4 items-start">
-                        <div className="flex-shrink-0 w-6 h-6 rounded-full bg-brand-600 flex items-center justify-center z-10 mt-0.5">
-                          <span className="text-white text-[10px] font-bold">{i + 1}</span>
-                        </div>
-                        <div className="flex-1 pb-1">
-                          <div className="flex flex-wrap items-baseline gap-x-2 mb-1">
-                            <p className="font-semibold text-gray-900 text-sm">{phase.title}</p>
-                            <span className="text-xs font-semibold text-brand-600 bg-brand-50 border border-brand-100 rounded-full px-2 py-0.5 whitespace-nowrap">{phase.cost}</span>
-                          </div>
-                          <p className="text-gray-500 text-xs leading-relaxed">{phase.desc}</p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
               </div>
             </div>
 
@@ -236,14 +212,8 @@ export default function Donar() {
                   </div>
                 </div>
 
-                <div className="bg-amber-50 border border-amber-100 rounded-2xl p-5 text-sm text-gray-700 leading-relaxed space-y-3">
-                  <p>{d.transfer.assocText}</p>
-                  <p>
-                    <strong>{d.transfer.fiscalTitle}</strong>{' '}
-                    {d.transfer.fiscalPre}{' '}
-                    <strong>{d.transfer.fiscalBold}</strong>{' '}
-                    {d.transfer.fiscalPost}
-                  </p>
+                <div className="bg-amber-50 border border-amber-200 rounded-2xl p-5 text-sm text-amber-800 leading-relaxed">
+                  <p>{d.transfer.note}</p>
                 </div>
               </div>
 
@@ -262,20 +232,6 @@ export default function Donar() {
                 </p>
               </div>
 
-              {/* Tarjeta — próximamente */}
-              <div className="bg-white rounded-3xl shadow-sm p-8 border border-brand-100 opacity-60">
-                <div className="flex items-center justify-between mb-2">
-                  <h2 className="font-serif text-2xl font-semibold text-gray-900">
-                    {d.card.title}
-                  </h2>
-                  <span className="text-xs font-semibold text-gray-500 bg-gray-100 px-3 py-1 rounded-full uppercase tracking-widest">
-                    {d.card.soon}
-                  </span>
-                </div>
-                <p className="text-gray-400 text-sm">
-                  {d.card.desc}
-                </p>
-              </div>
             </div>
           </div>
         </div>

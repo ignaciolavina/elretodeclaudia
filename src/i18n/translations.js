@@ -206,7 +206,9 @@ const translations = {
         amountLabels: ['Una cena', 'Suscripción Netflix', 'Sesión de fisio'],
         custom: 'Otra cantidad',
         cancel: 'Cancelar suscripción',
-        fiscalWarning: 'Acompañar a Claudia mes a mes no permite desgravarte en hacienda. Si necesitas desgravarte, usa la opción de donación única o escríbenos.',
+        fiscalWarningPre: 'Acompañar a Claudia mes a mes no permite desgravarte en hacienda. Si necesitas desgravarte, usa la opción de ',
+        fiscalWarningLink: 'donación única',
+        fiscalWarningPost: ' o escríbenos.',
       },
 
       donation: {
@@ -221,11 +223,7 @@ const translations = {
         ibanLabel: 'Número de cuenta (IBAN)',
         copyTitle: 'Copiar IBAN',
         copiedTitle: 'Copiado',
-        assocText: 'El reto de Claudia es un proyecto de la Asociación para la Investigación y Tratamiento de Enfermedades Peroxisomales.',
-        fiscalTitle: 'Exenciones fiscales.',
-        fiscalPre: 'Si quieres desgravarte en tu declaración de la renta,',
-        fiscalBold: 'antes de donar',
-        fiscalPost: 'contacta con nuestro email o con el teléfono 677804196. Muy pronto estará esta opción disponible para todo el mundo.',
+        note: 'La transferencia (única o periódica) es el mejor método para el proyecto, ya que no tiene comisiones.',
       },
 
       bizum: {
@@ -449,7 +447,9 @@ const translations = {
         amountLabels: ['A dinner', 'Netflix subscription', 'Physio session'],
         custom: 'Custom amount',
         cancel: 'Cancel subscription',
-        fiscalWarning: 'Monthly contributions to Claudia\'s cause are not tax-deductible. If you need a tax deduction, please use the one-time donation option.',
+        fiscalWarningPre: 'Monthly contributions are not tax-deductible. If you need a tax deduction, use the ',
+        fiscalWarningLink: 'one-time donation',
+        fiscalWarningPost: ' option or write to us.',
       },
 
       donation: {
@@ -464,11 +464,7 @@ const translations = {
         ibanLabel: 'Account number (IBAN)',
         copyTitle: 'Copy IBAN',
         copiedTitle: 'Copied',
-        assocText: 'El Reto de Claudia is a project of the Association for Research and Treatment of Peroxisomal Diseases.',
-        fiscalTitle: 'Tax exemptions.',
-        fiscalPre: 'If you would like to deduct your donation from your tax return,',
-        fiscalBold: 'before donating',
-        fiscalPost: 'please contact us by email or by phone at 677804196. This option will soon be available for everyone.',
+        note: 'Bank transfer (one-time or recurring) is the best method for the project, as it has no fees.',
       },
 
       bizum: {
