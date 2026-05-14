@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { useScrollAnimation } from '../hooks/useScrollAnimation'
 import { useLanguage } from '../context/LanguageContext'
 
@@ -75,7 +76,13 @@ export default function ComoAyudar() {
           <h2 id="ayudar-title" className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mt-3 mb-5 leading-tight">
             {d.title}
           </h2>
-          <p className="text-gray-600 text-lg leading-relaxed">{d.subtitle}</p>
+          <p className="text-gray-600 text-lg leading-relaxed mb-6">{d.subtitle}</p>
+          <Link
+            to="/donar"
+            className="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white text-xs font-semibold tracking-widest uppercase px-8 py-2 rounded-full transition-colors"
+          >
+            Dona ❤️
+          </Link>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

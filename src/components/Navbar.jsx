@@ -89,7 +89,7 @@ export default function Navbar({ donatePage = false }) {
                 to="/donar"
                 className="bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold px-5 py-2.5 rounded-xl transition-colors shadow-sm"
               >
-                Donar
+                Dona ❤️
               </Link>
             </li>
           </ul>
@@ -146,7 +146,7 @@ export default function Navbar({ donatePage = false }) {
                 onClick={() => setMenuOpen(false)}
                 className="block text-center bg-brand-600 hover:bg-brand-700 text-white font-semibold px-4 py-3 rounded-xl transition-colors"
               >
-                Donar
+                Dona ❤️
               </Link>
             </li>
           </ul>

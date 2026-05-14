@@ -11,13 +11,16 @@ const translations = {
 
     hero: {
       badge: 'Caso clínico · Convocatoria abierta',
-      title1: 'Buscamos investigadores para empezar la',
+      title1: 'Buscamos ',
+      titleBlue: 'financiación',
+      title1b: ' e investigadores para empezar la',
       titleEmphasis: 'terapia génica',
       title2: 'de Claudia.',
       p1: 'Claudia tiene 2 años y medio. Padece la deficiencia de la proteína D-bifuncional (DBP), una enfermedad neurodegenerativa ultrarrara sin tratamiento curativo. La terapia génica es hoy la vía con más potencial — y necesitamos conectar con quienes puedan explorarla.',
       p2: 'Si trabajas en terapia génica, enfermedades metabólicas o peroxisomales, o conoces a alguien que lo haga, hay un lugar en este reto para ti.',
       cta1: 'Cómo puedes ayudar',
       cta2: 'Conoce la enfermedad',
+      ctaDona: 'Dona',
     },
 
     dbp: {
@@ -267,13 +270,16 @@ const translations = {
 
     hero: {
       badge: 'Clinical case · Open call',
-      title1: 'We are looking for researchers to start',
+      title1: 'We are looking for ',
+      titleBlue: 'funding',
+      title1b: ' and researchers to start',
       titleEmphasis: 'gene therapy',
       title2: 'for Claudia.',
       p1: 'Claudia is 2.5 years old. She has D-bifunctional protein deficiency (DBP), an ultra-rare neurodegenerative disease with no curative treatment. Gene therapy is today the most promising avenue — and we need to connect with those who can explore it.',
       p2: 'If you work in gene therapy, metabolic or peroxisomal diseases, or know someone who does, there is a place for you in this challenge.',
       cta1: 'How you can help',
       cta2: 'Learn about the disease',
+      ctaDona: 'Donate',
     },
 
     dbp: {

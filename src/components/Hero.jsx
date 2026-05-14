@@ -32,19 +32,21 @@ export default function Hero() {
 
           {/* Columna izquierda */}
           <div>
-            {/* Badge */}
-            <div className={fade('delay-100')}>
-              <span className="inline-flex items-center gap-2 border border-brand-950/30 text-brand-950 text-[10px] lg:text-xs font-semibold tracking-widest uppercase px-3 py-1.5 lg:px-4 lg:py-2 rounded-full mb-5 lg:mb-10">
-                <span className="w-1.5 h-1.5 bg-brand-950 rounded-full" aria-hidden="true" />
-                {t.hero.badge}
-              </span>
+            {/* Badge — solo mobile */}
+            <div className={`flex justify-center lg:hidden ${fade('delay-100')}`}>
+              <Link
+                to="/donar"
+                className="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white text-xs font-semibold tracking-widest uppercase px-8 py-2 rounded-full mb-5 transition-colors"
+              >
+                DONA ❤️
+              </Link>
             </div>
 
             {/* Titular */}
             <h1
               className={`font-serif text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-brand-950 leading-[1.05] mb-5 lg:mb-7 ${fade('delay-150')}`}
             >
-              {t.hero.title1}{' '}
+              {t.hero.title1}<span className="text-brand-500">{t.hero.titleBlue}</span>{t.hero.title1b}{' '}
               <em className="not-italic italic text-brand-500">{t.hero.titleEmphasis}</em>{' '}
               {t.hero.title2}
             </h1>
@@ -66,36 +68,36 @@ export default function Hero() {
             </p>
 
             {/* Párrafo secundario */}
-            <p className={`text-brand-950/45 text-sm leading-relaxed mb-12 ${fade('delay-[400ms]')}`}>
+            <p className={`text-brand-950/60 text-sm leading-relaxed mb-12 ${fade('delay-[400ms]')}`}>
               {t.hero.p2}
             </p>
 
             {/* Botones */}
             <div className={`flex flex-col sm:flex-row items-start gap-4 ${fade('delay-500')}`}>
-              {/* CTA Donar — solo mobile */}
+              {/* CTA Donar — mobile */}
               <Link
                 to="/donar"
                 className="sm:hidden w-full text-center bg-brand-600 hover:bg-brand-700 text-white font-bold px-7 py-3.5 rounded-lg transition-all duration-200 shadow-sm"
               >
-                {t.nav.donar} ❤️
+                {t.hero.ctaDona} ❤️
+              </Link>
+              {/* CTA Donar — desktop (primero) */}
+              <Link
+                to="/donar"
+                className="hidden sm:flex sm:flex-1 items-center justify-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-semibold px-7 py-3.5 rounded-lg transition-all duration-200 shadow-sm hover:shadow-md focus:outline-none focus:ring-2 focus:ring-brand-600 focus:ring-offset-2"
+              >
+                {t.hero.ctaDona} ❤️
               </Link>
               <a
                 href="#ayudar"
                 onClick={(e) => { e.preventDefault(); scrollTo('#ayudar') }}
-                className="w-full sm:flex-1 text-center inline-flex items-center justify-center gap-2 bg-brand-950 hover:bg-brand-900 text-white font-semibold px-7 py-3.5 rounded-lg transition-all duration-200 shadow-sm hover:shadow-md focus:outline-none focus:ring-2 focus:ring-brand-950 focus:ring-offset-2"
+                className="w-full sm:flex-1 text-center inline-flex items-center justify-center gap-2 border border-brand-950/30 text-brand-950 hover:bg-brand-950/5 font-semibold px-7 py-3.5 rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-brand-950 focus:ring-offset-2"
               >
                 {t.hero.cta1}
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </a>
-              {/* CTA Donar — solo desktop */}
-              <Link
-                to="/donar"
-                className="hidden sm:flex sm:flex-1 items-center justify-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-semibold px-7 py-3.5 rounded-lg transition-all duration-200 shadow-sm hover:shadow-md focus:outline-none focus:ring-2 focus:ring-brand-600 focus:ring-offset-2"
-              >
-                {t.nav.donar} ❤️
-              </Link>
             </div>
           </div>
 
