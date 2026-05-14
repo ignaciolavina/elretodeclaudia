@@ -204,13 +204,15 @@ const translations = {
         desc: 'Apoya el proyecto con una aportación mensual y ayuda a que Claudia tenga una vida mejor.',
         amountLabels: ['Una cena', 'Suscripción Netflix', 'Sesión de fisio'],
         custom: 'Otra cantidad',
+        cancel: 'Cancelar suscripción',
+        fiscalWarning: 'Acompañar a Claudia mes a mes no permite desgravarte en hacienda. Si necesitas desgravarte, usa la opción de donación única o escríbenos.',
       },
 
       donation: {
         title: 'Ayuda a Claudia',
         subtitle: 'Donación puntual',
         desc: 'Cualquier aportación, por pequeña que sea, marca la diferencia.',
-        cta: 'Donar ahora',
+        cta: 'Dona ahora',
       },
 
       transfer: {
@@ -444,6 +446,8 @@ const translations = {
         desc: 'Support the project with a monthly contribution and help Claudia have a better life.',
         amountLabels: ['A dinner', 'Netflix subscription', 'Physio session'],
         custom: 'Custom amount',
+        cancel: 'Cancel subscription',
+        fiscalWarning: 'Monthly contributions to Claudia\'s cause are not tax-deductible. If you need a tax deduction, please use the one-time donation option.',
       },
 
       donation: {

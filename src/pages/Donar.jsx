@@ -2,10 +2,11 @@ import { useEffect, useState } from 'react'
 
 const STRIPE_LINK = 'https://buy.stripe.com/9AQ3e9clhbqCb9m9AA'
 const MEMBER_AMOUNTS = [
-  { amount: '10 €', emoji: '🍽️' },
-  { amount: '20 €', emoji: '📺' },
-  { amount: '50 €', emoji: '💆' },
+  { amount: '10 €', emoji: '🍽️', href: 'https://buy.stripe.com/7sY14haRwds4cWQeA54F200' },
+  { amount: '20 €', emoji: '📺', href: 'https://buy.stripe.com/28EeV7gbQ9bO8GA4Zv4F202' },
+  { amount: '50 €', emoji: '💆', href: 'https://buy.stripe.com/9B63cpe3I1Jm8GA8bH4F203' },
 ]
+const STRIPE_CUSTOM = 'https://buy.stripe.com/8x2fZb8Jo73GcWQ63z4F201'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import { useLanguage } from '../context/LanguageContext'
@@ -32,57 +33,53 @@ export default function Donar() {
     setTimeout(() => setCopied(false), 2000)
   }
 
-  const NetflixIcon = () => (
-    <svg className="w-5 h-5" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#E50914">
-      <path d="M5.398 0v.006c3.028 8.556 5.37 15.175 8.348 23.596 2.344.058 4.85.398 4.854.398-2.8-7.924-5.923-16.747-8.487-24zm8.489 0v9.63L18.6 22.951c-.043-7.86-.004-15.913.002-22.95zM5.398 1.05V24c1.873-.225 2.81-.312 4.715-.398v-9.22z"/>
-    </svg>
-  )
-
-  const AMOUNT_ICONS = [
-    <span className="text-lg">🍽️</span>,
-    <NetflixIcon />,
-    <span className="text-lg">💆</span>,
-  ]
-
   const MembersCard = () => (
     <div className="bg-white rounded-3xl shadow-sm p-8 border border-brand-100">
       <h2 className="font-serif text-2xl font-semibold text-gray-900 mb-1">
         {d.members.title}
-        <span className="text-gray-500 font-light text-lg"> — {d.members.subtitle}</span>
+        <span className="text-gray-700 font-light text-lg"> — {d.members.subtitle}</span>
       </h2>
       <p className="text-gray-600 text-sm leading-relaxed mb-5">
         {d.members.desc}
       </p>
 
-      <div className="grid grid-cols-2 gap-2 mb-4">
-        {MEMBER_AMOUNTS.map(({ amount }, i) => (
+      <div className="grid grid-cols-4 gap-2 mb-4">
+        {MEMBER_AMOUNTS.map(({ amount, href }) => (
           <a
             key={amount}
-            href={STRIPE_LINK}
+            href={href}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-2xl py-3 px-2 border-2 border-brand-100 bg-white hover:border-brand-400 hover:bg-brand-50 transition-all text-center flex flex-col items-center gap-0.5"
+            className="rounded-xl py-3 px-1 bg-brand-600 hover:bg-brand-700 transition-colors text-center flex items-center justify-center"
           >
-            <span className="flex items-center justify-center h-6">{AMOUNT_ICONS[i]}</span>
-            <span className="text-sm font-bold text-gray-800">{amount}</span>
-            <span className="text-xs text-gray-400">{d.members.amountLabels[i]}</span>
+            <span className="text-base font-bold text-white">{amount}</span>
           </a>
         ))}
         <a
-          href={STRIPE_LINK}
+          href={STRIPE_CUSTOM}
           target="_blank"
           rel="noopener noreferrer"
-          className="rounded-2xl py-3 px-2 border-2 border-brand-100 bg-white hover:border-brand-400 hover:bg-brand-50 transition-all text-center flex flex-col items-center justify-center gap-0.5"
+          className="rounded-xl py-3 px-1 bg-brand-600 hover:bg-brand-700 transition-colors text-center flex items-center justify-center"
         >
-          <span className="text-lg">✨</span>
-          <span className="text-sm font-bold text-gray-800">{d.members.custom}</span>
+          <span className="text-xs sm:text-base font-bold text-white leading-tight">{d.members.custom}</span>
         </a>
       </div>
 
+      <div className="bg-amber-50 border border-amber-200 rounded-2xl px-4 py-3 mb-4">
+        <p className="text-xs text-amber-800 leading-relaxed">
+          {d.members.fiscalWarning}
+        </p>
+      </div>
+
       <div className="text-center">
-        <span className="inline-block text-xs font-semibold text-brand-600 uppercase tracking-widest bg-brand-50 border border-brand-100 rounded-full px-3 py-1">
-          {d.members.badge}
-        </span>
+        <a
+          href="https://billing.stripe.com/p/login/7sY14haRwds4cWQeA54F200"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-xs text-gray-500 hover:text-gray-700 underline underline-offset-2 transition-colors"
+        >
+          {d.members.cancel}
+        </a>
       </div>
     </div>
   )
@@ -91,7 +88,7 @@ export default function Donar() {
     <div className="bg-white rounded-3xl shadow-sm p-8 border border-brand-100">
       <h2 className="font-serif text-2xl font-semibold text-gray-900 mb-1">
         {d.donation.title}
-        <span className="text-gray-400 font-light text-lg"> — {d.donation.subtitle}</span>
+        <span className="text-gray-600 font-light text-lg"> — {d.donation.subtitle}</span>
       </h2>
       <p className="text-gray-600 text-sm leading-relaxed mb-6">
         {d.donation.desc}
