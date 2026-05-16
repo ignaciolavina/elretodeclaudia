@@ -14,10 +14,66 @@ import { useLanguage } from '../context/LanguageContext'
 
 const IBAN = 'ES0600495186912316155681'
 
+function TaxCard({ d, donationAmount, setDonationAmount }) {
+  const deduction = Math.round(donationAmount * 0.8)
+  const netCost = donationAmount - deduction
+
+  return (
+    <div className="bg-white rounded-3xl shadow-sm p-8 border border-brand-100">
+      <h2 className="font-serif text-2xl font-semibold text-gray-900 mb-1">
+        {d.tax.title}
+        <span className="text-gray-600 font-light text-lg"> — {d.tax.subtitle}</span>
+      </h2>
+      <p className="text-gray-600 text-sm leading-relaxed mb-6">{d.tax.desc}</p>
+
+      <div className="mb-6">
+        <div className="flex justify-between items-baseline mb-3">
+          <span className="text-xs text-gray-500 uppercase tracking-widest font-semibold">{d.tax.sliderLabel}</span>
+          <span className="text-2xl font-bold text-brand-700">{donationAmount} €</span>
+        </div>
+        <input
+          type="range"
+          min="0"
+          max="200"
+          step="5"
+          value={donationAmount}
+          onChange={e => setDonationAmount(Number(e.target.value))}
+          className="w-full accent-brand-600 cursor-pointer"
+        />
+        <div className="flex justify-between text-xs text-gray-400 mt-1">
+          <span>0 €</span>
+          <span>200 €</span>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-2 gap-3 mb-5">
+        <div className="bg-brand-50 border border-brand-100 rounded-2xl p-4 text-center">
+          <p className="text-xs text-gray-500 uppercase tracking-widest font-semibold mb-1">{d.tax.labelDeduction}</p>
+          <p className="text-3xl font-bold text-brand-600">{deduction} €</p>
+        </div>
+        <div className="bg-green-50 border border-green-100 rounded-2xl p-4 text-center">
+          <p className="text-xs text-gray-500 uppercase tracking-widest font-semibold mb-1">{d.tax.labelNet}</p>
+          <p className="text-3xl font-bold text-green-600">{netCost} €</p>
+        </div>
+      </div>
+
+      <a
+        href={DONATION_LINK}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block w-full text-center bg-brand-600 hover:bg-brand-700 text-white font-semibold rounded-2xl py-4 text-sm transition-colors"
+      >
+        {d.tax.cta}
+      </a>
+    </div>
+  )
+}
+
 export default function Donar() {
   const [copied, setCopied] = useState(false)
   const [copiedBeneficiary, setCopiedBeneficiary] = useState(false)
   const [showModal, setShowModal] = useState(false)
+  const [donationAmount, setDonationAmount] = useState(50)
   const { t } = useLanguage()
   const d = t.donar
 
@@ -193,9 +249,10 @@ export default function Donar() {
             </h1>
           </div>
 
-          {/* Socios + Transferencia + Donación — solo mobile */}
+          {/* Socios + Desgravación + Transferencia + Donación — solo mobile */}
           <div className="lg:hidden space-y-6 mb-8">
             <MembersCard />
+            <TaxCard d={d} donationAmount={donationAmount} setDonationAmount={setDonationAmount} />
             <TransferCard />
             <DonationCard />
           </div>
@@ -226,6 +283,11 @@ export default function Donar() {
               {/* Socios — solo desktop */}
               <div className="hidden lg:block">
                 <MembersCard />
+              </div>
+
+              {/* Desgravación fiscal — solo desktop */}
+              <div className="hidden lg:block">
+                <TaxCard d={d} donationAmount={donationAmount} setDonationAmount={setDonationAmount} />
               </div>
 
               {/* Transferencia bancaria — solo desktop */}

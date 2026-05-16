@@ -225,6 +225,18 @@ const translations = {
         fiscalWarningPost: ' o escríbenos.',
       },
 
+      tax: {
+        title: 'Dona y desgrávate',
+        subtitle: 'Con deducción fiscal',
+        desc: 'Te puedes desgravar hasta un 80% si donas a través de la plataforma Mi Grano de Arena.',
+        sliderLabel: 'Ejemplo si donas:',
+        labelDeduction: 'Hacienda te devuelve',
+        labelDeductionSub: '',
+        labelNet: 'Tu coste real',
+        labelNetSub: '',
+        cta: 'Dona ❤️',
+      },
+
       donation: {
         title: 'Ayuda a Claudia',
         subtitle: 'Donación puntual',
@@ -485,6 +497,18 @@ const translations = {
         fiscalWarningPre: 'Monthly contributions are not tax-deductible. If you need a tax deduction, use ',
         fiscalWarningLink: 'the last option',
         fiscalWarningPost: ' or write to us.',
+      },
+
+      tax: {
+        title: 'Donate and get a tax deduction',
+        subtitle: 'With tax relief',
+        desc: 'You can deduct up to 80% if you donate through the Mi Grano de Arena platform.',
+        sliderLabel: 'Example if you donate:',
+        labelDeduction: 'Tax return',
+        labelDeductionSub: '',
+        labelNet: 'Your real cost',
+        labelNetSub: '',
+        cta: 'Donate ❤️',
       },
 
       donation: {
