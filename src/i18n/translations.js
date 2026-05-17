@@ -289,6 +289,45 @@ const translations = {
         soon: 'Próximamente',
         desc: 'Pronto podrás donar con tarjeta de forma rápida y segura.',
       },
+
+      faq: {
+        title: 'Preguntas frecuentes',
+        cancelLinkText: 'Cancelar suscripción',
+        items: [
+          {
+            q: 'Tengo dudas sobre el proceso',
+            a: 'Puedes llamarnos o escribirnos y te ayudamos:',
+          },
+          {
+            q: 'Hay un error',
+            a: 'Gracias por avisarnos. Puedes contactarnos y lo resolvemos:',
+          },
+          {
+            q: '¿Qué es lo mejor para Claudia?',
+            a: 'Lo mejor para Claudia es que ayudes mes a mes con transferencia bancaria, ya que no tiene comisiones.',
+            a2: 'Otra buena opción es que valores aumentar la cuantía de tu donación si usas el apartado de desgravación fiscal.',
+          },
+          {
+            q: 'Quiero ayudar de otras formas',
+            a: 'No toda ayuda es económica. Si quieres dedicar parte de tu tiempo al proyecto, escríbenos:',
+          },
+          {
+            q: '¿La asociación es oficial y está registrada?',
+            a: 'Sí. La Asociación para la Investigación y Tratamiento de Enfermedades Peroxisomales está legalmente constituida en España y cuenta con su correspondiente identificación fiscal y documentación oficial.',
+            a2: 'Si lo necesitas, puedes solicitarnos la documentación oficial o el registro.',
+          },
+          {
+            q: '¿Las donaciones son seguras?',
+            a: 'Si donas a través de Mi grano de arena, es una plataforma segura y muy reconocida en España — una plataforma de referencia para proyectos solidarios con miles de donantes.',
+            a2: 'Si donas sin desgravarte, los pagos se procesan a través de Stripe, el estándar global en pagos online, presente en millones de empresas y con certificaciones de seguridad de máximo nivel (PCI-DSS Nivel 1).',
+          },
+          {
+            q: '¿Puedo cancelar una donación mensual?',
+            a: 'Sí. Las donaciones recurrentes pueden cancelarse en cualquier momento desde el portal del proveedor de pagos o desde el enlace incluido en los correos de confirmación.',
+            cancelLink: true,
+          },
+        ],
+      },
     },
   },
 
@@ -581,6 +620,45 @@ const translations = {
         title: 'Donate by card',
         soon: 'Coming soon',
         desc: 'You will soon be able to donate quickly and securely by card.',
+      },
+
+      faq: {
+        title: 'Frequently asked questions',
+        cancelLinkText: 'Cancel subscription',
+        items: [
+          {
+            q: 'I have questions about the process',
+            a: 'You can call or write to us and we will help you:',
+          },
+          {
+            q: 'There is an error',
+            a: 'Thank you for letting us know. You can contact us and we will sort it out:',
+          },
+          {
+            q: 'What is best for Claudia?',
+            a: 'The best option for Claudia is to contribute monthly via bank transfer, as it has no fees.',
+            a2: 'Another good option is to consider increasing your donation amount through the tax deduction section.',
+          },
+          {
+            q: 'I want to help in other ways',
+            a: 'Not all help is financial. If you want to dedicate some of your time to the project, write to us:',
+          },
+          {
+            q: 'Is the association official and registered?',
+            a: 'Yes. The Association for Research and Treatment of Peroxisomal Diseases is legally established in Spain and has its corresponding tax identification and official documentation.',
+            a2: 'If needed, you can request the official documentation or registration from us.',
+          },
+          {
+            q: 'Are donations safe?',
+            a: 'If you donate through Mi grano de arena, it is a well-established and trusted platform in Spain — a reference platform for solidarity projects with thousands of donors.',
+            a2: 'If you donate without tax deduction, payments are processed through Stripe, the global standard for online payments, used by millions of companies and holding the highest security certifications (PCI-DSS Level 1).',
+          },
+          {
+            q: 'Can I cancel a monthly donation?',
+            a: 'Yes. Recurring donations can be cancelled at any time through the payment provider portal or via the link included in confirmation emails.',
+            cancelLink: true,
+          },
+        ],
       },
     },
   },

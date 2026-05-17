@@ -22,6 +22,56 @@ const ONCE_AMOUNTS = [
 const ONCE_CUSTOM = 'https://buy.stripe.com/8x2fZb8Jo73GcWQ63z4F201'
 
 
+const CANCEL_HREF = 'https://billing.stripe.com/p/login/7sY14haRwds4cWQeA54F200'
+const CONTACT_PHONE = '677 804 196'
+const CONTACT_EMAIL = 'info@elretodeclaudia.org'
+const FAQ_CONTACT = [true, true, false, true, false, false, false]
+
+function FaqItem({ item, hasContact, isOpen, onToggle, cancelLinkText }) {
+  return (
+    <div className="border-b border-gray-100 last:border-0">
+      <button
+        onClick={onToggle}
+        className="w-full flex items-center justify-between py-5 text-left gap-4"
+      >
+        <span className="font-semibold text-gray-900 text-sm">{item.q}</span>
+        <svg
+          className={`w-4 h-4 text-gray-400 flex-shrink-0 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
+          fill="none" stroke="currentColor" viewBox="0 0 24 24"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+      {isOpen && (
+        <div className="pb-5 space-y-3 text-sm text-gray-600 leading-relaxed">
+          <p>{item.a}</p>
+          {item.a2 && <p>{item.a2}</p>}
+          {hasContact && (
+            <div className="flex flex-wrap gap-3">
+              <a href={`tel:${CONTACT_PHONE.replace(/\s/g, '')}`} className="font-semibold text-brand-600 hover:underline">
+                {CONTACT_PHONE}
+              </a>
+              <a href={`mailto:${CONTACT_EMAIL}`} className="font-semibold text-brand-600 hover:underline">
+                {CONTACT_EMAIL}
+              </a>
+            </div>
+          )}
+          {item.cancelLink && (
+            <a
+              href={CANCEL_HREF}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block font-semibold text-brand-600 hover:underline"
+            >
+              {cancelLinkText}
+            </a>
+          )}
+        </div>
+      )}
+    </div>
+  )
+}
+
 function TaxCard({ d, donationAmount, setDonationAmount }) {
   const deduction = Math.round(donationAmount * 0.8)
   const netCost = donationAmount - deduction
@@ -82,6 +132,7 @@ export default function Donar() {
   const [copiedBeneficiary, setCopiedBeneficiary] = useState(false)
   const [showDirectModal, setShowDirectModal] = useState(false)
   const [directTab, setDirectTab] = useState('once')
+  const [openFaq, setOpenFaq] = useState(null)
   const [donationAmount, setDonationAmount] = useState(50)
   const { t } = useLanguage()
   const d = t.donar
@@ -299,6 +350,25 @@ export default function Donar() {
               </div>
 
 
+            </div>
+          </div>
+
+          {/* Preguntas frecuentes */}
+          <div className="max-w-2xl mx-auto mt-20">
+            <h2 className="font-serif text-3xl font-bold text-gray-900 mb-8 text-center">
+              {d.faq.title}
+            </h2>
+            <div className="bg-white rounded-3xl shadow-sm border border-brand-100 px-8">
+              {d.faq.items.map((item, i) => (
+                <FaqItem
+                  key={i}
+                  item={item}
+                  hasContact={FAQ_CONTACT[i]}
+                  isOpen={openFaq === i}
+                  onToggle={() => setOpenFaq(openFaq === i ? null : i)}
+                  cancelLinkText={d.faq.cancelLinkText}
+                />
+              ))}
             </div>
           </div>
         </div>
