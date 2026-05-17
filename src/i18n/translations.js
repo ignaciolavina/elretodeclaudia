@@ -160,12 +160,31 @@ const translations = {
       badge: 'Ayuda a Claudia',
       title: 'Únete al reto',
 
+      directDonation: {
+        title: 'Dona sin desgravarte',
+        subtitle: 'Dona sin desgravarte',
+        desc: 'Dona a Claudia sin desgravarte ni registrarte. Esta opción ahorra al proyecto el 5% de comisión.',
+        cta: 'Dona ahora ❤️',
+        tabOnce: 'Donación única',
+        tabMonthly: 'Acompaña a Claudia mes a mes',
+        tabOnceDesc: 'Cualquier aportación, por pequeña que sea, marca la diferencia.',
+        tabMonthlyDesc: 'Apoya el proyecto con una aportación mensual y ayuda a que Claudia tenga una vida mejor.',
+        cardDivider: 'O dona con tarjeta',
+      },
+
       research: {
         title: 'En busca de una cura',
         introPre: 'El Reto de Claudia es un proyecto de la ',
         introBold: 'Asociación para la Investigación y Tratamiento de Enfermedades Peroxisomales',
-        introPost: '. Gracias a vuestro apoyo, investigadores de la Universidad CEU San Pablo han iniciado un proyecto de investigación de terapia génica para la deficiencia de la proteína D-bifuncional.',
-        goal: 'El proyecto necesita financiación privada para avanzar. Buscamos valientes que se unan al reto y nos ayuden a financiar su cura.',
+        introPost: '.',
+        intro2: 'Gracias a vuestra difusión y a vuestro apoyo, hemos identificado varias potenciales líneas de investigación de terapia génica para Claudia, aunque todas ellas de financiación privada.',
+        intro3Pre: 'Como os podéis imaginar, esto nos llena de ilusión y alegría: ',
+        intro3Bold: 'por fin un rayo de esperanza',
+        intro3Post: ' para nuestra hija.',
+        goalPre: 'Ahora tenemos delante un reto importante: ',
+        goalBold1: 'necesitamos reunir los fondos necesarios para poder financiar esta investigación',
+        goalMid: '. Ahora, más que nunca, ',
+        goalBold2: 'NECESITAMOS VUESTRA AYUDA.',
         phasesTitle: 'Las fases del proyecto',
         phases: [
           {
@@ -228,13 +247,13 @@ const translations = {
       tax: {
         title: 'Dona y desgrávate',
         subtitle: 'Con deducción fiscal',
-        desc: 'Te puedes desgravar hasta un 80% si donas a través de la plataforma Mi Grano de Arena.',
+        desc: 'Te puedes desgravar hasta un 80% si donas a través de la plataforma Mi Grano de Arena (puede requerir registro).',
         sliderLabel: 'Ejemplo si donas:',
         labelDeduction: 'Hacienda te devuelve',
         labelDeductionSub: '',
         labelNet: 'Tu coste real',
         labelNetSub: '',
-        cta: 'Dona ❤️',
+        cta: 'Dona con desgravación',
       },
 
       donation: {
@@ -434,12 +453,31 @@ const translations = {
       badge: 'Help Claudia',
       title: 'Join the challenge',
 
+      directDonation: {
+        title: 'Donate without tax deduction',
+        subtitle: 'Donate without tax deduction',
+        desc: 'Donate to Claudia without registration or tax deduction. This option saves the project a 5% fee.',
+        cta: 'Donate now ❤️',
+        tabOnce: 'One-time donation',
+        tabMonthly: 'Accompany Claudia month by month',
+        tabOnceDesc: 'Every contribution, no matter how small, makes a difference.',
+        tabMonthlyDesc: 'Support the project with a monthly donation and help Claudia have a better life.',
+        cardDivider: 'Or donate by card',
+      },
+
       research: {
         title: 'In search of a cure',
         introPre: 'El Reto de Claudia is a project of the ',
         introBold: 'Association for Research and Treatment of Peroxisomal Diseases',
-        introPost: '. Thanks to your support, researchers at CEU San Pablo University have started a gene therapy research project for D-bifunctional protein deficiency.',
-        goal: 'The project needs private funding to move forward. We are looking for brave people to join the challenge and help us fund her cure.',
+        introPost: '.',
+        intro2: 'Thanks to your support and outreach, we have identified several potential gene therapy research lines for Claudia, all of which require private funding.',
+        intro3Pre: 'As you can imagine, this fills us with hope and excitement: ',
+        intro3Bold: 'at last a ray of hope',
+        intro3Post: ' for our daughter.',
+        goalPre: 'We now face an important challenge: ',
+        goalBold1: 'we need to raise the funds necessary to finance this research',
+        goalMid: '. Now, more than ever, ',
+        goalBold2: 'WE NEED YOUR HELP.',
         phasesTitle: 'Project phases',
         phases: [
           {
