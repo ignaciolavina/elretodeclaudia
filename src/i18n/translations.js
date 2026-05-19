@@ -163,6 +163,7 @@ const translations = {
       directDonation: {
         title: 'Dona sin desgravarte',
         subtitle: 'Dona sin desgravarte',
+        tagline: 'Dona sin necesidad de registros, o elige hacer una aportación mensual',
         desc: 'Dona a Claudia sin desgravarte ni registrarte. Esta opción ahorra al proyecto el 5% de comisión.',
         cta: 'Dona ahora ❤️',
         tabOnce: 'Donación única',
@@ -495,6 +496,7 @@ const translations = {
       directDonation: {
         title: 'Donate without tax deduction',
         subtitle: 'Donate without tax deduction',
+        tagline: 'Donate without registration, or choose a monthly contribution',
         desc: 'Donate to Claudia without registration or tax deduction. This option saves the project a 5% fee.',
         cta: 'Donate now ❤️',
         tabOnce: 'One-time donation',

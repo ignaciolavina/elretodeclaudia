@@ -153,9 +153,10 @@ export default function Donar() {
 
   const DirectDonationCard = () => (
     <div className="bg-white rounded-3xl shadow-sm p-8 border border-brand-100">
-      <h2 className="font-serif text-2xl font-semibold text-gray-900 mb-5">
+      <h2 className="font-serif text-2xl font-semibold text-gray-900 mb-2">
         {d.directDonation.title}
       </h2>
+      <p className="text-gray-500 text-sm mb-5">{d.directDonation.tagline}</p>
       {!showDirectModal && (
         <button
           onClick={() => setShowDirectModal(true)}
