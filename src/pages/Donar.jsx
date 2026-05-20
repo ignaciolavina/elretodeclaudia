@@ -25,7 +25,8 @@ const ONCE_CUSTOM = 'https://buy.stripe.com/8x2fZb8Jo73GcWQ63z4F201'
 const CANCEL_HREF = 'https://billing.stripe.com/p/login/7sY14haRwds4cWQeA54F200'
 const CONTACT_PHONE = '677 804 196'
 const CONTACT_EMAIL = 'info@elretodeclaudia.org'
-const FAQ_CONTACT = [true, true, false, true, false, false, false]
+// order: best-for-claudia, certificate, doubts-donation, safe, cancel, other-ways, association, error
+const FAQ_CONTACT = [true, false, true, false, true, true, false, true]
 
 function FaqItem({ item, hasContact, isOpen, onToggle, cancelLinkText }) {
   return (
@@ -45,6 +46,16 @@ function FaqItem({ item, hasContact, isOpen, onToggle, cancelLinkText }) {
       {isOpen && (
         <div className="pb-5 space-y-3 text-sm text-gray-600 leading-relaxed">
           <p>{item.a}</p>
+          {item.cancelLink && (
+            <a
+              href={CANCEL_HREF}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block font-semibold text-brand-600 hover:underline"
+            >
+              {cancelLinkText}
+            </a>
+          )}
           {item.a2 && <p>{item.a2}</p>}
           {hasContact && (
             <div className="flex flex-wrap gap-3">
@@ -56,16 +67,6 @@ function FaqItem({ item, hasContact, isOpen, onToggle, cancelLinkText }) {
               </a>
             </div>
           )}
-          {item.cancelLink && (
-            <a
-              href={CANCEL_HREF}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block font-semibold text-brand-600 hover:underline"
-            >
-              {cancelLinkText}
-            </a>
-          )}
         </div>
       )}
     </div>
@@ -75,6 +76,8 @@ function FaqItem({ item, hasContact, isOpen, onToggle, cancelLinkText }) {
 function TaxCard({ d, donationAmount, setDonationAmount }) {
   const deduction = Math.round(donationAmount * 0.8)
   const netCost = donationAmount - deduction
+  const [showModal, setShowModal] = useState(false)
+  const m = d.tax.infoModal
 
   return (
     <div className="bg-white rounded-3xl shadow-sm p-8 border border-brand-100">
@@ -105,12 +108,12 @@ function TaxCard({ d, donationAmount, setDonationAmount }) {
       </div>
 
       <div className="grid grid-cols-2 gap-3 mb-5">
-        <div className="bg-brand-50 border border-brand-100 rounded-2xl p-4 text-center">
-          <p className="text-xs text-gray-500 uppercase tracking-widest font-semibold mb-1">{d.tax.labelDeduction}</p>
+        <div className="bg-brand-50 border border-brand-100 rounded-2xl p-4 text-center flex flex-col items-center">
+          <p className="text-xs text-gray-500 uppercase tracking-widest font-semibold flex-1 flex items-center justify-center">{d.tax.labelDeduction}</p>
           <p className="text-3xl font-bold text-brand-600">{deduction} €</p>
         </div>
-        <div className="bg-green-50 border border-green-100 rounded-2xl p-4 text-center">
-          <p className="text-xs text-gray-500 uppercase tracking-widest font-semibold mb-1">{d.tax.labelNet}</p>
+        <div className="bg-green-50 border border-green-100 rounded-2xl p-4 text-center flex flex-col items-center">
+          <p className="text-xs text-gray-500 uppercase tracking-widest font-semibold flex-1 flex items-center justify-center">{d.tax.labelNet}</p>
           <p className="text-3xl font-bold text-green-600">{netCost} €</p>
         </div>
       </div>
@@ -123,6 +126,54 @@ function TaxCard({ d, donationAmount, setDonationAmount }) {
       >
         {d.tax.cta} ❤️
       </a>
+
+      <button
+        onClick={() => setShowModal(true)}
+        className="w-full text-center text-sm text-brand-600 hover:underline mt-3"
+      >
+        {d.tax.moreInfo}
+      </button>
+
+      {showModal && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4"
+          onClick={() => setShowModal(false)}
+        >
+          <div
+            className="bg-white rounded-3xl shadow-xl max-w-md w-full p-7 relative max-h-[90vh] overflow-y-auto"
+            onClick={e => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setShowModal(false)}
+              className="absolute top-4 right-4 text-gray-400 hover:text-gray-600"
+              aria-label="Cerrar"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+
+            <h3 className="font-serif text-xl font-semibold text-gray-900 mb-5">{m.title}</h3>
+
+            <div className="space-y-4 text-sm text-gray-700 leading-relaxed">
+              <div>
+                <p className="font-semibold text-gray-900 mb-2">{m.personasFisicas}</p>
+                <p className="mb-2">{m.pf1}</p>
+                <p>{m.pf2}</p>
+              </div>
+
+              <div>
+                <p className="font-semibold text-gray-900 mb-2">{m.personasJuridicas}</p>
+                <p>{m.pj1}</p>
+              </div>
+
+              <p className="text-gray-600">{m.forales}</p>
+
+              <p className="text-xs text-gray-500 border-t border-gray-100 pt-4">{m.footnote}</p>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }

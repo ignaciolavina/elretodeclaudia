@@ -178,7 +178,7 @@ const translations = {
         introPre: 'El Reto de Claudia es un proyecto de la ',
         introBold: 'Asociación para la Investigación y Tratamiento de Enfermedades Peroxisomales',
         introPost: '.',
-        intro2: 'Gracias a vuestra difusión y a vuestro apoyo, hemos identificado varias potenciales líneas de investigación de terapia génica para Claudia, aunque todas ellas de financiación privada.',
+        intro2: 'Gracias a vuestra difusión y a vuestro apoyo, hemos identificado varias potenciales líneas de investigación de terapia génica para Claudia en el ámbito académico / universitario, aunque todas ellas de financiación privada.',
         intro3Pre: 'Como os podéis imaginar, esto nos llena de ilusión y alegría: ',
         intro3Bold: 'por fin un rayo de esperanza',
         intro3Post: ' para nuestra hija.',
@@ -250,11 +250,22 @@ const translations = {
         subtitle: 'Con deducción fiscal',
         desc: 'Te puedes desgravar hasta un 80% si donas a través de la plataforma Mi Grano de Arena (puede requerir registro).',
         sliderLabel: 'Ejemplo si donas:',
-        labelDeduction: 'Hacienda te devuelve',
+        labelDeduction: 'Hacienda te devuelve hasta',
         labelDeductionSub: '',
         labelNet: 'Tu coste real',
         labelNetSub: '',
         cta: 'Dona con desgravación',
+        moreInfo: 'Más información',
+        infoModal: {
+          title: 'Deducciones fiscales',
+          personasFisicas: 'Personas Físicas',
+          pf1: 'Los primeros 250€ de donación dan derecho a una deducción del 80%.',
+          pf2: 'A partir de 250€ tienes derecho a una deducción como mínimo del 40%. Y los donantes recurrentes* tienen derecho a una deducción del 45%.',
+          personasJuridicas: 'Personas Jurídicas',
+          pj1: 'Las empresas tienen derecho a una deducción del 45% de sus donaciones. Los donantes recurrentes* tienen derecho a una deducción del 50%.',
+          forales: 'Los donantes residentes en el País Vasco y Navarra pueden aplicar las deducciones previstas en la Norma Foral.',
+          footnote: '(*) Los donantes recurrentes son aquellos que en los 2 años inmediatos anteriores han realizado donaciones a favor de la misma entidad por importe igual o superior, en cada uno de ellos, al del ejercicio anterior.',
+        },
       },
 
       donation: {
@@ -292,21 +303,32 @@ const translations = {
       },
 
       faq: {
-        title: 'Preguntas frecuentes',
+        title: 'Preguntas frecuentes sobre mi donación',
         cancelLinkText: 'Cancelar suscripción',
         items: [
           {
-            q: 'Tengo dudas sobre el proceso',
+            q: '¿Qué forma de donación es la mejor para Claudia?',
+            a: 'Lo mejor para Claudia es que te suscribas para ayudar mes a mes con transferencia bancaria, ya que no tiene comisiones para nosotros.',
+            a2: 'Otra buena opción es que valores aumentar la cuantía de tu donación si usas el apartado de desgravación fiscal.',
+          },
+          {
+            q: 'Quiero un certificado de donaciones para desgravarme',
+            a: 'Si has donado a través de la plataforma migranodearena, en la propia plataforma puedes solicitarlo y te lo envían al correo. Logeate con el correo con el que te registraste. Si tienes dudas escríbenos y te ayudamos.',
+          },
+          {
+            q: 'Tengo dudas sobre el proceso de donación',
             a: 'Puedes llamarnos o escribirnos y te ayudamos:',
           },
           {
-            q: 'Hay un error',
-            a: 'Gracias por avisarnos. Puedes contactarnos y lo resolvemos:',
+            q: '¿Las donaciones son seguras?',
+            a: 'Si donas a través de Mi grano de arena, es una plataforma segura y muy reconocida en España — una plataforma de referencia para proyectos solidarios con miles de donantes.',
+            a2: 'Si donas sin desgravarte, los pagos se procesan a través de Stripe, el estándar global en pagos online, presente en millones de empresas y con certificaciones de seguridad de máximo nivel (PCI-DSS Nivel 1).',
           },
           {
-            q: '¿Qué es lo mejor para Claudia?',
-            a: 'Lo mejor para Claudia es que ayudes mes a mes con transferencia bancaria, ya que no tiene comisiones.',
-            a2: 'Otra buena opción es que valores aumentar la cuantía de tu donación si usas el apartado de desgravación fiscal.',
+            q: '¿Puedo cancelar mi donación mensual?',
+            a: 'Sí. Las donaciones recurrentes pueden cancelarse en cualquier momento desde el portal del proveedor de pagos o desde el enlace incluido en los correos de confirmación. Si no te ha llegado, también puedes usar este link:',
+            cancelLink: true,
+            a2: 'Si en cualquier momento tienes dudas, también puedes contactarnos:',
           },
           {
             q: 'Quiero ayudar de otras formas',
@@ -318,14 +340,8 @@ const translations = {
             a2: 'Si lo necesitas, puedes solicitarnos la documentación oficial o el registro.',
           },
           {
-            q: '¿Las donaciones son seguras?',
-            a: 'Si donas a través de Mi grano de arena, es una plataforma segura y muy reconocida en España — una plataforma de referencia para proyectos solidarios con miles de donantes.',
-            a2: 'Si donas sin desgravarte, los pagos se procesan a través de Stripe, el estándar global en pagos online, presente en millones de empresas y con certificaciones de seguridad de máximo nivel (PCI-DSS Nivel 1).',
-          },
-          {
-            q: '¿Puedo cancelar una donación mensual?',
-            a: 'Sí. Las donaciones recurrentes pueden cancelarse en cualquier momento desde el portal del proveedor de pagos o desde el enlace incluido en los correos de confirmación.',
-            cancelLink: true,
+            q: '¿Qué hago si hay un error?',
+            a: 'Gracias por avisarnos. Puedes contactarnos y lo resolvemos:',
           },
         ],
       },
@@ -583,11 +599,22 @@ const translations = {
         subtitle: 'With tax relief',
         desc: 'You can deduct up to 80% if you donate through the Mi Grano de Arena platform.',
         sliderLabel: 'Example if you donate:',
-        labelDeduction: 'Tax return',
+        labelDeduction: 'Tax return up to',
         labelDeductionSub: '',
         labelNet: 'Your real cost',
         labelNetSub: '',
         cta: 'Donate ❤️',
+        moreInfo: 'More information',
+        infoModal: {
+          title: 'Tax deductions',
+          personasFisicas: 'Individuals',
+          pf1: 'The first €250 of donation entitles you to an 80% deduction.',
+          pf2: 'Above €250, you are entitled to a deduction of at least 40%. Recurring donors* are entitled to a 45% deduction.',
+          personasJuridicas: 'Companies',
+          pj1: 'Companies are entitled to a 45% deduction on their donations. Recurring donors* are entitled to a 50% deduction.',
+          forales: 'Donors residing in the Basque Country and Navarre may apply the deductions provided for in the Foral Law.',
+          footnote: '(*) Recurring donors are those who in the 2 immediately preceding years have made donations to the same entity for an amount equal to or greater than, in each of them, the amount of the previous year.',
+        },
       },
 
       donation: {
@@ -625,21 +652,32 @@ const translations = {
       },
 
       faq: {
-        title: 'Frequently asked questions',
+        title: 'Frequently asked questions about my donation',
         cancelLinkText: 'Cancel subscription',
         items: [
           {
-            q: 'I have questions about the process',
+            q: 'What is the best form of donation for Claudia?',
+            a: 'The best option for Claudia is to subscribe to help monthly via bank transfer, as it has no fees for us.',
+            a2: 'Another good option is to consider increasing your donation amount through the tax deduction section.',
+          },
+          {
+            q: 'I want a donation certificate for tax deduction',
+            a: 'If you donated through the migranodearena platform, you can request it directly on the platform and they will send it to your email. Log in with the email you registered with. If you have any questions, write to us and we will help you.',
+          },
+          {
+            q: 'I have questions about the donation process',
             a: 'You can call or write to us and we will help you:',
           },
           {
-            q: 'There is an error',
-            a: 'Thank you for letting us know. You can contact us and we will sort it out:',
+            q: 'Are donations safe?',
+            a: 'If you donate through Mi grano de arena, it is a well-established and trusted platform in Spain — a reference platform for solidarity projects with thousands of donors.',
+            a2: 'If you donate without tax deduction, payments are processed through Stripe, the global standard for online payments, used by millions of companies and holding the highest security certifications (PCI-DSS Level 1).',
           },
           {
-            q: 'What is best for Claudia?',
-            a: 'The best option for Claudia is to contribute monthly via bank transfer, as it has no fees.',
-            a2: 'Another good option is to consider increasing your donation amount through the tax deduction section.',
+            q: 'Can I cancel my monthly donation?',
+            a: "Yes. Recurring donations can be cancelled at any time through the payment provider portal or via the link included in confirmation emails. If you haven't received it, you can also use this link:",
+            cancelLink: true,
+            a2: 'If you have any questions at any point, you can also contact us:',
           },
           {
             q: 'I want to help in other ways',
@@ -651,14 +689,8 @@ const translations = {
             a2: 'If needed, you can request the official documentation or registration from us.',
           },
           {
-            q: 'Are donations safe?',
-            a: 'If you donate through Mi grano de arena, it is a well-established and trusted platform in Spain — a reference platform for solidarity projects with thousands of donors.',
-            a2: 'If you donate without tax deduction, payments are processed through Stripe, the global standard for online payments, used by millions of companies and holding the highest security certifications (PCI-DSS Level 1).',
-          },
-          {
-            q: 'Can I cancel a monthly donation?',
-            a: 'Yes. Recurring donations can be cancelled at any time through the payment provider portal or via the link included in confirmation emails.',
-            cancelLink: true,
+            q: 'What do I do if there is an error?',
+            a: 'Thank you for letting us know. You can contact us and we will sort it out:',
           },
         ],
       },
