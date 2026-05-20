@@ -51,7 +51,7 @@ export default function Navbar({ donatePage = false }) {
             to="/"
             className="font-serif font-bold text-xl tracking-tight text-brand-800 hover:text-brand-600 transition-colors duration-300"
           >
-            El Reto de Claudia
+            {t.nav.siteName}
           </Link>
 
           {/* Navegación desktop */}
@@ -89,7 +89,7 @@ export default function Navbar({ donatePage = false }) {
                 to="/donar"
                 className="bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold px-5 py-2.5 rounded-xl transition-colors shadow-sm"
               >
-                Dona ❤️
+                {t.nav.donar} ❤️
               </Link>
             </li>
           </ul>
@@ -146,7 +146,7 @@ export default function Navbar({ donatePage = false }) {
                 onClick={() => setMenuOpen(false)}
                 className="block text-center bg-brand-600 hover:bg-brand-700 text-white font-semibold px-4 py-3 rounded-xl transition-colors"
               >
-                Dona ❤️
+                {t.nav.donar} ❤️
               </Link>
             </li>
           </ul>

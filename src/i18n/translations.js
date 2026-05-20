@@ -1,12 +1,13 @@
 const translations = {
   es: {
     nav: {
+      siteName: 'El Reto de Claudia',
       inicio: 'Inicio',
       dbp: 'Qué es la DBP',
       historia: 'Historia de Claudia',
       ayudar: 'Cómo ayudar',
       contacto: 'Contacto',
-      donar: 'Donar',
+      donar: 'Dona',
     },
 
     hero: {
@@ -80,7 +81,7 @@ const translations = {
 
     ayudar: {
       sectionLabel: 'Únete',
-      title: '¿Cómo puedes ayudar?',
+      title: '¿Quieres difundir nuestra causa?',
       subtitle: 'Cada persona que se suma a este reto lo hace desde un lugar diferente. Encontramos un hueco para todos.',
       cards: [
         {
@@ -99,7 +100,13 @@ const translations = {
           badge: 'Difusión',
           title: '¿Quieres difundir nuestra causa?',
           text: 'La visibilidad es poder. Cuantas más personas conozcan la DBP, más posibilidades tenemos de llegar a quienes pueden ayudar. Comparte nuestra historia en redes sociales, entre tus contactos, en tu consulta o en tu comunidad. Cada voz importa.',
-          cta: 'Comparte nuestra historia',
+          cta: 'Síguenos en Instagram',
+        },
+        {
+          badge: 'Donación',
+          title: '¿Quieres donar? ❤️',
+          text: 'Cualquier aportación, por pequeña que sea, marca la diferencia. Tu donación nos ayuda a financiar la investigación de terapia génica para Claudia. Cada euro que aportas es un paso más hacia una cura.',
+          cta: 'Dona ahora',
         },
       ],
     },
@@ -350,6 +357,7 @@ const translations = {
 
   en: {
     nav: {
+      siteName: "Claudia's Challenge",
       inicio: 'Home',
       dbp: 'What is DBP',
       historia: "Claudia's Story",
@@ -429,7 +437,7 @@ const translations = {
 
     ayudar: {
       sectionLabel: 'Join us',
-      title: 'How can you help?',
+      title: 'Do you want to spread our cause?',
       subtitle: 'Everyone who joins this challenge does so from a different place. We find a role for everyone.',
       cards: [
         {
@@ -448,7 +456,13 @@ const translations = {
           badge: 'Outreach',
           title: 'Do you want to spread our cause?',
           text: 'Visibility is power. The more people know about DBP, the greater our chances of reaching those who can help. Share our story on social media, with your contacts, in your practice or in your community. Every voice matters.',
-          cta: 'Share our story',
+          cta: 'Follow us on Instagram',
+        },
+        {
+          badge: 'Donation',
+          title: 'Do you want to donate? ❤️',
+          text: 'Every contribution, no matter how small, makes a difference. Your donation helps us fund gene therapy research for Claudia. Every euro you contribute is one step closer to a cure.',
+          cta: 'Donate now',
         },
       ],
     },
@@ -603,7 +617,8 @@ const translations = {
         labelDeductionSub: '',
         labelNet: 'Your real cost',
         labelNetSub: '',
-        cta: 'Donate ❤️',
+        cta: 'Donate with tax deduction',
+        spainNote: 'This tax deduction applies in Spain. Donors from other countries may not be eligible.',
         moreInfo: 'More information',
         infoModal: {
           title: 'Tax deductions',
