@@ -44,7 +44,10 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/donar" element={<Donar />} />
+        <Route path="/donate" element={<Donar />} />
+        <Route path="/dona" element={<Donar />} />
         <Route path="/privacidad" element={<Privacidad />} />
+        <Route path="*" element={<Donar />} />
       </Routes>
     </LanguageProvider>
   )
