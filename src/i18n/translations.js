@@ -524,8 +524,8 @@ const translations = {
       title: 'Join the challenge',
 
       directDonation: {
-        title: 'Donate without tax deduction',
-        subtitle: 'Donate without tax deduction',
+        title: 'Thank you for donating',
+        subtitle: 'Thank you for donating',
         tagline: 'Donate without registration, or choose a monthly contribution',
         desc: 'Donate to Claudia without registration or tax deduction. This option saves the project a 5% fee.',
         cta: 'Donate now ❤️',

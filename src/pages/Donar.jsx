@@ -194,7 +194,7 @@ export default function Donar() {
   const [directTab, setDirectTab] = useState('once')
   const [openFaq, setOpenFaq] = useState(null)
   const [donationAmount, setDonationAmount] = useState(50)
-  const { t } = useLanguage()
+  const { t, lang } = useLanguage()
   const d = t.donar
 
   useEffect(() => { window.scrollTo(0, 0) }, [])
@@ -217,7 +217,7 @@ export default function Donar() {
         {d.directDonation.title}
       </h2>
       <p className="text-gray-500 text-sm mb-5">{d.directDonation.tagline}</p>
-      {!showDirectModal && (
+      {!showDirectModal && lang !== 'en' && (
         <button
           onClick={() => setShowDirectModal(true)}
           className="block w-full text-center bg-brand-600 hover:bg-brand-700 text-white font-semibold rounded-2xl py-4 text-sm transition-colors"
@@ -226,7 +226,7 @@ export default function Donar() {
         </button>
       )}
 
-      {showDirectModal && (
+      {(showDirectModal || lang === 'en') && (
         <div className="space-y-5">
           {/* IBAN + Beneficiario */}
           <div className="bg-brand-50 rounded-2xl p-5 border border-brand-100 space-y-4">
@@ -366,7 +366,7 @@ export default function Donar() {
 
           {/* Desgravación + Donación directa — solo mobile */}
           <div className="lg:hidden space-y-6 mb-8">
-            <TaxCard d={d} donationAmount={donationAmount} setDonationAmount={setDonationAmount} />
+            {lang !== 'en' && <TaxCard d={d} donationAmount={donationAmount} setDonationAmount={setDonationAmount} />}
             <DirectDonationCard />
           </div>
 
@@ -400,9 +400,11 @@ export default function Donar() {
             <div className="space-y-6 sticky top-28">
 
               {/* Desgravación fiscal — solo desktop */}
-              <div className="hidden lg:block">
-                <TaxCard d={d} donationAmount={donationAmount} setDonationAmount={setDonationAmount} />
-              </div>
+              {lang !== 'en' && (
+                <div className="hidden lg:block">
+                  <TaxCard d={d} donationAmount={donationAmount} setDonationAmount={setDonationAmount} />
+                </div>
+              )}
 
               {/* Donación directa — solo desktop */}
               <div className="hidden lg:block">
