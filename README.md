@@ -161,6 +161,21 @@ Cambiá `show: false` para ocultarlo cuando no haya nada próximo. Cuando llegue
 
 Localizá el array `STATS` y editá los valores `value` de cada ítem (ej: `'1,6M'` → `'2,1M'`). También están los mismos números en la card del hero (columna derecha) — esos se toman del mismo array, no hace falta duplicar.
 
+### Actualizar los stats de Instagram
+
+Localizá el objeto `INSTAGRAM` al principio de `src/pages/Prensa.jsx`:
+
+```js
+const INSTAGRAM = {
+  handle: '@elretodeclaudia',
+  url: 'https://www.instagram.com/elretodeclaudia',
+  views: '1,6M',       // ← actualizar aquí
+  followers: '4.874',  // ← actualizar aquí
+}
+```
+
+**¿Por qué no es automático?** Instagram deprecó su API pública en 2024. La Instagram Graph API actual requiere una app aprobada por Meta y una cuenta Business — no es viable para un sitio estático sin backend. La actualización es manual.
+
 ---
 
 ## Ramas principales
