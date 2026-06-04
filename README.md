@@ -159,7 +159,18 @@ Cambiá `show: false` para ocultarlo cuando no haya nada próximo. Cuando llegue
 
 ### Actualizar las métricas de impacto
 
-Localizá el array `STATS` y editá los valores `value` de cada ítem (ej: `'1,6M'` → `'2,1M'`). También están los mismos números en la card del hero (columna derecha) — esos se toman del mismo array, no hace falta duplicar.
+Localizá el objeto `IMPACT` al principio de `src/pages/Prensa.jsx`:
+
+```js
+const IMPACT = {
+  views:        '1,6M',   // visualizaciones
+  interactions: '38,7K',  // interacciones
+  followers:    '4.874',  // nuevos seguidores
+  shared:       '227',    // contenidos compartidos
+}
+```
+
+Editá los valores y se actualizan automáticamente en todos los sitios donde aparecen: la sección IMPACTO, la card del hero y la card de Instagram.
 
 ### Actualizar los stats de Instagram
 

@@ -56,14 +56,23 @@ const HeartGoalIcon = () => (
 
 // ─── Editable content (non-translatable: proper nouns, numbers, urls) ─────────
 
+// ── Actualizar métricas de impacto manualmente ────────────────────────────────
+// Estas cifras aparecen en la sección IMPACTO y en la card del hero.
+const IMPACT = {
+  views:        '1,6M',
+  interactions: '38,7K',
+  followers:    '4.874',
+  shared:       '227',
+}
+
 // ── Actualizar métricas de Instagram manualmente ──────────────────────────────
 // La API de Instagram no permite leer stats públicos sin una app aprobada por Meta.
 // Actualizar estos valores a mano cuando cambien.
 const INSTAGRAM = {
   handle: '@elretodeclaudia',
   url: 'https://www.instagram.com/elretodeclaudia',
-  views: '1,6M',
-  followers: '4.874',
+  views: IMPACT.views,
+  followers: IMPACT.followers,
 }
 
 // ── Editar para cambiar el bloque "Próximamente" ──────────────────────────────
@@ -254,10 +263,10 @@ function Hero({ p }) {
     `transition-all duration-700 ${delay} ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`
 
   const STATS_HERO = [
-    { value: '1,6M', label: p.statViews },
-    { value: '38,7K', label: p.statInteractions },
-    { value: '4.874', label: p.statFollowers },
-    { value: '227', label: p.statShared },
+    { value: IMPACT.views,        label: p.statViews },
+    { value: IMPACT.interactions, label: p.statInteractions },
+    { value: IMPACT.followers,    label: p.statFollowers },
+    { value: IMPACT.shared,       label: p.statShared },
   ]
 
   return (
@@ -342,10 +351,10 @@ export default function Prensa() {
   }
 
   const STATS = [
-    { value: '1,6M',  label: p.statViews,        icon: <EyeIcon /> },
-    { value: '38,7K', label: p.statInteractions,  icon: <HeartIcon /> },
-    { value: '4.874', label: p.statFollowers,     icon: <UsersIcon /> },
-    { value: '227',   label: p.statShared,        icon: <ShareIcon /> },
+    { value: IMPACT.views,        label: p.statViews,        icon: <EyeIcon /> },
+    { value: IMPACT.interactions, label: p.statInteractions,  icon: <HeartIcon /> },
+    { value: IMPACT.followers,    label: p.statFollowers,     icon: <UsersIcon /> },
+    { value: IMPACT.shared,       label: p.statShared,        icon: <ShareIcon /> },
   ]
 
   const GOALS = [
