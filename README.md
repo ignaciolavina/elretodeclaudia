@@ -121,45 +121,22 @@ La carpeta `/dist` es el artefacto de despliegue.
 
 ## Página de prensa (`/prensa`)
 
-El archivo es `src/pages/Prensa.jsx`. Todo el contenido editable está en los bloques de datos al principio del archivo, antes de cualquier componente.
+El archivo es `src/pages/Prensa.jsx`. **Todo el contenido editable está en los objetos y arrays al principio del archivo**, antes de cualquier componente. No hay que tocar nada más abajo.
 
-### Agregar una aparición en medios
+---
 
-Abrí `src/pages/Prensa.jsx` y localizá el array `MEDIA`. Copiá cualquier bloque existente y pegalo al final del array, rellenando los campos:
+### Constantes editables (resumen rápido)
 
-```js
-{
-  outlet: 'Nombre del medio',        // Ej: 'El País'
-  type: 'Prensa digital',            // 'Radio' | 'Prensa digital' | 'TV'
-  logo: 'PAIS',                      // Texto corto que aparece como logo
-  logoColor: '#000000',              // Color del logo en hex
-  url: 'https://elpais.com/...',     // URL de la noticia — null si no hay enlace
-  quote: 'Título o extracto de la noticia tal como aparece en el medio.',
-  typeIcon: (...),                   // Copiar el typeIcon de otro ítem del mismo tipo
-},
-```
+| Constante | Qué controla |
+|---|---|
+| `IMPACT` | Las 4 métricas de impacto (visualizaciones, interacciones, seguidores, compartidos) |
+| `INSTAGRAM` | Handle, URL y stats de Instagram — los stats apuntan a `IMPACT` automáticamente |
+| `UPCOMING` | El bloque "Próximamente" — usar `show: false` para ocultarlo |
+| `MEDIA` | Las apariciones en medios con URL, fecha y cita |
 
-Si `url` tiene valor, la card entera se vuelve un enlace que abre en pestaña nueva. Si es `null`, la card no es clickeable.
+---
 
-### Editar el bloque "Próximamente"
-
-Localizá el objeto `UPCOMING` justo encima del array `MEDIA`:
-
-```js
-const UPCOMING = {
-  show: true,              // false para ocultar el bloque sin borrar el contenido
-  label: 'Próximamente',   // Etiqueta del badge
-  title: 'Las Tardes de Cristian Gálvez',
-  date: 'Jueves 4 de junio',
-  cta: '¡No te lo pierdas!',
-}
-```
-
-Cambiá `show: false` para ocultarlo cuando no haya nada próximo. Cuando llegue un nuevo evento, actualizá `title`, `date` y `cta`, y volvé a poner `show: true`.
-
-### Actualizar las métricas de impacto
-
-Localizá el objeto `IMPACT` al principio de `src/pages/Prensa.jsx`:
+### Actualizar métricas de impacto
 
 ```js
 const IMPACT = {
@@ -170,22 +147,44 @@ const IMPACT = {
 }
 ```
 
-Editá los valores y se actualizan automáticamente en todos los sitios donde aparecen: la sección IMPACTO, la card del hero y la card de Instagram.
+Un cambio aquí se propaga a todos los sitios donde aparecen: hero, sección IMPACTO y card de Instagram.
 
-### Actualizar los stats de Instagram
+> **¿Por qué no es automático?** Instagram deprecó su API pública en 2024. La Graph API actual requiere app aprobada por Meta y cuenta Business — no es viable para un sitio estático. Actualización manual.
 
-Localizá el objeto `INSTAGRAM` al principio de `src/pages/Prensa.jsx`:
+---
+
+### Agregar una aparición en medios
+
+Abrí el array `MEDIA` y copiá un bloque existente al final:
 
 ```js
-const INSTAGRAM = {
-  handle: '@elretodeclaudia',
-  url: 'https://www.instagram.com/elretodeclaudia',
-  views: '1,6M',       // ← actualizar aquí
-  followers: '4.874',  // ← actualizar aquí
+{
+  outlet: 'Nombre del medio',           // Ej: 'El País'
+  type: 'press',                        // 'radio' | 'press' | 'tv'
+  logo: 'PAIS',                         // Texto corto que aparece como logo
+  logoColor: '#000000',                 // Color del logo en hex
+  url: 'https://elpais.com/...',        // null si no hay enlace publicado aún
+  date: '01/06/2026',                   // Fecha de publicación DD/MM/AAAA
+  quote: 'Titular o extracto del artículo.',
+},
+```
+
+Si `url` tiene valor, la card entera es un enlace que abre en pestaña nueva. Si es `null`, la card es estática.
+
+---
+
+### Editar el bloque "Próximamente"
+
+```js
+const UPCOMING = {
+  show: true,                          // false para ocultar sin borrar
+  title: 'Las Tardes de Cristian Gálvez',
+  date: 'Jueves 4 de junio',
+  cta: '¡No te lo pierdas!',
 }
 ```
 
-**¿Por qué no es automático?** Instagram deprecó su API pública en 2024. La Instagram Graph API actual requiere una app aprobada por Meta y una cuenta Business — no es viable para un sitio estático sin backend. La actualización es manual.
+Cuando no haya evento próximo: `show: false`. Cuando llegue uno nuevo: actualizá `title`, `date`, `cta` y poné `show: true`.
 
 ---
 
