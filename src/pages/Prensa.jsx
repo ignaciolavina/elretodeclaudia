@@ -68,30 +68,52 @@ const UPCOMING = {
 // ── Agregar una aparición en medios: copiar un bloque y pegar al final ─────────
 // url: enlace a la noticia (null si no hay enlace disponible)
 // type: 'radio' | 'press' | 'tv'  →  se traduce automáticamente
+// date: fecha de publicación en formato DD/MM/AAAA
 const MEDIA = [
   {
-    outlet: 'Cadena SER',
-    type: 'radio',
-    logo: 'SER',
-    logoColor: '#E31B23',
-    url: null,
-    quote: '"El Reto de Claudia": una familia de San Lorenzo busca apoyo para investigar la enfermedad ultrarrara de su hija',
+    outlet: 'GN Diario',
+    type: 'press',
+    logo: 'GN',
+    logoColor: '#1a7a4a',
+    url: 'https://gndiario.com/el-reto-de-claudia-deficiencia-proteina-Dbifuncional-DBP',
+    date: '08/05/2026',
+    quote: 'El Reto de Claudia: deficiencia de proteína D-bifuncional (DBP)',
   },
   {
     outlet: 'Marca',
     type: 'press',
     logo: 'MARCA',
     logoColor: '#003366',
-    url: null,
+    url: 'https://www.marca.com/bienestar/salud/2026/05/15/reto-claudia.html',
+    date: '15/05/2026',
     quote: 'El reto de Claudia. Sus padres buscan financiación e investigadores para empezar la terapia génica',
   },
   {
-    outlet: 'GN Diario',
+    outlet: 'Cadena SER',
+    type: 'radio',
+    logo: 'SER',
+    logoColor: '#E31B23',
+    url: 'https://cadenaser.com/cmadrid/2026/05/19/el-reto-de-claudia-una-familia-de-san-lorenzo-busca-apoyo-para-investigar-la-enfermedad-ultrarrara-de-su-hija-ser-madrid-sierra/',
+    date: '19/05/2026',
+    quote: '"El Reto de Claudia": una familia de San Lorenzo busca apoyo para investigar la enfermedad ultrarrara de su hija',
+  },
+  {
+    outlet: 'La Voz de la Sierra',
     type: 'press',
-    logo: 'GN',
-    logoColor: '#1a7a4a',
-    url: null,
-    quote: '"Corre por Claudia": desafío solidario en Lorca para la inversión de una enfermedad ultrarrara',
+    logo: 'LVS',
+    logoColor: '#2d6a4f',
+    url: 'https://lavozdelasierra.es/2026/05/19/una-familia-de-san-lorenzo-busca-apoyo-para-investigar-la-enfermedad-ultrarrara-de-su-hija-claudia/',
+    date: '19/05/2026',
+    quote: 'Una familia de San Lorenzo busca apoyo para investigar la enfermedad ultrarrara de su hija Claudia',
+  },
+  {
+    outlet: 'El Confidencial Digital',
+    type: 'press',
+    logo: 'ECD',
+    logoColor: '#c0392b',
+    url: 'https://www.elconfidencialdigital.com/articulo/la-guinda/guinda-asociacion-reto-claudia-que-recaudando-fondos-investigar-enfermedad-ultrarrara/202605210500001021867.html',
+    date: '21/05/2026',
+    quote: 'La asociación El Reto de Claudia recauda fondos para investigar la enfermedad ultrarrara de Claudia',
   },
   {
     outlet: 'Onda Cero',
@@ -99,7 +121,8 @@ const MEDIA = [
     logo: 'ONDA',
     logoColor: '#0058a3',
     url: null,
-    quote: 'Entrevista en Sierra 106.6 FM para dar visibilidad a El Reto de Claudia y su misión',
+    date: '26/05/2026',
+    quote: 'Entrevista en "Más de Uno Sierra" para dar visibilidad a El Reto de Claudia y su misión',
   },
 ]
 
@@ -157,11 +180,17 @@ function MediaCard({ item, typeLabel, index }) {
         )}
       </div>
       <p className="text-gray-700 text-sm leading-relaxed flex-1">{item.quote}</p>
-      <div className="flex items-center gap-2 pt-2 border-t border-gray-100">
+      <div className="flex items-center gap-2 pt-2 border-t border-gray-100 flex-wrap">
         <span className="text-rose-400">{TYPE_ICONS[item.type]}</span>
         <span className="text-xs font-semibold text-gray-800">{item.outlet}</span>
         <span className="text-xs text-gray-400">·</span>
         <span className="text-xs text-gray-400">{typeLabel}</span>
+        {item.date && (
+          <>
+            <span className="text-xs text-gray-400">·</span>
+            <span className="text-xs text-gray-400">{item.date}</span>
+          </>
+        )}
       </div>
     </Tag>
   )
@@ -338,7 +367,7 @@ export default function Prensa() {
         <section className="py-20 bg-rose-50/50" aria-labelledby="medios-title">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <SectionLabel>{p.mediaLabel}</SectionLabel>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {MEDIA.map((item, i) => (
                 <MediaCard key={item.outlet} item={item} typeLabel={TYPE_LABELS[item.type]} index={i} />
               ))}
