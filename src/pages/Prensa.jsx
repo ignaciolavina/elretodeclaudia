@@ -3,154 +3,115 @@ import { Link } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import { useScrollAnimation } from '../hooks/useScrollAnimation'
+import { useLanguage } from '../context/LanguageContext'
 
-// ─── Data ────────────────────────────────────────────────────────────────────
+// ─── Static icon helpers (no text, no translation needed) ────────────────────
 
-const STATS = [
-  {
-    value: '1,6M',
-    label: 'visualizaciones',
-    icon: (
-      <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-      </svg>
-    ),
-  },
-  {
-    value: '38,7K',
-    label: 'interacciones',
-    icon: (
-      <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-      </svg>
-    ),
-  },
-  {
-    value: '4.874',
-    label: 'nuevos seguidores',
-    icon: (
-      <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
-      </svg>
-    ),
-  },
-  {
-    value: '227',
-    label: 'contenidos compartidos',
-    icon: (
-      <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
-      </svg>
-    ),
-  },
-]
+const EyeIcon = () => (
+  <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+  </svg>
+)
+const HeartIcon = () => (
+  <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+  </svg>
+)
+const UsersIcon = () => (
+  <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+  </svg>
+)
+const ShareIcon = () => (
+  <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+  </svg>
+)
+const MicIcon = () => (
+  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+  </svg>
+)
+const NewspaperIcon = () => (
+  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+  </svg>
+)
+const BulbIcon = () => (
+  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+  </svg>
+)
+const DnaIcon = () => (
+  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+  </svg>
+)
+const HeartGoalIcon = () => (
+  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+  </svg>
+)
+
+// ─── Editable content (non-translatable: proper nouns, numbers, urls) ─────────
 
 // ── Editar para cambiar el bloque "Próximamente" ──────────────────────────────
 // Cambiar show a false para ocultarlo sin borrar el contenido.
 const UPCOMING = {
   show: true,
-  label: 'Próximamente',
   title: 'Las Tardes de Cristian Gálvez',
-  date: 'Jueves 4 de junio',
-  cta: '¡No te lo pierdas!',
+  date: 'Jueves 4 de junio',         // fecha — proper noun, no se traduce
+  cta: '¡No te lo pierdas!',         // override manual si querés texto fijo
 }
 
 // ── Agregar una aparición en medios: copiar un bloque y pegar al final ─────────
 // url: enlace a la noticia (null si no hay enlace disponible)
-// type: 'Radio' | 'Prensa digital' | 'TV'
+// type: 'radio' | 'press' | 'tv'  →  se traduce automáticamente
 const MEDIA = [
   {
     outlet: 'Cadena SER',
-    type: 'Radio',
+    type: 'radio',
     logo: 'SER',
     logoColor: '#E31B23',
     url: null,
-    quote:
-      '"El Reto de Claudia": una familia de San Lorenzo busca apoyo para investigar la enfermedad ultrarrara de su hija',
-    typeIcon: (
-      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
-      </svg>
-    ),
+    quote: '"El Reto de Claudia": una familia de San Lorenzo busca apoyo para investigar la enfermedad ultrarrara de su hija',
   },
   {
     outlet: 'Marca',
-    type: 'Prensa digital',
+    type: 'press',
     logo: 'MARCA',
     logoColor: '#003366',
     url: null,
-    quote:
-      'El reto de Claudia. Sus padres buscan financiación e investigadores para empezar la terapia génica',
-    typeIcon: (
-      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
-      </svg>
-    ),
+    quote: 'El reto de Claudia. Sus padres buscan financiación e investigadores para empezar la terapia génica',
   },
   {
     outlet: 'GN Diario',
-    type: 'Prensa digital',
+    type: 'press',
     logo: 'GN',
     logoColor: '#1a7a4a',
     url: null,
-    quote:
-      '"Corre por Claudia": desafío solidario en Lorca para la inversión de una enfermedad ultrarrara',
-    typeIcon: (
-      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
-      </svg>
-    ),
+    quote: '"Corre por Claudia": desafío solidario en Lorca para la inversión de una enfermedad ultrarrara',
   },
   {
     outlet: 'Onda Cero',
-    type: 'Radio',
+    type: 'radio',
     logo: 'ONDA',
     logoColor: '#0058a3',
     url: null,
-    quote:
-      'Entrevista en Sierra 106.6 FM para dar visibilidad a El Reto de Claudia y su misión',
-    typeIcon: (
-      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
-      </svg>
-    ),
+    quote: 'Entrevista en Sierra 106.6 FM para dar visibilidad a El Reto de Claudia y su misión',
   },
 ]
 
-const GOALS = [
-  {
-    title: 'FINANCIAR',
-    subtitle: 'investigación científica',
-    icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-      </svg>
-    ),
-  },
-  {
-    title: 'IMPULSAR',
-    subtitle: 'terapias génicas para enfermedades ultrarraras',
-    icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
-      </svg>
-    ),
-  },
-  {
-    title: 'DAR ESPERANZA',
-    subtitle: 'a Claudia y a todas las familias que esperan un futuro',
-    icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-      </svg>
-    ),
-  },
-]
+const TYPE_ICONS = {
+  radio: <MicIcon />,
+  press: <NewspaperIcon />,
+  tv: <NewspaperIcon />,
+}
 
 // ─── Sub-components ───────────────────────────────────────────────────────────
 
-function StatCard({ stat, index }) {
+function StatCard({ value, label, icon, index }) {
   const { ref, isVisible } = useScrollAnimation()
   return (
     <div
@@ -161,15 +122,15 @@ function StatCard({ stat, index }) {
       style={{ transitionDelay: isVisible ? `${index * 80}ms` : '0ms' }}
     >
       <div className="w-14 h-14 rounded-2xl bg-rose-100 text-rose-500 flex items-center justify-center">
-        {stat.icon}
+        {icon}
       </div>
-      <p className="font-serif text-3xl font-bold text-gray-900">{stat.value}</p>
-      <p className="text-sm text-gray-500 text-center leading-snug">{stat.label}</p>
+      <p className="font-serif text-3xl font-bold text-gray-900">{value}</p>
+      <p className="text-sm text-gray-500 text-center leading-snug">{label}</p>
     </div>
   )
 }
 
-function MediaCard({ item, index }) {
+function MediaCard({ item, typeLabel, index }) {
   const { ref, isVisible } = useScrollAnimation()
   const Tag = item.url ? 'a' : 'article'
   const linkProps = item.url
@@ -185,7 +146,6 @@ function MediaCard({ item, index }) {
       } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
       style={{ transitionDelay: isVisible ? `${index * 100}ms` : '0ms' }}
     >
-      {/* Logo + external link icon */}
       <div className="h-12 flex items-center justify-between">
         <span className="text-2xl font-black tracking-tight" style={{ color: item.logoColor }}>
           {item.logo}
@@ -196,22 +156,18 @@ function MediaCard({ item, index }) {
           </svg>
         )}
       </div>
-
-      {/* Quote */}
       <p className="text-gray-700 text-sm leading-relaxed flex-1">{item.quote}</p>
-
-      {/* Outlet + type */}
       <div className="flex items-center gap-2 pt-2 border-t border-gray-100">
-        <span className="text-rose-400">{item.typeIcon}</span>
+        <span className="text-rose-400">{TYPE_ICONS[item.type]}</span>
         <span className="text-xs font-semibold text-gray-800">{item.outlet}</span>
         <span className="text-xs text-gray-400">·</span>
-        <span className="text-xs text-gray-400">{item.type}</span>
+        <span className="text-xs text-gray-400">{typeLabel}</span>
       </div>
     </Tag>
   )
 }
 
-function GoalCard({ goal, index }) {
+function GoalCard({ title, subtitle, icon, index }) {
   const { ref, isVisible } = useScrollAnimation()
   return (
     <div
@@ -222,19 +178,33 @@ function GoalCard({ goal, index }) {
       style={{ transitionDelay: isVisible ? `${index * 100}ms` : '0ms' }}
     >
       <div className="w-16 h-16 rounded-2xl bg-rose-500 text-white flex items-center justify-center shadow-sm">
-        {goal.icon}
+        {icon}
       </div>
       <div>
-        <p className="font-bold text-rose-600 text-sm tracking-widest uppercase mb-1">{goal.title}</p>
-        <p className="text-gray-600 text-sm leading-relaxed">{goal.subtitle}</p>
+        <p className="font-bold text-rose-600 text-sm tracking-widest uppercase mb-1">{title}</p>
+        <p className="text-gray-600 text-sm leading-relaxed">{subtitle}</p>
       </div>
+    </div>
+  )
+}
+
+function SectionLabel({ children }) {
+  const { ref, isVisible } = useScrollAnimation()
+  return (
+    <div
+      ref={ref}
+      className={`text-center mb-12 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
+    >
+      <span className="inline-block bg-rose-100 text-rose-600 text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full">
+        {children}
+      </span>
     </div>
   )
 }
 
 // ─── Hero ─────────────────────────────────────────────────────────────────────
 
-function Hero() {
+function Hero({ p }) {
   const [loaded, setLoaded] = useState(false)
   useEffect(() => {
     const t = setTimeout(() => setLoaded(true), 80)
@@ -244,74 +214,63 @@ function Hero() {
   const fade = (delay) =>
     `transition-all duration-700 ${delay} ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`
 
+  const STATS_HERO = [
+    { value: '1,6M', label: p.statViews },
+    { value: '38,7K', label: p.statInteractions },
+    { value: '4.874', label: p.statFollowers },
+    { value: '227', label: p.statShared },
+  ]
+
   return (
-    <section
-      className="pt-28 pb-20 bg-gradient-to-br from-rose-50 via-white to-pink-50 relative overflow-hidden"
-      aria-label="Sala de prensa"
-    >
-      {/* Decorative blobs */}
+    <section className="pt-28 pb-20 bg-gradient-to-br from-rose-50 via-white to-pink-50 relative overflow-hidden" aria-label={p.badge}>
       <div className="absolute -top-32 -right-32 w-96 h-96 bg-rose-200/30 rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
       <div className="absolute -bottom-24 -left-24 w-80 h-80 bg-pink-200/20 rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
-          {/* Left */}
           <div>
             <div className={`inline-flex items-center gap-2 bg-rose-100 text-rose-600 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-6 ${fade('delay-100')}`}>
               <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                 <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0z" />
               </svg>
-              Sala de prensa
+              {p.badge}
             </div>
 
             <h1 className={`font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-4 ${fade('delay-150')}`}>
-              El Reto de{' '}
-              <span className="text-rose-500">Claudia</span>
+              El Reto de <span className="text-rose-500">Claudia</span>
             </h1>
 
             <p className={`text-rose-500 font-semibold text-lg mb-6 ${fade('delay-200')}`}>
-              Más investigación, más esperanza 🤍
+              {p.tagline}
             </p>
 
             <p className={`text-gray-600 text-lg leading-relaxed mb-8 ${fade('delay-300')}`}>
-              Claudia tiene 2 años y una enfermedad ultrarrara sin diagnóstico ni tratamiento. Sus padres han creado{' '}
-              <strong className="text-rose-500">El Reto de Claudia</strong>{' '}
-              para financiar la investigación que puede cambiar su vida y la de muchos niños.
+              {p.heroDesc}
             </p>
 
             <div className={`flex flex-wrap gap-3 ${fade('delay-[400ms]')}`}>
-              <Link
-                to="/donar"
-                className="inline-flex items-center gap-2 bg-rose-500 hover:bg-rose-600 text-white font-semibold px-6 py-3 rounded-xl transition-colors shadow-sm"
-              >
-                Donar ahora ❤️
+              <Link to="/donar" className="inline-flex items-center gap-2 bg-rose-500 hover:bg-rose-600 text-white font-semibold px-6 py-3 rounded-xl transition-colors shadow-sm">
+                {p.ctaDonate}
               </Link>
-              <a
-                href="mailto:contacto@elretodeclaudia.org"
-                className="inline-flex items-center gap-2 border border-rose-200 text-rose-600 hover:bg-rose-50 font-semibold px-6 py-3 rounded-xl transition-colors"
-              >
-                Contacto de prensa
+              <a href="mailto:contacto@elretodeclaudia.org" className="inline-flex items-center gap-2 border border-rose-200 text-rose-600 hover:bg-rose-50 font-semibold px-6 py-3 rounded-xl transition-colors">
+                {p.ctaPress}
               </a>
             </div>
           </div>
 
-          {/* Right — callout */}
           <div className={`${fade('delay-500')}`}>
             <div className="bg-white rounded-3xl p-8 shadow-lg border border-rose-100">
               <div className="flex items-start gap-4 mb-6">
                 <div className="w-12 h-12 bg-rose-100 rounded-2xl flex items-center justify-center flex-shrink-0">
-                  <svg className="w-6 h-6 text-rose-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
+                  <UsersIcon />
                 </div>
                 <p className="text-gray-700 text-lg font-serif font-semibold leading-snug">
-                  Una comunidad creciente que cree en la investigación y en la esperanza.
+                  {p.community}
                 </p>
               </div>
-
               <div className="grid grid-cols-2 gap-4">
-                {STATS.slice(0, 4).map((s) => (
+                {STATS_HERO.map((s) => (
                   <div key={s.label} className="bg-rose-50 rounded-2xl p-4 text-center">
                     <p className="font-serif text-2xl font-bold text-rose-600">{s.value}</p>
                     <p className="text-xs text-gray-500 mt-0.5">{s.label}</p>
@@ -320,6 +279,7 @@ function Hero() {
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </section>
@@ -328,40 +288,47 @@ function Hero() {
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
-function SectionLabel({ children }) {
-  const { ref, isVisible } = useScrollAnimation()
-  return (
-    <div
-      ref={ref}
-      className={`text-center mb-12 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
-    >
-      <span className="inline-block bg-rose-100 text-rose-600 text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full mb-4">
-        {children}
-      </span>
-    </div>
-  )
-}
-
 export default function Prensa() {
+  const { t } = useLanguage()
+  const p = t.prensa
+
   const { ref: goalsTitleRef, isVisible: goalsTitleVisible } = useScrollAnimation()
   const { ref: upcomingRef,   isVisible: upcomingVisible   } = useScrollAnimation()
   const { ref: ctaRef,        isVisible: ctaVisible        } = useScrollAnimation()
+
+  const TYPE_LABELS = {
+    radio: p.typeRadio,
+    press: p.typePress,
+    tv:    p.typeTV,
+  }
+
+  const STATS = [
+    { value: '1,6M',  label: p.statViews,        icon: <EyeIcon /> },
+    { value: '38,7K', label: p.statInteractions,  icon: <HeartIcon /> },
+    { value: '4.874', label: p.statFollowers,     icon: <UsersIcon /> },
+    { value: '227',   label: p.statShared,        icon: <ShareIcon /> },
+  ]
+
+  const GOALS = [
+    { title: p.goal1Title, subtitle: p.goal1Sub, icon: <BulbIcon /> },
+    { title: p.goal2Title, subtitle: p.goal2Sub, icon: <DnaIcon /> },
+    { title: p.goal3Title, subtitle: p.goal3Sub, icon: <HeartGoalIcon /> },
+  ]
 
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
 
       <main>
-        {/* ── Hero ── */}
-        <Hero />
+        <Hero p={p} />
 
         {/* ── Impacto ── */}
         <section className="py-20 bg-white" aria-labelledby="impacto-title">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <SectionLabel>Impacto</SectionLabel>
+            <SectionLabel>{p.impactLabel}</SectionLabel>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-              {STATS.map((stat, i) => (
-                <StatCard key={stat.label} stat={stat} index={i} />
+              {STATS.map((s, i) => (
+                <StatCard key={s.label} value={s.value} label={s.label} icon={s.icon} index={i} />
               ))}
             </div>
           </div>
@@ -370,50 +337,43 @@ export default function Prensa() {
         {/* ── En los medios ── */}
         <section className="py-20 bg-rose-50/50" aria-labelledby="medios-title">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <SectionLabel>En los medios</SectionLabel>
+            <SectionLabel>{p.mediaLabel}</SectionLabel>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
               {MEDIA.map((item, i) => (
-                <MediaCard key={item.outlet} item={item} index={i} />
+                <MediaCard key={item.outlet} item={item} typeLabel={TYPE_LABELS[item.type]} index={i} />
               ))}
             </div>
           </div>
         </section>
 
         {/* ── Nuestro objetivo + Próximamente ── */}
-        <section className="py-20 bg-white" aria-labelledby="objetivo-title">
+        <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
 
-              {/* Goals — 2/3 */}
               <div className="lg:col-span-2">
                 <div
                   ref={goalsTitleRef}
                   className={`mb-10 transition-all duration-700 ${goalsTitleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
                 >
                   <span className="inline-block bg-rose-100 text-rose-600 text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full mb-4">
-                    Nuestro objetivo
+                    {p.goalsLabel}
                   </span>
-                  <h2 id="objetivo-title" className="font-serif text-3xl font-bold text-gray-900">
-                    Tres pilares que guían nuestra misión
-                  </h2>
+                  <h2 className="font-serif text-3xl font-bold text-gray-900">{p.goalsTitle}</h2>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-8">
-                  {GOALS.map((goal, i) => (
-                    <GoalCard key={goal.title} goal={goal} index={i} />
+                  {GOALS.map((g, i) => (
+                    <GoalCard key={g.title} title={g.title} subtitle={g.subtitle} icon={g.icon} index={i} />
                   ))}
                 </div>
 
-                <div
-                  className={`bg-gradient-to-r from-rose-500 to-pink-500 rounded-2xl px-6 py-4 transition-all duration-700 delay-300 ${goalsTitleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
-                >
-                  <p className="text-white text-sm font-medium text-center">
-                    🤍 Cada paso cuenta. Cada donación, cada difusión, cada gesto suma vida.
-                  </p>
+                <div className={`bg-gradient-to-r from-rose-500 to-pink-500 rounded-2xl px-6 py-4 transition-all duration-700 delay-300 ${goalsTitleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+                  <p className="text-white text-sm font-medium text-center">{p.goalsMotto}</p>
                 </div>
               </div>
 
-              {/* Próximamente — 1/3 — editar el objeto UPCOMING arriba del todo */}
+              {/* Próximamente — editar el objeto UPCOMING arriba del todo */}
               {UPCOMING.show && (
                 <div
                   ref={upcomingRef}
@@ -422,7 +382,7 @@ export default function Prensa() {
                   <div className="bg-rose-500 text-white rounded-3xl p-8 h-full flex flex-col justify-between shadow-lg">
                     <div>
                       <span className="inline-block bg-white/20 text-white text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-6">
-                        {UPCOMING.label}
+                        {p.upcomingLabel}
                       </span>
                       <h3 className="font-serif text-3xl font-bold leading-tight mb-4">
                         {UPCOMING.title}
@@ -434,9 +394,7 @@ export default function Prensa() {
                         {UPCOMING.date}
                       </div>
                     </div>
-                    <p className="font-semibold text-white/90 text-lg mt-4">
-                      {UPCOMING.cta}
-                    </p>
+                    <p className="font-semibold text-white/90 text-lg mt-4">{UPCOMING.cta}</p>
                   </div>
                 </div>
               )}
@@ -446,11 +404,10 @@ export default function Prensa() {
         </section>
 
         {/* ── Síguenos + Cómo ayudar ── */}
-        <section className="py-20 bg-rose-50/50" aria-label="Síguenos y colabora">
+        <section className="py-20 bg-rose-50/50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 
-              {/* Social */}
               <div
                 ref={ctaRef}
                 className={`bg-white rounded-3xl p-8 shadow-sm border border-rose-100 flex flex-col gap-6 transition-all duration-700 ${ctaVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
@@ -462,35 +419,26 @@ export default function Prensa() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="font-serif text-xl font-bold text-gray-900">Síguenos y colabora</h3>
+                    <h3 className="font-serif text-xl font-bold text-gray-900">{p.socialTitle}</h3>
                     <p className="text-rose-500 font-semibold">@elretodeclaudia</p>
                   </div>
                 </div>
-
                 <div className="grid grid-cols-2 gap-4">
                   <div className="bg-rose-50 rounded-2xl p-4 text-center">
                     <p className="font-serif text-2xl font-bold text-rose-600">1,6M</p>
-                    <p className="text-xs text-gray-500 mt-0.5">visualizaciones</p>
+                    <p className="text-xs text-gray-500 mt-0.5">{p.socialViews}</p>
                   </div>
                   <div className="bg-rose-50 rounded-2xl p-4 text-center">
                     <p className="font-serif text-2xl font-bold text-rose-600">4.874</p>
-                    <p className="text-xs text-gray-500 mt-0.5">seguidores</p>
+                    <p className="text-xs text-gray-500 mt-0.5">{p.socialFollowers}</p>
                   </div>
                 </div>
               </div>
 
-              {/* How to help */}
-              <div
-                className={`bg-white rounded-3xl p-8 shadow-sm border border-rose-100 transition-all duration-700 delay-150 ${ctaVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-              >
-                <h3 className="font-serif text-xl font-bold text-gray-900 mb-6">¿Cómo puedes ayudar?</h3>
+              <div className={`bg-white rounded-3xl p-8 shadow-sm border border-rose-100 transition-all duration-700 delay-150 ${ctaVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+                <h3 className="font-serif text-xl font-bold text-gray-900 mb-6">{p.helpTitle}</h3>
                 <ul className="space-y-4">
-                  {[
-                    'Síguenos y comparte',
-                    'Difunde nuestro mensaje',
-                    'Colabora con tu donación',
-                    'Cree en la investigación',
-                  ].map((item) => (
+                  {p.helpItems.map((item) => (
                     <li key={item} className="flex items-center gap-3">
                       <span className="w-7 h-7 bg-rose-100 rounded-full flex items-center justify-center flex-shrink-0">
                         <svg className="w-4 h-4 text-rose-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -501,21 +449,14 @@ export default function Prensa() {
                     </li>
                   ))}
                 </ul>
-
-                <Link
-                  to="/donar"
-                  className="mt-8 w-full flex items-center justify-center gap-2 bg-rose-500 hover:bg-rose-600 text-white font-semibold py-3.5 rounded-xl transition-colors shadow-sm"
-                >
-                  Donar ahora ❤️
+                <Link to="/donar" className="mt-8 w-full flex items-center justify-center gap-2 bg-rose-500 hover:bg-rose-600 text-white font-semibold py-3.5 rounded-xl transition-colors shadow-sm">
+                  {p.helpCta}
                 </Link>
               </div>
 
             </div>
 
-            {/* Domain footer */}
-            <p className="text-center text-sm text-gray-400 mt-12">
-              www.elretodeclaudia.org
-            </p>
+            <p className="text-center text-sm text-gray-400 mt-12">www.elretodeclaudia.org</p>
           </div>
         </section>
       </main>

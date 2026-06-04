@@ -58,6 +58,11 @@ export default function Footer() {
                 </li>
               ))}
               <li>
+                <Link to="/prensa" className="text-gray-300 hover:text-white text-sm transition-colors">
+                  {t.nav.prensa}
+                </Link>
+              </li>
+              <li>
                 <Link to="/donar" className="text-brand-300 hover:text-white text-sm font-semibold transition-colors">
                   Donar ❤️
                 </Link>
