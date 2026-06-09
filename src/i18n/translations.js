@@ -8,6 +8,7 @@ const translations = {
       ayudar: 'Cómo ayudar',
       contacto: 'Contacto',
       prensa: 'Prensa',
+      eventos: 'Eventos',
       donar: 'Dona',
     },
 
@@ -355,6 +356,21 @@ const translations = {
       },
     },
 
+    eventos: {
+      sectionLabel: 'Calendario',
+      title: 'Eventos solidarios',
+      subtitle: 'Carreras, encuentros y actividades para apoyar la investigación y dar visibilidad a la DBP.',
+      upcomingTitle: 'Próximos eventos',
+      upcomingBadge: 'Próximo',
+      upcomingEmpty: 'No hay eventos próximos por el momento. ¡Vuelve pronto!',
+      pastTitle: 'Eventos pasados',
+      registerCta: 'Inscribirme',
+      infoCta: 'Más información',
+      homeTitle: 'Próximo evento',
+      homeSubtitle: 'Únete a nuestras actividades solidarias y corre con nosotros por Claudia.',
+      homeCta: 'Ver todos los eventos',
+    },
+
     prensa: {
       badge: 'Sala de prensa',
       tagline: 'Más investigación, más esperanza 🤍',
@@ -406,6 +422,7 @@ const translations = {
       ayudar: 'How to help',
       contacto: 'Contact',
       prensa: 'Press',
+      eventos: 'Events',
       donar: 'Donate',
     },
 
@@ -752,6 +769,21 @@ const translations = {
           },
         ],
       },
+    },
+
+    eventos: {
+      sectionLabel: 'Calendar',
+      title: 'Charity events',
+      subtitle: 'Races, meetups and activities to support research and raise awareness of DBP.',
+      upcomingTitle: 'Upcoming events',
+      upcomingBadge: 'Upcoming',
+      upcomingEmpty: 'No upcoming events at the moment. Check back soon!',
+      pastTitle: 'Past events',
+      registerCta: 'Sign Up',
+      infoCta: 'More information',
+      homeTitle: 'Next event',
+      homeSubtitle: 'Join our charity activities and run with us for Claudia.',
+      homeCta: 'See all events',
     },
 
     prensa: {
