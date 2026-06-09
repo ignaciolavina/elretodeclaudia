@@ -24,7 +24,7 @@ export default function Hero() {
   return (
     <section
       id="inicio"
-      className="min-h-screen flex items-center bg-[#f3f4f6]"
+      className="min-h-screen flex items-center bg-brand-50"
       aria-label="Sección principal"
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-12 w-full py-24 md:py-32">
