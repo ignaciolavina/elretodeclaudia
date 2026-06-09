@@ -71,6 +71,22 @@ export default function Navbar({ donatePage = false }) {
                 </a>
               </li>
             ))}
+            <li>
+              <Link
+                to="/prensa"
+                className="text-sm font-medium text-gray-600 hover:text-warm-500 transition-colors duration-200"
+              >
+                {t.nav.prensa}
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/eventos"
+                className="text-sm font-medium text-gray-600 hover:text-warm-500 transition-colors duration-200"
+              >
+                {t.nav.eventos}
+              </Link>
+            </li>
             {/* Toggle idioma */}
             <li>
               <button
@@ -132,6 +148,24 @@ export default function Navbar({ donatePage = false }) {
                 </a>
               </li>
             ))}
+            <li>
+              <Link
+                to="/prensa"
+                onClick={() => setMenuOpen(false)}
+                className="block px-4 py-3 text-gray-700 hover:text-brand-700 hover:bg-brand-50 rounded-xl font-medium transition-colors"
+              >
+                {t.nav.prensa}
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/eventos"
+                onClick={() => setMenuOpen(false)}
+                className="block px-4 py-3 text-gray-700 hover:text-brand-700 hover:bg-brand-50 rounded-xl font-medium transition-colors"
+              >
+                {t.nav.eventos}
+              </Link>
+            </li>
             <li className="flex items-center gap-2 px-2 pt-2">
               <button
                 onClick={toggleLang}

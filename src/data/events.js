@@ -1,0 +1,92 @@
+export const EVENTS = [
+  {
+    slug: 'carrera-solidaria-san-lorenzo-2026',
+    title: {
+      es: 'Carrera Solidaria en San Lorenzo de El Escorial',
+      en: 'Charity Race in San Lorenzo de El Escorial',
+    },
+    date: '2026-06-27',
+    location: 'San Lorenzo de El Escorial, Madrid',
+    description: {
+      es: 'Únete a la primera carrera solidaria de El Reto de Claudia. Un evento para correr juntos por Claudia y por todos los niños que padecen enfermedades peroxisomales. Todas las distancias son bienvenidas: caminar, trotar o correr. Lo importante es estar.',
+      en: 'Join the first charity race of El Reto de Claudia. An event to run together for Claudia and all children with peroxisomal diseases. All paces welcome: walk, jog or run. What matters is showing up.',
+    },
+    image: '/images/events/carrera-solidaria-san-lorenzo-2026.webp',
+    status: 'upcoming',
+    registerHref: 'https://www.correporclaudia.com/inscripcion-carrera-popular',
+    infoHref: 'https://www.correporclaudia.com/',
+    organizers: [],
+  },
+  {
+    slug: 'fiestas-del-carmen-2026',
+    title: {
+      es: 'Fiestas del Carmen — Claudia como causa solidaria',
+      en: 'Fiestas del Carmen — Claudia as a Charity Cause',
+    },
+    date: '2026-07-12',
+    location: 'San Lorenzo de El Escorial, Madrid',
+    description: {
+      es: 'Las Fiestas del Carmen de este año se visten de solidaridad. Durante varios días, múltiples actividades — música, juegos, gastronomía y mucho más — estarán dedicadas a Claudia y a la investigación de enfermedades peroxisomales. Un pueblo entero unido por una causa.',
+      en: 'This year\'s Fiestas del Carmen are dressed in solidarity. Over several days, multiple activities — music, games, food and more — will be dedicated to Claudia and peroxisomal disease research. A whole town united for one cause.',
+    },
+    image: '/images/events/fiestas-del-carmen-2026.webp',
+    status: 'upcoming',
+    registerHref: '#',
+    infoHref: '#',
+    organizers: [],
+  },
+  {
+    slug: 'hyrox-hybrid-race-2026',
+    title: {
+      es: 'HYROX / Hybrid Race solidaria',
+      en: 'HYROX / Hybrid Race for Claudia',
+    },
+    date: '2026-08-09',
+    location: 'Por confirmar',
+    description: {
+      es: 'Una prueba de resistencia y fuerza funcional en formato HYROX donde cada participante compite por Claudia. Ocho estaciones de fitness combinadas con carrera, en una experiencia única que pone a prueba el cuerpo y el corazón a la vez.',
+      en: 'A HYROX-format endurance and functional strength race where every participant competes for Claudia. Eight fitness stations combined with running, in a unique experience that tests both body and heart.',
+    },
+    image: '/images/events/hyrox-hybrid-race-solidaria-2026.webp',
+    status: 'upcoming',
+    registerHref: '#',
+    infoHref: '#',
+    organizers: [],
+  },
+  {
+    slug: 'spain-global-rare-diseases-summit-2026',
+    title: {
+      es: 'Spain Global Rare Diseases Summit',
+      en: 'Spain Global Rare Diseases Summit',
+    },
+    date: '2026-05-28',
+    location: 'Valencia, España',
+    description: {
+      es: 'Estuvimos en Valencia en el Spain Global Rare Diseases Summit buscando respuestas, apoyo e investigación para Claudia. Detrás de cada enfermedad rara hay una historia de lucha, amor y esperanza — y seguimos caminando por darle el mejor futuro posible.',
+      en: 'We attended the Spain Global Rare Diseases Summit in Valencia searching for answers, support and research for Claudia. Behind every rare disease is a story of struggle, love and hope — and we keep walking to give her the best possible future.',
+    },
+    image: '/images/events/spain-global-rare-diseases-summit-2026.webp',
+    status: 'past',
+    registerHref: null,
+    infoHref: null,
+    organizers: [],
+  },
+  {
+    slug: 'carrera-escolar-cp-jose-robles-2026',
+    title: {
+      es: 'Carrera solidaria escolar — C.P. José Robles',
+      en: 'School Charity Race — C.P. José Robles',
+    },
+    date: '2026-05-26',
+    location: 'C.P. José Robles',
+    description: {
+      es: 'El patio del C.P. José Robles se transformó en una pista de atletismo solidaria. Desde infantil hasta los más mayores, todos corrieron con pancartas de apoyo y un donativo mínimo de 1 euro por dorsal, demostrando que no hay distancia demasiado larga cuando se corre con el corazón.',
+      en: 'The C.P. José Robles schoolyard became a solidarity athletics track. From the youngest pupils to the oldest, everyone ran holding handmade banners of support and donated a minimum of 1 euro per bib — proving no distance is too long when you run with heart.',
+    },
+    image: '/images/events/carrera-escolar-cp-jose-robles-2026.webp',
+    status: 'past',
+    registerHref: null,
+    infoHref: null,
+    organizers: [],
+  },
+]
