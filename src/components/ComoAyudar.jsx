@@ -12,8 +12,8 @@ function scrollTo(href) {
 const CARD_STYLES = [
   { badge: 'bg-brand-100 text-brand-700',   iconBg: 'bg-brand-100 text-brand-600',   border: 'border-brand-200',   cta: 'bg-brand-700 hover:bg-brand-800 text-white' },
   { badge: 'bg-warm-100 text-warm-600',     iconBg: 'bg-warm-100 text-warm-500',     border: 'border-warm-200',    cta: 'bg-warm-400 hover:bg-warm-500 text-white'   },
-  { badge: 'bg-indigo-100 text-indigo-700', iconBg: 'bg-indigo-100 text-indigo-600', border: 'border-indigo-200',  cta: '' },
-  { badge: 'bg-rose-100 text-rose-700',     iconBg: 'bg-rose-100 text-rose-500',     border: 'border-rose-200',    cta: 'bg-rose-500 hover:bg-rose-600 text-white'   },
+  { badge: 'bg-brand-50 text-brand-900',    iconBg: 'bg-brand-50 text-brand-700',    border: 'border-brand-100',   cta: '' },
+  { badge: 'bg-warm-200 text-brand-800',    iconBg: 'bg-warm-200 text-warm-600',     border: 'border-warm-300',    cta: 'bg-warm-500 hover:bg-warm-600 text-white'   },
 ]
 
 const ICONS = [

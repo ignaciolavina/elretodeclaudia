@@ -47,11 +47,12 @@ export default function Navbar({ donatePage = false }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logotipo */}
-          <Link
-            to="/"
-            className="font-serif font-bold text-xl tracking-tight text-brand-800 hover:text-brand-600 transition-colors duration-300"
-          >
-            {t.nav.siteName}
+          <Link to="/" className="flex items-center">
+            <img
+              src="/images/logo_elretodeclaudia@2x.png"
+              alt="El Reto de Claudia"
+              className="h-14 w-auto"
+            />
           </Link>
 
           {/* Navegación desktop */}
