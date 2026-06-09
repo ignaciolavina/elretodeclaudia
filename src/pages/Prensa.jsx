@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import { useScrollAnimation } from '../hooks/useScrollAnimation'
 import { useLanguage } from '../context/LanguageContext'
+import prensaData from '../data/prensa.json'
 
 // ─── Static icon helpers (no text, no translation needed) ────────────────────
 
@@ -54,96 +55,17 @@ const HeartGoalIcon = () => (
   </svg>
 )
 
-// ─── Editable content (non-translatable: proper nouns, numbers, urls) ─────────
+// ─── Editable content ─────────────────────────────────────────────────────────
+// El contenido editable (métricas, próximamente, apariciones en medios) vive en
+// src/data/prensa.json — único punto de edición, también escrito por el bot de Telegram.
+const { impact: IMPACT, upcoming: UPCOMING, media: MEDIA } = prensaData
 
-// ── Actualizar métricas de impacto manualmente ────────────────────────────────
-// Estas cifras aparecen en la sección IMPACTO y en la card del hero.
-const IMPACT = {
-  views:        '1,6M',
-  interactions: '38,7K',
-  followers:    '4.874',
-  shared:       '227',
-}
-
-// ── Actualizar métricas de Instagram manualmente ──────────────────────────────
-// La API de Instagram no permite leer stats públicos sin una app aprobada por Meta.
-// Actualizar estos valores a mano cuando cambien.
+// Instagram comparte cifras con IMPACT (single source of truth).
 const INSTAGRAM = {
-  handle: '@elretodeclaudia',
-  url: 'https://www.instagram.com/elretodeclaudia',
+  ...prensaData.instagram,
   views: IMPACT.views,
   followers: IMPACT.followers,
 }
-
-// ── Editar para cambiar el bloque "Próximamente" ──────────────────────────────
-// Cambiar show a false para ocultarlo sin borrar el contenido.
-const UPCOMING = {
-  show: true,
-  title: 'Las Tardes de Cristian Gálvez',
-  date: 'Jueves 4 de junio',         // fecha — proper noun, no se traduce
-  cta: '¡No te lo pierdas!',         // override manual si querés texto fijo
-}
-
-// ── Agregar una aparición en medios: copiar un bloque y pegar al final ─────────
-// url: enlace a la noticia (null si no hay enlace disponible)
-// type: 'radio' | 'press' | 'tv'  →  se traduce automáticamente
-// date: fecha de publicación en formato DD/MM/AAAA
-const MEDIA = [
-  {
-    outlet: 'GN Diario',
-    type: 'press',
-    logo: 'GN',
-    logoColor: '#1a7a4a',
-    url: 'https://gndiario.com/el-reto-de-claudia-deficiencia-proteina-Dbifuncional-DBP',
-    date: '08/05/2026',
-    quote: 'El Reto de Claudia: deficiencia de proteína D-bifuncional (DBP)',
-  },
-  {
-    outlet: 'Marca',
-    type: 'press',
-    logo: 'MARCA',
-    logoColor: '#003366',
-    url: 'https://www.marca.com/bienestar/salud/2026/05/15/reto-claudia.html',
-    date: '15/05/2026',
-    quote: 'El reto de Claudia. Sus padres buscan financiación e investigadores para empezar la terapia génica',
-  },
-  {
-    outlet: 'Cadena SER',
-    type: 'radio',
-    logo: 'SER',
-    logoColor: '#E31B23',
-    url: 'https://cadenaser.com/cmadrid/2026/05/19/el-reto-de-claudia-una-familia-de-san-lorenzo-busca-apoyo-para-investigar-la-enfermedad-ultrarrara-de-su-hija-ser-madrid-sierra/',
-    date: '19/05/2026',
-    quote: '"El Reto de Claudia": una familia de San Lorenzo busca apoyo para investigar la enfermedad ultrarrara de su hija',
-  },
-  {
-    outlet: 'La Voz de la Sierra',
-    type: 'press',
-    logo: 'LVS',
-    logoColor: '#2d6a4f',
-    url: 'https://lavozdelasierra.es/2026/05/19/una-familia-de-san-lorenzo-busca-apoyo-para-investigar-la-enfermedad-ultrarrara-de-su-hija-claudia/',
-    date: '19/05/2026',
-    quote: 'Una familia de San Lorenzo busca apoyo para investigar la enfermedad ultrarrara de su hija Claudia',
-  },
-  {
-    outlet: 'El Confidencial Digital',
-    type: 'press',
-    logo: 'ECD',
-    logoColor: '#c0392b',
-    url: 'https://www.elconfidencialdigital.com/articulo/la-guinda/guinda-asociacion-reto-claudia-que-recaudando-fondos-investigar-enfermedad-ultrarrara/202605210500001021867.html',
-    date: '21/05/2026',
-    quote: 'La asociación El Reto de Claudia recauda fondos para investigar la enfermedad ultrarrara de Claudia',
-  },
-  {
-    outlet: 'Onda Cero',
-    type: 'radio',
-    logo: 'ONDA',
-    logoColor: '#0058a3',
-    url: null,
-    date: '26/05/2026',
-    quote: 'Entrevista en "Más de Uno Sierra" para dar visibilidad a El Reto de Claudia y su misión',
-  },
-]
 
 const TYPE_ICONS = {
   radio: <MicIcon />,
@@ -189,9 +111,18 @@ function MediaCard({ item, typeLabel, index }) {
       style={{ transitionDelay: isVisible ? `${index * 100}ms` : '0ms' }}
     >
       <div className="h-12 flex items-center justify-between">
-        <span className="text-2xl font-black tracking-tight" style={{ color: item.logoColor }}>
-          {item.logo}
-        </span>
+        {item.logoImage ? (
+          <img
+            src={item.logoImage}
+            alt={item.outlet}
+            className="h-10 max-w-[150px] object-contain"
+            loading="lazy"
+          />
+        ) : (
+          <span className="text-2xl font-black tracking-tight" style={{ color: item.logoColor }}>
+            {item.logo}
+          </span>
+        )}
         {item.url && (
           <svg className="w-4 h-4 text-gray-300 group-hover:text-brand-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />

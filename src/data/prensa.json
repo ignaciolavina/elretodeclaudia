@@ -1,0 +1,74 @@
+{
+  "impact": {
+    "views": "1,6M",
+    "interactions": "38,7K",
+    "followers": "4.874",
+    "shared": "227"
+  },
+  "instagram": {
+    "handle": "@elretodeclaudia",
+    "url": "https://www.instagram.com/elretodeclaudia"
+  },
+  "upcoming": {
+    "show": true,
+    "title": "Las Tardes de Cristian Gálvez",
+    "date": "Jueves 4 de junio",
+    "cta": "¡No te lo pierdas!"
+  },
+  "media": [
+    {
+      "outlet": "GN Diario",
+      "type": "press",
+      "logo": "GN",
+      "logoColor": "#1a7a4a",
+      "url": "https://gndiario.com/el-reto-de-claudia-deficiencia-proteina-Dbifuncional-DBP",
+      "date": "08/05/2026",
+      "quote": "El Reto de Claudia: deficiencia de proteína D-bifuncional (DBP)"
+    },
+    {
+      "outlet": "Marca",
+      "type": "press",
+      "logo": "MARCA",
+      "logoColor": "#003366",
+      "url": "https://www.marca.com/bienestar/salud/2026/05/15/reto-claudia.html",
+      "date": "15/05/2026",
+      "quote": "El reto de Claudia. Sus padres buscan financiación e investigadores para empezar la terapia génica"
+    },
+    {
+      "outlet": "Cadena SER",
+      "type": "radio",
+      "logo": "SER",
+      "logoColor": "#E31B23",
+      "url": "https://cadenaser.com/cmadrid/2026/05/19/el-reto-de-claudia-una-familia-de-san-lorenzo-busca-apoyo-para-investigar-la-enfermedad-ultrarrara-de-su-hija-ser-madrid-sierra/",
+      "date": "19/05/2026",
+      "quote": "\"El Reto de Claudia\": una familia de San Lorenzo busca apoyo para investigar la enfermedad ultrarrara de su hija"
+    },
+    {
+      "outlet": "La Voz de la Sierra",
+      "type": "press",
+      "logo": "LVS",
+      "logoColor": "#2d6a4f",
+      "url": "https://lavozdelasierra.es/2026/05/19/una-familia-de-san-lorenzo-busca-apoyo-para-investigar-la-enfermedad-ultrarrara-de-su-hija-claudia/",
+      "date": "19/05/2026",
+      "quote": "Una familia de San Lorenzo busca apoyo para investigar la enfermedad ultrarrara de su hija Claudia"
+    },
+    {
+      "outlet": "El Confidencial Digital",
+      "type": "press",
+      "logo": "ECD",
+      "logoColor": "#c0392b",
+      "url": "https://www.elconfidencialdigital.com/articulo/la-guinda/guinda-asociacion-reto-claudia-que-recaudando-fondos-investigar-enfermedad-ultrarrara/202605210500001021867.html",
+      "date": "21/05/2026",
+      "quote": "La asociación El Reto de Claudia recauda fondos para investigar la enfermedad ultrarrara de Claudia"
+    },
+    {
+      "outlet": "Onda Cero",
+      "type": "radio",
+      "logo": "ONDA",
+      "logoColor": "#0058a3",
+      "url": null,
+      "date": "26/05/2026",
+      "quote": "Entrevista en \"Más de Uno Sierra\" para dar visibilidad a El Reto de Claudia y su misión"
+    }
+  ]
+}
