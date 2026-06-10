@@ -3,16 +3,17 @@ import { Link, useNavigate, useLocation } from 'react-router-dom'
 import { useLanguage } from '../context/LanguageContext'
 
 const NAV_KEYS = [
-  { key: 'inicio', href: '#inicio' },
-  { key: 'dbp',    href: '#dbp'    },
+  { key: 'inicio',   href: '#inicio'   },
+  { key: 'dbp',      href: '#dbp'      },
   { key: 'historia', href: '#historia' },
-  { key: 'ayudar',  href: '#ayudar'  },
+  { key: 'ayudar',   href: '#ayudar'   },
   { key: 'contacto', href: '#contacto' },
 ]
 
 export default function Navbar({ donatePage = false }) {
-  const [scrolled,  setScrolled]  = useState(false)
-  const [menuOpen, setMenuOpen] = useState(false)
+  const [scrolled,      setScrolled]      = useState(false)
+  const [menuOpen,      setMenuOpen]      = useState(false)
+  const [activeSection, setActiveSection] = useState('inicio')
   const navigate = useNavigate()
   const location = useLocation()
   const { t, lang, toggleLang } = useLanguage()
@@ -22,6 +23,36 @@ export default function Navbar({ donatePage = false }) {
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
+
+  useEffect(() => {
+    if (location.pathname !== '/') return
+    const OFFSET = 100
+    const update = () => {
+      const y = window.scrollY + OFFSET
+      let current = 'inicio'
+      for (const link of NAV_KEYS) {
+        const el = document.querySelector(link.href)
+        if (el && el.offsetTop <= y) current = link.key
+      }
+      setActiveSection(current)
+    }
+    update()
+    window.addEventListener('scroll', update, { passive: true })
+    return () => window.removeEventListener('scroll', update)
+  }, [location.pathname])
+
+  const isScrollActive = (key) => location.pathname === '/' && activeSection === key
+  const isRouteActive  = (path) => location.pathname === path
+
+  const desktopLinkClass = (active) =>
+    active
+      ? 'text-sm font-bold text-brand-600 hover:text-brand-700 transition-colors duration-200'
+      : 'text-sm font-medium text-gray-600 hover:text-warm-500 transition-colors duration-200'
+
+  const mobileLinkClass = (active) =>
+    active
+      ? 'block px-4 py-3 text-brand-600 bg-brand-50 rounded-xl font-bold transition-colors'
+      : 'block px-4 py-3 text-gray-700 hover:text-brand-700 hover:bg-brand-50 rounded-xl font-medium transition-colors'
 
   const handleLink = (e, href) => {
     e.preventDefault()
@@ -47,11 +78,12 @@ export default function Navbar({ donatePage = false }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logotipo */}
-          <Link
-            to="/"
-            className="font-serif font-bold text-xl tracking-tight text-brand-800 hover:text-brand-600 transition-colors duration-300"
-          >
-            {t.nav.siteName}
+          <Link to="/" className="flex items-center">
+            <img
+              src="/images/logo_elretodeclaudia@2x.png"
+              alt="El Reto de Claudia"
+              className="h-14 w-auto"
+            />
           </Link>
 
           {/* Navegación desktop */}
@@ -61,16 +93,20 @@ export default function Navbar({ donatePage = false }) {
                 <a
                   href={link.href}
                   onClick={(e) => handleLink(e, link.href)}
-                  className={
-                    link.key === 'contacto'
-                      ? 'text-sm font-bold text-brand-600 hover:text-brand-700 transition-colors duration-200'
-                      : 'text-sm font-medium text-gray-600 hover:text-warm-500 transition-colors duration-200'
-                  }
+                  className={desktopLinkClass(isScrollActive(link.key))}
                 >
                   {t.nav[link.key]}
                 </a>
               </li>
             ))}
+            <li>
+              <Link
+                to="/eventos"
+                className={desktopLinkClass(isRouteActive('/eventos'))}
+              >
+                {t.nav.eventos}
+              </Link>
+            </li>
             {/* Toggle idioma */}
             <li>
               <button
@@ -116,7 +152,7 @@ export default function Navbar({ donatePage = false }) {
         {/* Menú móvil */}
         <div
           className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-            menuOpen ? 'max-h-96 opacity-100 mt-3' : 'max-h-0 opacity-0'
+            menuOpen ? 'max-h-[500px] opacity-100 mt-3' : 'max-h-0 opacity-0'
           }`}
           aria-hidden={!menuOpen}
         >
@@ -126,12 +162,21 @@ export default function Navbar({ donatePage = false }) {
                 <a
                   href={link.href}
                   onClick={(e) => handleLink(e, link.href)}
-                  className="block px-4 py-3 text-gray-700 hover:text-brand-700 hover:bg-brand-50 rounded-xl font-medium transition-colors"
+                  className={mobileLinkClass(isScrollActive(link.key))}
                 >
                   {t.nav[link.key]}
                 </a>
               </li>
             ))}
+            <li>
+              <Link
+                to="/eventos"
+                onClick={() => setMenuOpen(false)}
+                className={mobileLinkClass(isRouteActive('/eventos'))}
+              >
+                {t.nav.eventos}
+              </Link>
+            </li>
             <li className="flex items-center gap-2 px-2 pt-2">
               <button
                 onClick={toggleLang}

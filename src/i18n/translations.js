@@ -7,6 +7,8 @@ const translations = {
       historia: 'Historia de Claudia',
       ayudar: 'Cómo ayudar',
       contacto: 'Contacto',
+      prensa: 'Prensa',
+      eventos: 'Eventos',
       donar: 'Dona',
     },
 
@@ -353,6 +355,62 @@ const translations = {
         ],
       },
     },
+
+    eventos: {
+      sectionLabel: 'Calendario',
+      title: 'Eventos solidarios',
+      subtitle: 'Carreras, encuentros y actividades para apoyar la investigación y dar visibilidad a la DBP.',
+      upcomingTitle: 'Próximos eventos',
+      upcomingBadge: 'Próximo',
+      upcomingEmpty: 'No hay eventos próximos por el momento. ¡Vuelve pronto!',
+      pastTitle: 'Eventos pasados',
+      registerCta: 'Inscribirme',
+      infoCta: 'Más información',
+      homeTitle: 'Próximo evento',
+      homeSubtitle: 'Únete a nuestras actividades solidarias y corre con nosotros por Claudia.',
+      homeCta: 'Ver todos los eventos',
+    },
+
+    prensa: {
+      badge: 'Sala de prensa',
+      tagline: 'Más investigación, más esperanza 🤍',
+      heroDesc: 'Claudia tiene 2 años y una enfermedad ultrarrara sin diagnóstico ni tratamiento. Sus padres han creado El Reto de Claudia para financiar la investigación que puede cambiar su vida y la de muchos niños.',
+      ctaDonate: 'Donar ahora ❤️',
+      ctaPress: 'Contacto de prensa',
+      community: 'Una comunidad creciente que cree en la investigación y en la esperanza.',
+
+      impactLabel: 'Impacto',
+      mediaLabel: 'En los medios',
+      goalsLabel: 'Nuestro objetivo',
+      goalsTitle: 'Tres pilares que guían nuestra misión',
+      goalsMotto: '🤍 Cada paso cuenta. Cada donación, cada difusión, cada gesto suma vida.',
+
+      statViews: 'visualizaciones',
+      statInteractions: 'interacciones',
+      statFollowers: 'nuevos seguidores',
+      statShared: 'contenidos compartidos',
+
+      typeRadio: 'Radio',
+      typePress: 'Prensa digital',
+      typeTV: 'TV',
+
+      upcomingLabel: 'Próximamente',
+
+      goal1Title: 'FINANCIAR',
+      goal1Sub: 'investigación científica',
+      goal2Title: 'IMPULSAR',
+      goal2Sub: 'terapias génicas para enfermedades ultrarraras',
+      goal3Title: 'DAR ESPERANZA',
+      goal3Sub: 'a Claudia y a todas las familias que esperan un futuro',
+
+      socialTitle: 'Síguenos y colabora',
+      socialViews: 'visualizaciones',
+      socialFollowers: 'seguidores',
+
+      helpTitle: '¿Cómo puedes ayudar?',
+      helpItems: ['Síguenos y comparte', 'Difunde nuestro mensaje', 'Colabora con tu donación', 'Cree en la investigación'],
+      helpCta: 'Donar ahora ❤️',
+    },
   },
 
   en: {
@@ -363,6 +421,8 @@ const translations = {
       historia: "Claudia's Story",
       ayudar: 'How to help',
       contacto: 'Contact',
+      prensa: 'Press',
+      eventos: 'Events',
       donar: 'Donate',
     },
 
@@ -709,6 +769,62 @@ const translations = {
           },
         ],
       },
+    },
+
+    eventos: {
+      sectionLabel: 'Calendar',
+      title: 'Charity events',
+      subtitle: 'Races, meetups and activities to support research and raise awareness of DBP.',
+      upcomingTitle: 'Upcoming events',
+      upcomingBadge: 'Upcoming',
+      upcomingEmpty: 'No upcoming events at the moment. Check back soon!',
+      pastTitle: 'Past events',
+      registerCta: 'Sign Up',
+      infoCta: 'More information',
+      homeTitle: 'Next event',
+      homeSubtitle: 'Join our charity activities and run with us for Claudia.',
+      homeCta: 'See all events',
+    },
+
+    prensa: {
+      badge: 'Press room',
+      tagline: 'More research, more hope 🤍',
+      heroDesc: "Claudia is 2 years old and has an ultra-rare disease with no diagnosis or treatment. Her parents created El Reto de Claudia to fund the research that could change her life and the lives of many other children.",
+      ctaDonate: 'Donate now ❤️',
+      ctaPress: 'Press contact',
+      community: 'A growing community that believes in research and hope.',
+
+      impactLabel: 'Impact',
+      mediaLabel: 'In the media',
+      goalsLabel: 'Our mission',
+      goalsTitle: 'Three pillars that guide our mission',
+      goalsMotto: '🤍 Every step counts. Every donation, every share, every gesture adds up.',
+
+      statViews: 'views',
+      statInteractions: 'interactions',
+      statFollowers: 'new followers',
+      statShared: 'shared content',
+
+      typeRadio: 'Radio',
+      typePress: 'Digital press',
+      typeTV: 'TV',
+
+      upcomingLabel: 'Coming soon',
+
+      goal1Title: 'FUND',
+      goal1Sub: 'scientific research',
+      goal2Title: 'BOOST',
+      goal2Sub: 'gene therapies for ultra-rare diseases',
+      goal3Title: 'GIVE HOPE',
+      goal3Sub: 'to Claudia and all the families waiting for a future',
+
+      socialTitle: 'Follow us and collaborate',
+      socialViews: 'views',
+      socialFollowers: 'followers',
+
+      helpTitle: 'How can you help?',
+      helpItems: ['Follow us and share', 'Spread our message', 'Support with your donation', 'Believe in research'],
+      helpCta: 'Donate now ❤️',
     },
   },
 }

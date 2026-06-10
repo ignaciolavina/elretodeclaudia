@@ -58,7 +58,20 @@ export default function Footer() {
                 </li>
               ))}
               <li>
-                <Link to="/donar" className="text-brand-300 hover:text-white text-sm font-semibold transition-colors">
+                <Link
+                  to="/eventos"
+                  onClick={() => window.scrollTo(0, 0)}
+                  className="block py-1 text-gray-300 hover:text-white text-sm transition-colors"
+                >
+                  {t.nav.eventos}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/donar"
+                  onClick={() => window.scrollTo(0, 0)}
+                  className="block py-1 text-brand-300 hover:text-white text-sm font-semibold transition-colors"
+                >
                   Donar ❤️
                 </Link>
               </li>
