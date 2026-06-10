@@ -10,7 +10,6 @@ import Contacto from './components/Contacto'
 import Footer from './components/Footer'
 import Donar from './pages/Donar'
 import Privacidad from './pages/Privacidad'
-import Prensa from './pages/Prensa'
 import Eventos from './pages/Eventos'
 import ProximosEventos from './components/ProximosEventos'
 
@@ -51,7 +50,6 @@ export default function App() {
         <Route path="/donate" element={<Donar />} />
         <Route path="/dona" element={<Donar />} />
         <Route path="/privacidad" element={<Privacidad />} />
-        <Route path="/prensa" element={<Prensa />} />
         <Route path="/eventos" element={<Eventos />} />
         <Route path="*" element={<Donar />} />
       </Routes>

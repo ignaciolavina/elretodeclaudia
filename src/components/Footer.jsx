@@ -59,15 +59,6 @@ export default function Footer() {
               ))}
               <li>
                 <Link
-                  to="/prensa"
-                  onClick={() => window.scrollTo(0, 0)}
-                  className="block py-1 text-gray-300 hover:text-white text-sm transition-colors"
-                >
-                  {t.nav.prensa}
-                </Link>
-              </li>
-              <li>
-                <Link
                   to="/eventos"
                   onClick={() => window.scrollTo(0, 0)}
                   className="block py-1 text-gray-300 hover:text-white text-sm transition-colors"
