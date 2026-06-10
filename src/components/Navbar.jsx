@@ -3,16 +3,17 @@ import { Link, useNavigate, useLocation } from 'react-router-dom'
 import { useLanguage } from '../context/LanguageContext'
 
 const NAV_KEYS = [
-  { key: 'inicio', href: '#inicio' },
-  { key: 'dbp',    href: '#dbp'    },
+  { key: 'inicio',   href: '#inicio'   },
+  { key: 'dbp',      href: '#dbp'      },
   { key: 'historia', href: '#historia' },
-  { key: 'ayudar',  href: '#ayudar'  },
+  { key: 'ayudar',   href: '#ayudar'   },
   { key: 'contacto', href: '#contacto' },
 ]
 
 export default function Navbar({ donatePage = false }) {
-  const [scrolled,  setScrolled]  = useState(false)
-  const [menuOpen, setMenuOpen] = useState(false)
+  const [scrolled,      setScrolled]      = useState(false)
+  const [menuOpen,      setMenuOpen]      = useState(false)
+  const [activeSection, setActiveSection] = useState('inicio')
   const navigate = useNavigate()
   const location = useLocation()
   const { t, lang, toggleLang } = useLanguage()
@@ -22,6 +23,36 @@ export default function Navbar({ donatePage = false }) {
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
+
+  useEffect(() => {
+    if (location.pathname !== '/') return
+    const OFFSET = 100
+    const update = () => {
+      const y = window.scrollY + OFFSET
+      let current = 'inicio'
+      for (const link of NAV_KEYS) {
+        const el = document.querySelector(link.href)
+        if (el && el.offsetTop <= y) current = link.key
+      }
+      setActiveSection(current)
+    }
+    update()
+    window.addEventListener('scroll', update, { passive: true })
+    return () => window.removeEventListener('scroll', update)
+  }, [location.pathname])
+
+  const isScrollActive = (key) => location.pathname === '/' && activeSection === key
+  const isRouteActive  = (path) => location.pathname === path
+
+  const desktopLinkClass = (active) =>
+    active
+      ? 'text-sm font-bold text-brand-600 hover:text-brand-700 transition-colors duration-200'
+      : 'text-sm font-medium text-gray-600 hover:text-warm-500 transition-colors duration-200'
+
+  const mobileLinkClass = (active) =>
+    active
+      ? 'block px-4 py-3 text-brand-600 bg-brand-50 rounded-xl font-bold transition-colors'
+      : 'block px-4 py-3 text-gray-700 hover:text-brand-700 hover:bg-brand-50 rounded-xl font-medium transition-colors'
 
   const handleLink = (e, href) => {
     e.preventDefault()
@@ -62,11 +93,7 @@ export default function Navbar({ donatePage = false }) {
                 <a
                   href={link.href}
                   onClick={(e) => handleLink(e, link.href)}
-                  className={
-                    link.key === 'contacto'
-                      ? 'text-sm font-bold text-brand-600 hover:text-brand-700 transition-colors duration-200'
-                      : 'text-sm font-medium text-gray-600 hover:text-warm-500 transition-colors duration-200'
-                  }
+                  className={desktopLinkClass(isScrollActive(link.key))}
                 >
                   {t.nav[link.key]}
                 </a>
@@ -75,7 +102,7 @@ export default function Navbar({ donatePage = false }) {
             <li>
               <Link
                 to="/eventos"
-                className="text-sm font-medium text-gray-600 hover:text-warm-500 transition-colors duration-200"
+                className={desktopLinkClass(isRouteActive('/eventos'))}
               >
                 {t.nav.eventos}
               </Link>
@@ -135,7 +162,7 @@ export default function Navbar({ donatePage = false }) {
                 <a
                   href={link.href}
                   onClick={(e) => handleLink(e, link.href)}
-                  className="block px-4 py-3 text-gray-700 hover:text-brand-700 hover:bg-brand-50 rounded-xl font-medium transition-colors"
+                  className={mobileLinkClass(isScrollActive(link.key))}
                 >
                   {t.nav[link.key]}
                 </a>
@@ -145,7 +172,7 @@ export default function Navbar({ donatePage = false }) {
               <Link
                 to="/eventos"
                 onClick={() => setMenuOpen(false)}
-                className="block px-4 py-3 text-gray-700 hover:text-brand-700 hover:bg-brand-50 rounded-xl font-medium transition-colors"
+                className={mobileLinkClass(isRouteActive('/eventos'))}
               >
                 {t.nav.eventos}
               </Link>
