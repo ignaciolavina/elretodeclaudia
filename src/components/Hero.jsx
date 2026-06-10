@@ -32,15 +32,6 @@ export default function Hero() {
 
           {/* Columna izquierda */}
           <div>
-            {/* Badge — solo mobile */}
-            <div className={`flex justify-center lg:hidden ${fade('delay-100')}`}>
-              <Link
-                to="/donar"
-                className="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white text-xs font-semibold tracking-widest uppercase px-8 py-2 rounded-full mb-5 transition-colors"
-              >
-                DONA ❤️
-              </Link>
-            </div>
 
             {/* Titular */}
             <h1
@@ -74,13 +65,6 @@ export default function Hero() {
 
             {/* Botones */}
             <div className={`flex flex-col sm:flex-row items-start gap-4 ${fade('delay-500')}`}>
-              {/* CTA Donar — mobile */}
-              <Link
-                to="/donar"
-                className="sm:hidden w-full text-center bg-brand-600 hover:bg-brand-700 text-white font-bold px-7 py-3.5 rounded-lg transition-all duration-200 shadow-sm"
-              >
-                {t.hero.ctaDona} ❤️
-              </Link>
               {/* CTA Donar — desktop (primero) */}
               <Link
                 to="/donar"

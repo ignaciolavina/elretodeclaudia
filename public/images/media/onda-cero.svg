@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="300" height="300">
+  <rect width="300" height="300" fill="white"/>
+  <!-- Green shadow rectangle offset -->
+  <rect x="18" y="18" width="272" height="272" rx="8" fill="#3DAA5C"/>
+  <!-- Main black outer rectangle -->
+  <rect x="8" y="8" width="272" height="272" rx="8" fill="black" stroke="black" stroke-width="3"/>
+  <!-- White top section -->
+  <rect x="8" y="8" width="272" height="134" rx="8" fill="white"/>
+  <rect x="8" y="100" width="272" height="42" fill="white"/>
+  <!-- Top black oval -->
+  <ellipse cx="145" cy="78" rx="110" ry="55" fill="black"/>
+  <!-- ONDA text in white -->
+  <text x="145" y="96"
+    font-family="'Comic Sans MS', 'Chalkboard SE', cursive"
+    font-size="54"
+    font-weight="bold"
+    fill="white"
+    text-anchor="middle"
+    letter-spacing="2"
+  >ONDA</text>
+  <!-- Bottom white oval -->
+  <ellipse cx="155" cy="215" rx="120" ry="55" fill="white"/>
+  <!-- CERO text in black -->
+  <text x="155" y="233"
+    font-family="'Comic Sans MS', 'Chalkboard SE', cursive"
+    font-size="54"
+    font-weight="bold"
+    fill="black"
+    text-anchor="middle"
+    letter-spacing="2"
+  >CERO</text>
+</svg>

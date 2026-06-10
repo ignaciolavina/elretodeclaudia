@@ -9,18 +9,22 @@
     "handle": "@elretodeclaudia",
     "url": "https://www.instagram.com/elretodeclaudia"
   },
-  "upcoming": [
-    {
-      "show": true,
-      "title": "Las Tardes de Cristian Gálvez",
-      "date": "Jueves 4 de junio",
-      "cta": "¡No te lo pierdas!"
-    }
-  ],
+  "upcoming": [],
   "media": [
+    {
+      "outlet": "Telemadrid",
+      "type": "tv",
+      "logoImage": "/images/media/telemadrid.svg",
+      "logo": "TM",
+      "logoColor": "#e30613",
+      "url": "https://www.tlmad.es/content/unclassified/6397562426112/play",
+      "date": "04/06/2026",
+      "quote": "Ayudadnos a salvar a Claudia. Cada donación nos acerca a la investigación privada que puede cambiar su vida."
+    },
     {
       "outlet": "GN Diario",
       "type": "press",
+      "logoImage": "/images/media/gn-diario.svg",
       "logo": "GN",
       "logoColor": "#1a7a4a",
       "url": "https://gndiario.com/el-reto-de-claudia-deficiencia-proteina-Dbifuncional-DBP",
@@ -30,6 +34,7 @@
     {
       "outlet": "Marca",
       "type": "press",
+      "logoImage": "/images/media/marca.svg",
       "logo": "MARCA",
       "logoColor": "#003366",
       "url": "https://www.marca.com/bienestar/salud/2026/05/15/reto-claudia.html",
@@ -39,6 +44,7 @@
     {
       "outlet": "Cadena SER",
       "type": "radio",
+      "logoImage": "/images/media/ser.svg",
       "logo": "SER",
       "logoColor": "#E31B23",
       "url": "https://cadenaser.com/cmadrid/2026/05/19/el-reto-de-claudia-una-familia-de-san-lorenzo-busca-apoyo-para-investigar-la-enfermedad-ultrarrara-de-su-hija-ser-madrid-sierra/",
@@ -48,6 +54,7 @@
     {
       "outlet": "La Voz de la Sierra",
       "type": "press",
+      "logoImage": "/images/media/la-voz-de-la-sierra.svg",
       "logo": "LVS",
       "logoColor": "#2d6a4f",
       "url": "https://lavozdelasierra.es/2026/05/19/una-familia-de-san-lorenzo-busca-apoyo-para-investigar-la-enfermedad-ultrarrara-de-su-hija-claudia/",
@@ -57,6 +64,7 @@
     {
       "outlet": "El Confidencial Digital",
       "type": "press",
+      "logoImage": "/images/media/ecd-confidencial-digital.svg",
       "logo": "ECD",
       "logoColor": "#c0392b",
       "url": "https://www.elconfidencialdigital.com/articulo/la-guinda/guinda-asociacion-reto-claudia-que-recaudando-fondos-investigar-enfermedad-ultrarrara/202605210500001021867.html",
@@ -66,6 +74,7 @@
     {
       "outlet": "Onda Cero",
       "type": "radio",
+      "logoImage": "/images/media/onda-cero.svg",
       "logo": "ONDA",
       "logoColor": "#0058a3",
       "url": null,

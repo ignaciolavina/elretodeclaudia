@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 70" width="320" height="70">
+  <rect width="320" height="70" fill="white"/>
+  <!-- DNA helix style circle icon -->
+  <!-- Left circle (G shape) -->
+  <circle cx="22" cy="35" r="18" fill="none" stroke="#4A9060" stroke-width="3"/>
+  <circle cx="22" cy="35" r="10" fill="none" stroke="#7BC8A0" stroke-width="2"/>
+  <!-- Connecting lines suggesting DNA -->
+  <line x1="22" y1="17" x2="22" y2="12" stroke="#4A9060" stroke-width="2"/>
+  <line x1="22" y1="53" x2="22" y2="58" stroke="#4A9060" stroke-width="2"/>
+  <!-- GN text -->
+  <text x="50" y="52"
+    font-family="'Arial', 'Helvetica Neue', sans-serif"
+    font-size="48"
+    font-weight="700"
+    fill="#4A9060"
+  >GN</text>
+  <!-- Vertical separator -->
+  <line x1="138" y1="10" x2="138" y2="60" stroke="#4A9060" stroke-width="1.5"/>
+  <!-- DIARIO text -->
+  <text x="148" y="52"
+    font-family="'Arial', 'Helvetica Neue', sans-serif"
+    font-size="48"
+    font-weight="300"
+    fill="#3A7A60"
+    letter-spacing="3"
+  >DIARIO</text>
+</svg>

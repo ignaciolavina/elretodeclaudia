@@ -63,7 +63,7 @@ function HelpCard({ card, styles, icon, index }) {
         {isDonate && (
           <Link
             to="/donar"
-            className={`flex w-full items-center justify-center gap-2 font-semibold px-6 py-3 rounded-xl transition-all duration-200 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-offset-2 ${styles.cta}`}
+            className={`hidden md:flex w-full items-center justify-center gap-2 font-semibold px-6 py-3 rounded-xl transition-all duration-200 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-offset-2 ${styles.cta}`}
           >
             {card.cta}
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -112,7 +112,7 @@ export default function ComoAyudar() {
           <p className="text-gray-600 text-lg leading-relaxed mb-6">{d.subtitle}</p>
           <Link
             to="/donar"
-            className="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white text-xs font-semibold tracking-widest uppercase px-8 py-2 rounded-full transition-colors"
+            className="hidden md:inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white text-xs font-semibold tracking-widest uppercase px-8 py-2 rounded-full transition-colors"
           >
             {nav.donar} ❤️
           </Link>

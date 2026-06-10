@@ -1,6 +1,7 @@
-import { Routes, Route, useLocation } from 'react-router-dom'
+import { Routes, Route, useLocation, Link } from 'react-router-dom'
 import { useEffect } from 'react'
 import { LanguageProvider } from './context/LanguageContext'
+import { useLanguage } from './context/LanguageContext'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import QuEsDBP from './components/QuEsDBP'
@@ -31,6 +32,22 @@ function Home() {
   )
 }
 
+function StickyDonateBar() {
+  const location = useLocation()
+  const { t } = useLanguage()
+  if (['/donar', '/donate', '/dona'].includes(location.pathname)) return null
+  return (
+    <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 px-4 pb-4 pt-2 bg-gradient-to-t from-white/95 to-transparent backdrop-blur-sm">
+      <Link
+        to="/donar"
+        className="block w-full text-center bg-brand-600 hover:bg-brand-700 active:bg-brand-800 text-white font-semibold text-base px-4 py-3.5 rounded-2xl shadow-lg transition-colors"
+      >
+        {t.nav.donar} ❤️
+      </Link>
+    </div>
+  )
+}
+
 function ScrollToTop() {
   const location = useLocation()
   useEffect(() => {
@@ -54,6 +71,7 @@ export default function App() {
     <LanguageProvider>
       <ScrollToTop />
       <Analytics />
+      <StickyDonateBar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/donar" element={<Donar />} />

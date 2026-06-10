@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 100" width="440" height="100">
+  <rect width="440" height="100" fill="white"/>
+  <!-- Pentagon star shape for TeleMadrid -->
+  <!-- Outer pentagon points, inner star points -->
+  <path d="
+    M 50,10
+    L 57,32 L 80,32 L 62,46 L 69,68
+    L 50,55 L 31,68 L 38,46
+    L 20,32 L 43,32 Z
+  " fill="none" stroke="#E30613" stroke-width="5" stroke-linejoin="round"/>
+  <!-- Inner white star -->
+  <polygon points="50,22 54,34 67,34 57,42 61,54 50,46 39,54 43,42 33,34 46,34" fill="#E30613"/>
+  <polygon points="50,28 52.5,35.5 60.5,35.5 54,40 56.5,47.5 50,43 43.5,47.5 46,40 39.5,35.5 47.5,35.5" fill="white"/>
+  <!-- TeleMadrid text -->
+  <text x="95" y="68"
+    font-family="'Georgia', 'Times New Roman', serif"
+    font-size="52"
+    fill="#E30613"
+    font-weight="normal"
+  ><tspan font-style="italic" font-weight="bold">Tele</tspan><tspan font-style="normal" font-weight="bold">Madrid</tspan></text>
+</svg>
