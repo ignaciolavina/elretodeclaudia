@@ -30,6 +30,12 @@ function Home() {
   )
 }
 
+function ScrollToTop() {
+  const location = useLocation()
+  useEffect(() => { window.scrollTo(0, 0) }, [location.pathname])
+  return null
+}
+
 function Analytics() {
   const location = useLocation()
   useEffect(() => {
@@ -43,6 +49,7 @@ function Analytics() {
 export default function App() {
   return (
     <LanguageProvider>
+      <ScrollToTop />
       <Analytics />
       <Routes>
         <Route path="/" element={<Home />} />
