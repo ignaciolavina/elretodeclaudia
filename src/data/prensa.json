@@ -9,12 +9,14 @@
     "handle": "@elretodeclaudia",
     "url": "https://www.instagram.com/elretodeclaudia"
   },
-  "upcoming": {
-    "show": true,
-    "title": "Las Tardes de Cristian Gálvez",
-    "date": "Jueves 4 de junio",
-    "cta": "¡No te lo pierdas!"
-  },
+  "upcoming": [
+    {
+      "show": true,
+      "title": "Las Tardes de Cristian Gálvez",
+      "date": "Jueves 4 de junio",
+      "cta": "¡No te lo pierdas!"
+    }
+  ],
   "media": [
     {
       "outlet": "GN Diario",

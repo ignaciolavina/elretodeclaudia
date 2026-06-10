@@ -7,7 +7,6 @@ const NAV_KEYS = [
   { key: 'dbp',    href: '#dbp'    },
   { key: 'historia', href: '#historia' },
   { key: 'ayudar',  href: '#ayudar'  },
-  { key: 'contacto', href: '#contacto' },
 ]
 
 export default function Navbar({ donatePage = false }) {
@@ -62,11 +61,7 @@ export default function Navbar({ donatePage = false }) {
                 <a
                   href={link.href}
                   onClick={(e) => handleLink(e, link.href)}
-                  className={
-                    link.key === 'contacto'
-                      ? 'text-sm font-bold text-brand-600 hover:text-brand-700 transition-colors duration-200'
-                      : 'text-sm font-medium text-gray-600 hover:text-warm-500 transition-colors duration-200'
-                  }
+                  className="text-sm font-medium text-gray-600 hover:text-warm-500 transition-colors duration-200"
                 >
                   {t.nav[link.key]}
                 </a>
@@ -87,6 +82,15 @@ export default function Navbar({ donatePage = false }) {
               >
                 {t.nav.eventos}
               </Link>
+            </li>
+            <li>
+              <a
+                href="#contacto"
+                onClick={(e) => handleLink(e, '#contacto')}
+                className="text-sm font-bold text-brand-600 hover:text-brand-700 transition-colors duration-200"
+              >
+                {t.nav.contacto}
+              </a>
             </li>
             {/* Toggle idioma */}
             <li>
@@ -166,6 +170,15 @@ export default function Navbar({ donatePage = false }) {
               >
                 {t.nav.eventos}
               </Link>
+            </li>
+            <li>
+              <a
+                href="#contacto"
+                onClick={(e) => handleLink(e, '#contacto')}
+                className="block px-4 py-3 text-gray-700 hover:text-brand-700 hover:bg-brand-50 rounded-xl font-medium transition-colors"
+              >
+                {t.nav.contacto}
+              </a>
             </li>
             <li className="flex items-center gap-2 px-2 pt-2">
               <button

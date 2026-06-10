@@ -6,7 +6,6 @@ const NAV_KEYS = [
   { key: 'dbp',      href: '#dbp'      },
   { key: 'historia', href: '#historia' },
   { key: 'ayudar',   href: '#ayudar'   },
-  { key: 'contacto', href: '#contacto' },
 ]
 
 export default function Footer() {
@@ -74,6 +73,15 @@ export default function Footer() {
                 >
                   {t.nav.eventos}
                 </Link>
+              </li>
+              <li>
+                <a
+                  href="#contacto"
+                  onClick={(e) => handleLink(e, '#contacto')}
+                  className="text-gray-300 hover:text-white text-sm transition-colors"
+                >
+                  {t.nav.contacto}
+                </a>
               </li>
               <li>
                 <Link
