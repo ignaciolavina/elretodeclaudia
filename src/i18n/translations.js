@@ -372,6 +372,9 @@ const translations = {
     },
 
     prensa: {
+      sectionLabel: 'Medios',
+      title: 'El Reto de Claudia en los medios',
+      subtitle: 'Apariciones en TV, Radio y Prensa, próximas y pasadas. Si quieres compartir nuestra historia en tu medio, escríbenos, estaremos encantados de colaborar.',
       badge: 'Sala de prensa',
       tagline: 'Más investigación, más esperanza 🤍',
       heroDesc: 'Claudia tiene 2 años y una enfermedad ultrarrara sin diagnóstico ni tratamiento. Sus padres han creado El Reto de Claudia para financiar la investigación que puede cambiar su vida y la de muchos niños.',
@@ -787,6 +790,9 @@ const translations = {
     },
 
     prensa: {
+      sectionLabel: 'Media',
+      title: 'El Reto de Claudia in the media',
+      subtitle: "Appearances on TV, Radio and Press, upcoming and past. If you'd like to share our story in your outlet, write to us — we'd love to collaborate.",
       badge: 'Press room',
       tagline: 'More research, more hope 🤍',
       heroDesc: "Claudia is 2 years old and has an ultra-rare disease with no diagnosis or treatment. Her parents created El Reto de Claudia to fund the research that could change her life and the lives of many other children.",

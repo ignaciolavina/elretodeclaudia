@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
@@ -134,8 +135,17 @@ function SectionLabel({ children }) {
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
 export default function Prensa() {
+  const [loaded, setLoaded] = useState(false)
+  useEffect(() => {
+    const timer = setTimeout(() => setLoaded(true), 80)
+    return () => clearTimeout(timer)
+  }, [])
+
   const { t } = useLanguage()
   const p = t.prensa
+
+  const fade = (delay = '') =>
+    `transition-all duration-700 ${delay} ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`
 
   const { ref: ctaRef, isVisible: ctaVisible } = useScrollAnimation()
 
@@ -156,11 +166,25 @@ export default function Prensa() {
     <div className="min-h-screen bg-white">
       <Navbar />
 
-      <main className="pt-24">
+      <main>
+        {/* ── Hero ── */}
+        <section className="bg-brand-50 pt-32 pb-16">
+          <div className="max-w-7xl mx-auto px-6 lg:px-12">
+            <span className={`text-xs font-bold uppercase tracking-widest text-brand-600 mb-3 block ${fade()}`}>
+              {p.sectionLabel}
+            </span>
+            <h1 className={`font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-4 ${fade('delay-100')}`}>
+              {p.title}
+            </h1>
+            <p className={`text-gray-600 text-lg leading-relaxed max-w-2xl ${fade('delay-200')}`}>
+              {p.subtitle}
+            </p>
+          </div>
+        </section>
+
         {/* ── En los medios ── */}
         <section className="pt-8 pb-20 bg-brand-50/50" aria-labelledby="medios-title">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <SectionLabel>{p.mediaLabel}</SectionLabel>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {UPCOMING.filter((u) => u.show).map((u, i) => (
                 <UpcomingCard key={`upcoming-${i}`} item={u} label={p.upcomingLabel} index={i} />
