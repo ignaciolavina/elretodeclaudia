@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import { useScrollAnimation } from '../hooks/useScrollAnimation'
@@ -21,17 +20,10 @@ const NewspaperIcon = () => (
 // ─── Editable content ─────────────────────────────────────────────────────────
 // El contenido editable (métricas, próximamente, apariciones en medios) vive en
 // src/data/prensa.json — único punto de edición, también escrito por el bot de Telegram.
-const { impact: IMPACT, media: MEDIA } = prensaData
+const { media: MEDIA } = prensaData
 
 // "upcoming" can be a single object (legacy) or an array — normalize to a list.
 const UPCOMING = (Array.isArray(prensaData.upcoming) ? prensaData.upcoming : [prensaData.upcoming]).filter(Boolean)
-
-// Instagram comparte cifras con IMPACT (single source of truth).
-const INSTAGRAM = {
-  ...prensaData.instagram,
-  views: IMPACT.views,
-  followers: IMPACT.followers,
-}
 
 const TYPE_ICONS = {
   radio: <MicIcon />,
@@ -147,20 +139,11 @@ export default function Prensa() {
   const fade = (delay = '') =>
     `transition-all duration-700 ${delay} ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`
 
-  const { ref: ctaRef, isVisible: ctaVisible } = useScrollAnimation()
-
   const TYPE_LABELS = {
     radio: p.typeRadio,
     press: p.typePress,
     tv:    p.typeTV,
   }
-
-  const STATS = [
-    { value: IMPACT.views,        label: p.statViews },
-    { value: IMPACT.interactions, label: p.statInteractions },
-    { value: IMPACT.followers,    label: p.statFollowers },
-    { value: IMPACT.shared,       label: p.statShared },
-  ]
 
   return (
     <div className="min-h-screen bg-white">
@@ -196,64 +179,6 @@ export default function Prensa() {
           </div>
         </section>
 
-        {/* ── Síguenos + Cómo ayudar ── */}
-        <section className="py-20 bg-brand-50/50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-
-              <a
-                ref={ctaRef}
-                href={INSTAGRAM.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`bg-white rounded-3xl p-8 shadow-sm border border-brand-100 flex flex-col gap-6 transition-all duration-700 hover:shadow-md hover:-translate-y-1 group ${ctaVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-              >
-                <div className="flex items-center gap-4">
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-brand-400 to-brand-600 flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
-                    <svg className="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="font-serif text-xl font-bold text-gray-900">{p.socialTitle}</h3>
-                    <p className="text-brand-500 font-semibold">{INSTAGRAM.handle}</p>
-                  </div>
-                </div>
-                <p className="text-gray-700 font-serif font-semibold leading-snug">
-                  {p.community}
-                </p>
-                <div className="grid grid-cols-2 gap-4">
-                  {STATS.map((s) => (
-                    <div key={s.label} className="bg-brand-50 rounded-2xl p-4 text-center">
-                      <p className="font-serif text-2xl font-bold text-brand-600">{s.value}</p>
-                      <p className="text-xs text-gray-500 mt-0.5">{s.label}</p>
-                    </div>
-                  ))}
-                </div>
-              </a>
-
-              <div className={`bg-white rounded-3xl p-8 shadow-sm border border-brand-100 transition-all duration-700 delay-150 ${ctaVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-                <h3 className="font-serif text-xl font-bold text-gray-900 mb-6">{p.helpTitle}</h3>
-                <ul className="space-y-4">
-                  {p.helpItems.map((item) => (
-                    <li key={item} className="flex items-center gap-3">
-                      <span className="w-7 h-7 bg-brand-100 rounded-full flex items-center justify-center flex-shrink-0">
-                        <svg className="w-4 h-4 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                        </svg>
-                      </span>
-                      <span className="text-gray-700 font-medium">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-                <Link to="/donar" className="mt-8 hidden md:flex w-full items-center justify-center gap-2 bg-brand-500 hover:bg-brand-600 text-white font-semibold py-3.5 rounded-xl transition-colors shadow-sm">
-                  {p.helpCta}
-                </Link>
-              </div>
-
-            </div>
-          </div>
-        </section>
       </main>
 
       <Footer />
