@@ -152,7 +152,7 @@ export default function Navbar({ donatePage = false }) {
         {/* Menú móvil */}
         <div
           className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-            menuOpen ? 'max-h-96 opacity-100 mt-3' : 'max-h-0 opacity-0'
+            menuOpen ? 'max-h-[500px] opacity-100 mt-3' : 'max-h-0 opacity-0'
           }`}
           aria-hidden={!menuOpen}
         >
