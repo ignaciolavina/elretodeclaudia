@@ -12,6 +12,16 @@
   "upcoming": [],
   "media": [
     {
+      "outlet": "Telecinco",
+      "type": "tv",
+      "logoImage": "/images/media/telecinco.svg",
+      "logo": "T5",
+      "logoColor": "#0E63B8",
+      "url": "https://www.telecinco.es/noticias/testimonios/20260611/piden-ayuda-investigar-enfermedad-altamente-mortal-claudia-terapia-genica_18_019400713.html",
+      "date": "11/06/2026",
+      "quote": "La terapia génica que puede salvar a Claudia, de dos años, de su enfermedad \"altamente mortal\": \"No podíamos estar parados, cada día es oro\""
+    },
+    {
       "outlet": "Telemadrid",
       "type": "tv",
       "logoImage": "/images/media/telemadrid.svg",
@@ -22,24 +32,24 @@
       "quote": "Buscamos la cura para Claudia. Cada donación nos acerca a la investigación privada que puede cambiar su vida."
     },
     {
-      "outlet": "GN Diario",
-      "type": "press",
-      "logoImage": "/images/media/gn-diario.svg",
-      "logo": "GN",
-      "logoColor": "#1a7a4a",
-      "url": "https://gndiario.com/el-reto-de-claudia-deficiencia-proteina-Dbifuncional-DBP",
-      "date": "08/05/2026",
-      "quote": "El Reto de Claudia: deficiencia de proteína D-bifuncional (DBP)"
+      "outlet": "Onda Cero",
+      "type": "radio",
+      "logoImage": "/images/media/onda-cero.svg",
+      "logo": "ONDA",
+      "logoColor": "#0058a3",
+      "url": null,
+      "date": "26/05/2026",
+      "quote": "Entrevista en \"Más de Uno Sierra\" para dar visibilidad a El Reto de Claudia y su misión"
     },
     {
-      "outlet": "Marca",
+      "outlet": "El Confidencial Digital",
       "type": "press",
-      "logoImage": "/images/media/marca.svg",
-      "logo": "MARCA",
-      "logoColor": "#003366",
-      "url": "https://www.marca.com/bienestar/salud/2026/05/15/reto-claudia.html",
-      "date": "15/05/2026",
-      "quote": "El reto de Claudia. Sus padres buscan financiación e investigadores para empezar la terapia génica"
+      "logoImage": "/images/media/ecd-confidencial-digital.svg",
+      "logo": "ECD",
+      "logoColor": "#c0392b",
+      "url": "https://www.elconfidencialdigital.com/articulo/la-guinda/guinda-asociacion-reto-claudia-que-recaudando-fondos-investigar-enfermedad-ultrarrara/202605210500001021867.html",
+      "date": "21/05/2026",
+      "quote": "La asociación El Reto de Claudia recauda fondos para investigar la enfermedad ultrarrara de Claudia"
     },
     {
       "outlet": "Cadena SER",
@@ -62,24 +72,24 @@
       "quote": "Una familia de San Lorenzo busca apoyo para investigar la enfermedad ultrarrara de su hija Claudia"
     },
     {
-      "outlet": "El Confidencial Digital",
+      "outlet": "Marca",
       "type": "press",
-      "logoImage": "/images/media/ecd-confidencial-digital.svg",
-      "logo": "ECD",
-      "logoColor": "#c0392b",
-      "url": "https://www.elconfidencialdigital.com/articulo/la-guinda/guinda-asociacion-reto-claudia-que-recaudando-fondos-investigar-enfermedad-ultrarrara/202605210500001021867.html",
-      "date": "21/05/2026",
-      "quote": "La asociación El Reto de Claudia recauda fondos para investigar la enfermedad ultrarrara de Claudia"
+      "logoImage": "/images/media/marca.svg",
+      "logo": "MARCA",
+      "logoColor": "#003366",
+      "url": "https://www.marca.com/bienestar/salud/2026/05/15/reto-claudia.html",
+      "date": "15/05/2026",
+      "quote": "El reto de Claudia. Sus padres buscan financiación e investigadores para empezar la terapia génica"
     },
     {
-      "outlet": "Onda Cero",
-      "type": "radio",
-      "logoImage": "/images/media/onda-cero.svg",
-      "logo": "ONDA",
-      "logoColor": "#0058a3",
-      "url": null,
-      "date": "26/05/2026",
-      "quote": "Entrevista en \"Más de Uno Sierra\" para dar visibilidad a El Reto de Claudia y su misión"
+      "outlet": "GN Diario",
+      "type": "press",
+      "logoImage": "/images/media/gn-diario.svg",
+      "logo": "GN",
+      "logoColor": "#1a7a4a",
+      "url": "https://gndiario.com/el-reto-de-claudia-deficiencia-proteina-Dbifuncional-DBP",
+      "date": "08/05/2026",
+      "quote": "El Reto de Claudia: deficiencia de proteína D-bifuncional (DBP)"
     }
   ]
 }
