@@ -396,6 +396,7 @@ const translations = {
       typeRadio: 'Radio',
       typePress: 'Prensa digital',
       typeTV: 'TV',
+      typeWeb: 'Web',
 
       upcomingLabel: 'Próximamente',
 
@@ -814,6 +815,7 @@ const translations = {
       typeRadio: 'Radio',
       typePress: 'Digital press',
       typeTV: 'TV',
+      typeWeb: 'Web',
 
       upcomingLabel: 'Coming soon',
 

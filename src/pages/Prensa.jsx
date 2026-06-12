@@ -17,6 +17,11 @@ const NewspaperIcon = () => (
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
   </svg>
 )
+const GlobeIcon = () => (
+  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+  </svg>
+)
 // ─── Editable content ─────────────────────────────────────────────────────────
 // El contenido editable (métricas, próximamente, apariciones en medios) vive en
 // src/data/prensa.json — único punto de edición, también escrito por el bot de Telegram.
@@ -29,6 +34,7 @@ const TYPE_ICONS = {
   radio: <MicIcon />,
   press: <NewspaperIcon />,
   tv: <NewspaperIcon />,
+  web: <GlobeIcon />,
 }
 
 // ─── Sub-components ───────────────────────────────────────────────────────────
@@ -143,6 +149,7 @@ export default function Prensa() {
     radio: p.typeRadio,
     press: p.typePress,
     tv:    p.typeTV,
+    web:   p.typeWeb,
   }
 
   return (

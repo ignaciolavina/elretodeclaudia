@@ -13,7 +13,7 @@
   "media": [
     {
       "outlet": "Telecinco",
-      "type": "tv",
+      "type": "web",
       "logoImage": "/images/media/telecinco.svg",
       "logo": "T5",
       "logoColor": "#0E63B8",
