@@ -52,15 +52,9 @@ export default function Contacto() {
       await emailjs.send(
         EMAILJS_CONFIG.serviceId,
         EMAILJS_CONFIG.notificationTemplateId,
-        { to_email: 'claudialavinabermejo@gmail.com', nombre: form.nombre, email: form.email, motivo_label: motivoLabel, mensaje: form.mensaje },
+        { to_email: 'claudialavinabermejo@gmail.com', reply_to: form.email, nombre: form.nombre, email: form.email, motivo_label: motivoLabel, mensaje: form.mensaje },
         EMAILJS_CONFIG.publicKey
       )
-      emailjs.send(
-        EMAILJS_CONFIG.serviceId,
-        EMAILJS_CONFIG.confirmationTemplateId,
-        { to_email: form.email, nombre: form.nombre },
-        EMAILJS_CONFIG.publicKey
-      ).catch(() => {})
       setForm(EMPTY)
       setSubmitted(true)
     } catch (err) {
