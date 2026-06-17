@@ -1,4 +1,25 @@
 export const EVENTS = [
+  // ── Upcoming: solidarity events ─────────────────────────────────────────────
+  {
+    slug: 'concierto-solidario-coro-sagrados-corazones-2026',
+    title: {
+      es: 'Concierto solidario — Coro "Matisse"',
+      en: 'Charity Concert — "Matisse" Choir',
+    },
+    date: '2026-06-21',
+    time: '20:00',
+    location: 'Iglesia Sagrados Corazones, C/ Juan Abelló 52, San Lorenzo de El Escorial',
+    description: {
+      es: 'La música puede cambiar vidas, y tú puedes formar parte de ello. El coro "Matisse" ofrece una velada muy especial cuya recaudación voluntaria irá destinada a apoyar la investigación a través de El Reto de Claudia. Entrada libre con aportación voluntaria. Ven a disfrutar de la música, compartir un momento único y ayudar a que la investigación siga avanzando — porque cada gesto cuenta y cada aportación suma esperanza.',
+      en: 'Music can change lives, and you can be part of it. The "Matisse" choir offers a very special evening whose voluntary collection will support research through El Reto de Claudia. Free entry with voluntary contribution. Come enjoy the music, share a unique moment and help research keep moving forward — because every gesture counts and every contribution adds hope.',
+    },
+    image: '/images/events/coro-sscc-matisse-2026.webp',
+    status: 'upcoming',
+    category: 'solidarity',
+    registerHref: null,
+    infoHref: null,
+    organizers: [],
+  },
   {
     slug: 'carrera-solidaria-san-lorenzo-2026',
     title: {
@@ -8,31 +29,53 @@ export const EVENTS = [
     date: '2026-06-27',
     location: 'San Lorenzo de El Escorial, Madrid',
     description: {
-      es: 'Únete a la primera carrera solidaria de El Reto de Claudia. Un evento para correr juntos por Claudia y por todos los niños que padecen enfermedades peroxisomales. Todas las distancias son bienvenidas: caminar, trotar o correr. Lo importante es estar.',
-      en: 'Join the first charity race of El Reto de Claudia. An event to run together for Claudia and all children with peroxisomal diseases. All paces welcome: walk, jog or run. What matters is showing up.',
+      es: 'Únete a la primera carrera solidaria de El Reto de Claudia. ¡Ya somos más de 630 participantes inscritos! Un evento para correr juntos por Claudia y por todos los niños que padecen enfermedades peroxisomales. Todas las distancias son bienvenidas: caminar, trotar o correr. ⚠️ Necesitamos voluntarios para ayudar el día de la carrera — si podéis echar una mano, será de enorme ayuda.',
+      en: 'Join the first charity race of El Reto de Claudia. We already have over 630 registered participants! An event to run together for Claudia and all children with peroxisomal diseases. All paces welcome: walk, jog or run. ⚠️ We need volunteers on race day — if you can lend a hand, it will be a huge help.',
     },
     image: '/images/events/carrera-solidaria-san-lorenzo-2026.webp',
     status: 'upcoming',
+    category: 'solidarity',
     registerHref: 'https://www.correporclaudia.com/inscripcion-carrera-popular',
     infoHref: 'https://www.correporclaudia.com/',
     organizers: [],
   },
   {
-    slug: 'fiestas-del-carmen-2026',
+    slug: 'torneo-solidario-padel-2026',
     title: {
-      es: 'Fiestas del Carmen — Claudia como causa solidaria',
-      en: 'Fiestas del Carmen — Claudia as a Charity Cause',
+      es: 'Torneo solidario de pádel',
+      en: 'Charity Padel Tournament',
+    },
+    date: '2026-07-04',
+    dateEnd: '2026-07-05',
+    location: 'Por confirmar',
+    description: {
+      es: 'Dos días de pádel con corazón. Un torneo solidario donde cada punto jugado contribuye a la investigación de la DBP. Compite, disfruta y suma a la causa de Claudia.',
+      en: 'Two days of padel with heart. A charity tournament where every point played contributes to DBP research. Compete, enjoy and support Claudia\'s cause.',
+    },
+    image: '/images/events/torneo-solidario-padel-2026.webp',
+    status: 'upcoming',
+    category: 'solidarity',
+    registerHref: null,
+    infoHref: null,
+    organizers: [],
+  },
+  {
+    slug: 'hdad-ntra-sra-carmen-2026',
+    title: {
+      es: 'Hdad. Ntra. Sra. del Carmen — Claudia como causa solidaria',
+      en: 'Hdad. Ntra. Sra. del Carmen — Claudia as a Charity Cause',
     },
     date: '2026-07-12',
-    location: 'San Lorenzo de El Escorial, Madrid',
+    location: 'Barrio del Carmen, San Lorenzo de El Escorial',
     description: {
-      es: 'Las Fiestas del Carmen de este año se visten de solidaridad. Durante varios días, múltiples actividades — música, juegos, gastronomía y mucho más — estarán dedicadas a Claudia y a la investigación de enfermedades peroxisomales. Un pueblo entero unido por una causa.',
-      en: 'This year\'s Fiestas del Carmen are dressed in solidarity. Over several days, multiple activities — music, games, food and more — will be dedicated to Claudia and peroxisomal disease research. A whole town united for one cause.',
+      es: 'La Hermandad Nuestra Señora del Carmen dedica este año sus fiestas a Claudia como causa solidaria. Durante varios días, múltiples actividades — música, juegos, gastronomía y mucho más — estarán dedicadas a la investigación de enfermedades peroxisomales. Un barrio entero unido por una causa.',
+      en: 'The Hermandad Nuestra Señora del Carmen dedicates this year\'s festivities to Claudia as a charity cause. Over several days, multiple activities — music, games, food and more — will be dedicated to peroxisomal disease research. A whole neighbourhood united for one cause.',
     },
-    image: '/images/events/fiestas-del-carmen-2026.webp',
+    image: '/images/events/hdad-ntra-sra-carmen-2026.webp',
     status: 'upcoming',
-    registerHref: '#',
-    infoHref: '#',
+    category: 'solidarity',
+    registerHref: null,
+    infoHref: null,
     organizers: [],
   },
   {
@@ -49,10 +92,54 @@ export const EVENTS = [
     },
     image: '/images/events/hyrox-hybrid-race-solidaria-2026.webp',
     status: 'upcoming',
-    registerHref: '#',
-    infoHref: '#',
+    category: 'solidarity',
+    registerHref: null,
+    infoHref: null,
     organizers: [],
   },
+
+  // ── Upcoming: presence events (puesto de merchandising) ─────────────────────
+  {
+    slug: 'actuacion-gimnasia-ritmica-2026',
+    title: {
+      es: 'Actuación de gimnasia rítmica',
+      en: 'Rhythmic Gymnastics Showcase',
+    },
+    date: '2026-06-17',
+    location: 'Por confirmar',
+    description: {
+      es: 'El Reto de Claudia estará presente con un puesto de merchandising en esta actuación de gimnasia rítmica.',
+      en: 'El Reto de Claudia will be present with a merchandise stand at this rhythmic gymnastics showcase.',
+    },
+    image: null,
+    status: 'upcoming',
+    category: 'presence',
+    registerHref: null,
+    infoHref: null,
+    organizers: [],
+  },
+  {
+    slug: 'torneo-padel-aniversario-espacio-herreria-2026',
+    title: {
+      es: 'Torneo de pádel aniversario — Espacio Herrería',
+      en: 'Anniversary Padel Tournament — Espacio Herrería',
+    },
+    date: '2026-06-20',
+    dateEnd: '2026-06-21',
+    location: 'Espacio Herrería, San Lorenzo de El Escorial',
+    description: {
+      es: 'El Reto de Claudia estará presente con un puesto de merchandising en el torneo de pádel aniversario de Espacio Herrería.',
+      en: 'El Reto de Claudia will be present with a merchandise stand at the Espacio Herrería anniversary padel tournament.',
+    },
+    image: null,
+    status: 'upcoming',
+    category: 'presence',
+    registerHref: null,
+    infoHref: null,
+    organizers: [],
+  },
+
+  // ── Past events ─────────────────────────────────────────────────────────────
   {
     slug: 'spain-global-rare-diseases-summit-2026',
     title: {
@@ -67,6 +154,7 @@ export const EVENTS = [
     },
     image: '/images/events/spain-global-rare-diseases-summit-2026.webp',
     status: 'past',
+    category: 'solidarity',
     registerHref: null,
     infoHref: null,
     organizers: [],
@@ -85,6 +173,7 @@ export const EVENTS = [
     },
     image: '/images/events/carrera-escolar-cp-jose-robles-2026.webp',
     status: 'past',
+    category: 'solidarity',
     registerHref: null,
     infoHref: null,
     organizers: [],

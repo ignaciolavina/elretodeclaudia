@@ -26,14 +26,38 @@ const ImagePlaceholder = ({ size = 'lg' }) => (
   </div>
 )
 
-function UpcomingCard({ event }) {
+function formatDateRange(event, lang) {
+  const locale = lang === 'es' ? 'es-ES' : 'en-GB'
+  const start = new Date(event.date + 'T12:00:00')
+
+  if (!event.dateEnd) {
+    return new Intl.DateTimeFormat(locale, { day: 'numeric', month: 'long', year: 'numeric' }).format(start)
+  }
+
+  const end = new Date(event.dateEnd + 'T12:00:00')
+  const startDay = start.getDate()
+  const endDay = end.getDate()
+  const monthYear = new Intl.DateTimeFormat(locale, { month: 'long', year: 'numeric' }).format(start)
+
+  return lang === 'es'
+    ? `${startDay} y ${endDay} de ${monthYear}`
+    : `${startDay}–${endDay} ${monthYear}`
+}
+
+function UpcomingCard({ event, badgeLabel, badgeStyle = 'solidarity' }) {
   const { ref, isVisible } = useScrollAnimation()
   const { t, lang } = useLanguage()
   const d = t.eventos
 
-  const formattedDate = new Intl.DateTimeFormat(lang === 'es' ? 'es-ES' : 'en-GB', {
-    day: 'numeric', month: 'long', year: 'numeric',
-  }).format(new Date(event.date + 'T12:00:00'))
+  const formattedDate = formatDateRange(event, lang)
+
+  const badge = badgeStyle === 'presence'
+    ? 'bg-gray-100 text-gray-600'
+    : 'bg-brand-100 text-brand-700'
+
+  const dot = badgeStyle === 'presence'
+    ? 'bg-gray-400'
+    : 'bg-brand-500 animate-pulse'
 
   return (
     <div
@@ -49,9 +73,9 @@ function UpcomingCard({ event }) {
         </div>
 
         <div className="flex-1 p-8 lg:p-10 flex flex-col">
-          <span className="inline-flex items-center gap-1.5 bg-brand-100 text-brand-700 text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full self-start mb-5">
-            <span className="w-1.5 h-1.5 bg-brand-500 rounded-full animate-pulse" aria-hidden="true" />
-            {d.upcomingBadge}
+          <span className={`inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full self-start mb-5 ${badge}`}>
+            <span className={`w-1.5 h-1.5 rounded-full ${dot}`} aria-hidden="true" />
+            {badgeLabel}
           </span>
 
           <h3 className="font-serif text-2xl lg:text-3xl font-bold text-gray-900 mb-4 leading-snug">
@@ -61,7 +85,7 @@ function UpcomingCard({ event }) {
           <div className="flex flex-col sm:flex-row gap-3 mb-5">
             <div className="flex items-center gap-2 text-gray-600 text-sm">
               <CalendarIcon />
-              <span>{formattedDate}</span>
+              <span>{formattedDate}{event.time ? ` · ${event.time} h` : ''}</span>
             </div>
             <div className="flex items-center gap-2 text-gray-600 text-sm">
               <LocationIcon />
@@ -112,9 +136,7 @@ function PastCard({ event, index }) {
   const { t, lang } = useLanguage()
   const d = t.eventos
 
-  const formattedDate = new Intl.DateTimeFormat(lang === 'es' ? 'es-ES' : 'en-GB', {
-    day: 'numeric', month: 'long', year: 'numeric',
-  }).format(new Date(event.date + 'T12:00:00'))
+  const formattedDate = formatDateRange(event, lang)
 
   return (
     <div
@@ -163,8 +185,9 @@ export default function Eventos() {
   const fade = (delay = '') =>
     `transition-all duration-700 ${delay} ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`
 
-  const upcoming = EVENTS.filter(e => e.status === 'upcoming')
-  const past = EVENTS.filter(e => e.status === 'past')
+  const upcoming   = EVENTS.filter(e => e.status === 'upcoming' && e.category !== 'presence').sort((a, b) => a.date.localeCompare(b.date))
+  const presence   = EVENTS.filter(e => e.status === 'upcoming' && e.category === 'presence').sort((a, b) => a.date.localeCompare(b.date))
+  const past       = EVENTS.filter(e => e.status === 'past').sort((a, b) => b.date.localeCompare(a.date))
 
   return (
     <div className="min-h-screen">
@@ -186,7 +209,7 @@ export default function Eventos() {
           </div>
         </section>
 
-        {/* Upcoming */}
+        {/* Upcoming solidarity */}
         <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-6 lg:px-12">
             <h2 className="font-serif text-2xl font-bold text-gray-900 mb-8">{d.upcomingTitle}</h2>
@@ -196,12 +219,29 @@ export default function Eventos() {
             ) : (
               <div className="space-y-8">
                 {upcoming.map(event => (
-                  <UpcomingCard key={event.slug} event={event} />
+                  <UpcomingCard key={event.slug} event={event} badgeLabel={d.upcomingBadge} badgeStyle="solidarity" />
                 ))}
               </div>
             )}
           </div>
         </section>
+
+        {/* Presence events */}
+        {presence.length > 0 && (
+          <section className="py-16 bg-gray-50">
+            <div className="max-w-7xl mx-auto px-6 lg:px-12">
+              <div className="mb-8">
+                <h2 className="font-serif text-2xl font-bold text-gray-900">{d.presenceTitle}</h2>
+                <p className="text-gray-500 text-sm mt-1">{d.presenceNote}</p>
+              </div>
+              <div className="space-y-8">
+                {presence.map(event => (
+                  <UpcomingCard key={event.slug} event={event} badgeLabel={d.presenceBadge} badgeStyle="presence" />
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* Past */}
         {past.length > 0 && (
