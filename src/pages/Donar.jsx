@@ -193,7 +193,7 @@ export default function Donar() {
   const [showDirectModal, setShowDirectModal] = useState(false)
   const [directTab, setDirectTab] = useState('once')
   const [openFaq, setOpenFaq] = useState(null)
-  const [donationAmount, setDonationAmount] = useState(50)
+  const [donationAmount, setDonationAmount] = useState(10)
   const { t, lang } = useLanguage()
   const d = t.donar
 
