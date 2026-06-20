@@ -12,7 +12,7 @@ import Navbar from '../components/Navbar'
 import { useLanguage } from '../context/LanguageContext'
 
 
-const IBAN = 'ES6130581929452720018530'
+const IBAN = 'ES6130581929452720018539'
 
 const ONCE_AMOUNTS = [
   { amount: '10 €', href: 'https://buy.stripe.com/9B600d3p4fAc2ic3Vr4F207' },
@@ -234,7 +234,7 @@ export default function Donar() {
               <p className="text-xs text-gray-500 uppercase tracking-widest font-semibold mb-2">{d.transfer.ibanLabel}</p>
               <div className="flex items-center justify-between gap-3">
                 <p className="text-base font-bold text-brand-700 tracking-widest font-mono">
-                  ES61 3058 1929 4527 2001 8530
+                  ES61 3058 1929 4527 2001 8539
                 </p>
                 <button
                   onClick={copyIban}
