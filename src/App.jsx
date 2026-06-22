@@ -51,8 +51,15 @@ function StickyDonateBar() {
 function ScrollToTop() {
   const location = useLocation()
   useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [location.pathname])
+    if (location.hash) {
+      setTimeout(() => {
+        const el = document.querySelector(location.hash)
+        if (el) el.scrollIntoView({ behavior: 'smooth' })
+      }, 0)
+    } else {
+      window.scrollTo(0, 0)
+    }
+  }, [location.pathname, location.hash])
   return null
 }
 
