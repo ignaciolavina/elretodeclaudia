@@ -82,6 +82,25 @@ export const EVENTS = [
     organizers: [],
   },
   {
+    slug: 'torneo-benefico-volley-2026',
+    title: {
+      es: 'Torneo Benéfico Volley 4 — Hdad. Ntra. Sra. del Carmen',
+      en: 'Charity Volleyball 4 Tournament — Hdad. Ntra. Sra. del Carmen',
+    },
+    date: '2026-07-11',
+    location: 'Polideportivo Zaburdón, Pabellón Sur, San Lorenzo de El Escorial',
+    description: {
+      es: 'Torneo de volley 4x4 mixto (1 chica siempre en pista). 3 categorías: alevín (16:00 h), infantil y cadete (16:00 h), juvenil y absoluta (17:00 h). Inscripciones hasta el viernes 10 de julio en Carnicería Contreras.',
+      en: 'Mixed 4x4 volleyball tournament (1 girl always on court). 3 categories: U10 (4:00 PM), U14 (4:00 PM), U18 and open (5:00 PM). Registration until Friday 10 July at Carnicería Contreras.',
+    },
+    image: null,
+    status: 'upcoming',
+    category: 'solidarity',
+    registerHref: null,
+    infoHref: null,
+    organizers: [],
+  },
+  {
     slug: 'dia-de-la-esperanza-2026',
     title: {
       es: 'Día de la Esperanza — Hdad. Ntra. Sra. del Carmen',
@@ -97,6 +116,25 @@ export const EVENTS = [
     status: 'upcoming',
     category: 'solidarity',
     pageHref: '/eventos/dia-de-la-esperanza-2026',
+    registerHref: null,
+    infoHref: null,
+    organizers: [],
+  },
+  {
+    slug: 'memorial-victor-contreras-cogorro-2026',
+    title: {
+      es: 'Torneo Benéfico Fútbol 3 — Hdad. Ntra. Sra. del Carmen',
+      en: 'Charity Football 3 Tournament — Hdad. Ntra. Sra. del Carmen',
+    },
+    date: '2026-07-18',
+    location: 'Campo de Fútbol La Herrería "José Luis Nogal", San Lorenzo de El Escorial',
+    description: {
+      es: 'XXVI Memorial Víctor Contreras Cogorro. Torneo benéfico de fútbol 3 con 8 categorías: mini chupetines, chupetines, prebenjamín, benjamín, alevín, infantil, veteranos y femenino. Máximo 12 equipos por categoría y 4 jugadores por equipo. Inscripciones gratuitas en Carnicería Contreras.',
+      en: 'XXVI Memorial Víctor Contreras Cogorro. Charity football 3 tournament with 8 categories: mini chupetines, chupetines, pre-U8, U8, U10, U14, veterans and women\'s. Max 12 teams per category and 4 players per team. Free registration at Carnicería Contreras.',
+    },
+    image: null,
+    status: 'upcoming',
+    category: 'solidarity',
     registerHref: null,
     infoHref: null,
     organizers: [],

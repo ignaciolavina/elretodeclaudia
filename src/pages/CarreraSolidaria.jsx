@@ -15,12 +15,14 @@ const PHOTOS = [
 const STATS = {
   es: [
     { value: '1.000', label: 'inscritos' },
-    { value: '17.500 €', label: 'recaudados' },
+    { value: '17.500 €', label: 'recaudados por el evento' },
+    { value: '3.500 €', label: 'recaudados en merchandising' },
     { value: '27 jun', label: '2026' },
   ],
   en: [
     { value: '1,000', label: 'registered' },
-    { value: '€17,500', label: 'raised' },
+    { value: '€17,500', label: 'raised by the event' },
+    { value: '€3,500', label: 'raised from merchandise' },
     { value: '27 Jun', label: '2026' },
   ],
 }
@@ -131,7 +133,7 @@ export default function CarreraSolidaria() {
         {/* Stats */}
         <section className="py-8 bg-white">
           <div className="max-w-4xl mx-auto px-6 lg:px-12">
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               {STATS[lang].map((stat, i) => (
                 <div key={i} className={`text-center p-6 bg-brand-50 rounded-2xl ${fade(`delay-[${(i + 1) * 100}ms]`)}`}>
                   <p className="font-serif text-2xl sm:text-3xl font-bold text-brand-700">{stat.value}</p>

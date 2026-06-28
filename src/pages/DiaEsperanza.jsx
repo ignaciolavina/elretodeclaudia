@@ -7,7 +7,7 @@ import { useLanguage } from '../context/LanguageContext'
 const SCHEDULE = {
   es: [
     { time: '08:00', title: 'XVI Abantos Trekking', desc: 'Salida: Convento Carmelitas Descalzas. Llegada: Bar Rincón Andaluz.' },
-    { time: '13:00', title: 'Mural de la Esperanza', desc: 'Con la colaboración de la Escuela Infantil Trébol. Aperitivo Musical a cargo de Charanga Jóvenes Brillantes.' },
+    { time: '13:00', title: 'Mural de la Esperanza', desc: 'Con la colaboración de la Escuela Infantil Trébol. Aperitivo Musical a cargo de Charanga J. Brillantes.' },
     { time: '14:30', title: 'Paella Solidaria', desc: 'Concierto de The Greentones. Rifa benéfica durante el concierto.' },
     { time: '17:30', title: 'Juegos infantiles y tardeo', desc: 'Juegos infantiles con la colaboración de la Asociación Kairas. Tardeo con DJ.' },
     { time: '19:00', title: 'Danza Oriental — Grupo Ayla', desc: 'Rifa benéfica al finalizar la actuación.' },
@@ -16,7 +16,7 @@ const SCHEDULE = {
   ],
   en: [
     { time: '08:00', title: 'XVI Abantos Trekking', desc: 'Start: Convento Carmelitas Descalzas. Finish: Bar Rincón Andaluz.' },
-    { time: '13:00', title: 'Mural of Hope', desc: 'With the collaboration of Escuela Infantil Trébol. Musical appetiser by Charanga Jóvenes Brillantes.' },
+    { time: '13:00', title: 'Mural of Hope', desc: 'With the collaboration of Escuela Infantil Trébol. Musical appetiser by Charanga J. Brillantes.' },
     { time: '14:30', title: 'Charity Paella', desc: 'Concert by The Greentones. Charity raffle during the concert.' },
     { time: '17:30', title: 'Kids\' games & afternoon party', desc: 'Children\'s games with Asociación Kairas. Afternoon party with DJ.' },
     { time: '19:00', title: 'Oriental Dance — Grupo Ayla', desc: 'Charity raffle after the performance.' },
@@ -95,21 +95,8 @@ export default function DiaEsperanza() {
           </div>
         </section>
 
-        {/* Hero image */}
-        <section className="pt-8 bg-white">
-          <div className="max-w-5xl mx-auto px-6 lg:px-12">
-            <div className={`rounded-3xl overflow-hidden shadow-lg ${fade('delay-300')}`}>
-              <img
-                src="/images/events/hdad-ntra-sra-carmen-2026.webp"
-                alt={t.title}
-                className="w-full h-auto object-cover"
-              />
-            </div>
-          </div>
-        </section>
-
         {/* Info cards */}
-        <section className="py-8 bg-white">
+        <section className="pt-8 pb-8 bg-white">
           <div className="max-w-4xl mx-auto px-6 lg:px-12">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="bg-brand-50 rounded-2xl p-6 text-center">
