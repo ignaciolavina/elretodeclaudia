@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import { useScrollAnimation } from '../hooks/useScrollAnimation'
@@ -138,11 +139,15 @@ function PastCard({ event, index }) {
 
   const formattedDate = formatDateRange(event, lang)
 
+  const Wrapper = event.pageHref ? Link : 'div'
+  const wrapperProps = event.pageHref ? { to: event.pageHref } : {}
+
   return (
-    <div
+    <Wrapper
+      {...wrapperProps}
       ref={ref}
       style={{ transitionDelay: isVisible ? `${index * 100}ms` : '0ms' }}
-      className={`bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+      className={`block bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden transition-all duration-700 ${event.pageHref ? 'hover:shadow-md hover:-translate-y-1 cursor-pointer' : ''} ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
     >
       <div className="h-64 overflow-hidden">
         {event.image
@@ -157,7 +162,11 @@ function PastCard({ event, index }) {
         {event.description && (
           <p className="text-sm text-gray-600 leading-relaxed line-clamp-4 mb-4">{event.description[lang]}</p>
         )}
-        {event.infoHref && (
+        {event.pageHref ? (
+          <span className="text-sm text-brand-600 font-semibold underline underline-offset-2">
+            {d.detailsCta}
+          </span>
+        ) : event.infoHref && (
           <a
             href={event.infoHref}
             target="_blank"
@@ -168,7 +177,7 @@ function PastCard({ event, index }) {
           </a>
         )}
       </div>
-    </div>
+    </Wrapper>
   )
 }
 

@@ -13,6 +13,7 @@ import Donar from './pages/Donar'
 import Privacidad from './pages/Privacidad'
 import Prensa from './pages/Prensa'
 import Eventos from './pages/Eventos'
+import CarreraSolidaria from './pages/CarreraSolidaria'
 import ProximosEventos from './components/ProximosEventos'
 
 function Home() {
@@ -87,6 +88,7 @@ export default function App() {
         <Route path="/privacidad" element={<Privacidad />} />
         <Route path="/prensa" element={<Prensa />} />
         <Route path="/eventos" element={<Eventos />} />
+        <Route path="/eventos/carrera-solidaria-san-lorenzo-2026" element={<CarreraSolidaria />} />
         <Route path="*" element={<Donar />} />
       </Routes>
     </LanguageProvider>
