@@ -65,7 +65,6 @@ export default function CarreraSolidaria() {
       'Voluntarios organizando el tráfico y cuidando cada detalle',
       'Un photocall con todos los patrocinadores y colaboradores',
     ],
-    limit: 'Tuvimos que cerrar las inscripciones en 1.000 participantes por seguridad. Sabíamos que no todos acudirían, pero muchos se inscribieron como gesto solidario. Lo importante es que mucha gente quiso ayudar.',
     routeTitle: 'Recorrido',
     thanks: 'Gracias a todos los que lo hicisteis posible — corredores, voluntarios, patrocinadores y vecinos. Esto es solo el principio.',
     galleryTitle: 'Galería',
@@ -87,7 +86,6 @@ export default function CarreraSolidaria() {
       'Volunteers managing traffic and taking care of every detail',
       'A photo backdrop with all sponsors and collaborators',
     ],
-    limit: 'We had to cap registrations at 1,000 participants for safety. We knew not everyone would attend, but many signed up as a gesture of solidarity. What matters is that so many people wanted to help.',
     routeTitle: 'Route',
     thanks: 'Thank you to everyone who made it possible — runners, volunteers, sponsors and neighbours. This is just the beginning.',
     galleryTitle: 'Gallery',
@@ -161,8 +159,6 @@ export default function CarreraSolidaria() {
                 ))}
               </ul>
             </div>
-
-            <p className="text-gray-700 text-lg leading-relaxed">{t.limit}</p>
 
             {/* Route map */}
             <div>
