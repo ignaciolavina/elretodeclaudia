@@ -14,6 +14,7 @@ import Privacidad from './pages/Privacidad'
 import Prensa from './pages/Prensa'
 import Eventos from './pages/Eventos'
 import CarreraSolidaria from './pages/CarreraSolidaria'
+import DiaEsperanza from './pages/DiaEsperanza'
 import ProximosEventos from './components/ProximosEventos'
 
 function Home() {
@@ -89,6 +90,7 @@ export default function App() {
         <Route path="/prensa" element={<Prensa />} />
         <Route path="/eventos" element={<Eventos />} />
         <Route path="/eventos/carrera-solidaria-san-lorenzo-2026" element={<CarreraSolidaria />} />
+        <Route path="/eventos/dia-de-la-esperanza-2026" element={<DiaEsperanza />} />
         <Route path="*" element={<Donar />} />
       </Routes>
     </LanguageProvider>

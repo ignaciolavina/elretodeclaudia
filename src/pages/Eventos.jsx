@@ -60,10 +60,14 @@ function UpcomingCard({ event, badgeLabel, badgeStyle = 'solidarity' }) {
     ? 'bg-gray-400'
     : 'bg-brand-500 animate-pulse'
 
+  const Wrapper = event.pageHref ? Link : 'div'
+  const wrapperProps = event.pageHref ? { to: event.pageHref } : {}
+
   return (
-    <div
+    <Wrapper
+      {...wrapperProps}
       ref={ref}
-      className={`bg-white rounded-3xl shadow-sm border border-brand-100 overflow-hidden transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+      className={`block bg-white rounded-3xl shadow-sm border border-brand-100 overflow-hidden transition-all duration-700 ${event.pageHref ? 'hover:shadow-md cursor-pointer' : ''} ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
     >
       <div className="flex flex-col lg:flex-row">
         <div className="lg:w-2/5 flex-shrink-0 overflow-hidden">
@@ -105,6 +109,11 @@ function UpcomingCard({ event, badgeLabel, badgeStyle = 'solidarity' }) {
           )}
 
           <div className="flex flex-wrap gap-3">
+            {event.pageHref && (
+              <span className="bg-brand-600 text-white text-sm font-semibold px-6 py-3 rounded-xl shadow-sm">
+                {d.detailsCta}
+              </span>
+            )}
             {event.registerHref && event.registerHref !== '#' && (
               <a
                 href={event.registerHref}
@@ -128,7 +137,7 @@ function UpcomingCard({ event, badgeLabel, badgeStyle = 'solidarity' }) {
           </div>
         </div>
       </div>
-    </div>
+    </Wrapper>
   )
 }
 
