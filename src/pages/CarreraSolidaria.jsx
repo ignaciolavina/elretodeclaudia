@@ -59,7 +59,6 @@ export default function CarreraSolidaria() {
     highlights: 'Un día inolvidable',
     highlightsList: [
       'Stands de comida, merchandising y actividades para todos',
-      'Clase de zumba para calentar antes de la carrera',
       'Baile con Mónica Herranz animando al público desde el escenario',
       'Evento de magia a cargo de CISMAD',
       'Motos acompañando el recorrido, cada una con una letra que juntas formaban CLAUDIA',
@@ -82,7 +81,6 @@ export default function CarreraSolidaria() {
     highlights: 'An unforgettable day',
     highlightsList: [
       'Food stands, merchandise and activities for everyone',
-      'Zumba class to warm up before the race',
       'Dance with Mónica Herranz leading the crowd from the stage',
       'Magic show by CISMAD',
       'Motorbikes accompanying the route, each carrying a letter that together spelled CLAUDIA',
