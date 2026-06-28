@@ -43,12 +43,12 @@ export const EVENTS = [
   {
     slug: 'una-tarde-por-claudia-2026',
     title: {
-      es: 'Una tarde por Claudia — El Trébol',
-      en: 'An Afternoon for Claudia — El Trébol',
+      es: 'Una tarde por Claudia — EEI Trébol',
+      en: 'An Afternoon for Claudia — EEI Trébol',
     },
     date: '2026-07-03',
     time: '16:00–20:00',
-    location: 'El Trébol, San Lorenzo de El Escorial',
+    location: 'Escuela de Educación Infantil Trébol, C. Fray Luis de León 6, San Lorenzo de El Escorial',
     description: {
       es: 'Ven a disfrutar de una tarde divertida y muy solidaria con muchas sorpresas. Contaremos con un mercadillo solidario donde recogemos juguetes, cuentos, ropa en muy buen estado, complementos y accesorios. ¡Os esperamos a todos! Contacto: 649 17 36 30.',
       en: 'Come enjoy a fun and heartfelt solidarity afternoon full of surprises. We\'ll have a charity market collecting toys, books, clothes in great condition, accessories and more. We hope to see you all there! Contact: 649 17 36 30.',
