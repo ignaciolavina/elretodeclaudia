@@ -101,6 +101,26 @@ export const EVENTS = [
     organizers: [],
   },
   {
+    slug: 'ruta-del-carmen-2026',
+    title: {
+      es: 'Ruta del Carmen — Hdad. Ntra. Sra. del Carmen',
+      en: 'Ruta del Carmen — Hdad. Ntra. Sra. del Carmen',
+    },
+    date: '2026-07-12',
+    time: '08:00',
+    location: 'Bar Rincón Andaluz, Plaza de Santa Teresa, San Lorenzo de El Escorial',
+    description: {
+      es: 'XVI Abantos Trekking. Ruta de 11 km de dificultad media. Salida y llegada en Bar Rincón Andaluz. Inscripciones abiertas y venta de camisetas benéficas desde el 1 de julio. Máximo 150 participantes.',
+      en: 'XVI Abantos Trekking. 11 km route of medium difficulty. Start and finish at Bar Rincón Andaluz. Registration open and charity t-shirt sales from 1 July. Maximum 150 participants.',
+    },
+    image: null,
+    status: 'upcoming',
+    category: 'solidarity',
+    registerHref: null,
+    infoHref: null,
+    organizers: [],
+  },
+  {
     slug: 'dia-de-la-esperanza-2026',
     title: {
       es: 'Día de la Esperanza — Hdad. Ntra. Sra. del Carmen',

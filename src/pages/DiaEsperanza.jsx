@@ -6,7 +6,6 @@ import { useLanguage } from '../context/LanguageContext'
 
 const SCHEDULE = {
   es: [
-    { time: '08:00', title: 'XVI Abantos Trekking', desc: 'Salida: Convento Carmelitas Descalzas. Llegada: Bar Rincón Andaluz.' },
     { time: '13:00', title: 'Mural de la Esperanza', desc: 'Con la colaboración de la Escuela Infantil Trébol. Aperitivo Musical a cargo de Charanga J. Brillantes.' },
     { time: '14:30', title: 'Paella Solidaria', desc: 'Concierto de The Greentones. Rifa benéfica durante el concierto.' },
     { time: '17:30', title: 'Juegos infantiles y tardeo', desc: 'Juegos infantiles con la colaboración de la Asociación Kairas. Tardeo con DJ.' },
@@ -15,7 +14,6 @@ const SCHEDULE = {
     { time: '', title: 'Conciertos de cierre', desc: 'Break Times y Los Que Quedamos.' },
   ],
   en: [
-    { time: '08:00', title: 'XVI Abantos Trekking', desc: 'Start: Convento Carmelitas Descalzas. Finish: Bar Rincón Andaluz.' },
     { time: '13:00', title: 'Mural of Hope', desc: 'With the collaboration of Escuela Infantil Trébol. Musical appetiser by Charanga J. Brillantes.' },
     { time: '14:30', title: 'Charity Paella', desc: 'Concert by The Greentones. Charity raffle during the concert.' },
     { time: '17:30', title: 'Kids\' games & afternoon party', desc: 'Children\'s games with Asociación Kairas. Afternoon party with DJ.' },
