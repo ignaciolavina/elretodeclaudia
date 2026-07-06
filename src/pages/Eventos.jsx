@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import { useScrollAnimation } from '../hooks/useScrollAnimation'
@@ -209,6 +210,17 @@ export default function Eventos() {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Eventos — El Reto de Claudia</title>
+        <meta name="description" content="Carreras, torneos, conciertos y mucho más. Participa en los eventos solidarios de El Reto de Claudia y ayuda a financiar la investigación de la DBP." />
+        <meta property="og:url" content="https://elretodeclaudia.org/eventos" />
+        <meta property="og:title" content="Eventos — El Reto de Claudia" />
+        <meta property="og:description" content="Carreras, torneos, conciertos y mucho más. Participa en los eventos solidarios de El Reto de Claudia y ayuda a financiar la investigación de la DBP." />
+        <meta property="og:image" content="https://elretodeclaudia.org/og-default.png" />
+        <meta name="twitter:title" content="Eventos — El Reto de Claudia" />
+        <meta name="twitter:description" content="Carreras, torneos, conciertos y mucho más. Participa en los eventos solidarios de El Reto de Claudia y ayuda a financiar la investigación de la DBP." />
+        <meta name="twitter:image" content="https://elretodeclaudia.org/og-default.png" />
+      </Helmet>
       <Navbar />
       <main>
 

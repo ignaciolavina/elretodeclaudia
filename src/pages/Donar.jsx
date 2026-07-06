@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Helmet } from 'react-helmet-async'
 
 const DONATION_LINK = 'https://www.migranodearena.org/reto/el-reto-de-claudia'
 const MEMBER_AMOUNTS = [
@@ -406,6 +407,17 @@ export default function Donar() {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <Helmet>
+        <title>Dona — El Reto de Claudia</title>
+        <meta name="description" content="Ayuda a Claudia con una donación. Tu aportación financia la investigación de la deficiencia de la proteína D-bifuncional. Puedes donar por Bizum, tarjeta o transferencia bancaria." />
+        <meta property="og:url" content="https://elretodeclaudia.org/donar" />
+        <meta property="og:title" content="Dona — El Reto de Claudia" />
+        <meta property="og:description" content="Ayuda a Claudia con una donación. Tu aportación financia la investigación de la deficiencia de la proteína D-bifuncional. Puedes donar por Bizum, tarjeta o transferencia bancaria." />
+        <meta property="og:image" content="https://elretodeclaudia.org/og-default.png" />
+        <meta name="twitter:title" content="Dona — El Reto de Claudia" />
+        <meta name="twitter:description" content="Ayuda a Claudia con una donación. Tu aportación financia la investigación de la deficiencia de la proteína D-bifuncional. Puedes donar por Bizum, tarjeta o transferencia bancaria." />
+        <meta name="twitter:image" content="https://elretodeclaudia.org/og-default.png" />
+      </Helmet>
       <Navbar donatePage />
       <main className="flex-1 pt-24 pb-16 bg-brand-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

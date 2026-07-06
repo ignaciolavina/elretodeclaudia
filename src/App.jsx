@@ -1,5 +1,6 @@
 import { Routes, Route, useLocation, Link } from 'react-router-dom'
 import { useEffect } from 'react'
+import { Helmet } from 'react-helmet-async'
 import { LanguageProvider } from './context/LanguageContext'
 import { useLanguage } from './context/LanguageContext'
 import Navbar from './components/Navbar'
@@ -20,6 +21,17 @@ import ProximosEventos from './components/ProximosEventos'
 function Home() {
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>El Reto de Claudia — Deficiencia de la Proteína D-Bifuncional</title>
+        <meta name="description" content="Asociación sin ánimo de lucro para dar visibilidad a la deficiencia de la proteína D-bifuncional (DBP), una enfermedad neurodegenerativa ultrarrara. Más investigación, más esperanza." />
+        <meta property="og:url" content="https://elretodeclaudia.org/" />
+        <meta property="og:title" content="El Reto de Claudia — Deficiencia de la Proteína D-Bifuncional" />
+        <meta property="og:description" content="Asociación sin ánimo de lucro para dar visibilidad a la deficiencia de la proteína D-bifuncional (DBP), una enfermedad neurodegenerativa ultrarrara. Más investigación, más esperanza." />
+        <meta property="og:image" content="https://elretodeclaudia.org/og-default.png" />
+        <meta name="twitter:title" content="El Reto de Claudia — Deficiencia de la Proteína D-Bifuncional" />
+        <meta name="twitter:description" content="Asociación sin ánimo de lucro para dar visibilidad a la deficiencia de la proteína D-bifuncional (DBP), una enfermedad neurodegenerativa ultrarrara. Más investigación, más esperanza." />
+        <meta name="twitter:image" content="https://elretodeclaudia.org/og-default.png" />
+      </Helmet>
       <Navbar />
       <main>
         <Hero />

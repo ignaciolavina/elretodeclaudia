@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import { useLanguage } from '../context/LanguageContext'
@@ -98,6 +99,17 @@ export default function CarreraSolidaria() {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Carrera Solidaria San Lorenzo 2026 — El Reto de Claudia</title>
+        <meta name="description" content="Más de 1.000 inscritos y 17.500 € recaudados en la primera carrera solidaria de El Reto de Claudia. Un pueblo entero corriendo por Claudia." />
+        <meta property="og:url" content="https://elretodeclaudia.org/eventos/carrera-solidaria-san-lorenzo-2026" />
+        <meta property="og:title" content="Carrera Solidaria San Lorenzo 2026 — El Reto de Claudia" />
+        <meta property="og:description" content="Más de 1.000 inscritos y 17.500 € recaudados en la primera carrera solidaria de El Reto de Claudia. Un pueblo entero corriendo por Claudia." />
+        <meta property="og:image" content="https://elretodeclaudia.org/images/events/carrera-solidaria-san-lorenzo-2026/1.webp" />
+        <meta name="twitter:title" content="Carrera Solidaria San Lorenzo 2026 — El Reto de Claudia" />
+        <meta name="twitter:description" content="Más de 1.000 inscritos y 17.500 € recaudados en la primera carrera solidaria de El Reto de Claudia. Un pueblo entero corriendo por Claudia." />
+        <meta name="twitter:image" content="https://elretodeclaudia.org/images/events/carrera-solidaria-san-lorenzo-2026/1.webp" />
+      </Helmet>
       <Navbar />
       <main>
 

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import { useLanguage } from '../context/LanguageContext'
@@ -71,6 +72,17 @@ export default function DiaEsperanza() {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Día de la Esperanza 2026 — El Reto de Claudia</title>
+        <meta name="description" content="Un día entero de actividades solidarias organizado por la Hermandad de Nuestra Señora del Carmen en beneficio de El Reto de Claudia. 12 de julio de 2026." />
+        <meta property="og:url" content="https://elretodeclaudia.org/eventos/dia-de-la-esperanza-2026" />
+        <meta property="og:title" content="Día de la Esperanza 2026 — El Reto de Claudia" />
+        <meta property="og:description" content="Un día entero de actividades solidarias organizado por la Hermandad de Nuestra Señora del Carmen en beneficio de El Reto de Claudia. 12 de julio de 2026." />
+        <meta property="og:image" content="https://elretodeclaudia.org/images/events/hdad-ntra-sra-carmen-2026.webp" />
+        <meta name="twitter:title" content="Día de la Esperanza 2026 — El Reto de Claudia" />
+        <meta name="twitter:description" content="Un día entero de actividades solidarias organizado por la Hermandad de Nuestra Señora del Carmen en beneficio de El Reto de Claudia. 12 de julio de 2026." />
+        <meta name="twitter:image" content="https://elretodeclaudia.org/images/events/hdad-ntra-sra-carmen-2026.webp" />
+      </Helmet>
       <Navbar />
       <main>
 
