@@ -187,6 +187,62 @@ function TaxCard({ d, donationAmount, setDonationAmount }) {
   )
 }
 
+function BizumCard({ d }) {
+  const [copiedCode, setCopiedCode] = useState(false)
+  const b = d.bizum
+
+  function copyCode() {
+    navigator.clipboard.writeText(b.code)
+    setCopiedCode(true)
+    setTimeout(() => setCopiedCode(false), 2000)
+  }
+
+  return (
+    <div className="bg-white rounded-3xl shadow-sm p-8 border border-brand-100">
+      <div className="flex items-center justify-between mb-1">
+        <h2 className="font-serif text-2xl font-semibold text-gray-900">{b.title}</h2>
+        <span className="text-xs font-semibold text-gray-400 uppercase tracking-widest">{b.spainNote}</span>
+      </div>
+
+      {/* Code */}
+      <div className="bg-brand-50 border border-brand-100 rounded-2xl p-5 mt-5 mb-6">
+        <p className="text-xs text-gray-500 uppercase tracking-widest font-semibold mb-3">{b.codeLabel}</p>
+        <div className="flex items-center justify-between gap-3">
+          <p className="font-mono text-4xl font-bold text-brand-700 tracking-widest">{b.code}</p>
+          <button
+            onClick={copyCode}
+            title={copiedCode ? b.codeCopied : b.copyCode}
+            className={`flex-shrink-0 flex items-center gap-2 px-4 py-2 rounded-xl border text-sm font-semibold transition-all ${copiedCode ? 'border-green-300 bg-green-50 text-green-600' : 'border-brand-200 bg-white text-brand-600 hover:bg-brand-100'}`}
+          >
+            {copiedCode
+              ? <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              : <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            }
+            {copiedCode ? b.codeCopied : b.copyCode}
+          </button>
+        </div>
+      </div>
+
+      {/* Steps */}
+      <p className="text-xs text-gray-500 uppercase tracking-widest font-semibold mb-4">{b.stepsTitle}</p>
+      <ol className="space-y-4 mb-4">
+        {b.steps.map((step, i) => (
+          <li key={i} className="flex gap-4">
+            <span className="flex-shrink-0 w-7 h-7 rounded-full bg-brand-100 text-brand-700 text-xs font-bold flex items-center justify-center mt-0.5">
+              {i + 1}
+            </span>
+            <div>
+              <p className="font-semibold text-gray-900 text-sm leading-snug">{step.title}</p>
+              <p className="text-gray-500 text-sm leading-relaxed mt-0.5">{step.desc}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+      <p className="text-xs text-gray-400 italic">{b.bankNote}.</p>
+    </div>
+  )
+}
+
 export default function Donar() {
   const [copied, setCopied] = useState(false)
   const [copiedBeneficiary, setCopiedBeneficiary] = useState(false)
@@ -367,6 +423,7 @@ export default function Donar() {
           {/* Desgravación + Donación directa — solo mobile */}
           <div className="lg:hidden space-y-6 mb-8">
             {lang !== 'en' && <TaxCard d={d} donationAmount={donationAmount} setDonationAmount={setDonationAmount} />}
+            <BizumCard d={d} />
             <DirectDonationCard />
           </div>
 
@@ -405,6 +462,11 @@ export default function Donar() {
                   <TaxCard d={d} donationAmount={donationAmount} setDonationAmount={setDonationAmount} />
                 </div>
               )}
+
+              {/* Bizum — solo desktop */}
+              <div className="hidden lg:block">
+                <BizumCard d={d} />
+              </div>
 
               {/* Donación directa — solo desktop */}
               <div className="hidden lg:block">

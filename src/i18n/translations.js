@@ -300,9 +300,19 @@ const translations = {
       },
 
       bizum: {
-        title: 'Donar por Bizum',
-        soon: 'Próximamente',
-        desc: 'Pronto podrás donar fácilmente a través de Bizum.',
+        title: 'Dona por Bizum',
+        codeLabel: 'Código Bizum ONG',
+        code: '14489',
+        copyCode: 'Copiar código',
+        codeCopied: '¡Copiado!',
+        stepsTitle: 'Cómo hacerlo',
+        bankNote: 'El nombre del botón puede variar según tu banco',
+        spainNote: 'Solo disponible en España',
+        steps: [
+          { title: 'Abrir la app del banco e ir a Bizum', desc: 'Entra en la sección Bizum desde la app de tu banco.' },
+          { title: 'Buscar "Donar a ONG" o "Hacer donación"', desc: 'Si no lo encuentras, pulsa primero en "Más opciones".' },
+          { title: 'Introducir el código 14489', desc: 'Escribe el código y continúa el proceso normalmente.' },
+        ],
       },
 
       card: {
@@ -724,8 +734,18 @@ const translations = {
 
       bizum: {
         title: 'Donate by Bizum',
-        soon: 'Coming soon',
-        desc: 'You will soon be able to donate easily through Bizum.',
+        codeLabel: 'Bizum ONG Code',
+        code: '14489',
+        copyCode: 'Copy code',
+        codeCopied: 'Copied!',
+        stepsTitle: 'How to do it',
+        bankNote: 'Button names may vary by bank',
+        spainNote: 'Available in Spain only',
+        steps: [
+          { title: 'Open your bank app and go to Bizum', desc: 'Go to the Bizum section in your bank\'s app.' },
+          { title: 'Look for "Donar a ONG" or "Hacer donación"', desc: 'If you can\'t find it, tap "Más opciones" first.' },
+          { title: 'Enter the code 14489', desc: 'Type the code and complete the process normally.' },
+        ],
       },
 
       card: {
