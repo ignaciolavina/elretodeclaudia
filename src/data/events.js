@@ -93,7 +93,7 @@ export const EVENTS = [
       es: 'Torneo de volley 4x4 mixto (1 chica siempre en pista). 3 categorías: alevín (16:00 h), infantil y cadete (16:00 h), juvenil y absoluta (17:00 h). Inscripciones hasta el viernes 10 de julio en Carnicería Contreras.',
       en: 'Mixed 4x4 volleyball tournament (1 girl always on court). 3 categories: U10 (4:00 PM), U14 (4:00 PM), U18 and open (5:00 PM). Registration until Friday 10 July at Carnicería Contreras.',
     },
-    image: null,
+    image: '/images/events/torneo-benefico-volley4-2026.webp',
     status: 'upcoming',
     category: 'solidarity',
     registerHref: null,
