@@ -245,13 +245,13 @@ export default function Donar() {
                   <button
                     onClick={copyCode}
                     title={copiedCode ? b.codeCopied : b.copyCode}
-                    className={`flex-shrink-0 flex items-center gap-2 px-4 py-2 rounded-xl border text-sm font-semibold transition-all ${copiedCode ? 'border-green-300 bg-green-50 text-green-600' : 'border-brand-200 bg-white text-brand-600 hover:bg-brand-100'}`}
+                    className={`flex-shrink-0 flex flex-col sm:flex-row items-center gap-1 sm:gap-2 px-3 sm:px-4 py-2 rounded-xl border text-xs sm:text-sm font-semibold text-center leading-tight transition-all ${copiedCode ? 'border-green-300 bg-green-50 text-green-600' : 'border-brand-200 bg-white text-brand-600 hover:bg-brand-100'}`}
                   >
                     {copiedCode
                       ? <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                       : <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
                     }
-                    {copiedCode ? b.codeCopied : b.copyCode}
+                    <span className="max-w-[3.5rem] sm:max-w-none">{copiedCode ? b.codeCopied : b.copyCode}</span>
                   </button>
                 </div>
                 <ol className="space-y-2 mb-3">
