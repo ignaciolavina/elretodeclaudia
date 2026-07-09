@@ -287,7 +287,7 @@ const translations = {
       },
 
       transfer: {
-        title: 'Transferencia bancaria',
+        title: 'Dona por transferencia bancaria',
         ibanLabel: 'Número de cuenta (IBAN)',
         copyTitle: 'Copiar IBAN',
         copiedTitle: 'Copiado',
@@ -720,7 +720,7 @@ const translations = {
       },
 
       transfer: {
-        title: 'Bank transfer',
+        title: 'Donate by bank transfer',
         ibanLabel: 'Account number (IBAN)',
         copyTitle: 'Copy IBAN',
         copiedTitle: 'Copied',

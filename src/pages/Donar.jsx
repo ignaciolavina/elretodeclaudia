@@ -188,66 +188,10 @@ function TaxCard({ d, donationAmount, setDonationAmount }) {
   )
 }
 
-function BizumCard({ d }) {
-  const [copiedCode, setCopiedCode] = useState(false)
-  const b = d.bizum
-
-  function copyCode() {
-    navigator.clipboard.writeText(b.code)
-    setCopiedCode(true)
-    setTimeout(() => setCopiedCode(false), 2000)
-  }
-
-  return (
-    <div className="bg-white rounded-3xl shadow-sm p-8 border border-brand-100">
-      <div className="flex items-center justify-between mb-1">
-        <h2 className="font-serif text-2xl font-semibold text-gray-900">{b.title}</h2>
-        <span className="text-xs font-semibold text-gray-400 uppercase tracking-widest">{b.spainNote}</span>
-      </div>
-
-      {/* Code */}
-      <div className="bg-brand-50 border border-brand-100 rounded-2xl p-5 mt-5 mb-6">
-        <p className="text-xs text-gray-500 uppercase tracking-widest font-semibold mb-3">{b.codeLabel}</p>
-        <div className="flex items-center justify-between gap-3">
-          <p className="font-mono text-4xl font-bold text-brand-700 tracking-widest">{b.code}</p>
-          <button
-            onClick={copyCode}
-            title={copiedCode ? b.codeCopied : b.copyCode}
-            className={`flex-shrink-0 flex items-center gap-2 px-4 py-2 rounded-xl border text-sm font-semibold transition-all ${copiedCode ? 'border-green-300 bg-green-50 text-green-600' : 'border-brand-200 bg-white text-brand-600 hover:bg-brand-100'}`}
-          >
-            {copiedCode
-              ? <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              : <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-            }
-            {copiedCode ? b.codeCopied : b.copyCode}
-          </button>
-        </div>
-      </div>
-
-      {/* Steps */}
-      <p className="text-xs text-gray-500 uppercase tracking-widest font-semibold mb-4">{b.stepsTitle}</p>
-      <ol className="space-y-4 mb-4">
-        {b.steps.map((step, i) => (
-          <li key={i} className="flex gap-4">
-            <span className="flex-shrink-0 w-7 h-7 rounded-full bg-brand-100 text-brand-700 text-xs font-bold flex items-center justify-center mt-0.5">
-              {i + 1}
-            </span>
-            <div>
-              <p className="font-semibold text-gray-900 text-sm leading-snug">{step.title}</p>
-              <p className="text-gray-500 text-sm leading-relaxed mt-0.5">{step.desc}</p>
-            </div>
-          </li>
-        ))}
-      </ol>
-      <p className="text-xs text-gray-400 italic">{b.bankNote}.</p>
-    </div>
-  )
-}
-
 export default function Donar() {
   const [copied, setCopied] = useState(false)
   const [copiedBeneficiary, setCopiedBeneficiary] = useState(false)
-  const [showDirectModal, setShowDirectModal] = useState(false)
+  const [copiedCode, setCopiedCode] = useState(false)
   const [directTab, setDirectTab] = useState('once')
   const [openFaq, setOpenFaq] = useState(null)
   const [donationAmount, setDonationAmount] = useState(10)
@@ -268,142 +212,187 @@ export default function Donar() {
     setTimeout(() => setCopiedBeneficiary(false), 2000)
   }
 
-  const DirectDonationCard = () => (
-    <div className="bg-white rounded-3xl shadow-sm p-8 border border-brand-100">
-      <h2 className="font-serif text-2xl font-semibold text-gray-900 mb-2">
-        {d.directDonation.title}
-      </h2>
-      <p className="text-gray-500 text-sm mb-5">{d.directDonation.tagline}</p>
-      {!showDirectModal && lang !== 'en' && (
-        <button
-          onClick={() => setShowDirectModal(true)}
-          className="block w-full text-center bg-brand-600 hover:bg-brand-700 text-white font-semibold rounded-2xl py-4 text-sm transition-colors"
-        >
-          {d.directDonation.cta}
-        </button>
-      )}
+  function copyCode() {
+    navigator.clipboard.writeText(d.bizum.code)
+    setCopiedCode(true)
+    setTimeout(() => setCopiedCode(false), 2000)
+  }
 
-      {(showDirectModal || lang === 'en') && (
-        <div className="space-y-5">
-          {/* IBAN + Beneficiario */}
-          <div className="bg-brand-50 rounded-2xl p-5 border border-brand-100 space-y-4">
+  const DirectDonationCard = () => {
+    const b = d.bizum
+    return (
+      <div className="bg-white rounded-3xl shadow-sm p-8 border border-brand-100">
+        <h2 className="font-serif text-2xl font-semibold text-gray-900 mb-2">
+          {d.directDonation.title}
+        </h2>
+        <p className="text-gray-500 text-sm mb-6">{d.directDonation.tagline}</p>
+
+        <div className="space-y-6">
+
+          {/* ── Bizum (ES only) ── */}
+          {lang !== 'en' && (
             <div>
-              <p className="text-xs text-gray-500 uppercase tracking-widest font-semibold mb-2">{d.transfer.ibanLabel}</p>
-              <div className="flex items-center justify-between gap-3">
-                <p className="text-base font-bold text-brand-700 tracking-widest font-mono">
-                  ES61 3058 1929 4527 2001 8539
-                </p>
-                <button
-                  onClick={copyIban}
-                  title={copied ? d.transfer.copiedTitle : d.transfer.copyTitle}
-                  className={`flex-shrink-0 p-2 rounded-lg border transition-all ${copied ? 'border-green-300 bg-green-50 text-green-600' : 'border-brand-200 bg-white text-brand-600 hover:bg-brand-100'}`}
-                >
-                  {copied
-                    ? <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                    : <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-                  }
-                </button>
-              </div>
-            </div>
-            <div className="border-t border-brand-100 pt-4">
-              <p className="text-xs text-gray-500 uppercase tracking-widest font-semibold mb-2">{d.transfer.beneficiaryLabel}</p>
-              <div className="flex items-center justify-between gap-3">
-                <p className="text-sm font-semibold text-brand-700">{d.transfer.beneficiaryValue}</p>
-                <button
-                  onClick={copyBeneficiary}
-                  title={copiedBeneficiary ? d.transfer.copiedTitle : d.transfer.copyBeneficiaryTitle}
-                  className={`flex-shrink-0 p-2 rounded-lg border transition-all ${copiedBeneficiary ? 'border-green-300 bg-green-50 text-green-600' : 'border-brand-200 bg-white text-brand-600 hover:bg-brand-100'}`}
-                >
-                  {copiedBeneficiary
-                    ? <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                    : <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-                  }
-                </button>
-              </div>
-            </div>
-          </div>
-
-          {/* Divider */}
-          <div className="flex items-center gap-3">
-            <div className="flex-1 h-px bg-gray-200" />
-            <span className="text-xs text-gray-400 font-semibold uppercase tracking-wider whitespace-nowrap">
-              {d.directDonation.cardDivider}
-            </span>
-            <div className="flex-1 h-px bg-gray-200" />
-          </div>
-
-          {/* Tab switcher */}
-          <div className="flex bg-gray-100 rounded-2xl p-1 gap-1">
-            <button
-              onClick={() => setDirectTab('once')}
-              className={`flex-1 text-xs font-semibold py-2.5 px-2 rounded-xl transition-all ${directTab === 'once' ? 'bg-white shadow text-brand-700' : 'text-gray-500 hover:text-gray-700'}`}
-            >
-              {d.directDonation.tabOnce}
-            </button>
-            <button
-              onClick={() => setDirectTab('monthly')}
-              className={`flex-1 text-xs font-semibold py-2.5 px-2 rounded-xl transition-all leading-tight ${directTab === 'monthly' ? 'bg-white shadow text-brand-700' : 'text-gray-500 hover:text-gray-700'}`}
-            >
-              {d.directDonation.tabMonthly}
-            </button>
-          </div>
-
-          {/* Tab description */}
-          <p className="text-xs text-gray-500 leading-relaxed">
-            {directTab === 'monthly' ? d.directDonation.tabMonthlyDesc : d.directDonation.tabOnceDesc}
-          </p>
-
-          {/* Amount buttons */}
-          <div className="grid grid-cols-4 gap-2">
-            {directTab === 'monthly' ? (
-              <>
-                {MEMBER_AMOUNTS.map(({ amount, href }) => (
-                  <a key={amount} href={href} target="_blank" rel="noopener noreferrer"
-                    className="rounded-xl py-3 px-1 bg-brand-600 hover:bg-brand-700 transition-colors text-center flex items-center justify-center"
+              <p className="text-xs text-gray-500 uppercase tracking-widest font-semibold mb-3">
+                {b.title}
+                <span className="ml-2 normal-case text-gray-400 font-normal">· {b.spainNote}</span>
+              </p>
+              <div className="bg-brand-50 border border-brand-100 rounded-2xl p-4">
+                <div className="flex items-center justify-between gap-3 mb-4">
+                  <div>
+                    <p className="text-xs text-gray-500 mb-1">{b.codeLabel}</p>
+                    <p className="font-mono text-3xl font-bold text-brand-700 tracking-widest">{b.code}</p>
+                  </div>
+                  <button
+                    onClick={copyCode}
+                    title={copiedCode ? b.codeCopied : b.copyCode}
+                    className={`flex-shrink-0 flex items-center gap-2 px-4 py-2 rounded-xl border text-sm font-semibold transition-all ${copiedCode ? 'border-green-300 bg-green-50 text-green-600' : 'border-brand-200 bg-white text-brand-600 hover:bg-brand-100'}`}
                   >
-                    <span className="text-sm font-bold text-white">{amount}</span>
-                  </a>
-                ))}
-                <a href={STRIPE_CUSTOM} target="_blank" rel="noopener noreferrer"
-                  className="rounded-xl py-3 px-1 bg-brand-600 hover:bg-brand-700 transition-colors text-center flex items-center justify-center"
-                >
-                  <span className="text-xs font-bold text-white leading-tight">{d.members.custom}</span>
-                </a>
-              </>
-            ) : (
-              <>
-                {ONCE_AMOUNTS.map(({ amount, href }) => (
-                  <a key={amount} href={href} target="_blank" rel="noopener noreferrer"
-                    className="rounded-xl py-3 px-1 bg-brand-600 hover:bg-brand-700 transition-colors text-center flex items-center justify-center"
-                  >
-                    <span className="text-sm font-bold text-white">{amount}</span>
-                  </a>
-                ))}
-                <a href={ONCE_CUSTOM} target="_blank" rel="noopener noreferrer"
-                  className="rounded-xl py-3 px-1 bg-brand-600 hover:bg-brand-700 transition-colors text-center flex items-center justify-center"
-                >
-                  <span className="text-xs font-bold text-white leading-tight">{d.members.custom}</span>
-                </a>
-              </>
-            )}
-          </div>
-
-          {directTab === 'monthly' && (
-            <div className="text-center">
-              <a
-                href="https://billing.stripe.com/p/login/7sY14haRwds4cWQeA54F200"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-xs text-gray-500 hover:text-gray-700 underline underline-offset-2 transition-colors"
-              >
-                {d.members.cancel}
-              </a>
+                    {copiedCode
+                      ? <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                      : <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                    }
+                    {copiedCode ? b.codeCopied : b.copyCode}
+                  </button>
+                </div>
+                <ol className="space-y-2 mb-3">
+                  {b.steps.map((step, i) => (
+                    <li key={i} className="flex gap-3">
+                      <span className="flex-shrink-0 w-5 h-5 rounded-full bg-brand-200 text-brand-700 text-xs font-bold flex items-center justify-center mt-0.5">
+                        {i + 1}
+                      </span>
+                      <div>
+                        <p className="text-sm font-semibold text-gray-900 leading-snug">{step.title}</p>
+                        <p className="text-xs text-gray-500 mt-0.5">{step.desc}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ol>
+                <p className="text-xs text-gray-400 italic">{b.bankNote}.</p>
+              </div>
             </div>
           )}
+
+          {lang !== 'en' && <div className="h-px bg-gray-100" />}
+
+          {/* ── Transferencia bancaria ── */}
+          <div>
+            <p className="text-xs text-gray-500 uppercase tracking-widest font-semibold mb-3">{d.transfer.title}</p>
+            <div className="bg-brand-50 rounded-2xl p-5 border border-brand-100 space-y-4">
+              <div>
+                <p className="text-xs text-gray-500 uppercase tracking-widest font-semibold mb-2">{d.transfer.ibanLabel}</p>
+                <div className="flex items-center justify-between gap-3">
+                  <p className="text-base font-bold text-brand-700 tracking-widest font-mono">
+                    ES61 3058 1929 4527 2001 8539
+                  </p>
+                  <button
+                    onClick={copyIban}
+                    title={copied ? d.transfer.copiedTitle : d.transfer.copyTitle}
+                    className={`flex-shrink-0 p-2 rounded-lg border transition-all ${copied ? 'border-green-300 bg-green-50 text-green-600' : 'border-brand-200 bg-white text-brand-600 hover:bg-brand-100'}`}
+                  >
+                    {copied
+                      ? <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                      : <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                    }
+                  </button>
+                </div>
+              </div>
+              <div className="border-t border-brand-100 pt-4">
+                <p className="text-xs text-gray-500 uppercase tracking-widest font-semibold mb-2">{d.transfer.beneficiaryLabel}</p>
+                <div className="flex items-center justify-between gap-3">
+                  <p className="text-sm font-semibold text-brand-700">{d.transfer.beneficiaryValue}</p>
+                  <button
+                    onClick={copyBeneficiary}
+                    title={copiedBeneficiary ? d.transfer.copiedTitle : d.transfer.copyBeneficiaryTitle}
+                    className={`flex-shrink-0 p-2 rounded-lg border transition-all ${copiedBeneficiary ? 'border-green-300 bg-green-50 text-green-600' : 'border-brand-200 bg-white text-brand-600 hover:bg-brand-100'}`}
+                  >
+                    {copiedBeneficiary
+                      ? <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                      : <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                    }
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="h-px bg-gray-100" />
+
+          {/* ── Con tarjeta ── */}
+          <div>
+            <p className="text-xs text-gray-500 uppercase tracking-widest font-semibold mb-3">{d.card.title}</p>
+            <div className="space-y-4">
+              <div className="flex bg-gray-100 rounded-2xl p-1 gap-1">
+                <button
+                  onClick={() => setDirectTab('once')}
+                  className={`flex-1 text-xs font-semibold py-2.5 px-2 rounded-xl transition-all ${directTab === 'once' ? 'bg-white shadow text-brand-700' : 'text-gray-500 hover:text-gray-700'}`}
+                >
+                  {d.directDonation.tabOnce}
+                </button>
+                <button
+                  onClick={() => setDirectTab('monthly')}
+                  className={`flex-1 text-xs font-semibold py-2.5 px-2 rounded-xl transition-all leading-tight ${directTab === 'monthly' ? 'bg-white shadow text-brand-700' : 'text-gray-500 hover:text-gray-700'}`}
+                >
+                  {d.directDonation.tabMonthly}
+                </button>
+              </div>
+
+              <p className="text-xs text-gray-500 leading-relaxed">
+                {directTab === 'monthly' ? d.directDonation.tabMonthlyDesc : d.directDonation.tabOnceDesc}
+              </p>
+
+              <div className="grid grid-cols-4 gap-2">
+                {directTab === 'monthly' ? (
+                  <>
+                    {MEMBER_AMOUNTS.map(({ amount, href }) => (
+                      <a key={amount} href={href} target="_blank" rel="noopener noreferrer"
+                        className="rounded-xl py-3 px-1 bg-brand-600 hover:bg-brand-700 transition-colors text-center flex items-center justify-center"
+                      >
+                        <span className="text-sm font-bold text-white">{amount}</span>
+                      </a>
+                    ))}
+                    <a href={STRIPE_CUSTOM} target="_blank" rel="noopener noreferrer"
+                      className="rounded-xl py-3 px-1 bg-brand-600 hover:bg-brand-700 transition-colors text-center flex items-center justify-center"
+                    >
+                      <span className="text-xs font-bold text-white leading-tight">{d.members.custom}</span>
+                    </a>
+                  </>
+                ) : (
+                  <>
+                    {ONCE_AMOUNTS.map(({ amount, href }) => (
+                      <a key={amount} href={href} target="_blank" rel="noopener noreferrer"
+                        className="rounded-xl py-3 px-1 bg-brand-600 hover:bg-brand-700 transition-colors text-center flex items-center justify-center"
+                      >
+                        <span className="text-sm font-bold text-white">{amount}</span>
+                      </a>
+                    ))}
+                    <a href={ONCE_CUSTOM} target="_blank" rel="noopener noreferrer"
+                      className="rounded-xl py-3 px-1 bg-brand-600 hover:bg-brand-700 transition-colors text-center flex items-center justify-center"
+                    >
+                      <span className="text-xs font-bold text-white leading-tight">{d.members.custom}</span>
+                    </a>
+                  </>
+                )}
+              </div>
+
+              {directTab === 'monthly' && (
+                <div className="text-center">
+                  <a
+                    href="https://billing.stripe.com/p/login/7sY14haRwds4cWQeA54F200"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs text-gray-500 hover:text-gray-700 underline underline-offset-2 transition-colors"
+                  >
+                    {d.members.cancel}
+                  </a>
+                </div>
+              )}
+            </div>
+          </div>
+
         </div>
-      )}
-    </div>
-  )
+      </div>
+    )
+  }
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -435,7 +424,6 @@ export default function Donar() {
           {/* Desgravación + Donación directa — solo mobile */}
           <div className="lg:hidden space-y-6 mb-8">
             {lang !== 'en' && <TaxCard d={d} donationAmount={donationAmount} setDonationAmount={setDonationAmount} />}
-            <BizumCard d={d} />
             <DirectDonationCard />
           </div>
 
@@ -474,11 +462,6 @@ export default function Donar() {
                   <TaxCard d={d} donationAmount={donationAmount} setDonationAmount={setDonationAmount} />
                 </div>
               )}
-
-              {/* Bizum — solo desktop */}
-              <div className="hidden lg:block">
-                <BizumCard d={d} />
-              </div>
 
               {/* Donación directa — solo desktop */}
               <div className="hidden lg:block">
