@@ -16,6 +16,7 @@ import Prensa from './pages/Prensa'
 import Eventos from './pages/Eventos'
 import CarreraSolidaria from './pages/CarreraSolidaria'
 import DiaEsperanza from './pages/DiaEsperanza'
+import Videos from './pages/Videos'
 import ProximosEventos from './components/ProximosEventos'
 
 function Home() {
@@ -64,16 +65,26 @@ function StickyDonateBar() {
 
 function ScrollToTop() {
   const location = useLocation()
+
   useEffect(() => {
-    if (location.hash) {
-      setTimeout(() => {
-        const el = document.querySelector(location.hash)
-        if (el) el.scrollIntoView({ behavior: 'smooth' })
-      }, 0)
-    } else {
+    if (!location.hash) {
       window.scrollTo(0, 0)
+      return
     }
+
+    const scrollToHash = () => {
+      const target = document.querySelector(location.hash)
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      } else {
+        window.scrollTo(0, 0)
+      }
+    }
+
+    const timer = window.setTimeout(scrollToHash, 80)
+    return () => window.clearTimeout(timer)
   }, [location.pathname, location.hash])
+
   return null
 }
 
@@ -103,6 +114,7 @@ export default function App() {
         <Route path="/eventos" element={<Eventos />} />
         <Route path="/eventos/carrera-solidaria-san-lorenzo-2026" element={<CarreraSolidaria />} />
         <Route path="/eventos/dia-de-la-esperanza-2026" element={<DiaEsperanza />} />
+        <Route path="/videos" element={<Videos />} />
         <Route path="*" element={<Donar />} />
       </Routes>
     </LanguageProvider>

@@ -6,6 +6,7 @@ const translations = {
       dbp: 'Qué es la DBP',
       historia: 'Historia de Claudia',
       ayudar: 'Cómo ayudar',
+      videos: 'Vídeos',
       contacto: 'Contacto',
       prensa: 'Prensa',
       eventos: 'Eventos',
@@ -366,6 +367,25 @@ const translations = {
       },
     },
 
+
+    videos: {
+      sectionLabel: 'Vídeos',
+      title: 'Claudia en movimiento',
+      subtitle: 'En estos vídeos compartimos pedacitos de Claudia y del camino que estamos recorriendo para dar visibilidad a la DBP y empujar la investigación.',
+      instagramCta: 'Seguir en Instagram',
+      helpCta: 'Sumarte al reto',
+      videoLabel: 'Vídeo',
+      previous: 'Vídeo anterior',
+      previousShort: 'Anterior',
+      next: 'Vídeo siguiente',
+      nextShort: 'Siguiente',
+      loadMore: 'Cargar más vídeos',
+      empty: {
+        title: 'Muy pronto compartiremos vídeos',
+        text: 'Este espacio reunirá momentos de Claudia y del movimiento que está creciendo a su alrededor.',
+      },
+    },
+
     eventos: {
       sectionLabel: 'Calendario',
       title: 'Eventos solidarios',
@@ -438,6 +458,7 @@ const translations = {
       dbp: 'What is DBP',
       historia: "Claudia's Story",
       ayudar: 'How to help',
+      videos: 'Videos',
       contacto: 'Contact',
       prensa: 'Press',
       eventos: 'Events',
@@ -796,6 +817,25 @@ const translations = {
             a: 'Thank you for letting us know. You can contact us and we will sort it out:',
           },
         ],
+      },
+    },
+
+
+    videos: {
+      sectionLabel: 'Videos',
+      title: 'Claudia in motion',
+      subtitle: "These videos share moments from Claudia's life and the journey we are building to raise awareness of DBP and push research forward.",
+      instagramCta: 'Follow on Instagram',
+      helpCta: 'Join the challenge',
+      videoLabel: 'Video',
+      previous: 'Previous video',
+      previousShort: 'Previous',
+      next: 'Next video',
+      nextShort: 'Next',
+      loadMore: 'Load more videos',
+      empty: {
+        title: 'Videos coming soon',
+        text: "This space will bring together moments from Claudia's life and from the movement growing around her.",
       },
     },
 

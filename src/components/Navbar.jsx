@@ -86,7 +86,7 @@ export default function Navbar({ donatePage = false }) {
           </Link>
 
           {/* Navegación desktop */}
-          <ul className="hidden md:flex items-center gap-8 list-none m-0 p-0">
+          <ul className="hidden lg:flex items-center gap-6 list-none m-0 p-0">
             {NAV_KEYS.map((link) => (
               <li key={link.href}>
                 <a
@@ -98,6 +98,14 @@ export default function Navbar({ donatePage = false }) {
                 </a>
               </li>
             ))}
+            <li>
+              <Link
+                to="/videos"
+                className={desktopLinkClass(isRouteActive('/videos'))}
+              >
+                {t.nav.videos}
+              </Link>
+            </li>
             <li>
               <Link
                 to="/prensa"
@@ -148,7 +156,7 @@ export default function Navbar({ donatePage = false }) {
 
           {/* Botón hamburguesa */}
           <button
-            className="md:hidden p-2 rounded-xl text-gray-600 hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-brand-400"
+            className="lg:hidden p-2 rounded-xl text-gray-600 hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-brand-400"
             onClick={() => setMenuOpen((o) => !o)}
             aria-expanded={menuOpen}
             aria-label={menuOpen ? 'Cerrar menú' : 'Abrir menú'}
@@ -167,7 +175,7 @@ export default function Navbar({ donatePage = false }) {
 
         {/* Menú móvil */}
         <div
-          className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+          className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out ${
             menuOpen ? 'max-h-[32rem] opacity-100 mt-3' : 'max-h-0 opacity-0'
           }`}
           aria-hidden={!menuOpen}
@@ -184,6 +192,15 @@ export default function Navbar({ donatePage = false }) {
                 </a>
               </li>
             ))}
+            <li>
+              <Link
+                to="/videos"
+                onClick={() => setMenuOpen(false)}
+                className={mobileLinkClass(isRouteActive('/videos'))}
+              >
+                {t.nav.videos}
+              </Link>
+            </li>
             <li>
               <Link
                 to="/prensa"
