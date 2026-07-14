@@ -6,6 +6,54 @@ export const INSTAGRAM_PROFILE_URL = 'https://www.instagram.com/elretodeclaudia'
 // The page renders it through Instagram's official embed script.
 export const VIDEOS = [
   {
+    id: 'esta-es-claudia',
+    type: 'instagram',
+    title: {
+      es: 'Esta es Claudia, y este es su reto',
+      en: 'This is Claudia, and this is her challenge',
+    },
+    description: {
+      es: 'Una niña de dos años y medio, una enfermedad ultrarrara y una familia buscando investigación donde hoy casi no la hay.',
+      en: 'A two-and-a-half-year-old girl, an ultra-rare disease and a family searching for research where almost none exists today.',
+    },
+    date: { es: 'Junio 2026', en: 'June 2026' },
+    duration: 'Reel',
+    permalink: 'https://www.instagram.com/reel/DZF5312MKw9/',
+    caption: '❤️ Esta es Claudia.\n\nTiene 2 años y medio y padece una enfermedad genética neurodegenerativa para la que, a día de hoy, no existe una cura conocida.\n\nLa única esperanza real para Claudia es desarrollar una terapia génica: una investigación muy compleja que busca corregir el fallo genético que provoca su enfermedad. Hace poco se ha aprobado una línea de investigación para Claudia, pero para hacerla realidad hace falta un equipo científico especializado... y mucha financiación privada.\n\nPor eso necesitamos tu ayuda de 3 maneras:\n\n1️⃣ Síguenos en redes: @elretodeclaudia\n\nComparte nuestras publicaciones por WhatsApp y otros canales, comenta e interactúa. Cuanta más gente conozca el caso de Claudia, más posibilidades tendremos de encontrar apoyo, colaboradores y financiación.\n\n2️⃣ Dona 💛\n\nAunque sea el equivalente a un café. De verdad. Cada pequeña aportación suma y nos acerca un paso más a la investigación.\n\n🌐 elretodeclaudia.org\/dona\n\n3️⃣ Si eres una empresa, colegio, asociación u organización y quieres ayudar, escríbenos.\n\nToda colaboración cuenta y puede marcar una diferencia real en el futuro de Claudia.\n\nGracias de corazón ❤️ por ayudarnos a darle una oportunidad.\n\nPorque Claudia merece una oportunidad. Y juntos podemos dársela.\n\n#elretodeclaudia #dbpdeficiency #raredesease #dona #investigación',
+  },
+  {
+    id: 'pruebas-imposibles',
+    type: 'instagram',
+    title: {
+      es: 'Cuando lo imposible llama a la puerta',
+      en: 'When the impossible knocks',
+    },
+    description: {
+      es: 'El inicio de una historia que nadie elige, pero que estamos decididos a pelear con amor, ciencia y esperanza.',
+      en: 'The beginning of a story nobody chooses, but one we are determined to fight with love, science and hope.',
+    },
+    date: { es: 'Mayo 2026', en: 'May 2026' },
+    duration: 'Reel',
+    permalink: 'https://www.instagram.com/reel/DYSJGcPsz7t/',
+    caption: 'A veces, la vida nos pone pruebas que parecen imposibles de superar. Claudia tiene una enfermedad ultrarrara llamada Deficiencia de enzima D-bifuncional, una condición neurodegenerativa que le ha robado gran parte de sus avances físicos, pero que jamás podrá quitarle su sonrisa. 🌸\n\nHemos visto cómo cada pequeño logro: reptar, gatear, dar sus primeros pasos, ha sido una batalla ganada con un esfuerzo sobrehumano. Hoy, aunque el camino se ha vuelto más difícil, nuestra lucha sigue intacta.\n\nQueremos que el mundo conozca a Claudia. No solo por su diagnóstico, sino por su fuerza. Porque detrás de cada enfermedad rara, hay una niña que merece todas las oportunidades del mundo. 🫂✨\n\nAyúdanos a que su historia llegue lejos. Un “Me gusta”, un comentario o compartir este vídeo significa que Claudia no está sola en esta batalla. 🤍\n\n#elretodeclaudia #EnfermedadesRaras #D-Bifuncional #LuchaDiaria #Resiliencia ClaudiaNuestraGuerrera AmorIncondicional Visibilidad',
+  },
+  {
+    id: 'pinned-pending-caption',
+    type: 'instagram',
+    title: {
+      es: 'Reel fijado (pendiente de texto)',
+      en: 'Pinned reel (caption pending)',
+    },
+    description: {
+      es: 'Pendiente: pegar título, descripción y caption reales de este reel fijado.',
+      en: 'Pending: paste the real title, description and caption for this pinned reel.',
+    },
+    date: { es: 'Pendiente', en: 'Pending' },
+    duration: 'Reel',
+    permalink: 'https://www.instagram.com/reel/DX1Xt74sluB/',
+    caption: 'Reel fijado de @elretodeclaudia — pendiente de añadir el texto real.',
+  },
+  {
     id: 'barcelona-reto-claudia',
     type: 'instagram',
     title: {
@@ -67,38 +115,6 @@ export const VIDEOS = [
     duration: 'Reel',
     permalink: 'https://www.instagram.com/reel/DZM33VaNW45/',
     caption: 'Claudia tiene 2 a\u00f1os y medio y convive con una enfermedad ultrarrara: deficiencia de enzima bifuncional.\n\nCada d\u00eda es un reto que afronta con valent\u00eda, siempre acompa\u00f1ada por sus padres, que luchan a su lado sin soltarle la mano.\n\nSu sonrisa inspira y su lucha nos une \u2728\n\n#LaTardeTM',
-  },
-  {
-    id: 'esta-es-claudia',
-    type: 'instagram',
-    title: {
-      es: 'Esta es Claudia, y este es su reto',
-      en: 'This is Claudia, and this is her challenge',
-    },
-    description: {
-      es: 'Una niña de dos años y medio, una enfermedad ultrarrara y una familia buscando investigación donde hoy casi no la hay.',
-      en: 'A two-and-a-half-year-old girl, an ultra-rare disease and a family searching for research where almost none exists today.',
-    },
-    date: { es: 'Junio 2026', en: 'June 2026' },
-    duration: 'Reel',
-    permalink: 'https://www.instagram.com/reel/DZF5312MKw9/',
-    caption: '\u2764\ufe0f Esta es Claudia.\n\nTiene 2 a\u00f1os y medio y padece una enfermedad gen\u00e9tica neurodegenerativa para la que, a d\u00eda de hoy, no existe una cura conocida.\n\nLa \u00fanica esperanza real para Claudia es desarrollar una terapia g\u00e9nica: una investigaci\u00f3n muy compleja que busca corregir el fallo gen\u00e9tico que provoca su enfermedad. Hace poco se ha aprobado una l\u00ednea de investigaci\u00f3n para Claudia, pero para hacerla realidad hace falta un equipo cient\u00edfico especializado... y mucha financiaci\u00f3n privada.\n\nPor eso necesitamos tu ayuda de 3 maneras:\n\n1\ufe0f\u20e3 S\u00edguenos en redes: \u0040elretodeclaudia\n\nComparte nuestras publicaciones por WhatsApp y otros canales, comenta e interact\u00faa. Cuanta m\u00e1s gente conozca el caso de Claudia, m\u00e1s posibilidades tendremos de encontrar apoyo, colaboradores y financiaci\u00f3n.\n\n2\ufe0f\u20e3 Dona \ud83d\udc9b\n\nAunque sea el equivalente a un caf\u00e9. De verdad. Cada peque\u00f1a aportaci\u00f3n suma y nos acerca un paso m\u00e1s a la investigaci\u00f3n.\n\n\ud83c\udf10 elretodeclaudia.org\/dona\n\n3\ufe0f\u20e3 Si eres una empresa, colegio, asociaci\u00f3n u organizaci\u00f3n y quieres ayudar, escr\u00edbenos.\n\nToda colaboraci\u00f3n cuenta y puede marcar una diferencia real en el futuro de Claudia.\n\nGracias de coraz\u00f3n \u2764\ufe0f por ayudarnos a darle una oportunidad.\n\nPorque Claudia merece una oportunidad. Y juntos podemos d\u00e1rsela.\n\n#elretodeclaudia #dbpdeficiency #raredesease #dona #investigaci\u00f3n',
-  },
-  {
-    id: 'pruebas-imposibles',
-    type: 'instagram',
-    title: {
-      es: 'Cuando lo imposible llama a la puerta',
-      en: 'When the impossible knocks',
-    },
-    description: {
-      es: 'El inicio de una historia que nadie elige, pero que estamos decididos a pelear con amor, ciencia y esperanza.',
-      en: 'The beginning of a story nobody chooses, but one we are determined to fight with love, science and hope.',
-    },
-    date: { es: 'Mayo 2026', en: 'May 2026' },
-    duration: 'Reel',
-    permalink: 'https://www.instagram.com/reel/DYSJGcPsz7t/',
-    caption: 'A veces, la vida nos pone pruebas que parecen imposibles de superar. Claudia tiene una enfermedad ultrarrara llamada Deficiencia de enzima D-bifuncional, una condici\u00f3n neurodegenerativa que le ha robado gran parte de sus avances f\u00edsicos, pero que jam\u00e1s podr\u00e1 quitarle su sonrisa. \ud83c\udf38\n\nHemos visto c\u00f3mo cada peque\u00f1o logro: reptar, gatear, dar sus primeros pasos, ha sido una batalla ganada con un esfuerzo sobrehumano. Hoy, aunque el camino se ha vuelto m\u00e1s dif\u00edcil, nuestra lucha sigue intacta.\n\nQueremos que el mundo conozca a Claudia. No solo por su diagn\u00f3stico, sino por su fuerza. Porque detr\u00e1s de cada enfermedad rara, hay una ni\u00f1a que merece todas las oportunidades del mundo. \ud83e\udec2\u2728\n\nAy\u00fadanos a que su historia llegue lejos. Un \u201cMe gusta\u201d, un comentario o compartir este v\u00eddeo significa que Claudia no est\u00e1 sola en esta batalla. \ud83e\udd0d\n\n#elretodeclaudia #EnfermedadesRaras #D-Bifuncional #LuchaDiaria #Resiliencia ClaudiaNuestraGuerrera AmorIncondicional Visibilidad',
   },
   {
     id: 'gracias-carino-ayuda',
