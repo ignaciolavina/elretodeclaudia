@@ -54,6 +54,38 @@ export const VIDEOS = [
     caption: 'Reel fijado de @elretodeclaudia — pendiente de añadir el texto real.',
   },
   {
+    id: 'los-dias-de-claudia',
+    type: 'instagram',
+    title: {
+      es: 'Los días de Claudia son diferentes',
+      en: "Claudia's days are different",
+    },
+    description: {
+      es: 'No puede correr por el parque como otros niños, pero su alegría y sus ganas de reír son más fuertes que cualquier enfermedad.',
+      en: 'She cannot run through the park like other kids, but her joy and will to laugh are stronger than any disease.',
+    },
+    date: { es: 'Julio 2026', en: 'July 2026' },
+    duration: 'Reel',
+    permalink: 'https://www.instagram.com/reel/Da0Kpwls-Aj/',
+    caption: 'Los días de Claudia son un poco diferentes.\n\nNo puede correr por el parque ni hacer muchas de las cosas que hacen otros niños de su edad. Pero si algo le sobran son ganas de reír, de disfrutar de cada momento y de contagiar su alegría a todos los que la queremos.\n\nPorque la enfermedad forma parte de su vida, pero nunca definirá quién es. 💜\n\nGracias por seguir acompañándonos.',
+  },
+  {
+    id: 'las-viandas-apoya-claudia',
+    type: 'instagram',
+    title: {
+      es: 'Un restaurante que se suma al reto',
+      en: 'A restaurant joins the challenge',
+    },
+    description: {
+      es: 'El Restaurante Las Viandas se suma a la lucha de Claudia dando visibilidad a su historia.',
+      en: 'Restaurante Las Viandas joins Claudia\'s fight by giving visibility to her story.',
+    },
+    date: { es: 'Julio 2026', en: 'July 2026' },
+    duration: 'Reel',
+    permalink: 'https://www.instagram.com/reel/Dau2dLYMMZN/',
+    caption: 'Desde nuestro restaurante hoy @sergioviandas quiere que nos sumemos a @elretodeclaudia 💙\n\nClaudia padece deficiencia de la proteína D-bifuncional (DBP), una enfermedad neurodegenerativa rara. Hoy necesitamos algo muy sencillo: que su historia llegue a más personas para dar visibilidad a su lucha y apoyar la investigación.\n\nDale a "Me gusta", compártelo y ayúdanos a difundir este mensaje. Juntos podemos dar esperanza a Claudia.\n\n#ElRetoDeClaudia #SanLorenzodeElEscorial #Investigación #JuntosSumamos',
+  },
+  {
     id: 'barcelona-reto-claudia',
     type: 'instagram',
     title: {
