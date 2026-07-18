@@ -12,6 +12,16 @@
   "upcoming": [],
   "media": [
     {
+      "outlet": "COPE",
+      "type": "radio",
+      "logoImage": "/images/media/cope.svg",
+      "logo": "COPE",
+      "logoColor": "#0C3B8C",
+      "url": "/audio/cope-la-linterna.mp3",
+      "date": "17/07/2026",
+      "quote": "El reto de Claudia: la búsqueda de una terapia génica que puede corregir el gen mutado y frenar su enfermedad ultrarrara"
+    },
+    {
       "outlet": "Telecinco",
       "type": "web",
       "logoImage": "/images/media/telecinco.svg",
@@ -40,16 +50,6 @@
       "url": null,
       "date": "26/05/2026",
       "quote": "Entrevista en \"Más de Uno Sierra\" para dar visibilidad a El Reto de Claudia y su misión"
-    },
-    {
-      "outlet": "COPE",
-      "type": "radio",
-      "logoImage": "/images/media/cope.svg",
-      "logo": "COPE",
-      "logoColor": "#0C3B8C",
-      "url": "/audio/cope-la-linterna.mp3",
-      "date": "17/07/2026",
-      "quote": "El reto de Claudia: la búsqueda de una terapia génica que puede corregir el gen mutado y frenar su enfermedad ultrarrara"
     },
     {
       "outlet": "El Confidencial Digital",

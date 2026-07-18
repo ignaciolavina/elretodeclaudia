@@ -1,11 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" width="200" height="60">
-  <rect width="200" height="60" fill="white"/>
-  <text x="100" y="50"
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 260" width="200" height="260">
+  <rect width="200" height="260" fill="white"/>
+  <path
+    fill-rule="evenodd"
+    fill="#0C3B8C"
+    d="M100,10 A90,90 0 1,1 100,190 A90,90 0 1,1 100,10 Z
+       M145,55 L230,100 L145,145 L95,100 Z"
+  />
+  <text x="100" y="245"
     font-family="'Arial', 'Helvetica Neue', sans-serif"
-    font-size="52"
+    font-size="56"
     font-weight="900"
     fill="#0C3B8C"
     text-anchor="middle"
-    letter-spacing="4"
+    letter-spacing="3"
   >COPE</text>
 </svg>
