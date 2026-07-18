@@ -204,9 +204,9 @@ export default function Eventos() {
   const fade = (delay = '') =>
     `transition-all duration-700 ${delay} ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`
 
-  const upcoming   = EVENTS.filter(e => e.status === 'upcoming' && e.category !== 'presence').sort((a, b) => a.date.localeCompare(b.date))
-  const presence   = EVENTS.filter(e => e.status === 'upcoming' && e.category === 'presence').sort((a, b) => a.date.localeCompare(b.date))
-  const past       = EVENTS.filter(e => e.status === 'past').sort((a, b) => b.date.localeCompare(a.date))
+  const upcoming   = EVENTS.filter(e => !e.hidden && e.status === 'upcoming' && e.category !== 'presence').sort((a, b) => a.date.localeCompare(b.date))
+  const presence   = EVENTS.filter(e => !e.hidden && e.status === 'upcoming' && e.category === 'presence').sort((a, b) => a.date.localeCompare(b.date))
+  const past       = EVENTS.filter(e => !e.hidden && e.status === 'past').sort((a, b) => b.date.localeCompare(a.date))
 
   return (
     <div className="min-h-screen">

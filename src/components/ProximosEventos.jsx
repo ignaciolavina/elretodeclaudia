@@ -28,7 +28,7 @@ export default function ProximosEventos() {
   const d = t.eventos
 
   const next = EVENTS
-    .filter(e => e.status === 'upcoming' && e.category !== 'presence')
+    .filter(e => !e.hidden && e.status === 'upcoming' && e.category !== 'presence')
     .sort((a, b) => new Date(a.date) - new Date(b.date))[0]
 
   if (!next) return null
