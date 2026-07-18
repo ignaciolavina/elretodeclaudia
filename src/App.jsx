@@ -17,6 +17,7 @@ import Eventos from './pages/Eventos'
 import CarreraSolidaria from './pages/CarreraSolidaria'
 import DiaEsperanza from './pages/DiaEsperanza'
 import Videos from './pages/Videos'
+import Landing from './pages/Landing'
 import ProximosEventos from './components/ProximosEventos'
 
 function Home() {
@@ -50,7 +51,7 @@ function Home() {
 function StickyDonateBar() {
   const location = useLocation()
   const { t } = useLanguage()
-  if (['/donar', '/donate', '/dona'].includes(location.pathname)) return null
+  if (['/donar', '/donate', '/dona', '/landing'].includes(location.pathname)) return null
   return (
     <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 px-4 pb-4 pt-2 bg-gradient-to-t from-white/95 to-transparent backdrop-blur-sm">
       <Link
@@ -115,6 +116,7 @@ export default function App() {
         <Route path="/eventos/carrera-solidaria-san-lorenzo-2026" element={<CarreraSolidaria />} />
         <Route path="/eventos/dia-de-la-esperanza-2026" element={<DiaEsperanza />} />
         <Route path="/videos" element={<Videos />} />
+        <Route path="/landing" element={<Landing />} />
         <Route path="*" element={<Donar />} />
       </Routes>
     </LanguageProvider>
