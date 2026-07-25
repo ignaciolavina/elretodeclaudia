@@ -5,7 +5,6 @@ import { useLanguage } from '../context/LanguageContext'
 const NAV_KEYS = [
   { key: 'inicio',   href: '#inicio'   },
   { key: 'dbp',      href: '#dbp'      },
-  { key: 'historia', href: '#historia' },
   { key: 'ayudar',   href: '#ayudar'   },
 ]
 

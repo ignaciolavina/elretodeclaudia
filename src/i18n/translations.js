@@ -501,9 +501,9 @@ const translations = {
       approach: {
         sectionLabel: 'Enfoque científico',
         title: 'Edición genética de precisión con CRISPR',
-        techTitle: '¿Qué tecnología proponemos?',
+        techTitle: 'Estrategia elegida',
         techParagraphs: [
-          'Proponemos abordar la enfermedad mediante edición genética de precisión ("base editing"), que permite corregir errores concretos en el ADN y actuar directamente sobre la causa de la enfermedad, en lugar de limitarse a tratar los síntomas. La edición se realizará con tecnología CRISPR (Clustered Regularly Interspaced Short Palindromic Repeats).',
+          'Abordamos la enfermedad mediante edición genética de precisión ("base editing"), que permite corregir errores concretos en el ADN y actuar directamente sobre la causa de la enfermedad, en lugar de limitarse a tratar los síntomas. La edición se realiza con tecnología CRISPR (Clustered Regularly Interspaced Short Palindromic Repeats).',
           'El reciente caso del bebé KJ Muldoon (Musunuru et al.) demostró por primera vez que es posible diseñar, fabricar y administrar un tratamiento genético personalizado para una enfermedad ultra rara, abriendo una vía real para otros niños con mutaciones únicas.',
           'La esperanza de esta tecnología no es ralentizar ligeramente la enfermedad, sino corregir el defecto genético de origen antes de que el daño neurológico sea irreversible.',
         ],
@@ -1074,9 +1074,9 @@ const translations = {
       approach: {
         sectionLabel: 'Scientific approach',
         title: 'Precision gene editing with CRISPR',
-        techTitle: 'What technology are we proposing?',
+        techTitle: 'Chosen strategy',
         techParagraphs: [
-          'We propose tackling the disease through precision gene editing ("base editing"), which corrects specific errors in the DNA and acts directly on the cause of the disease instead of only treating its symptoms. The editing will be carried out using CRISPR technology (Clustered Regularly Interspaced Short Palindromic Repeats).',
+          'We tackle the disease through precision gene editing ("base editing"), which corrects specific errors in the DNA and acts directly on the cause of the disease instead of only treating its symptoms. The editing is carried out using CRISPR technology (Clustered Regularly Interspaced Short Palindromic Repeats).',
           'The recent case of baby KJ Muldoon (Musunuru et al.) showed for the first time that it is possible to design, manufacture, and administer a personalized genetic treatment for an ultra-rare disease, opening a real path for other children with unique mutations.',
           'The hope behind this technology is not to slightly slow down the disease, but to correct the underlying genetic defect before the neurological damage becomes irreversible.',
         ],

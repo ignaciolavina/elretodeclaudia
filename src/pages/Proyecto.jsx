@@ -22,67 +22,65 @@ function SectionHeader({ label, title, subtitle }) {
   )
 }
 
-function PhaseItem({ item, index, isLast }) {
+function AccentCard({ header, children, index = 0, className = '' }) {
   const { ref, isVisible } = useScrollAnimation()
   return (
     <div
       ref={ref}
-      className={`relative flex gap-6 transition-all duration-700 ${
+      className={`bg-white rounded-3xl overflow-hidden border-l-4 border-brand-500 shadow-sm hover:shadow-md transition-all duration-300 ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-      }`}
+      } ${className}`}
       style={{ transitionDelay: isVisible ? `${index * 100}ms` : '0ms' }}
     >
-      <div className="flex flex-col items-center">
-        <div className="w-4 h-4 rounded-full flex-shrink-0 mt-1 bg-brand-500 ring-4 ring-white shadow-md" aria-hidden="true" />
-        {!isLast && <div className="w-0.5 flex-1 bg-brand-200 mt-2" aria-hidden="true" />}
-      </div>
-      <div className="pb-10">
-        <span className="inline-block text-xs font-semibold uppercase tracking-widest text-brand-500 mb-1">
-          {item.phase}
-        </span>
-        <h3 className="font-serif text-lg font-semibold text-gray-900 mb-2">{item.title}</h3>
-        <ul className="space-y-1">
-          {item.points.map((point, i) => (
-            <li key={i} className="text-gray-600 text-sm leading-relaxed flex gap-2">
-              <span className="text-brand-400 flex-shrink-0">•</span>
-              {point}
-            </li>
-          ))}
-        </ul>
-      </div>
+      <div className="bg-brand-100 px-6 py-4">{header}</div>
+      <div className="p-6">{children}</div>
     </div>
+  )
+}
+
+function PhaseCard({ item, index }) {
+  return (
+    <AccentCard
+      index={index}
+      header={
+        <>
+          <span className="text-xs font-bold uppercase tracking-widest text-brand-700">{item.phase}</span>
+          <h3 className="font-serif text-lg font-bold text-brand-900 mt-0.5">{item.title}</h3>
+        </>
+      }
+    >
+      <ul className="space-y-1.5">
+        {item.points.map((point, i) => (
+          <li key={i} className="text-gray-600 text-sm leading-relaxed flex gap-2">
+            <span className="text-brand-400 flex-shrink-0">•</span>
+            {point}
+          </li>
+        ))}
+      </ul>
+    </AccentCard>
   )
 }
 
 function StatCard({ number, label, index }) {
-  const { ref, isVisible } = useScrollAnimation()
   return (
-    <div
-      ref={ref}
-      className={`bg-white rounded-2xl border border-brand-100 p-6 text-center transition-all duration-700 ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-      }`}
-      style={{ transitionDelay: isVisible ? `${index * 100}ms` : '0ms' }}
+    <AccentCard
+      index={index}
+      className="text-center"
+      header={<p className="font-serif text-4xl font-bold text-brand-800">{number}</p>}
     >
-      <p className="font-serif text-4xl font-bold text-brand-600 mb-2">{number}</p>
       <p className="text-gray-600 text-sm leading-relaxed">{label}</p>
-    </div>
+    </AccentCard>
   )
 }
 
-function MissionPoint({ point, index }) {
-  const { ref, isVisible } = useScrollAnimation()
+function MissionCard({ point, index }) {
   return (
-    <div
-      ref={ref}
-      className={`flex gap-5 transition-all duration-700 ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-      }`}
-      style={{ transitionDelay: isVisible ? `${index * 100}ms` : '0ms' }}
+    <AccentCard
+      index={index}
+      header={<p className="font-serif text-3xl font-bold text-brand-800">{point.number}</p>}
     >
-      <span className="font-serif text-4xl font-bold text-brand-300 flex-shrink-0 leading-none">{point.number}</span>
-      <p className="text-gray-600 text-sm leading-relaxed pt-1">{point.text}</p>
-    </div>
+      <p className="text-gray-600 text-sm leading-relaxed">{point.text}</p>
+    </AccentCard>
   )
 }
 
@@ -125,18 +123,16 @@ export default function Proyecto() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <SectionHeader label={d.approach.sectionLabel} title={d.approach.title} />
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              <div className="bg-gray-50 rounded-3xl p-8 border border-gray-100">
-                <h3 className="font-serif text-xl font-semibold text-brand-800 mb-4">{d.approach.techTitle}</h3>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <AccentCard header={<h3 className="font-serif text-xl font-bold text-brand-900">{d.approach.techTitle}</h3>}>
                 <div className="space-y-4">
                   {d.approach.techParagraphs.map((p, i) => (
                     <p key={i} className="text-gray-600 text-sm leading-relaxed">{p}</p>
                   ))}
                 </div>
-              </div>
+              </AccentCard>
 
-              <div className="bg-brand-50 rounded-3xl p-8 border border-brand-100">
-                <h3 className="font-serif text-xl font-semibold text-brand-800 mb-5">{d.approach.whyTitle}</h3>
+              <AccentCard index={1} header={<h3 className="font-serif text-xl font-bold text-brand-900">{d.approach.whyTitle}</h3>}>
                 <ul className="space-y-4">
                   {d.approach.whyItems.map((item, i) => (
                     <li key={i}>
@@ -145,7 +141,7 @@ export default function Proyecto() {
                     </li>
                   ))}
                 </ul>
-              </div>
+              </AccentCard>
             </div>
 
             <p className="text-gray-400 text-xs leading-relaxed mt-8 max-w-4xl">{d.approach.references}</p>
@@ -157,9 +153,9 @@ export default function Proyecto() {
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
             <SectionHeader label={d.phases.sectionLabel} title={d.phases.title} subtitle={d.phases.subtitle} />
 
-            <div>
+            <div className="space-y-5">
               {d.phases.items.map((item, i) => (
-                <PhaseItem key={i} item={item} index={i} isLast={i === d.phases.items.length - 1} />
+                <PhaseCard key={i} item={item} index={i} />
               ))}
             </div>
           </div>
@@ -170,7 +166,7 @@ export default function Proyecto() {
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <SectionHeader label={d.collab.sectionLabel} title={d.collab.title} subtitle={d.collab.text} />
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
               {d.collab.stats.map((stat, i) => (
                 <StatCard key={i} number={stat.number} label={stat.label} index={i} />
               ))}
@@ -209,9 +205,13 @@ export default function Proyecto() {
               </div>
 
               <div className="lg:col-span-2">
-                <div className="bg-white rounded-3xl border border-brand-100 shadow-sm p-10 text-center">
-                  <p className="font-serif text-5xl font-bold text-brand-600 mb-2">{d.funding.amount}</p>
-                  <p className="text-gray-500 text-sm uppercase tracking-widest font-semibold">{d.funding.amountLabel}</p>
+                <div className="bg-white rounded-3xl overflow-hidden border-l-4 border-brand-500 shadow-sm">
+                  <div className="bg-brand-100 px-8 py-10 text-center">
+                    <p className="font-serif text-5xl font-bold text-brand-800">{d.funding.amount}</p>
+                  </div>
+                  <div className="p-6 text-center">
+                    <p className="text-gray-500 text-sm uppercase tracking-widest font-semibold">{d.funding.amountLabel}</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -223,9 +223,9 @@ export default function Proyecto() {
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <SectionHeader label={d.aitep.sectionLabel} title={d.aitep.title} subtitle={d.aitep.intro} />
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               {d.aitep.points.map((point, i) => (
-                <MissionPoint key={i} point={point} index={i} />
+                <MissionCard key={i} point={point} index={i} />
               ))}
             </div>
           </div>
