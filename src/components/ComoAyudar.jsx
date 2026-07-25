@@ -13,8 +13,8 @@ const CTA_CLASSES = 'inline-flex items-center gap-1.5 font-semibold text-sm text
 
 function HelpCard({ card, index, isBig }) {
   const { ref, isVisible } = useScrollAnimation()
-  const isInstagram = index === 8
-  const isDonate = index === 9
+  const isInstagram = card.ctaType === 'instagram'
+  const isDonate = card.ctaType === 'donate'
 
   const ctaContent = (
     <>
