@@ -100,6 +100,14 @@ export default function Navbar({ donatePage = false }) {
             ))}
             <li>
               <Link
+                to="/proyecto"
+                className={desktopLinkClass(isRouteActive('/proyecto'))}
+              >
+                {t.nav.proyecto}
+              </Link>
+            </li>
+            <li>
+              <Link
                 to="/videos"
                 className={desktopLinkClass(isRouteActive('/videos'))}
               >
@@ -192,6 +200,15 @@ export default function Navbar({ donatePage = false }) {
                 </a>
               </li>
             ))}
+            <li>
+              <Link
+                to="/proyecto"
+                onClick={() => setMenuOpen(false)}
+                className={mobileLinkClass(isRouteActive('/proyecto'))}
+              >
+                {t.nav.proyecto}
+              </Link>
+            </li>
             <li>
               <Link
                 to="/videos"

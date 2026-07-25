@@ -11,6 +11,7 @@ import ComoAyudar from './components/ComoAyudar'
 import Contacto from './components/Contacto'
 import Footer from './components/Footer'
 import Donar from './pages/Donar'
+import Proyecto from './pages/Proyecto'
 import Privacidad from './pages/Privacidad'
 import Prensa from './pages/Prensa'
 import Eventos from './pages/Eventos'
@@ -110,6 +111,7 @@ export default function App() {
         <Route path="/donar" element={<Donar />} />
         <Route path="/donate" element={<Donar />} />
         <Route path="/dona" element={<Donar />} />
+        <Route path="/proyecto" element={<Proyecto />} />
         <Route path="/privacidad" element={<Privacidad />} />
         <Route path="/prensa" element={<Prensa />} />
         <Route path="/eventos" element={<Eventos />} />

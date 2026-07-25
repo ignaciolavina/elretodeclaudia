@@ -6,6 +6,7 @@ const translations = {
       dbp: 'Qué es la DBP',
       historia: 'Historia de Claudia',
       ayudar: 'Cómo ayudar',
+      proyecto: 'Proyecto',
       videos: 'Vídeos',
       contacto: 'Contacto',
       prensa: 'Prensa',
@@ -491,6 +492,83 @@ const translations = {
       helpItems: ['Síguenos y comparte', 'Difunde nuestro mensaje', 'Colabora con tu donación', 'Cree en la investigación'],
       helpCta: 'Donar ahora ❤️',
     },
+
+    proyecto: {
+      badge: 'Proyecto de investigación',
+      title: 'La terapia génica, el camino hacia la cura de Claudia',
+      subtitle: 'La terapia génica es hoy el único enfoque clínico con potencial curativo para la deficiencia de la proteína D-bifuncional (DBP). Así es el proyecto de investigación que estamos impulsando.',
+
+      approach: {
+        sectionLabel: 'Enfoque científico',
+        title: 'Edición genética de precisión con CRISPR',
+        techTitle: '¿Qué tecnología proponemos?',
+        techParagraphs: [
+          'Proponemos abordar la enfermedad mediante edición genética de precisión ("base editing"), que permite corregir errores concretos en el ADN y actuar directamente sobre la causa de la enfermedad, en lugar de limitarse a tratar los síntomas. La edición se realizará con tecnología CRISPR (Clustered Regularly Interspaced Short Palindromic Repeats).',
+          'El reciente caso del bebé KJ Muldoon (Musunuru et al.) demostró por primera vez que es posible diseñar, fabricar y administrar un tratamiento genético personalizado para una enfermedad ultra rara, abriendo una vía real para otros niños con mutaciones únicas.',
+          'La esperanza de esta tecnología no es ralentizar ligeramente la enfermedad, sino corregir el defecto genético de origen antes de que el daño neurológico sea irreversible.',
+        ],
+        whyTitle: '¿Por qué CRISPR?',
+        whyItems: [
+          { title: 'Potencial curativo', text: 'Ataca el problema de raíz en lugar de limitarse a tratar los síntomas.' },
+          { title: 'Existe un precedente', text: 'El caso de Musunuru et al. aumenta la esperanza en la viabilidad de este enfoque.' },
+          { title: 'Seguridad', text: 'Baja inmunogenicidad frente a otras estrategias de edición genética.' },
+          { title: 'Agilidad', text: 'Relativamente más rápida de desarrollar que otras formas de edición genética.' },
+        ],
+        references: 'Referencias: Wong PK et al., "CRISPR Gene-Editing Models Geared Toward Therapy for Hereditary and Developmental Neurological Disorders", Front Pediatr 9:592571 (2021). Musunuru K et al., "Patient-Specific In Vivo Gene Editing to Treat a Rare Genetic Disease", N Engl J Med 392:2235–2243 (2025).',
+      },
+
+      phases: {
+        sectionLabel: 'Hoja de ruta',
+        title: 'Las fases del proyecto',
+        subtitle: 'Desde la definición de la estrategia hasta la administración a la paciente y su seguimiento.',
+        items: [
+          { phase: 'Fase 0', title: 'Definición del proyecto', points: ['Definición del proyecto', 'Elección de la estrategia experimental', 'Coordinación de los diferentes organismos participantes'] },
+          { phase: 'Fase 1', title: 'Síntesis y modelo celular', points: ['Síntesis de los compuestos editores', 'Generación de la línea celular', 'Generación del modelo murino (ratones)'] },
+          { phase: 'Fase 2', title: 'Estudio en células', points: ['Estudio en células para probar la eficacia de los diferentes candidatos terapéuticos'] },
+          { phase: 'Fase 3', title: 'Encapsulación', points: ['Vehiculización de la terapia para hacerla llegar a los diferentes órganos'] },
+          { phase: 'Fase 4', title: 'Ensayos preclínicos', points: ['Ensayos en modelo murino (ratones)', 'Pruebas de toxicidad'] },
+          { phase: 'Fase 5', title: 'Fase clínica', points: ['Finalización de pruebas y requisitos regulatorios', 'Administración a la paciente y seguimiento'] },
+        ],
+      },
+
+      collab: {
+        sectionLabel: 'Alcance internacional',
+        title: 'Un proyecto con colaboración internacional',
+        text: 'El proyecto conecta a instituciones y empresas de investigación repartidas por varios países, cada una especializada en una fase distinta: desde el diseño y la síntesis de los compuestos editores hasta los ensayos preclínicos y la fase clínica. De momento no podemos compartir sus nombres concretos, pero sí el alcance de esta colaboración.',
+        stats: [
+          { number: '+5', label: 'Instituciones y empresas de investigación' },
+          { number: '3', label: 'Países implicados' },
+          { number: '6', label: 'Fases coordinadas a nivel internacional' },
+        ],
+      },
+
+      funding: {
+        sectionLabel: 'Financiación',
+        title: 'Una investigación pionera que necesita apoyo privado',
+        amount: '3 millones de euros',
+        amountLabel: 'Coste estimado de la primera fase',
+        paragraphs: [
+          'El coste estimado inicial del proyecto es de 3 millones de euros, destinados a financiar las primeras fases de investigación preclínica: validación experimental, desarrollo del modelo animal, pruebas de seguridad y preparación regulatoria.',
+          'Esta cifra es una previsión temporal. Al tratarse de una investigación pionera y sin precedentes directos en España para esta enfermedad, es probable que las fases futuras —hacia la administración clínica y el seguimiento de la paciente— requieran financiación adicional.',
+          'El proyecto busca ofrecer una oportunidad a Claudia, pero también generar conocimiento, modelos y herramientas que puedan acelerar el desarrollo de terapias para otros niños con enfermedades genéticas ultra raras.',
+          'Al no existir tratamiento comercial ni financiación pública suficiente para cubrir este desarrollo, necesitamos apoyo privado: donaciones particulares y, sobre todo, la colaboración de empresas, fundaciones e instituciones que quieran impulsar una investigación con impacto científico y humano.',
+        ],
+        ctaDonate: 'Dona ahora ❤️',
+        ctaContact: 'Quiero colaborar',
+      },
+
+      aitep: {
+        sectionLabel: 'Quién impulsa el proyecto',
+        title: 'Sobre AITEP',
+        intro: 'Este proyecto está impulsado por AITEP (Asociación para la Investigación y Tratamiento de las Enfermedades Peroxisomales), una entidad sin ánimo de lucro cuyos fines incluyen:',
+        points: [
+          { number: '01', text: 'El cuidado, tratamiento y mejora de la calidad de vida de las personas afectadas por enfermedades raras de origen genético, con especial atención a patologías de carácter metabólico o peroxisomal, así como el apoyo a sus familias.' },
+          { number: '02', text: 'La colaboración y el fomento de la investigación científica y médica que permita avanzar en el conocimiento, diagnóstico, tratamiento y eventual curación de dichas enfermedades.' },
+          { number: '03', text: 'La financiación de proyectos de investigación genética, terapias innovadoras y tratamientos especializados, así como la cobertura de necesidades derivadas de la enfermedad no atendidas suficientemente por los sistemas públicos o privados.' },
+          { number: '04', text: 'La sensibilización social y la difusión de información veraz y accesible sobre las enfermedades raras de origen genético, promoviendo la concienciación pública, la inclusión y la defensa de los derechos de las personas afectadas.' },
+        ],
+      },
+    },
   },
 
   en: {
@@ -500,6 +578,7 @@ const translations = {
       dbp: 'What is DBP',
       historia: "Claudia's Story",
       ayudar: 'How to help',
+      proyecto: 'Project',
       videos: 'Videos',
       contacto: 'Contact',
       prensa: 'Press',
@@ -985,6 +1064,83 @@ const translations = {
       helpTitle: 'How can you help?',
       helpItems: ['Follow us and share', 'Spread our message', 'Support with your donation', 'Believe in research'],
       helpCta: 'Donate now ❤️',
+    },
+
+    proyecto: {
+      badge: 'Research project',
+      title: "Gene therapy: the path toward Claudia's cure",
+      subtitle: 'Gene therapy is today the only clinical approach with curative potential for D-bifunctional protein deficiency (DBP). This is the research project we are driving forward.',
+
+      approach: {
+        sectionLabel: 'Scientific approach',
+        title: 'Precision gene editing with CRISPR',
+        techTitle: 'What technology are we proposing?',
+        techParagraphs: [
+          'We propose tackling the disease through precision gene editing ("base editing"), which corrects specific errors in the DNA and acts directly on the cause of the disease instead of only treating its symptoms. The editing will be carried out using CRISPR technology (Clustered Regularly Interspaced Short Palindromic Repeats).',
+          'The recent case of baby KJ Muldoon (Musunuru et al.) showed for the first time that it is possible to design, manufacture, and administer a personalized genetic treatment for an ultra-rare disease, opening a real path for other children with unique mutations.',
+          'The hope behind this technology is not to slightly slow down the disease, but to correct the underlying genetic defect before the neurological damage becomes irreversible.',
+        ],
+        whyTitle: 'Why CRISPR?',
+        whyItems: [
+          { title: 'Curative potential', text: 'It targets the root cause instead of only treating symptoms.' },
+          { title: 'There is a precedent', text: "The Musunuru et al. case increases confidence in this approach's viability." },
+          { title: 'Safety', text: 'Low immunogenicity compared to other gene-editing strategies.' },
+          { title: 'Speed', text: 'Relatively faster to develop than other forms of gene editing.' },
+        ],
+        references: 'References: Wong PK et al., "CRISPR Gene-Editing Models Geared Toward Therapy for Hereditary and Developmental Neurological Disorders", Front Pediatr 9:592571 (2021). Musunuru K et al., "Patient-Specific In Vivo Gene Editing to Treat a Rare Genetic Disease", N Engl J Med 392:2235–2243 (2025).',
+      },
+
+      phases: {
+        sectionLabel: 'Roadmap',
+        title: 'The phases of the project',
+        subtitle: "From defining the strategy to administering the therapy to the patient and her follow-up.",
+        items: [
+          { phase: 'Phase 0', title: 'Project definition', points: ['Defining the project', 'Choosing the experimental strategy', 'Coordinating the different participating organizations'] },
+          { phase: 'Phase 1', title: 'Synthesis and cell model', points: ['Synthesis of the editing compounds', 'Generating the cell line', 'Generating the mouse model'] },
+          { phase: 'Phase 2', title: 'Cell studies', points: ['Testing the efficacy of the different therapeutic candidates in cells'] },
+          { phase: 'Phase 3', title: 'Encapsulation', points: ['Encapsulating the therapy so it can reach the different organs'] },
+          { phase: 'Phase 4', title: 'Preclinical trials', points: ['Trials in the mouse model', 'Toxicity testing'] },
+          { phase: 'Phase 5', title: 'Clinical phase', points: ['Completing testing and regulatory requirements', 'Administering to the patient and follow-up'] },
+        ],
+      },
+
+      collab: {
+        sectionLabel: 'International reach',
+        title: 'A project with international collaboration',
+        text: 'The project connects research institutions and companies spread across several countries, each specialized in a different phase: from designing and synthesizing the editing compounds to preclinical trials and the clinical phase. We cannot yet share their specific names, but we can share the scale of this collaboration.',
+        stats: [
+          { number: '+5', label: 'Research institutions and companies' },
+          { number: '3', label: 'Countries involved' },
+          { number: '6', label: 'Phases coordinated internationally' },
+        ],
+      },
+
+      funding: {
+        sectionLabel: 'Funding',
+        title: 'A pioneering research project that needs private support',
+        amount: '3 million euros',
+        amountLabel: 'Estimated cost of the first phase',
+        paragraphs: [
+          'The estimated initial cost of the project is 3 million euros, allocated to funding the first phases of preclinical research: experimental validation, developing the animal model, safety testing, and regulatory preparation.',
+          'This figure is a temporary estimate. As this is pioneering research with no direct precedent in Spain for this disease, future phases — toward clinical administration and patient follow-up — will likely require additional funding.',
+          'The project seeks to offer Claudia a chance, but also to generate knowledge, models, and tools that can accelerate the development of therapies for other children with ultra-rare genetic diseases.',
+          'Since there is no commercial treatment or sufficient public funding to cover this development, we need private support: individual donations and, above all, collaboration from companies, foundations, and institutions who want to drive research with scientific and human impact.',
+        ],
+        ctaDonate: 'Donate now ❤️',
+        ctaContact: 'I want to collaborate',
+      },
+
+      aitep: {
+        sectionLabel: 'Who is behind the project',
+        title: 'About AITEP',
+        intro: 'This project is driven by AITEP (Asociación para la Investigación y Tratamiento de las Enfermedades Peroxisomales), a non-profit whose goals include:',
+        points: [
+          { number: '01', text: 'Caring for, treating, and improving the quality of life of people affected by rare genetic diseases, with special attention to metabolic or peroxisomal conditions, as well as supporting their families.' },
+          { number: '02', text: 'Fostering and collaborating on scientific and medical research that advances knowledge, diagnosis, treatment, and eventual cures for these diseases.' },
+          { number: '03', text: 'Funding genetic research projects, innovative therapies, and specialized treatments, as well as covering disease-related needs not sufficiently met by public or private systems.' },
+          { number: '04', text: 'Raising social awareness and spreading truthful, accessible information about rare genetic diseases, promoting public awareness, inclusion, and the defense of the rights of those affected.' },
+        ],
+      },
     },
   },
 }
