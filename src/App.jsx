@@ -1,4 +1,4 @@
-import { Routes, Route, useLocation, Link } from 'react-router-dom'
+import { Routes, Route, Navigate, useLocation, Link } from 'react-router-dom'
 import { useEffect } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { LanguageProvider } from './context/LanguageContext'
@@ -6,18 +6,17 @@ import { useLanguage } from './context/LanguageContext'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import QuEsDBP from './components/QuEsDBP'
-import HistoriaClaudia from './components/HistoriaClaudia'
 import ComoAyudar from './components/ComoAyudar'
 import Contacto from './components/Contacto'
 import Footer from './components/Footer'
 import Donar from './pages/Donar'
 import Proyecto from './pages/Proyecto'
+import Claudia from './pages/Claudia'
 import Privacidad from './pages/Privacidad'
 import Prensa from './pages/Prensa'
 import Eventos from './pages/Eventos'
 import CarreraSolidaria from './pages/CarreraSolidaria'
 import DiaEsperanza from './pages/DiaEsperanza'
-import Videos from './pages/Videos'
 import Landing from './pages/Landing'
 import ProximosEventos from './components/ProximosEventos'
 
@@ -39,7 +38,6 @@ function Home() {
       <main>
         <Hero />
         <QuEsDBP />
-        <HistoriaClaudia />
         <ComoAyudar />
         <ProximosEventos />
         <Contacto />
@@ -112,12 +110,13 @@ export default function App() {
         <Route path="/donate" element={<Donar />} />
         <Route path="/dona" element={<Donar />} />
         <Route path="/proyecto" element={<Proyecto />} />
+        <Route path="/claudia" element={<Claudia />} />
         <Route path="/privacidad" element={<Privacidad />} />
         <Route path="/prensa" element={<Prensa />} />
         <Route path="/eventos" element={<Eventos />} />
         <Route path="/eventos/carrera-solidaria-san-lorenzo-2026" element={<CarreraSolidaria />} />
         <Route path="/eventos/dia-de-la-esperanza-2026" element={<DiaEsperanza />} />
-        <Route path="/videos" element={<Videos />} />
+        <Route path="/videos" element={<Navigate to="/claudia" replace />} />
         <Route path="/landing" element={<Landing />} />
         <Route path="*" element={<Donar />} />
       </Routes>

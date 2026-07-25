@@ -2,10 +2,9 @@ import { Link, useNavigate, useLocation } from 'react-router-dom'
 import { useLanguage } from '../context/LanguageContext'
 
 const NAV_KEYS = [
-  { key: 'inicio',   href: '#inicio'   },
-  { key: 'dbp',      href: '#dbp'      },
-  { key: 'historia', href: '#historia' },
-  { key: 'ayudar',   href: '#ayudar'   },
+  { key: 'inicio', href: '#inicio' },
+  { key: 'dbp',    href: '#dbp'    },
+  { key: 'ayudar', href: '#ayudar' },
 ]
 
 export default function Footer() {
@@ -58,11 +57,11 @@ export default function Footer() {
               ))}
               <li>
                 <Link
-                  to="/videos"
+                  to="/claudia"
                   onClick={() => window.scrollTo(0, 0)}
                   className="block py-1 text-gray-300 hover:text-white text-sm transition-colors"
                 >
-                  {t.nav.videos}
+                  {t.nav.historia}
                 </Link>
               </li>
               <li>

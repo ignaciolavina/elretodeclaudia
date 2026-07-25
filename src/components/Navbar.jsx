@@ -107,10 +107,10 @@ export default function Navbar({ donatePage = false }) {
             </li>
             <li>
               <Link
-                to="/videos"
-                className={desktopLinkClass(isRouteActive('/videos'))}
+                to="/claudia"
+                className={desktopLinkClass(isRouteActive('/claudia'))}
               >
-                {t.nav.videos}
+                {t.nav.historia}
               </Link>
             </li>
             <li>
@@ -210,11 +210,11 @@ export default function Navbar({ donatePage = false }) {
             </li>
             <li>
               <Link
-                to="/videos"
+                to="/claudia"
                 onClick={() => setMenuOpen(false)}
-                className={mobileLinkClass(isRouteActive('/videos'))}
+                className={mobileLinkClass(isRouteActive('/claudia'))}
               >
-                {t.nav.videos}
+                {t.nav.historia}
               </Link>
             </li>
             <li>

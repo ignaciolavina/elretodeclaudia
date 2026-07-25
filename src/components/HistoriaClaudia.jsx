@@ -38,7 +38,7 @@ export default function HistoriaClaudia() {
   const d = t.historia
 
   return (
-    <section id="historia" className="py-24 bg-brand-50" aria-labelledby="historia-title">
+    <section id="historia" className="pt-32 pb-24 bg-brand-50" aria-labelledby="historia-title">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div

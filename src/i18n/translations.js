@@ -4,10 +4,9 @@ const translations = {
       siteName: 'El Reto de Claudia',
       inicio: 'Inicio',
       dbp: 'Qué es la DBP',
-      historia: 'Historia de Claudia',
+      historia: 'Conoce a Claudia',
       ayudar: 'Cómo ayudar',
       proyecto: 'Proyecto',
-      videos: 'Vídeos',
       contacto: 'Contacto',
       prensa: 'Prensa',
       eventos: 'Eventos',
@@ -403,7 +402,7 @@ const translations = {
 
     videos: {
       sectionLabel: 'Vídeos',
-      title: 'Claudia en movimiento',
+      title: 'Conoce a Claudia',
       subtitle: 'En estos vídeos compartimos pedacitos de Claudia y del camino que estamos recorriendo para dar visibilidad a la DBP y empujar la investigación.',
       instagramCta: 'Seguir en Instagram',
       helpCta: 'Sumarte al reto',
@@ -566,10 +565,9 @@ const translations = {
       siteName: "Claudia's Challenge",
       inicio: 'Home',
       dbp: 'What is DBP',
-      historia: "Claudia's Story",
+      historia: 'Meet Claudia',
       ayudar: 'How to help',
       proyecto: 'Project',
-      videos: 'Videos',
       contacto: 'Contact',
       prensa: 'Press',
       eventos: 'Events',
@@ -966,7 +964,7 @@ const translations = {
 
     videos: {
       sectionLabel: 'Videos',
-      title: 'Claudia in motion',
+      title: 'Meet Claudia',
       subtitle: "These videos share moments from Claudia's life and the journey we are building to raise awareness of DBP and push research forward.",
       instagramCta: 'Follow on Instagram',
       helpCta: 'Join the challenge',
