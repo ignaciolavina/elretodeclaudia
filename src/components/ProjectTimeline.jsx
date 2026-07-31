@@ -116,7 +116,7 @@ const FASES = [
       'Desarrollo y optimización del sistema de administración mediante nanopartículas lipídicas (LNP).',
     ],
     participantes: [
-      { id: 'danielGao', destacado: true },
+      { id: 'danielGao' },
       { id: 'ceu' },
       { id: 'aitep' },
       { id: 'colaboradoresCientificos' },
@@ -138,7 +138,7 @@ const FASES = [
       'Evaluación preclínica in vivo: eficacia, biodistribución y seguridad/toxicidad.',
     ],
     participantes: [
-      { id: 'charlesRiver', destacado: true },
+      { id: 'charlesRiver' },
       { id: 'empresasEEUU3' },
       { id: 'ceu' },
       { id: 'aitep' },
@@ -159,7 +159,7 @@ const FASES = [
       'Seguimiento clínico de seguridad y eficacia.',
     ],
     participantes: [
-      { id: 'hospitalSantJoanDeDeu', destacado: true },
+      { id: 'hospitalSantJoanDeDeu' },
       { id: 'empresaFabricacion' },
       { id: 'aemps' },
       { id: 'ema' },
@@ -239,14 +239,12 @@ function ParticipantBadge({ id, destacado = false }) {
   )
 }
 
-function PhaseCard({ fase, alineacion }) {
-  const align = alineacion === 'centro' ? 'text-center' : 'text-left'
-  const justify = alineacion === 'centro' ? 'justify-center' : 'justify-start'
+function PhaseCard({ fase }) {
   const mostrarCoste = fase.coste && !fase.ocultarCoste
 
   return (
     <div
-      className={`rounded-3xl shadow-sm p-8 sm:p-10 bg-white ${align} ${
+      className={`rounded-3xl shadow-sm p-8 sm:p-10 bg-white text-left ${
         fase.destacado ? 'border border-gray-100 border-l-4 border-l-brand-500' : 'border border-gray-100'
       }`}
     >
@@ -264,7 +262,10 @@ function PhaseCard({ fase, alineacion }) {
       </p>
       <div className="space-y-1.5">
         {fase.actividades.map((d, i) => (
-          <p key={i} className="text-base leading-relaxed text-gray-600">{d}</p>
+          <div key={i} className="flex gap-2">
+            <span className="text-gray-400 flex-shrink-0">-</span>
+            <p className="text-base leading-relaxed text-gray-600">{d}</p>
+          </div>
         ))}
       </div>
 
@@ -273,7 +274,7 @@ function PhaseCard({ fase, alineacion }) {
       <p className="text-xs uppercase tracking-widest font-semibold mb-4 text-gray-400">
         Participan en esta fase
       </p>
-      <div className={`flex flex-wrap gap-3 ${justify}`}>
+      <div className="flex flex-wrap gap-3 justify-start">
         {fase.participantes.map(({ id, destacado }) => (
           <ParticipantBadge key={id} id={id} destacado={destacado} />
         ))}
@@ -290,7 +291,7 @@ function PhaseCard({ fase, alineacion }) {
             </p>
           ) : (
             <div>
-              <div className={`flex items-baseline gap-3 ${justify}`}>
+              <div className="flex items-baseline gap-3 justify-start">
                 <span className="text-xs uppercase tracking-widest font-semibold text-gray-400">
                   {fase.coste.etiqueta || 'Coste'}
                 </span>
@@ -358,15 +359,15 @@ export default function ProjectTimeline() {
         <div className="relative">
           <div className="absolute top-0 bottom-0 left-6 md:left-1/2 w-px bg-brand-200 md:-translate-x-1/2" />
 
-          <div className="space-y-10 md:space-y-16">
+          <div>
             {FASES.map((fase, i) => (
-              <div key={fase.numero} className="relative">
+              <div key={fase.numero} className={`relative ${i === 0 ? '' : 'mt-10 md:-mt-64'}`}>
                 <div className="absolute left-6 md:left-1/2 top-8 -translate-x-1/2 z-10 w-9 h-9 rounded-full bg-brand-600 text-white text-sm font-bold flex items-center justify-center ring-4 ring-gray-50">
                   {fase.numero}
                 </div>
 
                 <div className={`pl-16 md:pl-0 md:w-[calc(50%-2.5rem)] ${i % 2 === 0 ? 'md:mr-auto' : 'md:ml-auto'}`}>
-                  <PhaseCard fase={fase} alineacion={i % 2 === 0 ? 'centro' : 'izquierda'} />
+                  <PhaseCard fase={fase} />
                 </div>
               </div>
             ))}
