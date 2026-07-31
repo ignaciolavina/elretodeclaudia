@@ -19,6 +19,7 @@ import CarreraSolidaria from './pages/CarreraSolidaria'
 import DiaEsperanza from './pages/DiaEsperanza'
 import Landing from './pages/Landing'
 import ProximosEventos from './components/ProximosEventos'
+import Test from './pages/Test'
 
 function Home() {
   return (
@@ -118,6 +119,7 @@ export default function App() {
         <Route path="/eventos/dia-de-la-esperanza-2026" element={<DiaEsperanza />} />
         <Route path="/videos" element={<Navigate to="/claudia" replace />} />
         <Route path="/landing" element={<Landing />} />
+        <Route path="/test" element={<Test />} />
         <Route path="*" element={<Donar />} />
       </Routes>
     </LanguageProvider>
