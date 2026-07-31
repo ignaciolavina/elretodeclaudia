@@ -2,11 +2,18 @@ import { useState } from 'react'
 
 // Datos de ejemplo — iterar rápido, traducir/pulir al final.
 
+const PAIS_BANDERA = { ES: '🇪🇸', US: '🇺🇸', EU: '🇪🇺', CN: '🇨🇳' }
+
+// Cada fila del timeline se solapa con la siguiente; z-index descendente
+// para que una fase nunca tape los badges/popover de la fase anterior.
+const FILA_Z = ['z-40', 'z-30', 'z-20', 'z-10']
+
 const ENTIDADES = {
   ceu: {
-    nombre: 'CEU San Pablo — METBrain',
+    nombre: 'CEU San Pablo - METBrain',
+    pais: 'ES',
     categoria: 'Centro académico e investigador',
-    nombreCompleto: 'Universidad CEU San Pablo — METBrain',
+    nombreCompleto: 'Universidad CEU San Pablo - METBrain',
     descripcion:
       'Dirección científica del proyecto y coordinación de investigadores, empresas y colaboradores.',
     fases: '1 · 2 · 3 · 4',
@@ -14,7 +21,7 @@ const ENTIDADES = {
   },
   aitep: {
     nombre: 'AITEP',
-    acento: true,
+    pais: 'ES',
     categoria: 'Entidad promotora',
     nombreCompleto: 'AITEP – El Reto de Claudia',
     descripcion:
@@ -24,6 +31,7 @@ const ENTIDADES = {
   },
   aemps: {
     nombre: 'AEMPS',
+    pais: 'ES',
     categoria: 'Autoridad regulatoria',
     nombreCompleto: 'Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)',
     descripcion: 'Asesoramiento y orientación regulatoria de cara a la futura autorización clínica.',
@@ -32,6 +40,7 @@ const ENTIDADES = {
   },
   ema: {
     nombre: 'EMA',
+    pais: 'EU',
     categoria: 'Autoridad regulatoria',
     nombreCompleto: 'Agencia Europea de Medicamentos (EMA)',
     descripcion: 'Asesoramiento y orientación regulatoria de cara a la futura autorización clínica.',
@@ -40,6 +49,7 @@ const ENTIDADES = {
   },
   danielGao: {
     nombre: 'Dr. Daniel Gao, E&E Foundation',
+    pais: 'US',
     categoria: 'Investigador principal',
     nombreCompleto: 'Dr. Daniel Gao',
     descripcion:
@@ -49,6 +59,7 @@ const ENTIDADES = {
   },
   charlesRiver: {
     nombre: 'Charles River',
+    pais: 'US',
     categoria: 'Empresa de investigación preclínica (CRO)',
     nombreCompleto: 'Charles River Laboratories',
     descripcion:
@@ -58,7 +69,7 @@ const ENTIDADES = {
   },
   hospitalSantJoanDeDeu: {
     nombre: 'Hospital Sant Joan de Déu Barcelona',
-    acento: true,
+    pais: 'ES',
     categoria: 'Hospital — administración del tratamiento',
     nombreCompleto: 'Hospital Sant Joan de Déu Barcelona',
     descripcion:
@@ -66,15 +77,15 @@ const ENTIDADES = {
     fases: '4',
     ambito: 'Barcelona, España',
   },
-  colaboradoresCientificos: { nombre: 'Equipo asesor científico y técnico', pendiente: true },
-  empresasEEUU3: { nombre: '3 empresas EE. UU. · en negociación', pendiente: true },
-  empresaFabricacion: { nombre: 'Empresa EE. UU. de fabricación clínica · en negociación', pendiente: true },
-  proveedores: { nombre: 'Proveedores especializados', pendiente: true },
+  empresaEEUU1: { nombre: 'Empresa en negociación', pais: 'CN', pendiente: true },
+  empresaEEUU2: { nombre: 'Empresa en negociación', pais: 'US', pendiente: true },
+  empresaEEUU3: { nombre: 'Empresa en negociación', pais: 'US', pendiente: true },
+  empresaFabricacion: { nombre: 'Empresa de fabricación clínica · en negociación', pais: 'US', pendiente: true },
 }
 
 const TRANSVERSALES = [
   {
-    titulo: 'Universidad CEU San Pablo — METBrain',
+    titulo: 'Universidad CEU San Pablo - METBrain',
     descripcion: 'Dirección científica del proyecto y coordinación de investigadores, empresas y colaboradores.',
   },
   {
@@ -115,12 +126,7 @@ const FASES = [
       'Evaluación de especificidad y seguridad genómica (análisis off-target).',
       'Desarrollo y optimización del sistema de administración mediante nanopartículas lipídicas (LNP).',
     ],
-    participantes: [
-      { id: 'danielGao' },
-      { id: 'ceu' },
-      { id: 'aitep' },
-      { id: 'colaboradoresCientificos' },
-    ],
+    participantes: [{ id: 'danielGao' }, { id: 'ceu' }, { id: 'aitep' }],
     coste: {
       etiqueta: 'Coste fases 2 y 3',
       monto: '780.000 €',
@@ -139,10 +145,12 @@ const FASES = [
     ],
     participantes: [
       { id: 'charlesRiver' },
-      { id: 'empresasEEUU3' },
       { id: 'ceu' },
       { id: 'aitep' },
       { id: 'danielGao' },
+      { id: 'empresaEEUU1' },
+      { id: 'empresaEEUU2' },
+      { id: 'empresaEEUU3' },
     ],
     coste: { referencia: 'Incluido en los 780.000 € de la fase 2' },
     ocultarCoste: true,
@@ -160,12 +168,11 @@ const FASES = [
     ],
     participantes: [
       { id: 'hospitalSantJoanDeDeu' },
-      { id: 'empresaFabricacion' },
       { id: 'aemps' },
       { id: 'ema' },
       { id: 'ceu' },
       { id: 'aitep' },
-      { id: 'proveedores' },
+      { id: 'empresaFabricacion' },
     ],
     coste: {
       monto: '1,5 – 2,7 M €',
@@ -181,19 +188,19 @@ function ParticipantBadge({ id, destacado = false }) {
   const p = ENTIDADES[id]
   if (!p) return null
 
+  const bandera = PAIS_BANDERA[p.pais]
+
   if (p.pendiente) {
     return (
       <span
         title="En fase de negociación — nombre pendiente de publicación."
         className="inline-flex items-center gap-2 rounded-full border border-dashed border-gray-300 px-4 py-2 text-sm font-medium text-gray-400"
       >
-        <span className="h-2 w-2 rounded-full flex-shrink-0 bg-gray-300" />
+        {bandera && <span>{bandera}</span>}
         {p.nombre}
       </span>
     )
   }
-
-  const dotColor = p.acento ? 'bg-brand-600' : 'bg-brand-400'
 
   const badgeClasses = destacado
     ? 'bg-brand-600 border-brand-600 text-white'
@@ -205,7 +212,7 @@ function ParticipantBadge({ id, destacado = false }) {
         type="button"
         className={`inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium transition-colors ${badgeClasses}`}
       >
-        <span className={`h-2 w-2 rounded-full flex-shrink-0 ${destacado ? 'bg-white' : dotColor}`} />
+        {bandera && <span>{bandera}</span>}
         {p.nombre}
       </button>
 
@@ -361,7 +368,10 @@ export default function ProjectTimeline() {
 
           <div>
             {FASES.map((fase, i) => (
-              <div key={fase.numero} className={`relative ${i === 0 ? '' : 'mt-10 md:-mt-64'}`}>
+              <div
+                key={fase.numero}
+                className={`relative ${FILA_Z[i] || 'z-0'} ${i === 0 ? '' : 'mt-10 md:-mt-32'}`}
+              >
                 <div className="absolute left-6 md:left-1/2 top-8 -translate-x-1/2 z-10 w-9 h-9 rounded-full bg-brand-600 text-white text-sm font-bold flex items-center justify-center ring-4 ring-gray-50">
                   {fase.numero}
                 </div>
