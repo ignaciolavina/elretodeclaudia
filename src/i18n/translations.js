@@ -521,7 +521,7 @@ const translations = {
         sectionLabel: 'Financiación',
         title: 'Una investigación pionera que necesita apoyo privado',
         amount: '3 millones de euros',
-        amountLabel: 'Coste estimado de la primera fase',
+        amountLabel: 'Coste estimado del proyecto',
         paragraphs: [
           'El coste estimado inicial del proyecto es de 3 millones de euros, destinados a financiar las primeras fases de investigación preclínica: validación experimental, desarrollo del modelo animal, pruebas de seguridad y preparación regulatoria.',
           'Esta cifra es una previsión temporal. Al tratarse de una investigación pionera y sin precedentes directos en España para esta enfermedad, es probable que las fases futuras —hacia la administración clínica y el seguimiento de la paciente— requieran financiación adicional.',
@@ -1198,7 +1198,7 @@ const translations = {
         sectionLabel: 'Funding',
         title: 'A pioneering research project that needs private support',
         amount: '3 million euros',
-        amountLabel: 'Estimated cost of the first phase',
+        amountLabel: 'Estimated cost of the project',
         paragraphs: [
           'The estimated initial cost of the project is 3 million euros, allocated to funding the first phases of preclinical research: experimental validation, developing the animal model, safety testing, and regulatory preparation.',
           'This figure is a temporary estimate. As this is pioneering research with no direct precedent in Spain for this disease, future phases — toward clinical administration and patient follow-up — will likely require additional funding.',
