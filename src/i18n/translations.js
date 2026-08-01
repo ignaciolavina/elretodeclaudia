@@ -506,20 +506,6 @@ const translations = {
         references: 'Referencias: Wong PK et al., "CRISPR Gene-Editing Models Geared Toward Therapy for Hereditary and Developmental Neurological Disorders", Front Pediatr 9:592571 (2021). Musunuru K et al., "Patient-Specific In Vivo Gene Editing to Treat a Rare Genetic Disease", N Engl J Med 392:2235–2243 (2025).',
       },
 
-      phases: {
-        sectionLabel: 'Hoja de ruta',
-        title: 'Las fases del proyecto',
-        subtitle: 'Desde la definición de la estrategia hasta la administración a la paciente y su seguimiento.',
-        items: [
-          { phase: 'Fase 0', title: 'Definición del proyecto', points: ['Definición del proyecto', 'Elección de la estrategia experimental', 'Coordinación de los diferentes organismos participantes'] },
-          { phase: 'Fase 1', title: 'Síntesis y modelo celular', points: ['Síntesis de los compuestos editores', 'Generación de la línea celular', 'Generación del modelo murino (ratones)'] },
-          { phase: 'Fase 2', title: 'Estudio en células', points: ['Estudio en células para probar la eficacia de los diferentes candidatos terapéuticos'] },
-          { phase: 'Fase 3', title: 'Encapsulación', points: ['Vehiculización de la terapia para hacerla llegar a los diferentes órganos'] },
-          { phase: 'Fase 4', title: 'Ensayos preclínicos', points: ['Ensayos en modelo murino (ratones)', 'Pruebas de toxicidad'] },
-          { phase: 'Fase 5', title: 'Fase clínica', points: ['Finalización de pruebas y requisitos regulatorios', 'Administración a la paciente y seguimiento'] },
-        ],
-      },
-
       collab: {
         sectionLabel: 'Alcance internacional',
         title: 'Un proyecto con colaboración internacional',
@@ -1195,20 +1181,6 @@ const translations = {
           { title: 'Speed', text: 'Relatively faster to develop than other forms of gene editing.' },
         ],
         references: 'References: Wong PK et al., "CRISPR Gene-Editing Models Geared Toward Therapy for Hereditary and Developmental Neurological Disorders", Front Pediatr 9:592571 (2021). Musunuru K et al., "Patient-Specific In Vivo Gene Editing to Treat a Rare Genetic Disease", N Engl J Med 392:2235–2243 (2025).',
-      },
-
-      phases: {
-        sectionLabel: 'Roadmap',
-        title: 'The phases of the project',
-        subtitle: "From defining the strategy to administering the therapy to the patient and her follow-up.",
-        items: [
-          { phase: 'Phase 0', title: 'Project definition', points: ['Defining the project', 'Choosing the experimental strategy', 'Coordinating the different participating organizations'] },
-          { phase: 'Phase 1', title: 'Synthesis and cell model', points: ['Synthesis of the editing compounds', 'Generating the cell line', 'Generating the mouse model'] },
-          { phase: 'Phase 2', title: 'Cell studies', points: ['Testing the efficacy of the different therapeutic candidates in cells'] },
-          { phase: 'Phase 3', title: 'Encapsulation', points: ['Encapsulating the therapy so it can reach the different organs'] },
-          { phase: 'Phase 4', title: 'Preclinical trials', points: ['Trials in the mouse model', 'Toxicity testing'] },
-          { phase: 'Phase 5', title: 'Clinical phase', points: ['Completing testing and regulatory requirements', 'Administering to the patient and follow-up'] },
-        ],
       },
 
       collab: {

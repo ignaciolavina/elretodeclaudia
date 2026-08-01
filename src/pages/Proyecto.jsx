@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import ProjectTimeline from '../components/ProjectTimeline'
 import { useScrollAnimation } from '../hooks/useScrollAnimation'
 import { useLanguage } from '../context/LanguageContext'
 
@@ -35,29 +36,6 @@ function AccentCard({ header, children, index = 0, className = '' }) {
       <div className="bg-brand-100 px-6 py-4">{header}</div>
       <div className="p-6">{children}</div>
     </div>
-  )
-}
-
-function PhaseCard({ item, index }) {
-  return (
-    <AccentCard
-      index={index}
-      header={
-        <>
-          <span className="text-xs font-bold uppercase tracking-widest text-brand-700">{item.phase}</span>
-          <h3 className="font-serif text-lg font-bold text-brand-900 mt-0.5">{item.title}</h3>
-        </>
-      }
-    >
-      <ul className="space-y-1.5">
-        {item.points.map((point, i) => (
-          <li key={i} className="text-gray-600 text-sm leading-relaxed flex gap-2">
-            <span className="text-brand-400 flex-shrink-0">•</span>
-            {point}
-          </li>
-        ))}
-      </ul>
-    </AccentCard>
   )
 }
 
@@ -149,17 +127,7 @@ export default function Proyecto() {
         </section>
 
         {/* Fases del proyecto */}
-        <section className="py-20 bg-gray-50">
-          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <SectionHeader label={d.phases.sectionLabel} title={d.phases.title} subtitle={d.phases.subtitle} />
-
-            <div className="space-y-5">
-              {d.phases.items.map((item, i) => (
-                <PhaseCard key={i} item={item} index={i} />
-              ))}
-            </div>
-          </div>
-        </section>
+        <ProjectTimeline />
 
         {/* Colaboradores */}
         <section className="py-20 bg-white">
