@@ -160,6 +160,25 @@ export const EVENTS = [
     organizers: [],
   },
   {
+    slug: 'velada-del-ano-vi-2026',
+    title: {
+      es: 'La Velada del Año VI — con Edu Aguirre',
+      en: 'La Velada del Año VI — with Edu Aguirre',
+    },
+    date: '2026-07-26',
+    location: 'Madrid',
+    description: {
+      es: 'El Reto de Claudia estuvo presente en La Velada del Año VI gracias a Edu Aguirre. Hay luchas que van mucho más allá del ring — la visibilidad salva tiempo, y en enfermedades como la de Claudia, el tiempo lo es todo.',
+      en: 'El Reto de Claudia was present at La Velada del Año VI thanks to Edu Aguirre. Some fights go far beyond the ring — visibility saves time, and with diseases like Claudia\'s, time is everything.',
+    },
+    image: '/images/events/la-lucha-de-claudia.webp',
+    status: 'past',
+    category: 'solidarity',
+    registerHref: null,
+    infoHref: null,
+    organizers: [],
+  },
+  {
     slug: 'doce-horas-por-claudia-2026',
     title: {
       es: '12 horas al piano por Claudia — Manu Contreras',
