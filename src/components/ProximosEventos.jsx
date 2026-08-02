@@ -27,15 +27,18 @@ export default function ProximosEventos() {
   const { t, lang } = useLanguage()
   const d = t.eventos
 
+  const today = new Date().toISOString().slice(0, 10)
   const next = EVENTS
-    .filter(e => !e.hidden && e.status === 'upcoming' && e.category !== 'presence')
+    .filter(e => !e.hidden && (e.postponed || (e.dateEnd || e.date) >= today) && e.category !== 'presence')
     .sort((a, b) => new Date(a.date) - new Date(b.date))[0]
 
   if (!next) return null
 
-  const formattedDate = new Intl.DateTimeFormat(lang === 'es' ? 'es-ES' : 'en-GB', {
-    day: 'numeric', month: 'long', year: 'numeric',
-  }).format(new Date(next.date + 'T12:00:00'))
+  const formattedDate = next.datePlaceholder
+    ? next.datePlaceholder[lang]
+    : new Intl.DateTimeFormat(lang === 'es' ? 'es-ES' : 'en-GB', {
+        day: 'numeric', month: 'long', year: 'numeric',
+      }).format(new Date(next.date + 'T12:00:00'))
 
   return (
     <section id="eventos" aria-labelledby="eventos-home-title" className="py-20 bg-white">
