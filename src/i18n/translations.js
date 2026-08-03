@@ -513,7 +513,7 @@ const translations = {
         stats: [
           { number: '+5', label: 'Instituciones y empresas de investigación' },
           { number: '3', label: 'Países implicados' },
-          { number: '6', label: 'Fases coordinadas a nivel internacional' },
+          { number: '4', label: 'Fases coordinadas a nivel internacional' },
         ],
       },
 
@@ -523,8 +523,7 @@ const translations = {
         amount: '3 millones de euros',
         amountLabel: 'Coste estimado del proyecto',
         paragraphs: [
-          'El coste estimado inicial del proyecto es de 3 millones de euros, destinados a financiar las primeras fases de investigación preclínica: validación experimental, desarrollo del modelo animal, pruebas de seguridad y preparación regulatoria.',
-          'Esta cifra es una previsión temporal. Al tratarse de una investigación pionera y sin precedentes directos en España para esta enfermedad, es probable que las fases futuras —hacia la administración clínica y el seguimiento de la paciente— requieran financiación adicional.',
+          'El coste estimado del proyecto es de 3 millones de euros, destinados a financiar las diferentes fases de investigación: diseño, validación experimental, desarrollo del modelo animal, pruebas de seguridad y preparación regulatoria.',
           'El proyecto busca ofrecer una oportunidad a Claudia, pero también generar conocimiento, modelos y herramientas que puedan acelerar el desarrollo de terapias para otros niños con enfermedades genéticas ultra raras.',
           'Al no existir tratamiento comercial ni financiación pública suficiente para cubrir este desarrollo, necesitamos apoyo privado: donaciones particulares y, sobre todo, la colaboración de empresas, fundaciones e instituciones que quieran impulsar una investigación con impacto científico y humano.',
         ],
@@ -1258,7 +1257,7 @@ const translations = {
         stats: [
           { number: '+5', label: 'Research institutions and companies' },
           { number: '3', label: 'Countries involved' },
-          { number: '6', label: 'Phases coordinated internationally' },
+          { number: '4', label: 'Phases coordinated internationally' },
         ],
       },
 
@@ -1268,8 +1267,7 @@ const translations = {
         amount: '3 million euros',
         amountLabel: 'Estimated cost of the project',
         paragraphs: [
-          'The estimated initial cost of the project is 3 million euros, allocated to funding the first phases of preclinical research: experimental validation, developing the animal model, safety testing, and regulatory preparation.',
-          'This figure is a temporary estimate. As this is pioneering research with no direct precedent in Spain for this disease, future phases — toward clinical administration and patient follow-up — will likely require additional funding.',
+          'The estimated cost of the project is 3 million euros, allocated to funding the different research phases: design, experimental validation, developing the animal model, safety testing, and regulatory preparation.',
           'The project seeks to offer Claudia a chance, but also to generate knowledge, models, and tools that can accelerate the development of therapies for other children with ultra-rare genetic diseases.',
           'Since there is no commercial treatment or sufficient public funding to cover this development, we need private support: individual donations and, above all, collaboration from companies, foundations, and institutions who want to drive research with scientific and human impact.',
         ],
