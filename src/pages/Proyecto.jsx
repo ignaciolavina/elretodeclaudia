@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet-async'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import ProjectTimeline from '../components/ProjectTimeline'
+import Team from '../components/Team'
 import { useScrollAnimation } from '../hooks/useScrollAnimation'
 import { useLanguage } from '../context/LanguageContext'
 
@@ -128,6 +129,9 @@ export default function Proyecto() {
 
         {/* Fases del proyecto */}
         <ProjectTimeline />
+
+        {/* Equipo */}
+        <Team />
 
         {/* Colaboradores */}
         <section className="py-20 bg-white">
