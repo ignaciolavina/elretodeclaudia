@@ -6,57 +6,97 @@ const EQUIPO = [
     iniciales: 'CF',
     badge: { bandera: '🇪🇸', texto: 'CEU San Pablo' },
     bio: 'Doctora en Bioquímica y Biología Molecular y líder del laboratorio MetBrain. Más de 16 años de experiencia en neurodegeneración y enfermedades metabólicas.',
-    cvUrl: 'https://orcid.org/0000-0002-6387-4456',
+    links: [{ label: 'Ver CV extendido', url: 'https://orcid.org/0000-0002-6387-4456' }],
   },
   {
     nombre: 'Dra. María del Carmen Conde Rubio',
     iniciales: 'MC',
     badge: { bandera: '🇪🇸', texto: 'CEU San Pablo' },
     bio: 'Doctora por la Universidad de Lausana, especializada en señalización celular, apoptosis y edición genética CRISPR-Cas9. Investigadora del grupo MetBrain.',
-    cvUrl: 'https://orcid.org/0000-0002-0469-0227',
+    links: [{ label: 'Ver CV extendido', url: 'https://orcid.org/0000-0002-0469-0227' }],
   },
   {
     nombre: 'Dr. Daniel Gao',
     iniciales: 'DG',
     badge: { bandera: '🇺🇸', texto: 'University of Pittsburgh' },
     bio: 'Profesor adjunto especializado en edición genética de precisión. Formado en el laboratorio de David Liu (Broad Institute/Harvard), trabaja en terapias para trastornos peroxisomales como el síndrome de Zellweger.',
-    cvUrl: 'https://orcid.org/0000-0003-2917-2060',
+    links: [{ label: 'Ver CV extendido', url: 'https://orcid.org/0000-0003-2917-2060' }],
   },
 ]
 
 const ASESORES = [
   {
-    nombre: 'Coral Barbas',
+    nombre: 'Coral Barbas Arribas',
     iniciales: 'CB',
-    afiliacion: 'Fundación CEU',
+    badge: { bandera: '🇪🇸', texto: 'Fundación CEU' },
     bio: 'Catedrática de Química Analítica y directora del centro de metabolómica CEMBIO, en la Universidad CEU San Pablo.',
+    links: [
+      { label: 'Perfil de investigación', url: 'https://investigacionusp.ceu.es/es/ipublic/researcher/271901' },
+      { label: 'LinkedIn', url: 'https://www.linkedin.com/in/coral-barbas/' },
+    ],
   },
-  { pendiente: true },
-  { pendiente: true },
+  {
+    nombre: 'Carmen González Martín',
+    iniciales: 'CG',
+    badge: { bandera: '🇪🇸', texto: 'CEU San Pablo' },
+    bio: 'Catedrática de Toxicología y presidenta del Comité Ético de la Universidad CEU San Pablo.',
+    links: [
+      { label: 'Perfil de investigación', url: 'https://investigacionusp.ceu.es/es/ipublic/researcher/272125' },
+      { label: 'LinkedIn', url: 'https://www.linkedin.com/in/carmen-gonzalez-martin-273ba232' },
+    ],
+  },
+  {
+    nombre: 'Luis Fernando Alguacil',
+    iniciales: 'LA',
+    badge: { bandera: '🇪🇸', texto: 'CEU San Pablo' },
+    bio: 'Catedrático de Farmacología y director del Instituto de Investigación de las Adicciones, en la Universidad CEU San Pablo.',
+    links: [
+      { label: 'Perfil de investigación', url: 'https://investigacionusp.ceu.es/es/ipublic/researcher/271861' },
+      { label: 'LinkedIn', url: 'https://www.linkedin.com/in/luis-fernando-alguacil-1b505a1a' },
+    ],
+  },
 ]
 
 const PROMOTOR = [
   {
     nombre: 'Elena Bermejo Rubio',
     iniciales: 'EB',
-    afiliacion: 'Directora de AITEP',
-    bio: 'Madre de Claudia y cofundadora de AITEP. Impulsa la difusión del proyecto y la coordinación de los equipos de investigación implicados.',
+    badge: { bandera: '🇪🇸', texto: 'Directora de AITEP' },
+    bio: 'Madre de Claudia y cofundadora de AITEP junto a Ignacio. Redujo su actividad profesional para dedicarse a su cuidado y lidera la difusión del proyecto y la búsqueda de financiación.',
+    links: [{ label: 'LinkedIn', url: 'https://www.linkedin.com/in/elena-bermejo-rubio-212a45a0/' }],
   },
   {
-    nombre: 'Ignacio Laviña',
+    nombre: 'Ignacio Laviña Faustmann',
     iniciales: 'IL',
-    afiliacion: 'Secretario de AITEP',
+    badge: { bandera: '🇪🇸', texto: 'Secretario de AITEP' },
+    bio: 'Padre de Claudia y cofundador de AITEP junto a Elena. Impulsa la coordinación del proyecto y la búsqueda de apoyos para financiar la investigación.',
+    links: [{ label: 'LinkedIn', url: 'https://www.linkedin.com/in/ignacio-lavina/' }],
   },
   {
-    nombre: 'Fernando Laviña',
+    nombre: 'Fernando Laviña Richi',
     iniciales: 'FL',
-    afiliacion: 'Advisor AITEP',
+    badge: { bandera: '🇪🇸', texto: 'Director financiero de AITEP' },
+    bio: 'Director financiero de AITEP, encargado de la gestión económica y la búsqueda de financiación para el proyecto. Es Digital Trade Manager en IMEX-Impulso Exterior, especializado en comercio internacional y digitalización empresarial.',
+    links: [{ label: 'LinkedIn', url: 'https://www.linkedin.com/in/fernandolrichi/' }],
   },
 ]
 
-function TeamCard({ persona }) {
+function PersonCard({ persona }) {
+  if (persona.pendiente) {
+    return (
+      <div className="bg-white rounded-3xl border border-dashed border-gray-300 shadow-sm p-8">
+        <div className="flex flex-col items-center text-center">
+          <div className="w-24 h-24 rounded-full bg-gray-100 flex items-center justify-center text-gray-400 text-2xl font-bold mb-4 flex-shrink-0">
+            ?
+          </div>
+          <h3 className="font-serif text-xl font-bold text-gray-400">Pendiente de aprobación</h3>
+        </div>
+      </div>
+    )
+  }
+
   return (
-    <div className="bg-white rounded-3xl border border-gray-100 shadow-sm p-8">
+    <div className="h-full flex flex-col bg-white rounded-3xl border border-gray-100 shadow-sm p-8">
       <div className="flex flex-col items-center text-center mb-5">
         <div className="w-24 h-24 rounded-full bg-brand-100 flex items-center justify-center text-brand-700 font-serif text-2xl font-bold mb-4 flex-shrink-0">
           {persona.iniciales}
@@ -68,47 +108,35 @@ function TeamCard({ persona }) {
         </span>
       </div>
 
-      <p className="text-sm text-gray-600 leading-relaxed text-center">{persona.bio}</p>
+      {persona.bio && <p className="text-sm text-gray-600 leading-relaxed text-center">{persona.bio}</p>}
 
-      {persona.cvUrl && (
-        <div className="text-center">
-          <a
-            href={persona.cvUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 mt-4 text-brand-600 text-sm font-semibold hover:text-brand-700"
-          >
-            Ver CV extendido
-            <span aria-hidden="true">→</span>
-          </a>
+      {persona.links && persona.links.length > 0 && (
+        <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 mt-auto pt-4">
+          {persona.links.map((link, i) => (
+            <span key={i} className="flex items-center gap-2">
+              {i > 0 && <span className="text-gray-300">·</span>}
+              <a
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-brand-600 text-sm font-semibold hover:text-brand-700"
+              >
+                {link.label}
+              </a>
+            </span>
+          ))}
         </div>
       )}
     </div>
   )
 }
 
-function AdvisorCard({ persona }) {
-  if (persona.pendiente) {
-    return (
-      <div className="bg-white rounded-2xl border border-dashed border-gray-300 shadow-sm p-5 flex items-center gap-4">
-        <div className="w-14 h-14 rounded-full bg-gray-100 flex items-center justify-center text-gray-400 text-lg font-bold flex-shrink-0">
-          ?
-        </div>
-        <p className="font-serif text-base font-bold text-gray-400">Pendiente de aprobación</p>
-      </div>
-    )
-  }
-
+function PersonGrid({ personas }) {
   return (
-    <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-5 flex items-start gap-4">
-      <div className="w-14 h-14 rounded-full bg-brand-100 flex items-center justify-center text-brand-700 font-serif text-lg font-bold flex-shrink-0">
-        {persona.iniciales}
-      </div>
-      <div>
-        <p className="font-serif text-base font-bold text-gray-900">{persona.nombre}</p>
-        <p className="text-gray-500 text-sm mb-1">{persona.afiliacion}</p>
-        {persona.bio && <p className="text-gray-500 text-xs leading-relaxed">{persona.bio}</p>}
-      </div>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {personas.map((persona, i) => (
+        <PersonCard key={i} persona={persona} />
+      ))}
     </div>
   )
 }
@@ -128,11 +156,7 @@ export default function Team() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {EQUIPO.map((persona, i) => (
-            <TeamCard key={i} persona={persona} />
-          ))}
-        </div>
+        <PersonGrid personas={EQUIPO} />
 
         {/* Equipo asesor científico */}
         <div className="mt-20 pt-16 border-t border-gray-100">
@@ -145,11 +169,7 @@ export default function Team() {
             </h3>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 max-w-4xl mx-auto">
-            {ASESORES.map((persona, i) => (
-              <AdvisorCard key={i} persona={persona} />
-            ))}
-          </div>
+          <PersonGrid personas={ASESORES} />
         </div>
 
         {/* Equipo promotor */}
@@ -163,11 +183,7 @@ export default function Team() {
             </h3>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 max-w-4xl mx-auto">
-            {PROMOTOR.map((persona, i) => (
-              <AdvisorCard key={i} persona={persona} />
-            ))}
-          </div>
+          <PersonGrid personas={PROMOTOR} />
         </div>
       </div>
     </section>
