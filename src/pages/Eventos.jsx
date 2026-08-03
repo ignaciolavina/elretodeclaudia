@@ -29,6 +29,8 @@ const ImagePlaceholder = ({ size = 'lg' }) => (
 )
 
 function formatDateRange(event, lang) {
+  if (event.datePlaceholder) return event.datePlaceholder[lang]
+
   const locale = lang === 'es' ? 'es-ES' : 'en-GB'
   const start = new Date(event.date + 'T12:00:00')
 
@@ -204,9 +206,11 @@ export default function Eventos() {
   const fade = (delay = '') =>
     `transition-all duration-700 ${delay} ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`
 
-  const upcoming   = EVENTS.filter(e => !e.hidden && e.status === 'upcoming' && e.category !== 'presence').sort((a, b) => a.date.localeCompare(b.date))
-  const presence   = EVENTS.filter(e => !e.hidden && e.status === 'upcoming' && e.category === 'presence').sort((a, b) => a.date.localeCompare(b.date))
-  const past       = EVENTS.filter(e => !e.hidden && e.status === 'past').sort((a, b) => b.date.localeCompare(a.date))
+  const today = new Date().toISOString().slice(0, 10)
+  const isUpcoming = e => e.postponed || (e.dateEnd || e.date) >= today
+  const upcoming   = EVENTS.filter(e => !e.hidden && isUpcoming(e) && e.category !== 'presence').sort((a, b) => a.date.localeCompare(b.date))
+  const presence   = EVENTS.filter(e => !e.hidden && isUpcoming(e) && e.category === 'presence').sort((a, b) => a.date.localeCompare(b.date))
+  const past       = EVENTS.filter(e => !e.hidden && !isUpcoming(e)).sort((a, b) => b.date.localeCompare(a.date))
 
   return (
     <div className="min-h-screen">
