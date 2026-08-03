@@ -4,6 +4,7 @@ const EQUIPO = [
   {
     nombre: 'Dra. Carmen Fernández Martos',
     iniciales: 'CF',
+    foto: '/images/team/carmen-fernandez-martos.png',
     badge: { bandera: '🇪🇸', texto: 'CEU San Pablo' },
     bio: 'Doctora en Bioquímica y Biología Molecular y líder del laboratorio MetBrain. Más de 16 años de experiencia en neurodegeneración y enfermedades metabólicas.',
     links: [{ label: 'Ver CV extendido', url: 'https://orcid.org/0000-0002-6387-4456' }],
@@ -11,6 +12,7 @@ const EQUIPO = [
   {
     nombre: 'Dra. María del Carmen Conde Rubio',
     iniciales: 'MC',
+    foto: '/images/team/maria-carmen-conde.webp',
     badge: { bandera: '🇪🇸', texto: 'CEU San Pablo' },
     bio: 'Doctora por la Universidad de Lausana, especializada en señalización celular, apoptosis y edición genética CRISPR-Cas9. Investigadora del grupo MetBrain.',
     links: [{ label: 'Ver CV extendido', url: 'https://orcid.org/0000-0002-0469-0227' }],
@@ -18,6 +20,7 @@ const EQUIPO = [
   {
     nombre: 'Dr. Daniel Gao',
     iniciales: 'DG',
+    foto: '/images/team/daniel-gao.png',
     badge: { bandera: '🇺🇸', texto: 'University of Pittsburgh' },
     bio: 'Profesor adjunto especializado en edición genética de precisión. Formado en el laboratorio de David Liu (Broad Institute/Harvard), trabaja en terapias para trastornos peroxisomales como el síndrome de Zellweger.',
     links: [{ label: 'Ver CV extendido', url: 'https://orcid.org/0000-0003-2917-2060' }],
@@ -28,6 +31,7 @@ const ASESORES = [
   {
     nombre: 'Coral Barbas Arribas',
     iniciales: 'CB',
+    foto: '/images/team/coral.png',
     badge: { bandera: '🇪🇸', texto: 'Fundación CEU' },
     bio: 'Catedrática de Química Analítica y directora del centro de metabolómica CEMBIO, en la Universidad CEU San Pablo.',
     links: [
@@ -38,6 +42,7 @@ const ASESORES = [
   {
     nombre: 'Carmen González Martín',
     iniciales: 'CG',
+    foto: '/images/team/carmen.png',
     badge: { bandera: '🇪🇸', texto: 'CEU San Pablo' },
     bio: 'Catedrática de Toxicología y presidenta del Comité Ético de la Universidad CEU San Pablo.',
     links: [
@@ -48,6 +53,7 @@ const ASESORES = [
   {
     nombre: 'Luis Fernando Alguacil',
     iniciales: 'LA',
+    foto: '/images/team/luis.png',
     badge: { bandera: '🇪🇸', texto: 'CEU San Pablo' },
     bio: 'Catedrático de Farmacología y director del Instituto de Investigación de las Adicciones, en la Universidad CEU San Pablo.',
     links: [
@@ -61,6 +67,7 @@ const PROMOTOR = [
   {
     nombre: 'Elena Bermejo Rubio',
     iniciales: 'EB',
+    foto: '/images/team/elena.png',
     badge: { bandera: '🇪🇸', texto: 'Directora de AITEP' },
     bio: 'Madre de Claudia y cofundadora de AITEP junto a Ignacio. Redujo su actividad profesional para dedicarse a su cuidado y lidera la difusión del proyecto y la búsqueda de financiación.',
     links: [{ label: 'LinkedIn', url: 'https://www.linkedin.com/in/elena-bermejo-rubio-212a45a0/' }],
@@ -68,6 +75,7 @@ const PROMOTOR = [
   {
     nombre: 'Ignacio Laviña Faustmann',
     iniciales: 'IL',
+    foto: '/images/team/ignacio.png',
     badge: { bandera: '🇪🇸', texto: 'Secretario de AITEP' },
     bio: 'Padre de Claudia y cofundador de AITEP junto a Elena. Impulsa la coordinación del proyecto y la búsqueda de apoyos para financiar la investigación.',
     links: [{ label: 'LinkedIn', url: 'https://www.linkedin.com/in/ignacio-lavina/' }],
@@ -75,6 +83,7 @@ const PROMOTOR = [
   {
     nombre: 'Fernando Laviña Richi',
     iniciales: 'FL',
+    foto: '/images/team/fernando.png',
     badge: { bandera: '🇪🇸', texto: 'Director financiero de AITEP' },
     bio: 'Director financiero de AITEP, encargado de la gestión económica y la búsqueda de financiación para el proyecto. Es Digital Trade Manager en IMEX-Impulso Exterior, especializado en comercio internacional y digitalización empresarial.',
     links: [{ label: 'LinkedIn', url: 'https://www.linkedin.com/in/fernandolrichi/' }],
@@ -98,8 +107,12 @@ function PersonCard({ persona }) {
   return (
     <div className="h-full flex flex-col bg-white rounded-3xl border border-gray-100 shadow-sm p-8">
       <div className="flex flex-col items-center text-center mb-5">
-        <div className="w-24 h-24 rounded-full bg-brand-100 flex items-center justify-center text-brand-700 font-serif text-2xl font-bold mb-4 flex-shrink-0">
-          {persona.iniciales}
+        <div className="w-24 h-24 rounded-full bg-brand-100 overflow-hidden flex items-center justify-center text-brand-700 font-serif text-2xl font-bold mb-4 flex-shrink-0">
+          {persona.foto ? (
+            <img src={persona.foto} alt={persona.nombre} className="w-full h-full object-cover" />
+          ) : (
+            persona.iniciales
+          )}
         </div>
         <h3 className="font-serif text-xl font-bold text-gray-900 mb-3">{persona.nombre}</h3>
         <span className="inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-700">
