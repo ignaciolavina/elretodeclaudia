@@ -673,6 +673,74 @@ const translations = {
         },
       ],
     },
+
+    team: {
+      liderazgo: {
+        label: 'Equipo',
+        title: 'Liderazgo científico',
+        subtitle: 'El proyecto está liderado por un equipo altamente capacitado, que coordinará un grupo de organismos a nivel internacional.',
+      },
+      comiteAsesor: {
+        label: 'Comité asesor',
+        title: 'Equipo asesor científico',
+      },
+      equipoPromotor: {
+        label: 'AITEP',
+        title: 'Equipo promotor',
+      },
+      linkLabels: {
+        cv: 'Ver CV extendido',
+        perfil: 'Perfil de investigación',
+        linkedin: 'LinkedIn',
+      },
+      personas: {
+        carmenFernandezMartos: {
+          nombre: 'Dra. Carmen Fernández Martos',
+          badgeTexto: 'CEU San Pablo',
+          bio: 'Doctora en Bioquímica y Biología Molecular y líder del laboratorio MetBrain. Más de 16 años de experiencia en neurodegeneración y enfermedades metabólicas.',
+        },
+        mariaCarmenCondeRubio: {
+          nombre: 'Dra. María del Carmen Conde Rubio',
+          badgeTexto: 'CEU San Pablo',
+          bio: 'Doctora por la Universidad de Lausana, especializada en señalización celular, apoptosis y edición genética CRISPR-Cas9. Investigadora del grupo MetBrain.',
+        },
+        danielGao: {
+          nombre: 'Dr. Daniel Gao',
+          badgeTexto: 'University of Pittsburgh',
+          bio: 'Profesor adjunto especializado en edición genética de precisión. Formado en el laboratorio de David Liu (Broad Institute/Harvard), trabaja en terapias para trastornos peroxisomales como el síndrome de Zellweger.',
+        },
+        coralBarbas: {
+          nombre: 'Coral Barbas Arribas',
+          badgeTexto: 'Fundación CEU',
+          bio: 'Catedrática de Química Analítica y directora del centro de metabolómica CEMBIO, en la Universidad CEU San Pablo.',
+        },
+        carmenGonzalezMartin: {
+          nombre: 'Carmen González Martín',
+          badgeTexto: 'CEU San Pablo',
+          bio: 'Catedrática de Toxicología y presidenta del Comité Ético de la Universidad CEU San Pablo.',
+        },
+        luisFernandoAlguacil: {
+          nombre: 'Luis Fernando Alguacil',
+          badgeTexto: 'CEU San Pablo',
+          bio: 'Catedrático de Farmacología y director del Instituto de Investigación de las Adicciones, en la Universidad CEU San Pablo.',
+        },
+        elenaBermejoRubio: {
+          nombre: 'Elena Bermejo Rubio',
+          badgeTexto: 'Directora de AITEP',
+          bio: 'Madre de Claudia y cofundadora de AITEP junto a Ignacio. Redujo su actividad profesional para dedicarse a su cuidado y lidera la difusión del proyecto y la búsqueda de financiación.',
+        },
+        ignacioLavina: {
+          nombre: 'Ignacio Laviña Faustmann',
+          badgeTexto: 'Secretario de AITEP',
+          bio: 'Padre de Claudia y cofundador de AITEP junto a Elena. Impulsa la coordinación del proyecto y la búsqueda de apoyos para financiar la investigación.',
+        },
+        fernandoLavina: {
+          nombre: 'Fernando Laviña Richi',
+          badgeTexto: 'Director financiero de AITEP',
+          bio: 'Director financiero de AITEP, encargado de la gestión económica y la búsqueda de financiación para el proyecto. Es Digital Trade Manager en IMEX-Impulso Exterior, especializado en comercio internacional y digitalización empresarial.',
+        },
+      },
+    },
   },
 
   en: {
@@ -1349,6 +1417,74 @@ const translations = {
           },
         },
       ],
+    },
+
+    team: {
+      liderazgo: {
+        label: 'Team',
+        title: 'Scientific leadership',
+        subtitle: 'The project is led by a highly qualified team, who will coordinate a group of organizations internationally.',
+      },
+      comiteAsesor: {
+        label: 'Advisory committee',
+        title: 'Scientific advisory team',
+      },
+      equipoPromotor: {
+        label: 'AITEP',
+        title: 'Founding team',
+      },
+      linkLabels: {
+        cv: 'View extended CV',
+        perfil: 'Research profile',
+        linkedin: 'LinkedIn',
+      },
+      personas: {
+        carmenFernandezMartos: {
+          nombre: 'Dr. Carmen Fernández Martos',
+          badgeTexto: 'CEU San Pablo',
+          bio: 'PhD in Biochemistry and Molecular Biology and head of the MetBrain lab. Over 16 years of experience in neurodegeneration and metabolic diseases.',
+        },
+        mariaCarmenCondeRubio: {
+          nombre: 'Dr. María del Carmen Conde Rubio',
+          badgeTexto: 'CEU San Pablo',
+          bio: 'PhD from the University of Lausanne, specialized in cell signaling, apoptosis and CRISPR-Cas9 gene editing. Researcher in the MetBrain group.',
+        },
+        danielGao: {
+          nombre: 'Dr. Daniel Gao',
+          badgeTexto: 'University of Pittsburgh',
+          bio: "Assistant professor specialized in precision gene editing. Trained in David Liu's lab (Broad Institute/Harvard), he works on therapies for peroxisomal disorders such as Zellweger syndrome.",
+        },
+        coralBarbas: {
+          nombre: 'Coral Barbas Arribas',
+          badgeTexto: 'Fundación CEU',
+          bio: 'Full professor of Analytical Chemistry and director of the CEMBIO metabolomics center, at Universidad CEU San Pablo.',
+        },
+        carmenGonzalezMartin: {
+          nombre: 'Carmen González Martín',
+          badgeTexto: 'CEU San Pablo',
+          bio: 'Full professor of Toxicology and chair of the Ethics Committee at Universidad CEU San Pablo.',
+        },
+        luisFernandoAlguacil: {
+          nombre: 'Luis Fernando Alguacil',
+          badgeTexto: 'CEU San Pablo',
+          bio: 'Full professor of Pharmacology and director of the Addiction Research Institute, at Universidad CEU San Pablo.',
+        },
+        elenaBermejoRubio: {
+          nombre: 'Elena Bermejo Rubio',
+          badgeTexto: 'Director of AITEP',
+          bio: "Claudia's mother and co-founder of AITEP together with Ignacio. She reduced her professional activity to care for her and leads the project's outreach and fundraising efforts.",
+        },
+        ignacioLavina: {
+          nombre: 'Ignacio Laviña Faustmann',
+          badgeTexto: 'Secretary of AITEP',
+          bio: "Claudia's father and co-founder of AITEP together with Elena. He drives the project's coordination and the search for support to fund the research.",
+        },
+        fernandoLavina: {
+          nombre: 'Fernando Laviña Richi',
+          badgeTexto: 'Financial director of AITEP',
+          bio: "Financial director of AITEP, in charge of the project's financial management and fundraising. He is a Digital Trade Manager at IMEX-Impulso Exterior, specialized in international trade and business digitalization.",
+        },
+      },
     },
   },
 }
