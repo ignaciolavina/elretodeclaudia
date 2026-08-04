@@ -463,6 +463,8 @@ const translations = {
       typePress: 'Prensa digital',
       typeTV: 'TV',
       typeWeb: 'Web',
+      filterAll: 'Todos',
+      filterBy: 'Filtrar por:',
 
       upcomingLabel: 'Próximamente',
 
@@ -1207,6 +1209,8 @@ const translations = {
       typePress: 'Digital press',
       typeTV: 'TV',
       typeWeb: 'Web',
+      filterAll: 'All',
+      filterBy: 'Filter by:',
 
       upcomingLabel: 'Coming soon',
 

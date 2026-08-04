@@ -25,10 +25,21 @@ const GlobeIcon = () => (
 // ─── Editable content ─────────────────────────────────────────────────────────
 // El contenido editable (métricas, próximamente, apariciones en medios) vive en
 // src/data/prensa.json — único punto de edición, también escrito por el bot de Telegram.
-const { media: MEDIA } = prensaData
+const { media: MEDIA_RAW } = prensaData
+
+// Ordenado por "priority" (campo oculto en prensa.json, mayor = más relevante primero).
+// Los ítems sin priority se tratan como 0 y quedan al final, ordenados por fecha.
+const MEDIA = [...MEDIA_RAW].sort((a, b) => (b.priority || 0) - (a.priority || 0))
 
 // "upcoming" can be a single object (legacy) or an array — normalize to a list.
 const UPCOMING = (Array.isArray(prensaData.upcoming) ? prensaData.upcoming : [prensaData.upcoming]).filter(Boolean)
+
+const MEDIA_TYPES = ['radio', 'press', 'tv', 'web']
+
+const MEDIA_COUNTS = MEDIA_TYPES.reduce((acc, type) => {
+  acc[type] = MEDIA.filter((item) => item.type === type).length
+  return acc
+}, {})
 
 const TYPE_ICONS = {
   radio: <MicIcon />,
@@ -116,6 +127,51 @@ function UpcomingCard({ item, label, index }) {
   )
 }
 
+function FilterBar({ options, active, onChange }) {
+  return (
+    <div className="flex flex-wrap gap-2">
+      {options.map((opt) => (
+        <button
+          key={opt.key}
+          type="button"
+          onClick={() => onChange(opt.key)}
+          aria-pressed={active === opt.key}
+          className={`flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest px-4 py-2.5 rounded-full border transition-colors duration-300 ${
+            active === opt.key
+              ? 'bg-brand-500 border-brand-500 text-white'
+              : 'bg-white border-gray-200 text-gray-600 hover:border-brand-300 hover:text-brand-600'
+          }`}
+        >
+          {opt.icon}
+          {opt.label}
+          <span
+            className={`text-[10px] font-semibold rounded-full min-w-[1.25rem] px-1.5 py-0.5 leading-none transition-colors duration-300 ${
+              active === opt.key ? 'bg-white/25 text-white' : 'bg-gray-100 text-gray-500'
+            }`}
+          >
+            {opt.count}
+          </span>
+        </button>
+      ))}
+    </div>
+  )
+}
+
+function FilterRow({ filterBy, options, active, onChange }) {
+  const { ref, isVisible } = useScrollAnimation()
+  return (
+    <div
+      ref={ref}
+      className={`mb-8 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 transition-all duration-700 ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+      }`}
+    >
+      <span className="text-xs font-bold uppercase tracking-widest text-brand-600">{filterBy}</span>
+      <FilterBar options={options} active={active} onChange={onChange} />
+    </div>
+  )
+}
+
 function SectionLabel({ children }) {
   const { ref, isVisible } = useScrollAnimation()
   return (
@@ -134,6 +190,7 @@ function SectionLabel({ children }) {
 
 export default function Prensa() {
   const [loaded, setLoaded] = useState(false)
+  const [activeFilter, setActiveFilter] = useState('all')
   useEffect(() => {
     const timer = setTimeout(() => setLoaded(true), 80)
     return () => clearTimeout(timer)
@@ -151,6 +208,20 @@ export default function Prensa() {
     tv:    p.typeTV,
     web:   p.typeWeb,
   }
+
+  const filteredMedia = activeFilter === 'all'
+    ? MEDIA
+    : MEDIA.filter((item) => item.type === activeFilter)
+
+  const filterOptions = [
+    { key: 'all', label: p.filterAll, icon: null, count: MEDIA.length },
+    ...MEDIA_TYPES.map((type) => ({
+      key: type,
+      label: TYPE_LABELS[type],
+      icon: <span className={activeFilter === type ? 'text-white' : 'text-brand-400'}>{TYPE_ICONS[type]}</span>,
+      count: MEDIA_COUNTS[type],
+    })),
+  ]
 
   return (
     <div className="min-h-screen bg-white">
@@ -175,12 +246,13 @@ export default function Prensa() {
         {/* ── En los medios ── */}
         <section className="pt-8 pb-20 bg-brand-50/50" aria-labelledby="medios-title">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <FilterRow filterBy={p.filterBy} options={filterOptions} active={activeFilter} onChange={setActiveFilter} />
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              {UPCOMING.filter((u) => u.show).map((u, i) => (
+              {activeFilter === 'all' && UPCOMING.filter((u) => u.show).map((u, i) => (
                 <UpcomingCard key={`upcoming-${i}`} item={u} label={p.upcomingLabel} index={i} />
               ))}
-              {MEDIA.map((item, i) => (
-                <MediaCard key={item.outlet} item={item} typeLabel={TYPE_LABELS[item.type]} index={i} />
+              {filteredMedia.map((item, i) => (
+                <MediaCard key={`${item.outlet}-${item.date}`} item={item} typeLabel={TYPE_LABELS[item.type]} index={i} />
               ))}
             </div>
           </div>
