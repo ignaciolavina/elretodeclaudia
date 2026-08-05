@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useLanguage } from '../context/LanguageContext'
 
-const PAIS_BANDERA = { ES: '🇪🇸', US: '🇺🇸', EU: '🇪🇺', CN: '🇨🇳' }
+const PAIS_BANDERA = { ES: '🇪🇸', US: '🇺🇸', EU: '🇪🇺', CN: '🇨🇳', FR: '🇫🇷' }
 
 // Cada fila del timeline se solapa con la siguiente; z-index descendente
 // para que una fase nunca tape los badges/popover de la fase anterior.
@@ -15,7 +15,7 @@ const ENTIDADES_CONFIG = {
   aemps: { pais: 'ES' },
   ema: { pais: 'EU' },
   danielGao: { pais: 'US' },
-  charlesRiver: { pais: 'US' },
+  charlesRiver: { pais: 'FR' },
   hospitalSantJoanDeDeu: { pais: 'ES' },
   empresaEEUU1: { pais: 'CN', pendiente: true },
   empresaEEUU2: { pais: 'US', pendiente: true },

@@ -607,7 +607,7 @@ const translations = {
           categoria: 'Empresa de investigación preclínica (CRO)',
           nombreCompleto: 'Charles River Laboratories',
           descripcion: 'Organización de investigación por contrato (CRO) especializada en modelos animales y estudios preclínicos.',
-          ambito: 'Estados Unidos',
+          ambito: 'Francia',
         },
         hospitalSantJoanDeDeu: {
           nombre: 'Hospital Sant Joan de Déu Barcelona',
@@ -1353,7 +1353,7 @@ const translations = {
           categoria: 'Preclinical research company (CRO)',
           nombreCompleto: 'Charles River Laboratories',
           descripcion: 'Contract research organization (CRO) specialized in animal models and preclinical studies.',
-          ambito: 'United States',
+          ambito: 'France',
         },
         hospitalSantJoanDeDeu: {
           nombre: 'Hospital Sant Joan de Déu Barcelona',
