@@ -27,14 +27,39 @@ const GlobeIcon = () => (
 // src/data/prensa.json — único punto de edición, también escrito por el bot de Telegram.
 const { media: MEDIA_RAW } = prensaData
 
-// Ordenado por "priority" (campo oculto en prensa.json, mayor = más relevante primero).
-// Los ítems sin priority se tratan como 0 y quedan al final, ordenados por fecha.
-const MEDIA = [...MEDIA_RAW].sort((a, b) => (b.priority || 0) - (a.priority || 0))
+// Ordenado por fecha, de más reciente a más antigua. Así una noticia añadida por
+// el bot de Telegram (que no escribe ningún campo de orden) se coloca sola en su
+// sitio en vez de caer al final de la lista.
+// "priority" es opcional: solo hace falta para fijar una entrada por encima del
+// resto (mayor = más arriba). A igualdad, se respeta el orden de prensa.json.
+const parseDate = (date) => {
+  const [d, m, y] = (date || '').split('/')
+  return y ? new Date(Number(y), Number(m) - 1, Number(d)).getTime() : 0
+}
+
+const MEDIA = [...MEDIA_RAW].sort(
+  (a, b) => (b.priority || 0) - (a.priority || 0) || parseDate(b.date) - parseDate(a.date)
+)
 
 // "upcoming" can be a single object (legacy) or an array — normalize to a list.
 const UPCOMING = (Array.isArray(prensaData.upcoming) ? prensaData.upcoming : [prensaData.upcoming]).filter(Boolean)
 
 const MEDIA_TYPES = ['radio', 'press', 'tv', 'web']
+
+// Los titulares viven en prensa.json con `quote` (original, en castellano) y
+// `quoteEn`. Si falta la traducción se cae al original en vez de dejar el hueco.
+const quoteFor = (item, lang) => (lang === 'en' && item.quoteEn) || item.quote
+
+// Las fechas se guardan como DD/MM/YYYY. En inglés hay que reformatearlas o
+// "03/08/2026" se lee como 8 de marzo.
+const EN_MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+
+function formatDate(date, lang) {
+  if (lang !== 'en' || !date) return date
+  const [d, m, y] = date.split('/')
+  const month = EN_MONTHS[Number(m) - 1]
+  return month && d && y ? `${Number(d)} ${month} ${y}` : date
+}
 
 const MEDIA_COUNTS = MEDIA_TYPES.reduce((acc, type) => {
   acc[type] = MEDIA.filter((item) => item.type === type).length
@@ -50,7 +75,7 @@ const TYPE_ICONS = {
 
 // ─── Sub-components ───────────────────────────────────────────────────────────
 
-function MediaCard({ item, typeLabel, index }) {
+function MediaCard({ item, typeLabel, index, lang }) {
   const { ref, isVisible } = useScrollAnimation()
   const Tag = item.url ? 'a' : 'article'
   const linkProps = item.url
@@ -85,7 +110,7 @@ function MediaCard({ item, typeLabel, index }) {
           </svg>
         )}
       </div>
-      <p className="text-gray-700 text-sm leading-relaxed flex-1">{item.quote}</p>
+      <p className="text-gray-700 text-sm leading-relaxed flex-1">{quoteFor(item, lang)}</p>
       <div className="flex items-center gap-2 pt-2 border-t border-gray-100 flex-wrap">
         <span className="text-brand-400">{TYPE_ICONS[item.type]}</span>
         <span className="text-xs font-semibold text-gray-800">{item.outlet}</span>
@@ -94,7 +119,7 @@ function MediaCard({ item, typeLabel, index }) {
         {item.date && (
           <>
             <span className="text-xs text-gray-400">·</span>
-            <span className="text-xs text-gray-400">{item.date}</span>
+            <span className="text-xs text-gray-400">{formatDate(item.date, lang)}</span>
           </>
         )}
       </div>
@@ -102,7 +127,7 @@ function MediaCard({ item, typeLabel, index }) {
   )
 }
 
-function UpcomingCard({ item, label, index }) {
+function UpcomingCard({ item, label, index, lang }) {
   const { ref, isVisible } = useScrollAnimation()
   return (
     <div
@@ -115,14 +140,18 @@ function UpcomingCard({ item, label, index }) {
       <span className="inline-flex self-start items-center bg-white/20 text-white text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full">
         {label}
       </span>
-      <h3 className="font-serif text-2xl font-bold leading-tight flex-1">{item.title}</h3>
+      <h3 className="font-serif text-2xl font-bold leading-tight flex-1">
+        {(lang === 'en' && item.titleEn) || item.title}
+      </h3>
       <div className="flex items-center gap-2 text-brand-100 text-sm">
         <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
         </svg>
-        {item.date}
+        {formatDate(item.date, lang)}
       </div>
-      <p className="font-semibold text-white/90 pt-3 border-t border-white/20">{item.cta}</p>
+      <p className="font-semibold text-white/90 pt-3 border-t border-white/20">
+        {(lang === 'en' && item.ctaEn) || item.cta}
+      </p>
     </div>
   )
 }
@@ -196,7 +225,7 @@ export default function Prensa() {
     return () => clearTimeout(timer)
   }, [])
 
-  const { t } = useLanguage()
+  const { t, lang } = useLanguage()
   const p = t.prensa
 
   const fade = (delay = '') =>
@@ -249,10 +278,10 @@ export default function Prensa() {
             <FilterRow filterBy={p.filterBy} options={filterOptions} active={activeFilter} onChange={setActiveFilter} />
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {activeFilter === 'all' && UPCOMING.filter((u) => u.show).map((u, i) => (
-                <UpcomingCard key={`upcoming-${i}`} item={u} label={p.upcomingLabel} index={i} />
+                <UpcomingCard key={`upcoming-${i}`} item={u} label={p.upcomingLabel} index={i} lang={lang} />
               ))}
               {filteredMedia.map((item, i) => (
-                <MediaCard key={`${item.outlet}-${item.date}`} item={item} typeLabel={TYPE_LABELS[item.type]} index={i} />
+                <MediaCard key={`${item.outlet}-${item.date}`} item={item} typeLabel={TYPE_LABELS[item.type]} index={i} lang={lang} />
               ))}
             </div>
           </div>

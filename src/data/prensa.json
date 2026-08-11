@@ -12,6 +12,39 @@
   "upcoming": [],
   "media": [
     {
+      "outlet": "Marca",
+      "type": "press",
+      "logoImage": "/images/media/marca.svg",
+      "logo": "MARCA",
+      "logoColor": "#003366",
+      "url": "https://www.marca.com/tiramillas/2026/08/03/buscando-3-millones-financiar-terapia-genica-pequena-claudia.html",
+      "date": "03/08/2026",
+      "quote": "Buscando 3 millones para financiar la terapia génica de la pequeña Claudia",
+      "quoteEn": "Seeking 3 million to fund little Claudia's gene therapy"
+    },
+    {
+      "outlet": "ABC Sevilla Solidaria",
+      "type": "press",
+      "logoImage": "/images/media/abc.svg",
+      "logo": "ABC",
+      "logoColor": "#000000",
+      "url": "https://sevillasolidaria.sevilla.abc.es/noticias/una-carrera-contrarreloj-para-claudia-su-familia-necesita-tres-millones-de-euros-para-investigar-una-cura-para-una-enfermedad-ultrarrara/",
+      "date": "03/08/2026",
+      "quote": "Una carrera contrarreloj para Claudia: su familia necesita tres millones de euros para investigar una cura para una enfermedad ultrarrara",
+      "quoteEn": "A race against the clock for Claudia: her family needs three million euros to research a cure for an ultra-rare disease"
+    },
+    {
+      "outlet": "Diario de Sevilla",
+      "type": "press",
+      "logoImage": "/images/media/diario-de-sevilla.svg",
+      "logo": "D. DE SEVILLA",
+      "logoColor": "#000000",
+      "url": "https://www.diariodesevilla.es/sociedad/tres-millones-euros-salvar-vida_0_2007632118.html",
+      "date": "01/08/2026",
+      "quote": "Tres millones de euros para salvar la vida de Claudia, una niña con una enfermedad ultrarrara",
+      "quoteEn": "Three million euros to save the life of Claudia, a girl with an ultra-rare disease"
+    },
+    {
       "outlet": "Apple Podcasts",
       "type": "web",
       "logo": "PODCASTS",
@@ -19,7 +52,7 @@
       "url": "https://podcasts.apple.com/us/podcast/la-familia-de-claudia-lucha-por-conseguir/id1735295959?i=1000779407170",
       "date": "01/08/2026",
       "quote": "La familia de Claudia lucha por conseguir la terapia génica que puede salvarle la vida",
-      "priority": 20
+      "quoteEn": "Claudia's family fights to obtain the gene therapy that could save her life"
     },
     {
       "outlet": "esRadio",
@@ -30,7 +63,7 @@
       "url": "https://esradio.libertaddigital.com/kilometro-cero/2026-07-31/el-reto-de-claudia-teletrabajo-y-sedentarismo-y-cine-clasico-south-pacific-7444147/",
       "date": "31/07/2026",
       "quote": "Kilómetro Cero: entrevista sobre El Reto de Claudia (min. 32:32)",
-      "priority": 19
+      "quoteEn": "Kilómetro Cero: interview about El Reto de Claudia (min. 32:32)"
     },
     {
       "outlet": "El Pespunte",
@@ -41,7 +74,7 @@
       "url": "https://www.elpespunte.es/articulo/espana/es-historia-claudia-nina-que-necesita-3-millones-euros-acceder-terapia-genica/20260731083653143435.html",
       "date": "31/07/2026",
       "quote": "Esta es la historia de Claudia, la niña que necesita 3 millones de euros para acceder a una terapia génica",
-      "priority": 18
+      "quoteEn": "This is the story of Claudia, the girl who needs 3 million euros to access a gene therapy"
     },
     {
       "outlet": "esRadio",
@@ -52,7 +85,18 @@
       "url": "https://esradio.libertaddigital.com/en-casa-de-herrero/las-noticias-de-herrero/2026-07-30/claudia-con-una-enfermedad-ultrarrara-necesita-un-tratamiento-de-tres-millones-de-euros-7443704/",
       "date": "30/07/2026",
       "quote": "Las noticias de Herrero: Claudia, con una enfermedad ultrarrara, necesita un tratamiento de tres millones de euros",
-      "priority": 17
+      "quoteEn": "Las noticias de Herrero: Claudia, who has an ultra-rare disease, needs a three-million-euro treatment"
+    },
+    {
+      "outlet": "El Diario Montañés",
+      "type": "press",
+      "logoImage": "/images/media/el-diario-montanes.svg",
+      "logo": "D. MONTAÑÉS",
+      "logoColor": "#000000",
+      "url": "https://www.eldiariomontanes.es/sociedad/salud/tres-millones-euros-salvar-vida-claudia-20260729084802-nt.html",
+      "date": "29/07/2026",
+      "quote": "Contrarreloj para financiar la primera terapia génica contra la deficiencia de proteína D-bifuncional",
+      "quoteEn": "A race against the clock to fund the first gene therapy for D-bifunctional protein deficiency"
     },
     {
       "outlet": "ABC",
@@ -63,7 +107,29 @@
       "url": "https://www.abc.es/sociedad/reto-claudia-enfermedad-rara-tres-millones-euros-20260729110001-nt_amp.html",
       "date": "29/07/2026",
       "quote": "El reto de Claudia: la enfermedad rara que necesita tres millones de euros para acceder a la terapia génica",
-      "priority": 16
+      "quoteEn": "El reto de Claudia: the rare disease that needs three million euros to access gene therapy"
+    },
+    {
+      "outlet": "20minutos",
+      "type": "press",
+      "logoImage": "/images/media/20minutos.png",
+      "logo": "20MINUTOS",
+      "logoColor": "#0b419b",
+      "url": "https://www.20minutos.es/capaces/reto-claudia-enfermedad-ultrarrara_7019908_0.html",
+      "date": "28/07/2026",
+      "quote": "'El reto de Claudia': conseguir tres millones para curar su enfermedad ultrarrara",
+      "quoteEn": "'El reto de Claudia': raising three million to cure her ultra-rare disease"
+    },
+    {
+      "outlet": "El Independiente",
+      "type": "press",
+      "logoImage": "/images/media/el-independiente.svg",
+      "logo": "INDEPENDIENTE",
+      "logoColor": "#000000",
+      "url": "https://www.elindependiente.com/vida-sana/salud/2026/07/28/tres-millones-euros-salvar-vida-claudia/",
+      "date": "28/07/2026",
+      "quote": "Tres millones de euros para salvar la vida de Claudia",
+      "quoteEn": "Three million euros to save Claudia's life"
     },
     {
       "outlet": "El Debate",
@@ -74,7 +140,7 @@
       "url": "https://www.eldebate.com/sociedad/20260728/tres-millones-euros-salvar-vida-claudia_444385.html",
       "date": "28/07/2026",
       "quote": "El objetivo es realizar una terapia génica; esto es, cambiar la letra del gen mutado, para corregir el defecto genético de origen antes de que el daño neurológico sea irreversible",
-      "priority": 15
+      "quoteEn": "The goal is to carry out a gene therapy; that is, to change the letter of the mutated gene, to correct the underlying genetic defect before the neurological damage becomes irreversible"
     },
     {
       "outlet": "The Objective",
@@ -85,17 +151,18 @@
       "url": "https://theobjective.com/sanidad/2026-07-28/necesitan-millones-salvar-claudia/",
       "date": "28/07/2026",
       "quote": "El objetivo es realizar una terapia génica; esto es, cambiar la letra del gen mutado, aunque sería individualizada para Claudia también podría ser el medio para solucionar otros casos en el mundo",
-      "priority": 14
+      "quoteEn": "The goal is to carry out a gene therapy; that is, to change the letter of the mutated gene — although it would be tailored to Claudia, it could also be the means to solve other cases around the world"
     },
     {
       "outlet": "Libertad Digital",
       "type": "press",
+      "logoImage": "/images/media/libertad-digital.png",
       "logo": "LD",
-      "logoColor": "#004a91",
+      "logoColor": "#1165ae",
       "url": "https://www.libertaddigital.com/ciencia-tecnologia/salud/2026-07-28/tres-millones-de-euros-para-salvar-la-vida-de-claudia-7442217/",
       "date": "28/07/2026",
-      "quote": "El objetivo es realizar una terapia génica; esto es, cambiar la letra del gen mutado, para corregir el defecto genético de origen antes de que el daño neurológico sea irreversible",
-      "priority": 13
+      "quote": "La pequeña hija de Elena e Ignacio sufre una enfermedad degenerativa de la que se conocen muy pocos casos en todo el mundo",
+      "quoteEn": "Elena and Ignacio’s little daughter has a degenerative disease with very few known cases anywhere in the world"
     },
     {
       "outlet": "La Vanguardia",
@@ -105,28 +172,30 @@
       "logoColor": "#000d5e",
       "url": "https://www.lavanguardia.com/vida/20260728/11602629/tres-millones-euros-salvar-vida-claudia.amp.html",
       "date": "28/07/2026",
-      "quote": "El objetivo es realizar una terapia génica; esto es, cambiar la letra del gen mutado, para corregir el defecto genético de origen antes de que el daño neurológico sea irreversible",
-      "priority": 12
+      "quote": "La familia busca el apoyo de empresas y fundaciones para costear las pruebas preclínicas de una terapia personalizada que también podría abrir una esperanza para otros pacientes",
+      "quoteEn": "The family is seeking support from companies and foundations to fund the preclinical trials of a personalised therapy that could also open up hope for other patients"
     },
     {
       "outlet": "La Razón",
       "type": "press",
+      "logoImage": "/images/media/la-razon.svg",
       "logo": "LA RAZÓN",
-      "logoColor": "#003b71",
+      "logoColor": "#0d3567",
       "url": "https://www.larazon.es/sociedad/reto-claudia-familia-busca-tres-millones-euros-financiar-terapia-genica-enfermedad-hija_202607286a6863e5aa17c0020f347810.html?outputType=amp",
       "date": "28/07/2026",
       "quote": "El reto de Claudia: la familia busca tres millones de euros para financiar la terapia génica de la enfermedad de su hija",
-      "priority": 11
+      "quoteEn": "El reto de Claudia: the family seeks three million euros to fund the gene therapy for their daughter's disease"
     },
     {
       "outlet": "El Plural",
       "type": "press",
+      "logoImage": "/images/media/el-plural.png",
       "logo": "EL PLURAL",
-      "logoColor": "#e07b1f",
+      "logoColor": "#ff2e1d",
       "url": "https://www.elplural.com/sociedad/carrera-contrarreloj-salvar-claudia-nina-tres-anos-enfermedad-ultrarrara_396639102_amp",
       "date": "28/07/2026",
       "quote": "Un equipo de investigadores está dispuesto a desarrollar una terapia génica personalizada que podría cambiar el curso de la enfermedad, pero el tiempo corre en su contra y el proyecto necesita tres millones de euros para hacerse realidad",
-      "priority": 10
+      "quoteEn": "A team of researchers is ready to develop a personalised gene therapy that could change the course of the disease, but time is running against them and the project needs three million euros to become a reality"
     },
     {
       "outlet": "COPE",
@@ -137,7 +206,7 @@
       "url": "/audio/cope-la-linterna.mp3",
       "date": "17/07/2026",
       "quote": "El reto de Claudia: la búsqueda de una terapia génica que puede corregir el gen mutado y frenar su enfermedad ultrarrara",
-      "priority": 9
+      "quoteEn": "El reto de Claudia: the search for a gene therapy that can correct the mutated gene and halt her ultra-rare disease"
     },
     {
       "outlet": "Telecinco",
@@ -148,7 +217,7 @@
       "url": "https://www.telecinco.es/noticias/testimonios/20260611/piden-ayuda-investigar-enfermedad-altamente-mortal-claudia-terapia-genica_18_019400713.html",
       "date": "11/06/2026",
       "quote": "La terapia génica que puede salvar a Claudia, de dos años, de su enfermedad \"altamente mortal\": \"No podíamos estar parados, cada día es oro\"",
-      "priority": 8
+      "quoteEn": "The gene therapy that could save two-year-old Claudia from her \"highly lethal\" disease: \"We couldn't stand still, every day is gold\""
     },
     {
       "outlet": "Telemadrid",
@@ -159,7 +228,7 @@
       "url": "https://www.tlmad.es/content/unclassified/6397562426112/play",
       "date": "04/06/2026",
       "quote": "Buscamos la cura para Claudia. Cada donación nos acerca a la investigación privada que puede cambiar su vida.",
-      "priority": 7
+      "quoteEn": "We are looking for Claudia's cure. Every donation brings us closer to the private research that can change her life."
     },
     {
       "outlet": "Onda Cero",
@@ -170,7 +239,7 @@
       "url": null,
       "date": "26/05/2026",
       "quote": "Entrevista en \"Más de Uno Sierra\" para dar visibilidad a El Reto de Claudia y su misión",
-      "priority": 6
+      "quoteEn": "Interview on \"Más de Uno Sierra\" to raise visibility for El Reto de Claudia and its mission"
     },
     {
       "outlet": "El Confidencial Digital",
@@ -181,7 +250,7 @@
       "url": "https://www.elconfidencialdigital.com/articulo/la-guinda/guinda-asociacion-reto-claudia-que-recaudando-fondos-investigar-enfermedad-ultrarrara/202605210500001021867.html",
       "date": "21/05/2026",
       "quote": "La asociación El Reto de Claudia recauda fondos para investigar la enfermedad ultrarrara de Claudia",
-      "priority": 5
+      "quoteEn": "The El Reto de Claudia association raises funds to research Claudia's ultra-rare disease"
     },
     {
       "outlet": "Cadena SER",
@@ -192,7 +261,7 @@
       "url": "https://cadenaser.com/cmadrid/2026/05/19/el-reto-de-claudia-una-familia-de-san-lorenzo-busca-apoyo-para-investigar-la-enfermedad-ultrarrara-de-su-hija-ser-madrid-sierra/",
       "date": "19/05/2026",
       "quote": "\"El Reto de Claudia\": una familia de San Lorenzo busca apoyo para investigar la enfermedad ultrarrara de su hija",
-      "priority": 4
+      "quoteEn": "\"El Reto de Claudia\": a family from San Lorenzo seeks support to research their daughter's ultra-rare disease"
     },
     {
       "outlet": "La Voz de la Sierra",
@@ -203,7 +272,7 @@
       "url": "https://lavozdelasierra.es/2026/05/19/una-familia-de-san-lorenzo-busca-apoyo-para-investigar-la-enfermedad-ultrarrara-de-su-hija-claudia/",
       "date": "19/05/2026",
       "quote": "Una familia de San Lorenzo busca apoyo para investigar la enfermedad ultrarrara de su hija Claudia",
-      "priority": 3
+      "quoteEn": "A family from San Lorenzo seeks support to research their daughter Claudia's ultra-rare disease"
     },
     {
       "outlet": "Marca",
@@ -214,7 +283,18 @@
       "url": "https://www.marca.com/bienestar/salud/2026/05/15/reto-claudia.html",
       "date": "15/05/2026",
       "quote": "El reto de Claudia. Sus padres buscan financiación e investigadores para empezar la terapia génica",
-      "priority": 2
+      "quoteEn": "El reto de Claudia. Her parents seek funding and researchers to begin the gene therapy"
+    },
+    {
+      "outlet": "Tododisca",
+      "type": "web",
+      "logoImage": "/images/media/tododisca.png",
+      "logo": "TODODISCA",
+      "logoColor": "#191111",
+      "url": "https://tododisca.es/discapacidad/reto-claudia-2-anos-buscar-investigadores-tratar-enfermedad-rara/",
+      "date": "14/05/2026",
+      "quote": "'El reto de Claudia', de 2 años: buscar investigadores para tratar su enfermedad rara",
+      "quoteEn": "'El reto de Claudia', aged 2: finding researchers to treat her rare disease"
     },
     {
       "outlet": "GN Diario",
@@ -225,7 +305,7 @@
       "url": "https://gndiario.com/el-reto-de-claudia-deficiencia-proteina-Dbifuncional-DBP",
       "date": "08/05/2026",
       "quote": "El Reto de Claudia: deficiencia de proteína D-bifuncional (DBP)",
-      "priority": 1
+      "quoteEn": "El Reto de Claudia: D-bifunctional protein deficiency (DBP)"
     }
   ]
 }

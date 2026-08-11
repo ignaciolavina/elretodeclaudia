@@ -742,6 +742,112 @@ const translations = {
         },
       },
     },
+
+    landing: {
+      meta: {
+        title: 'Claudia te necesita — El Reto de Claudia',
+        description:
+          'Claudia tiene 3 años y padece una enfermedad neurodegenerativa que no tiene cura. Necesitamos 3 millones de euros para su proyecto de terapia génica. Ayuda a Claudia, salva una vida.',
+        descriptionShort:
+          'Claudia tiene 3 años y padece una enfermedad neurodegenerativa que no tiene cura. Necesitamos 3 millones de euros para su proyecto de terapia génica.',
+      },
+      logoAlt: 'El Reto de Claudia',
+      claudiaAlt: 'Claudia',
+      donate: 'Dona ❤️',
+      hero: {
+        title: 'Claudia te necesita.',
+        p1: 'Claudia tiene 3 años. Padece una enfermedad neurodegenerativa que no tiene cura. Tiene muchas ganas de vivir, pero el tiempo juega en su contra.',
+        p2Before:
+          'Su familia ha impulsado un proyecto de investigación en terapia génica, un tratamiento innovador que podría curarla a ella y a otros niños con enfermedades similares, pero para pagar el tratamiento su familia necesita ',
+        p2Amount: '3 millones de euros',
+        p2After: '.',
+        p3: 'Tú puedes ayudar desde tan solo 3€.',
+        secure: 'Donación segura · AITEP, asociación sin ánimo de lucro',
+      },
+      urgency: {
+        title: '¿Por qué el tiempo es tan importante?',
+        cards: [
+          {
+            title: 'Sin tratamiento curativo',
+            text: 'Actualmente no existe ninguna terapia capaz de detener o curar la enfermedad de Claudia. Solo existen cuidados y tratamientos de soporte.',
+          },
+          {
+            title: 'Enfermedad neurodegenerativa',
+            text: 'La enfermedad es progresiva. Por eso es importante impulsar la investigación y avanzar en el proyecto cuanto antes.',
+          },
+          {
+            title: 'Una enfermedad ultrarrara',
+            text: 'Al afectar a muy pocos niños, existen muy pocos recursos y líneas de investigación dedicados específicamente a buscar un tratamiento.',
+          },
+        ],
+      },
+      media: {
+        label: 'En los medios',
+        title: 'Conoce la historia de Claudia',
+        subtitle: 'La historia de Claudia ha salido en medios como prensa, radio y televisión.',
+        videoSoon: 'Vídeo próximamente · Nuestra visita a la televisión',
+        igTitle: 'Enamórate de Claudia',
+        igText: 'Si quieres enamorarte de Claudia, puedes seguirla en redes sociales.',
+        igCta: 'Seguir en Instagram',
+      },
+      project: {
+        label: 'El proyecto',
+        title: 'Conoce el proyecto',
+        intro:
+          'El proyecto de terapia génica para Claudia se encuentra actualmente en fase preclínica. Antes de poder avanzar hacia una posible aplicación en pacientes, es necesario estudiar y validar la estrategia terapéutica en diferentes modelos.',
+        description:
+          'Se trata de un proyecto innovador de terapia génica que involucra a empresas y expertos de varios países, y a investigadores reconocidos como el Dr. Guangping Gao, Coral Barbas, M. Carmen Conde y Carmen Fernández Martos.',
+        disclaimer:
+          'La investigación se encuentra en una fase inicial y no puede garantizarse que dé lugar a un tratamiento. Cada avance, sin embargo, permite acercarnos a una oportunidad que hoy no existe.',
+      },
+      goal: {
+        label: 'El objetivo',
+        amount: '3 millones de euros',
+        text: 'Es la cantidad estimada necesaria para desarrollar las distintas fases del proyecto preclínico de terapia génica y reunir los recursos científicos, técnicos y regulatorios necesarios para avanzar.',
+        usesTitle: '¿En qué se invierte?',
+        uses: [
+          'Estudios en líneas celulares.',
+          'Estudios en modelos animales.',
+          'Evaluación de eficacia y seguridad.',
+          'Desarrollo de la estrategia terapéutica.',
+          'Trabajo de empresas y expertos especializados.',
+          'Coordinación científica y desarrollo preclínico.',
+        ],
+      },
+      trust: {
+        before: 'Las donaciones son gestionadas por ',
+        brand: 'AITEP',
+        after:
+          ', Asociación para la Investigación y Tratamiento de Enfermedades Peroxisomales, una entidad sin ánimo de lucro creada para impulsar la investigación y buscar oportunidades para Claudia y otros niños con enfermedades peroxisomales. Iremos informando de los avances del proyecto.',
+      },
+      cta: {
+        title: 'Ayuda a Claudia, salva una vida.',
+        text: 'Desde 3 € puedes formar parte de la investigación que Claudia necesita.',
+      },
+      bizum: {
+        title: 'Dona por Bizum',
+        onlySpain: 'Solo disponible en España',
+        close: 'Cerrar',
+        codeLabel: 'Código Bizum ONG',
+        copy: 'Copiar código',
+        copied: '¡Copiado!',
+        steps: [
+          { title: 'Abre la app de tu banco y ve a Bizum', desc: 'Entra en la sección Bizum desde la app de tu banco.' },
+          { title: 'Busca "Donar a ONG" o "Hacer donación"', desc: 'Si no lo encuentras, pulsa primero en "Más opciones".' },
+          { title: 'Introduce el código {code}', desc: 'Escribe el código y continúa el proceso normalmente.' },
+        ],
+        bankNote: 'El nombre del botón puede variar según tu banco.',
+        otherWays: '¿Prefieres tarjeta o transferencia? Ver todas las formas de donar',
+        isSafe: '¿Es seguro?',
+        cif: 'CIF: G88669163',
+        moreAboutClaudia: 'Conoce más sobre Claudia aquí',
+      },
+      footer: {
+        rights: 'El Reto de Claudia · AITEP, asociación sin ánimo de lucro',
+        story: 'Conoce toda la historia de Claudia',
+        privacy: 'Privacidad',
+      },
+    },
   },
 
   en: {
@@ -1486,6 +1592,112 @@ const translations = {
           badgeTexto: 'Financial director of AITEP',
           bio: "Financial director of AITEP, in charge of the project's financial management and fundraising. He is a Digital Trade Manager at IMEX-Impulso Exterior, specialized in international trade and business digitalization.",
         },
+      },
+    },
+
+    landing: {
+      meta: {
+        title: 'Claudia needs you — El Reto de Claudia',
+        description:
+          'Claudia is 3 years old and has a neurodegenerative disease with no cure. We need 3 million euros for her gene therapy project. Help Claudia, save a life.',
+        descriptionShort:
+          'Claudia is 3 years old and has a neurodegenerative disease with no cure. We need 3 million euros for her gene therapy project.',
+      },
+      logoAlt: 'El Reto de Claudia',
+      claudiaAlt: 'Claudia',
+      donate: 'Donate ❤️',
+      hero: {
+        title: 'Claudia needs you.',
+        p1: 'Claudia is 3 years old. She has a neurodegenerative disease with no cure. She has every desire to live, but time is against her.',
+        p2Before:
+          'Her family has launched a gene therapy research project, an innovative treatment that could cure her and other children with similar diseases — but to pay for it her family needs ',
+        p2Amount: '3 million euros',
+        p2After: '.',
+        p3: 'You can help from as little as €3.',
+        secure: 'Secure donation · AITEP, non-profit association',
+      },
+      urgency: {
+        title: 'Why does time matter so much?',
+        cards: [
+          {
+            title: 'No curative treatment',
+            text: "There is currently no therapy able to stop or cure Claudia's disease. Only care and supportive treatments exist.",
+          },
+          {
+            title: 'A neurodegenerative disease',
+            text: 'The disease is progressive. That is why it is so important to drive the research forward and advance the project as soon as possible.',
+          },
+          {
+            title: 'An ultra-rare disease',
+            text: 'Because it affects very few children, there are very few resources and research lines specifically dedicated to finding a treatment.',
+          },
+        ],
+      },
+      media: {
+        label: 'In the media',
+        title: "Get to know Claudia's story",
+        subtitle: "Claudia's story has appeared in press, radio and television.",
+        videoSoon: 'Video coming soon · Our visit to the television studio',
+        igTitle: 'Fall in love with Claudia',
+        igText: 'If you want to fall in love with Claudia, you can follow her on social media.',
+        igCta: 'Follow on Instagram',
+      },
+      project: {
+        label: 'The project',
+        title: 'About the project',
+        intro:
+          "Claudia's gene therapy project is currently in the preclinical phase. Before it can move towards a possible application in patients, the therapeutic strategy must be studied and validated in different models.",
+        description:
+          'This is an innovative gene therapy project involving companies and experts from several countries, and renowned researchers such as Dr. Guangping Gao, Coral Barbas, M. Carmen Conde and Carmen Fernández Martos.',
+        disclaimer:
+          'The research is at an early stage and there is no guarantee that it will lead to a treatment. Every advance, however, brings us closer to an opportunity that does not exist today.',
+      },
+      goal: {
+        label: 'The goal',
+        amount: '3 million euros',
+        text: 'This is the estimated amount needed to develop the different phases of the preclinical gene therapy project and to gather the scientific, technical and regulatory resources required to move forward.',
+        usesTitle: 'What is the money spent on?',
+        uses: [
+          'Studies in cell lines.',
+          'Studies in animal models.',
+          'Efficacy and safety evaluation.',
+          'Development of the therapeutic strategy.',
+          'Work by specialised companies and experts.',
+          'Scientific coordination and preclinical development.',
+        ],
+      },
+      trust: {
+        before: 'Donations are managed by ',
+        brand: 'AITEP',
+        after:
+          ', the Association for Research and Treatment of Peroxisomal Diseases, a non-profit created to drive research and seek opportunities for Claudia and other children with peroxisomal diseases. We will keep you informed of the project’s progress.',
+      },
+      cta: {
+        title: 'Help Claudia, save a life.',
+        text: 'From €3 you can be part of the research Claudia needs.',
+      },
+      bizum: {
+        title: 'Donate with Bizum',
+        onlySpain: 'Only available in Spain',
+        close: 'Close',
+        codeLabel: 'Bizum NGO code',
+        copy: 'Copy code',
+        copied: 'Copied!',
+        steps: [
+          { title: 'Open your bank app and go to Bizum', desc: 'Enter the Bizum section from your bank app.' },
+          { title: 'Look for "Donate to NGO" or "Make a donation"', desc: 'If you cannot find it, tap "More options" first.' },
+          { title: 'Enter the code {code}', desc: 'Type the code and continue the process as usual.' },
+        ],
+        bankNote: 'The button name may vary depending on your bank.',
+        otherWays: 'Prefer card or bank transfer? See all the ways to donate',
+        isSafe: 'Is it safe?',
+        cif: 'Tax ID: G88669163',
+        moreAboutClaudia: 'Learn more about Claudia here',
+      },
+      footer: {
+        rights: 'El Reto de Claudia · AITEP, non-profit association',
+        story: "Read Claudia's full story",
+        privacy: 'Privacy',
       },
     },
   },
