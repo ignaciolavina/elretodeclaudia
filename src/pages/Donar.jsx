@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet-async'
 
 // const DONATION_LINK = 'https://www.migranodearena.org/reto/el-reto-de-claudia'
-const DONATION_LINK = 'https://donio.es/contribucion/180'
+const DONATION_LINK = 'https://donio.es/Claudia'
 const MEMBER_AMOUNTS = [
   { amount: '10 €', emoji: '🍽️', href: 'https://buy.stripe.com/7sY14haRwds4cWQeA54F200' },
   { amount: '20 €', emoji: '📺', href: 'https://buy.stripe.com/28EeV7gbQ9bO8GA4Zv4F202' },
