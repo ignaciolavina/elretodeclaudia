@@ -48,10 +48,13 @@ function Home() {
   )
 }
 
+const NO_DONATE_BAR_PATHS = ['/donar', '/donate', '/dona', '/landing']
+
 function StickyDonateBar() {
   const location = useLocation()
   const { t } = useLanguage()
-  if (['/donar', '/donate', '/dona', '/landing'].includes(location.pathname)) return null
+  const path = location.pathname.replace(/^\/en(\/|$)/, '/')
+  if (NO_DONATE_BAR_PATHS.includes(path)) return null
   return (
     <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 px-4 pb-4 pt-2 bg-gradient-to-t from-white/95 to-transparent backdrop-blur-sm">
       <Link
@@ -64,17 +67,23 @@ function StickyDonateBar() {
   )
 }
 
+const SECTION_ROUTES = {
+  '/how-to-help': '#ayudar',
+}
+
 function ScrollToTop() {
   const location = useLocation()
 
   useEffect(() => {
-    if (!location.hash) {
+    const path = location.pathname.replace(/^\/en(\/|$)/, '/')
+    const hash = location.hash || SECTION_ROUTES[path]
+    if (!hash) {
       window.scrollTo(0, 0)
       return
     }
 
     const scrollToHash = () => {
-      const target = document.querySelector(location.hash)
+      const target = document.querySelector(hash)
       if (target) {
         target.scrollIntoView({ behavior: 'smooth', block: 'start' })
       } else {
@@ -99,6 +108,21 @@ function Analytics() {
   return null
 }
 
+const LOCALIZABLE_ROUTES = [
+  { path: '/', element: <Home /> },
+  { path: '/how-to-help', element: <Home /> },
+  { path: '/donar', element: <Donar /> },
+  { path: '/donate', element: <Donar /> },
+  { path: '/dona', element: <Donar /> },
+  { path: '/proyecto', element: <Proyecto /> },
+  { path: '/claudia', element: <Claudia /> },
+  { path: '/privacidad', element: <Privacidad /> },
+  { path: '/prensa', element: <Prensa /> },
+  { path: '/eventos', element: <Eventos /> },
+  { path: '/eventos/carrera-solidaria-san-lorenzo-2026', element: <CarreraSolidaria /> },
+  { path: '/eventos/dia-de-la-esperanza-2026', element: <DiaEsperanza /> },
+]
+
 export default function App() {
   return (
     <LanguageProvider>
@@ -106,17 +130,12 @@ export default function App() {
       <Analytics />
       <StickyDonateBar />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/donar" element={<Donar />} />
-        <Route path="/donate" element={<Donar />} />
-        <Route path="/dona" element={<Donar />} />
-        <Route path="/proyecto" element={<Proyecto />} />
-        <Route path="/claudia" element={<Claudia />} />
-        <Route path="/privacidad" element={<Privacidad />} />
-        <Route path="/prensa" element={<Prensa />} />
-        <Route path="/eventos" element={<Eventos />} />
-        <Route path="/eventos/carrera-solidaria-san-lorenzo-2026" element={<CarreraSolidaria />} />
-        <Route path="/eventos/dia-de-la-esperanza-2026" element={<DiaEsperanza />} />
+        {LOCALIZABLE_ROUTES.map(({ path, element }) => (
+          <Route key={path} path={path} element={element} />
+        ))}
+        {LOCALIZABLE_ROUTES.map(({ path, element }) => (
+          <Route key={`en${path}`} path={`/en${path === '/' ? '' : path}`} element={element} />
+        ))}
         <Route path="/videos" element={<Navigate to="/claudia" replace />} />
         <Route path="/landing" element={<Landing />} />
         <Route path="/test" element={<Test />} />
