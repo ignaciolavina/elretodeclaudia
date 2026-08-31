@@ -243,6 +243,32 @@ export default function Eventos() {
           </div>
         </section>
 
+        {/* Lotería Banner */}
+        <section className="pt-16 bg-white">
+          <div className="max-w-7xl mx-auto px-6 lg:px-12">
+            <h2 className="font-serif text-2xl font-bold text-gray-900 mb-8">{d.currentEventsTitle}</h2>
+            <a href="https://tulotero.es/e/claudia" target="_blank" rel="noopener noreferrer" className="block bg-brand-50 rounded-3xl p-6 sm:p-8 lg:p-10 border border-brand-100 hover:shadow-md transition-shadow">
+              <div className="flex flex-col md:flex-row items-center gap-8">
+                <div className="w-full md:w-1/3 flex-shrink-0">
+                  <div className="w-full aspect-square rounded-full overflow-hidden shadow-sm mx-auto max-w-[240px]">
+                    <img src="https://static.es.tulotero.net/images/penya/2026/8/6/1786019333799.jpg" alt="Lotería El Reto de Claudia" className="w-full h-full object-cover scale-105" />
+                  </div>
+                </div>
+                <div className="flex-1">
+                  <span className="inline-block bg-brand-200 text-brand-800 text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4">
+                    {d.lotteryBadge}
+                  </span>
+                  <h3 className="font-serif text-2xl lg:text-3xl font-bold text-gray-900 mb-4">{d.lotteryTitle}</h3>
+                  <p className="text-gray-700 text-lg mb-6">{d.lotteryDesc}</p>
+                  <span className="inline-block bg-brand-600 text-white font-semibold px-6 py-3 rounded-xl hover:bg-brand-700 transition-colors">
+                    {d.lotteryCta}
+                  </span>
+                </div>
+              </div>
+            </a>
+          </div>
+        </section>
+
         {/* Upcoming solidarity */}
         <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-6 lg:px-12">
