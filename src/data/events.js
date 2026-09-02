@@ -179,27 +179,6 @@ export const EVENTS = [
     organizers: [],
   },
   {
-    slug: 'doce-horas-por-claudia-2026',
-    title: {
-      es: '12 horas al piano por Claudia — Manu Contreras',
-      en: '12 Hours at the Piano for Claudia — Manu Contreras',
-    },
-    date: '2026-07-25',
-    postponed: true,
-    datePlaceholder: { es: 'Fecha por confirmar', en: 'Date to be confirmed' },
-    location: 'Plaza Jacinto Benavente, San Lorenzo de El Escorial',
-    description: {
-      es: 'Manu Contreras se reta a sí mismo: 12 horas seguidas tocando en la plaza, sin parar, por Claudia. Un reto por otro... ¿Cuál es el tuyo? El evento ha sido aplazado por los incendios de Madrid. Fecha por confirmar.',
-      en: 'Manu Contreras challenges himself: 12 hours of non-stop playing in the square, for Claudia. One challenge for another... What\'s yours? The event has been postponed due to the Madrid wildfires. Date to be confirmed.',
-    },
-    image: '/images/events/doce-horas-por-claudia-2026.webp',
-    status: 'upcoming',
-    category: 'solidarity',
-    registerHref: null,
-    infoHref: null,
-    organizers: [],
-  },
-  {
     slug: 'hyrox-hybrid-race-2026',
     title: {
       es: 'HYROX / Hybrid Race solidaria',

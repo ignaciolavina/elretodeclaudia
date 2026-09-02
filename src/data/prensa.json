@@ -6,6 +6,37 @@
   "upcoming": [],
   "media": [
     {
+      "outlet": "esRadio",
+      "type": "radio",
+      "logoImage": "/images/media/esradio.svg",
+      "logo": "esRADIO",
+      "logoColor": "#004a91",
+      "url": "https://esradio.libertaddigital.com/es-la-manana-de-fin-de-semana/2026-08-22/el-libro-prohibido-de-la-policia-el-reto-de-claudia-goya-del-museo-al-palacio-y-la-avt-7450766/",
+      "date": "22/08/2026",
+      "quote": "Es La Mañana de Fin de Semana: El libro prohibido de la policía, el Reto de Claudia, Goya del museo al palacio y la AVT",
+      "quoteEn": "Es La Mañana de Fin de Semana: The banned police book, El Reto de Claudia, Goya from museum to palace and the AVT"
+    },
+    {
+      "outlet": "InnovaSpain",
+      "type": "web",
+      "logo": "INNOVASPAIN",
+      "logoColor": "#003b5c",
+      "url": "https://www.innovaspain.com/nace-la-asociacion-para-la-investigacion-y-el-tratamiento-de-enfermedades-peroxisomales/",
+      "date": "28/07/2026",
+      "quote": "Nace la Asociación para la Investigación y Tratamiento de Enfermedades Peroxisomales",
+      "quoteEn": "The Association for the Research and Treatment of Peroxisomal Diseases is founded"
+    },
+    {
+      "outlet": "Congreso Diario",
+      "type": "press",
+      "logo": "CONGRESO DIARIO",
+      "logoColor": "#1f2937",
+      "url": "https://congresodiario.com/reto-claudia-investigacion-enfermedad-ultrarrara/",
+      "date": "28/07/2026",
+      "quote": "El Reto de Claudia: 3 millones contra su enfermedad rara",
+      "quoteEn": "El Reto de Claudia: 3 million against her rare disease"
+    },
+    {
       "outlet": "Marca",
       "type": "press",
       "logoImage": "/images/media/marca.svg",

@@ -251,7 +251,7 @@ export default function Eventos() {
               <div className="flex flex-col md:flex-row items-center gap-8">
                 <div className="w-full md:w-1/3 flex-shrink-0">
                   <div className="w-full aspect-square rounded-full overflow-hidden shadow-sm mx-auto max-w-[240px]">
-                    <img src="https://static.es.tulotero.net/images/penya/2026/8/6/1786019333799.jpg" alt="Lotería El Reto de Claudia" className="w-full h-full object-cover scale-105" />
+                    <img src="/images/IMG-20260902-WA0018.jpg" alt="Lotería El Reto de Claudia" className="w-full h-full object-cover scale-105" />
                   </div>
                 </div>
                 <div className="flex-1">
