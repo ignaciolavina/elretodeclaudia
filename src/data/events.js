@@ -1,6 +1,26 @@
 export const EVENTS = [
   // ── Upcoming: solidarity events ─────────────────────────────────────────────
   {
+    slug: 'carrera-solidaria-el-escorial-2026',
+    title: {
+      es: 'Carrera Solidaria — XI Feria de la Salud de El Escorial',
+      en: 'Charity Race — 11th El Escorial Health Fair',
+    },
+    date: '2026-09-25',
+    time: '18:30',
+    location: 'Salida: Casa Miñana, El Escorial, Madrid',
+    description: {
+      es: 'La XI Feria de la Salud de El Escorial (del 22 al 27 de septiembre) celebra su Carrera Solidaria a favor de El Reto de Claudia. 5 kilómetros con salida en Casa Miñana a las 18:30 h. Corre, camina o anima: cada dorsal es un paso más hacia la investigación que Claudia necesita. Colabora Sin Límites Run Club.',
+      en: 'The 11th El Escorial Health Fair (22–27 September) holds its Charity Race in benefit of El Reto de Claudia. A 5-kilometre run starting at Casa Miñana at 6:30 PM. Run, walk or cheer: every bib is another step towards the research Claudia needs. In collaboration with Sin Límites Run Club.',
+    },
+    image: '/images/events/carrera-solidaria-el-escorial-2026.webp',
+    status: 'upcoming',
+    category: 'solidarity',
+    registerHref: null,
+    infoHref: null,
+    organizers: [],
+  },
+  {
     slug: 'concierto-solidario-coro-sagrados-corazones-2026',
     title: {
       es: 'Concierto solidario — Coro "Matisse"',

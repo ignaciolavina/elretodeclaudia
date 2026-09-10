@@ -75,7 +75,7 @@ function UpcomingCard({ event, badgeLabel, badgeStyle = 'solidarity' }) {
       <div className="flex flex-col lg:flex-row">
         <div className="lg:w-2/5 flex-shrink-0 overflow-hidden">
           {event.image
-            ? <img src={event.image} alt={event.title[lang]} className="w-full h-full object-cover" />
+            ? <img src={event.image} alt={event.title[lang]} loading="lazy" decoding="async" className="w-full h-full object-cover" />
             : <ImagePlaceholder />
           }
         </div>
@@ -163,7 +163,7 @@ function PastCard({ event, index }) {
     >
       <div className="h-64 overflow-hidden">
         {event.image
-          ? <img src={event.image} alt={event.title[lang]} className="w-full h-full object-cover" />
+          ? <img src={event.image} alt={event.title[lang]} loading="lazy" decoding="async" className="w-full h-full object-cover" />
           : <ImagePlaceholder size="sm" />
         }
       </div>

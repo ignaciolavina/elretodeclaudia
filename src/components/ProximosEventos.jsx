@@ -65,7 +65,7 @@ export default function ProximosEventos() {
             {/* Image */}
             <div className="lg:w-2/5 flex-shrink-0 overflow-hidden">
               {next.image
-                ? <img src={next.image} alt={next.title[lang]} className="w-full h-full object-cover" />
+                ? <img src={next.image} alt={next.title[lang]} loading="lazy" decoding="async" className="w-full h-full object-cover" />
                 : (
                   <div className="w-full h-full bg-brand-100 flex items-center justify-center min-h-[240px]">
                     <svg className="w-16 h-16 text-brand-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
