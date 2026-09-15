@@ -1,6 +1,26 @@
 export const EVENTS = [
   // ── Upcoming: solidarity events ─────────────────────────────────────────────
   {
+    slug: 'concierto-solidario-comillas-2026',
+    title: {
+      es: 'Concierto solidario — El Reto de Claudia',
+      en: 'Charity Concert — El Reto de Claudia',
+    },
+    date: '2026-09-19',
+    time: '21:00',
+    location: 'Iglesia de Comillas, Comillas, Cantabria',
+    description: {
+      es: 'Una velada musical solidaria a favor de El Reto de Claudia, con las actuaciones de Valdáliga Gospel Choir y Coro Brumas Norteñas.',
+      en: 'A charity music evening in support of El Reto de Claudia, featuring performances by Valdáliga Gospel Choir and Coro Brumas Norteñas.',
+    },
+    image: '/images/events/concierto-solidario-comillas-2026.webp',
+    status: 'upcoming',
+    category: 'solidarity',
+    registerHref: null,
+    infoHref: 'https://www.instagram.com/p/DdRkKE0HCzz/',
+    organizers: [],
+  },
+  {
     slug: 'carrera-solidaria-el-escorial-2026',
     title: {
       es: 'Carrera Solidaria — XI Feria de la Salud de El Escorial',
