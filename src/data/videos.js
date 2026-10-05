@@ -57,6 +57,214 @@ export const VIDEOS = [
     caption: '20 de febrero de 2025. El día que todo cambió\n\nSi conocieras a Claudia, lo primero que te robaría sería la risa. Esa risa que contagia y que te obliga a sonreír al verla disfrutar.\n\nTiene 2 años y 7 meses, está rodeada de gente que la quiere con locura, y cuando tiene que esforzarse apenas se queja. Como si supiera, a su manera, que hay que seguir adelante.\n\nEn febrero de 2025 recibimos la noticia que ningún padre debería recibir jamás: Claudia tiene Deficiencia de enzima D-Bifuncional. Una enfermedad degenerativa, progresiva y, a día de hoy, sin cura.\n\nEse día el mundo se paró, pero Claudia no. Y nosotros tampoco.\n\nSomos su familia y hemos decidido luchar con todo lo que tenemos. Hemos contactado con investigadores de todo el mundo, estudiado cada línea terapéutica y llamado a cada puerta.\n\nLa única posibilidad real para Claudia es la terapia génica.\n\nNecesitamos encontrar a quien pueda desarrollarla, a alguien que quiera investigar y darnos la esperanza de frenar este avance.\n\nPor eso necesitamos tu acción hoy: ayúdanos a dar visibilidad a esta enfermedad.\n\nLa persona que puede cambiarle la vida a Claudia quizás está al otro lado de la pantalla. Ayúdanos a llegar a ella.\n\n#enfermedadesperoxisomales #enfermedadrara #terapiagenica #investigacion #deficienciadeenzimabifuncional',
   },
   {
+    id: 'ayudemos-entre-todos',
+    type: 'instagram',
+    title: {
+      es: 'Ayudemos entre todos a Claudia',
+      en: 'Let\'s help Claudia together',
+    },
+    description: {
+      es: 'Un mensaje de apoyo de @meermeladaa_ para que Claudia consiga su oportunidad.',
+      en: 'A message of support from @meermeladaa_ so that Claudia gets her chance.',
+    },
+    date: { es: 'Octubre 2026', en: 'October 2026' },
+    duration: 'Reel',
+    permalink: 'https://www.instagram.com/reel/DeGvSXUASRY/',
+    caption: 'Ayudemos entre todos a Claudia a conseguir su oportunidad💙\n\nhttps://elretodeclaudia.org/',
+  },
+  {
+    id: 'todo-sobre-terapia-genica',
+    type: 'instagram',
+    title: {
+      es: 'Todo sobre nuestra terapia génica',
+      en: 'Everything about our gene therapy',
+    },
+    description: {
+      es: 'Respondemos a las preguntas más frecuentes: en qué consiste, cómo funciona, en qué punto estamos y cuál es el camino por delante.',
+      en: 'We answer the most common questions: what it is, how it works, where we stand and what the road ahead looks like.',
+    },
+    date: { es: 'Septiembre 2026', en: 'September 2026' },
+    duration: 'Reel',
+    permalink: 'https://www.instagram.com/reel/Dd67cCrhu7p/',
+    caption: '🧬 Todo sobre nuestra terapia génica\n\nSon muchas las preguntas que recibimos sobre la terapia génica que estamos desarrollando para Claudia: en qué consiste, cómo funciona, en qué punto estamos y cuál es el camino que tenemos por delante.\n\nEn este vídeo intentamos responder a muchas de ellas y explicar, de la forma más sencilla posible, el proyecto científico que hay detrás de El Reto de Claudia.\n\nLa terapia génica de Claudia ya es un proyecto en marcha, liderado científicamente por la Universidad CEU San Pablo y con empresas especializadas de Estados Unidos involucradas en el diseño de la terapia y la generación de los modelos de ratón con las mutaciones de Claudia.\n\nSeguimos avanzando paso a paso con un único objetivo: conseguir que esta terapia llegue hasta Claudia. 💗\n\nGracias por querer conocer, entender y formar parte de este camino. Cada persona que se interesa, comparte nuestra historia o nos ayuda hace posible que podamos seguir avanzando.\n\nSi queréis conocer más información sobre la terapia génica, el proyecto y el equipo que está trabajando para hacerlo posible, podéis encontrarla en:\n\n🌐  elretodeclaudia.org\n\nSeguimos. Por Claudia. 💗',
+  },
+  {
+    id: 'hace-un-ano',
+    type: 'instagram',
+    title: {
+      es: 'Hace un año',
+      en: 'A year ago',
+    },
+    description: {
+      es: 'Una mirada atrás: lo que hoy se echa de menos y cuánto ha cambiado todo en solo un año.',
+      en: 'A look back at what we miss today and how much has changed in just one year.',
+    },
+    date: { es: 'Septiembre 2026', en: 'September 2026' },
+    duration: 'Reel',
+    permalink: 'https://www.instagram.com/reel/Ddg-JCJMmLb/',
+    caption: 'Hace un año también estábamos preocupados.\n\nVeíamos cosas que nos inquietaban, nos hacíamos preguntas y teníamos miedo de lo que pudiera venir…\n\nY no sabíamos que estábamos viviendo tu mejor momento. Ahora nos preguntamos, ¿por que estábamos preocupados?\n\nNo sabíamos cuánto íbamos a echar de menos verte hacer cosas que entonces parecían tan pequeñas. Cosas que incluso nos preocupaban porque pensábamos que deberían ser fáciles para ti.\n\nHoy vemos vídeos y nos damos cuenta de toda la fuerza que tenías, de todo lo que eras capaz de hacer y de cuánto ha cambiado todo en solo un año.\n\nEste último año la enfermedad te ha ido quitando fuerza y movimiento. Y nosotros hemos ido aprendiendo (intentando aprender sin que duela) a valorar cada pequeño gesto, cada avance, cada momento.\n\nPero hay algo que la enfermedad no ha podido quitarte: tus ganas de reír, de disfrutar y de seguir regalándonos momentos felices. 🤍\n\nY aquí seguimos, aunque cueste, celebrando cada sonrisa y luchando con todas nuestras fuerzas para intentar devolverte parte de todo lo que esta enfermedad te está quitando.\n\nHoy solo queremos seguir luchando para que algún día podamos mirar hacia atrás y decir que conseguimos cambiar tu historia.\n\nTe queremos, Claudia. Por ti, hasta donde haga falta.\n\n#ElRetoDeClaudia #enfermedadesraras #masinvestigacionmasesperanza #terapiagenica',
+  },
+  {
+    id: 'claudia-nos-necesita-max',
+    type: 'instagram',
+    title: {
+      es: 'Claudia nos necesita',
+      en: 'Claudia needs us',
+    },
+    description: {
+      es: '@maxthehussky habla desde el corazón: Claudia tiene tres años y una única oportunidad.',
+      en: '@maxthehussky speaks from the heart: Claudia is three years old and has one single chance.',
+    },
+    date: { es: 'Septiembre 2026', en: 'September 2026' },
+    duration: 'Reel',
+    permalink: 'https://www.instagram.com/reel/DdBmsnSNRpq/',
+    caption: 'Claudia nos necesita: solo tiene 3 años y una única oportunidad 💔\nFamilia, hoy no vengo a compartir risas ni el día a día con vosotros. Hoy os hablo desde el corazón, porque nos toca arrimar el hombro por alguien muy especial para mí.\nElla es Claudia, tiene solo 3 añitos y es la nieta de unos grandísimos amigos míos de toda la vida. Claudia lucha contra una enfermedad ultrarrara muy grave (DBP), y su única esperanza real es acceder a una terapia génica pionera. El obstáculo es enorme: el tratamiento cuesta 3 millones de euros y el tiempo corre en su contra.\n\nSé la gran comunidad que somos y la fuerza que tenemos cuando nos unimos. Por eso os pido que no paséis de largo. Cualquier gesto suma la vida para ella:\n♥️ Síguela en su cuenta oficial: @elretodeclaudia para arropar a su familia y darles fuerza.\n\n♥️ Comparte este vídeo para que su historia rompa fronteras y llegue a más personas.\n\n♥️ Colabora si está en tu mano: cada granito de arena cuenta.\n\nTenéis el enlace directo para donar en la biografía de @elretodeclaudia y también os lo dejo fijado ahora mismo en mis historias para que podáis entrar directamente.\n🙏Por favor, no lo dejes pasar. Vamos a demostrar la fuerza de esta gran familia. ¡Todos con Claudia! 🥰\n#elretodeclaudia',
+  },
+  {
+    id: 'feliz-3-cumpleanos',
+    type: 'instagram',
+    title: {
+      es: 'Feliz 3 cumpleaños, Claudia',
+      en: 'Happy 3rd birthday, Claudia',
+    },
+    description: {
+      es: 'Un cumpleaños que no era el que habían imaginado, y la fuerza de una familia que sigue luchando.',
+      en: 'A birthday that wasn\'t the one they had imagined, and the strength of a family that keeps fighting.',
+    },
+    date: { es: 'Septiembre 2026', en: 'September 2026' },
+    duration: 'Reel',
+    permalink: 'https://www.instagram.com/reel/Dc2txTGs-su/',
+    caption: 'Feliz 3 cumpleaños, Claudia. 🎂❤️\n\nAunque nos cuesta decirlo, este no es el cumpleaños que habíamos imaginado ni es la forma en la que soñábamos verte cumplir 3 años.\n\nNo es la infancia que imaginábamos para ti.\n\nHay dias que duele muchísimo aceptar que las cosas hayan cambiado tanto, otros no lo podemos ni aceptar.\n\nPero si algo hemos aprendido en estos tres años es a celebrar cada sonrisa, cada mirada, cada pequeño momento contigo.\n\nA celebrar todo lo que eres y todo lo que has conseguido. Todo el amor infinito que nos das y que recibes cada día.\n\nY sobre todo, a no rendirnos. Porque mientras haya una posibilidad, vamos a luchar por ti siempre.\n\nVamos a seguir buscando respuestas, investigando y llamando a todas las puertas que haga falta para conseguir este tratamiento que tanto necesitas.\n\nHoy no queremos pensar en todo lo que esta enfermedad nos ha quitado. Hoy vamos a celebrar que hace 3 años llegaste tú:\n\nNuestra Claudia, nuestra niña valiente, nuestro amor más grande.\n\nOjalá la vida nos regale muchos más cumpleaños a tu lado y algún día podamos mirar atrás y pensar que todo esto solo fue una parte de nuestra historia.\n\nFeliz cumpleaños, Claudi.\n\nTe queremos mucho mucho mucho.',
+  },
+  {
+    id: 'terapia-ya-es-realidad',
+    type: 'instagram',
+    title: {
+      es: 'Hoy la terapia es una realidad',
+      en: 'Today the therapy is a reality',
+    },
+    description: {
+      es: 'Hace unos meses hablar de una terapia para Claudia parecía un sueño; hoy es una realidad.',
+      en: 'A few months ago, talking about a therapy for Claudia seemed like a dream; today it is a reality.',
+    },
+    date: { es: 'Septiembre 2026', en: 'September 2026' },
+    duration: 'Reel',
+    permalink: 'https://www.instagram.com/reel/DcvuEnwRbqX/',
+    caption: 'Hace unos meses, hablar de una terapia para Claudia parecía un sueño.\n\n🧡Hoy es una realidad.🧡\n\nClaudia tiene solo 3 años, le encanta jugar con otros niños, tocar la batería y chapotear en el agua.\n\nY convive con una enfermedad genética ultra rara y neurodegenerativa. En los últimos meses ha empezado a perder capacidades motoras que había conseguido con muchísimo esfuerzo.\n\n🧡Pero por primera vez Claudia y su familia, tienen una oportunidad real.\n\nYa está en marcha un proyecto de investigación para desarrollar una terapia génica personalizada para Claudia. Una universidad española trabaja junto a médicos y empresas especializadas de Estados Unidos para hacerlo posible.\n\n📌Pero necesitan que este proyecto no se detenga.\n\nEl siguiente paso de la investigación ya está en marcha, pero necesitan recaudar los fondos necesarios para seguir avanzando. Cada donación nos acerca a esa posible terapia que podría cambiar el futuro de Claudia.\n\nClaudia solo tiene 3 años. Y merece tener la oportunidad de seguir viviendo muchos más.\n\n👉Comparte y dona: https://l.donio.es/claudia\n\n@elretodeclaudia\n\n#enfermedadesraras #infancia #degenerativa #investigacion #niños',
+  },
+  {
+    id: 'bomberos-tazas-solidarias',
+    type: 'instagram',
+    title: {
+      es: 'Los bomberos de Madrid y las tazas solidarias',
+      en: 'Madrid firefighters and the charity mugs',
+    },
+    description: {
+      es: 'Los 22 parques de bomberos de la Comunidad de Madrid tendrán las tazas de la campaña solidaria.',
+      en: 'All 22 fire stations in the Community of Madrid will have the campaign\'s charity mugs.',
+    },
+    date: { es: 'Agosto 2026', en: 'August 2026' },
+    duration: 'Reel',
+    permalink: 'https://www.instagram.com/reel/DctaANOs8V1/',
+    caption: 'Hoy han llegado al Parque las tazas de la campaña solidaria @elretodeclaudia !! Los 22 Parques de la Comunidad de Madrid tendrán sus tazas para colaborar en esta campaña tan bonita!! Animamos a todo el mundo a que colabore por el futuro de Claudia!!! ❤️‍🔥❤️‍🔥❤️‍🔥 #elretodeclaudia #bomberoscomu #bomberos #corazóndebombero',
+  },
+  {
+    id: 'ayudas-a-claudia-jose',
+    type: 'instagram',
+    title: {
+      es: '¿Ayudas a Claudia?',
+      en: 'Will you help Claudia?',
+    },
+    description: {
+      es: 'Un reel de @jose_martinaguado para pedir apoyo a El Reto de Claudia.',
+      en: 'A reel by @jose_martinaguado asking for support for El Reto de Claudia.',
+    },
+    date: { es: 'Agosto 2026', en: 'August 2026' },
+    duration: 'Reel',
+    permalink: 'https://www.instagram.com/reel/DcZFTBVIDGW/',
+    caption: '⭐️⭐️⭐️ ¿AYUDAS a @elretodeclaudia?',
+  },
+  {
+    id: 'reto-viral-por-claudia',
+    type: 'instagram',
+    title: {
+      es: 'Reto viral por Claudia',
+      en: 'Viral challenge for Claudia',
+    },
+    description: {
+      es: 'Una cadena solidaria para conseguir los 3.000.000 € que necesita la terapia génica: dona 10 €, comparte y etiqueta.',
+      en: 'A chain of solidarity to raise the €3,000,000 the gene therapy needs: donate €10, share and tag.',
+    },
+    date: { es: 'Agosto 2026', en: 'August 2026' },
+    duration: 'Reel',
+    permalink: 'https://www.instagram.com/reel/DcYITbGMLmd/',
+    caption: '🚨 ¡RETO VIRAL POR CLAUDIA!🚨\n\nTenemos un objetivo enorme: conseguir 3.000.000 € para financiar la terapia génica que Claudia necesita.\n\nY queremos intentar algo muy sencillo: que una pequeña ayuda pueda convertirse en una cadena enorme. 💗\n\n¿Cómo participar?\n\n👉 Dona 10 €\n👉 Comparte este post en tus stories\n👉 Etiqueta a al menos 3 amigos y consigue que se impliquen. No basta con etiquetar: debes conseguir que conozcan el proyecto y se involucren.\n👉 Hazlo viral\n\nA la hora de elegir a quién etiquetar, busca involucrar a gente que aún no conozca demasiado El Reto de Claudia o que esté fuera de nuestra comunidad. Así conseguiremos que cada vez más personas nuevas conozcan el proyecto y puedan sumarse.\n\nSi cada persona consigue que al menos otras 3 se impliquen de verdad, podemos llegar muchísimo más lejos de lo que imaginamos.\n\nBIZUM ONG: 14489\nTambién puedes donar en elretodeclaudia.org\n\nClaudia necesita que esta cadena no pare.\n¿Nos ayudas a llevarla lo más lejos posible? 💗\n\n#ElRetoDeClaudia #RetoViral #TerapiaGenica #EnfermedadesRaras #AyudaAClaudia',
+  },
+  {
+    id: 'risa-esperanza-claudia',
+    type: 'instagram',
+    title: {
+      es: 'La risa de Claudia, nuestra mayor esperanza',
+      en: 'Claudia\'s laughter, our greatest hope',
+    },
+    description: {
+      es: 'Mientras lucha cada día por mantener su cuerpo fuerte, Claudia nos sigue regalando sus carcajadas: la prueba de que sigue siendo una niña feliz.',
+      en: 'While she fights every day to keep her body strong, Claudia keeps giving us her laughter: proof that she is still a happy little girl.',
+    },
+    date: { es: 'Agosto 2026', en: 'August 2026' },
+    duration: 'Reel',
+    permalink: 'https://www.instagram.com/reel/DcQcOWJMA91/',
+    caption: 'Dicen que la risa es la mejor medicina, y para nosotros, es nuestra mayor esperanza.\n\nMientras Claudia lucha y trabaja para mantener su cuerpo fuerte cada día, nos sigue regalando algo que no tiene precio: sus carcajadas. ❤️\n\nEscucharla reír es lo que nos da fuerzas cada mañana; es la prueba de que, por encima de la enfermedad, sigue siendo una niña feliz, con ganas de vivir, de disfrutar y de seguir adelante.\n\nPara nosotros, lo es absolutamente todo poder mantener viva esa sonrisa. Hoy necesitamos tu ayuda para seguir luchando por ella y por su futuro.\n\nCualquier donación, por pequeña que sea, nos acerca a conseguir su tratamiento y nos da una oportunidad de que su alegría nunca se apague.\n\n¿Nos ayudas a seguir escuchando su risa? ❤️\n\nelretodeclaudia.org\n\n#ElRetoDeClaudia #investigación #EnfermedadesRaras #TerapiaGenica',
+  },
+  {
+    id: 'thor-loki-doblaje',
+    type: 'instagram',
+    title: {
+      es: 'Thor y Loki piden ayuda para Claudia',
+      en: 'Thor and Loki ask for help for Claudia',
+    },
+    description: {
+      es: 'Un doblaje solidario de @doblando_cosas y @juanofgodd para dar a conocer la enfermedad de Claudia y su terapia génica.',
+      en: 'A charity dub by @doblando_cosas and @juanofgodd to raise awareness of Claudia\'s disease and her gene therapy.',
+    },
+    date: { es: 'Agosto 2026', en: 'August 2026' },
+    duration: 'Reel',
+    permalink: 'https://www.instagram.com/reel/DcMM5vuNflo/',
+    caption: 'La pequeña Claudia necesita tu ayuda. Nació con una enfermedad rara llamada DEFICIENCIA DE ENZIMA D-BIFUNCIONAL. Su única esperanza está en la investigación de una terapia genética que supone 3 millones de euros. Para donaciones y más información id al perfil de @elretodeclaudia\nVoz de Thor, guión y edición: @doblando_cosas\nVoz de Loki: @juanofgodd\n#enfermedadrara #doblaje #thoryloki #elretodeclaudia',
+  },
+  {
+    id: 'dos-pagos-terapia-genica',
+    type: 'instagram',
+    title: {
+      es: 'Dos pagos, dos pasos hacia la terapia',
+      en: 'Two payments, two steps toward the therapy',
+    },
+    description: {
+      es: 'Hemos pagado a la entidad que diseña la terapia génica y a la empresa que crea los ratones con la mutación de Claudia. Gracias a todos.',
+      en: 'We have paid the entity designing the gene therapy and the company creating the mice with Claudia\'s mutation. Thank you all.',
+    },
+    date: { es: 'Agosto 2026', en: 'August 2026' },
+    duration: 'Reel',
+    permalink: 'https://www.instagram.com/reel/Db77oyRsn-p/',
+    caption: '¡Tenemos dos noticias muy importantes que contaros! ❤️🧬\n\nHemos realizado dos pagos de una importante cantidad a dos de las entidades involucradas en el proyecto:\n\n🔬 Un primer pago a la entidad encargada del diseño de la terapia génica\n\n🐭 Y otro pago a la empresa encargada de crear los ratones con la mutación de Claudia, necesarios para realizar los experimentos preclínicos.\n\nY hoy queremos daros las GRACIAS. ❤️\n\nGracias a todas las personas que habéis confiado en Claudia, que habéis donado, compartido, organizado iniciativas y nos habéis ayudado a hacer crecer este reto.\n\nEl camino es largo y queda mucho por conseguir, pero hoy tenemos algo que hace unos meses parecía lejano: un proyecto que ya está en marcha y una esperanza cada vez más real. 🥹❤️\n\nTambién, hemos creado un nuevo apartado en nuestra web donde explicamos de forma sencilla en qué consiste la estrategia científica, cuáles son las fases del proyecto, quiénes participan y todo lo que necesitamos para poder llevarlo hasta Claudia.\n\n👉 Puedes verlo en elretodeclaudia.org/proyecto\n\nEl proyecto avanza, y para poder recorrer todo este camino necesitamos alcanzar los 3 millones de euros que harán posible llevarlo hasta el final.\n\n¿Nos ayudas?❤️\n\nComparte, dona o ayúdanos a llegar a personas y empresas que puedan sumarse al reto.\n\n#ElRetoDeClaudia #TerapiaGenica #Investigacion #EnfermedadesRaras #MasInvestigacionMasEsperanza',
+  },
+  {
+    id: 'corredor-espana-arabia-saudi',
+    type: 'instagram',
+    title: {
+      es: 'El Corredor España–Arabia Saudí por Claudia',
+      en: 'The Spain–Saudi Corridor for Claudia',
+    },
+    description: {
+      es: '@kiranegron comparte la historia de Claudia y quiere tender puentes entre España, Arabia Saudí y la comunidad internacional para impulsar su terapia génica.',
+      en: '@kiranegron shares Claudia\'s story and wants to build bridges between Spain, Saudi Arabia and the international community to move her gene therapy forward.',
+    },
+    date: { es: 'Agosto 2026', en: 'August 2026' },
+    duration: 'Reel',
+    permalink: 'https://www.instagram.com/reel/Db0UixNRVLB/',
+    caption: 'Today I want to share Claudia’s story. ❤️\n\nShe is only three years old, and behind this beautiful smile is an extraordinary fight against an ultra-rare genetic disease.\n\nA research project for Claudia’s gene therapy has now begun under the scientific direction and coordination of the research team at Universidad CEU San Pablo.\n\nNow we need to help this project move forward.\n\nThrough the Spain–Saudi Corridor, I want to use every connection we can build between Spain, Saudi Arabia and the international community to bring scientists, hospitals, biotechnology companies, foundations, investors and people who can help around the same table.\n\nBecause sometimes the impossible becomes possible when the right people decide to work together.\n\nClaudia deserves that possibility.\nAnd we will do everything we can to help open those doors.\n\nScience has no borders. Hope has no limits.\n\nOfficial campaign: https://elretodeclaudia.org/\n\n#ElRetoDeClaudia #SaudiSpain #GeneTherapy #RareDiseases #Biotechnology',
+  },
+  {
     id: 'urgente-claudia-merece-oportunidad',
     type: 'instagram',
     title: {
@@ -137,6 +345,166 @@ export const VIDEOS = [
     caption: 'Desde nuestro restaurante hoy @sergioviandas quiere que nos sumemos a @elretodeclaudia 💙\n\nClaudia padece deficiencia de la proteína D-bifuncional (DBP), una enfermedad neurodegenerativa rara. Hoy necesitamos algo muy sencillo: que su historia llegue a más personas para dar visibilidad a su lucha y apoyar la investigación.\n\nDale a "Me gusta", compártelo y ayúdanos a difundir este mensaje. Juntos podemos dar esperanza a Claudia.\n\n#ElRetoDeClaudia #SanLorenzodeElEscorial #Investigación #JuntosSumamos',
   },
   {
+    id: 'torneo-farolas-pinar-alcorcon',
+    type: 'instagram',
+    title: {
+      es: 'Un gesto del Torneo de Farolas 2026',
+      en: 'A gesture at the 2026 Farolas Tournament',
+    },
+    description: {
+      es: 'Agradecimiento al CD Pinar de Alcorcón, patrocinador del torneo, por un momento muy especial.',
+      en: 'Thanks to CD Pinar de Alcorcón, the tournament sponsor, for a very special moment.',
+    },
+    date: { es: 'Julio 2026', en: 'July 2026' },
+    duration: 'Reel',
+    permalink: 'https://www.instagram.com/reel/Dar3shBtFWN/',
+    caption: '❤️ HAY GESTOS QUE LO DICEN TODO.\nHemos vivido uno de los momentos más especiales del Torneo de Farolas 2026.\n\nQueremos expresar nuestro más sincero agradecimiento al CD Pinar de Alcorcón, patrocinador de nuestro torneo, por su enorme gesto de solidaridad al realizar una DONACIÓN DE 500 € AL RETO DE CLAUDIA.\n\nAcciones como esta demuestran que el deporte va mucho más allá de la competición: une personas, crea comunidad y ayuda a quienes más lo necesitan.\n\nGracias por vuestra implicación, vuestra generosidad y por formar parte de esta gran familia. 💙\n\n❤️ Cada euro suma. Cada gesto cuenta. Juntos seguimos apoyando al RETO DE CLAUDIA.\n\n#TorneoDeFarolas2026 #RetoDeClaudia #Solidaridad #CDPinarDeAlcorcón #ElEscorial DeporteConValores',
+  },
+  {
+    id: 'momentos-que-lo-cambian-todo',
+    type: 'instagram',
+    title: {
+      es: 'Hay momentos que lo cambian todo',
+      en: 'Some moments change everything',
+    },
+    description: {
+      es: 'Días difíciles que una sonrisa y un intento de decir «ma» convierten en esperanza.',
+      en: 'Hard days that a smile and an attempt to say "ma" turn into hope.',
+    },
+    date: { es: 'Julio 2026', en: 'July 2026' },
+    duration: 'Reel',
+    permalink: 'https://www.instagram.com/reel/Dak41V_hRaU/',
+    caption: 'Hay momentos que lo cambian todo.\n\nNo hacen desaparecer las dificultades, ni borran las noticias que tanto duelen. Pero, por un instante, consiguen que todo lo demás se detenga.\n\nEstos días no están siendo fáciles. Hay momentos de incertidumbre, de miedo y de mucho cansancio. Pero entonces llega Claudia, intenta decir “ma”, rompe a reír con esa risa tan contagiosa... y nos recuerda por qué seguimos luchando cada día.\n\nPorque su sonrisa tiene el poder de llenar de esperanza incluso los días más grises.\n\nSeguiremos haciendo todo lo que esté en nuestras manos. Por ella. Por su futuro. Y porque creemos, más que nunca, que la investigación es el camino.\n\nGracias por seguir caminando a nuestro lado. 🩷\n#ElRetoDeClaudia #MásInvestigaciónMásEsperanza #Esperanza #Investigación #NuncaDejaremosDeLuchar',
+  },
+  {
+    id: 'carta-a-claudia',
+    type: 'instagram',
+    title: {
+      es: 'Una carta para Claudia',
+      en: 'A letter to Claudia',
+    },
+    description: {
+      es: 'Un mensaje de @rezaporlosenfermos sobre querer a Claudia antes incluso de conocerla.',
+      en: 'A message from @rezaporlosenfermos about loving Claudia even before meeting her.',
+    },
+    date: { es: 'Julio 2026', en: 'July 2026' },
+    duration: 'Reel',
+    permalink: 'https://www.instagram.com/reel/DadMm44tksM/',
+    caption: 'Claudi…\n\nHay personas a las que uno empieza a querer antes incluso de haberlas conocido.\n\nTú eres una de ellas.\n\nYo no te conocí primero a ti.\n\nTe conocí a través del amor con el que tu mamá hablaba de ti.\n\nElla nunca intentó explicarme una enfermedad.\n\nSimplemente me estaba presentando a su hija.\n\nY, sin darme cuenta…\n\nyo también empecé a quererte.\n\n…\n\n«¿Cuánto quiere Claudi a mamá?»\n\nY tú levantas tus pequeñas manitas.\n\n«Mucho, mucho.»\n\nNunca imaginé que dos pequeñas manitas pudieran decir tanto.\n\n…\n\nDespués me contó otra escena.\n\n«¿Dónde está la niña más guapa del mundo?»\n\nY tú, convencida…\n\nte señalas.\n\nDespués te ríes.\n\nY no pude evitar sonreír contigo.\n\n…\n\nTambién me contó que intentas decir una palabra.\n\n«Mamá.»\n\nY pensé que hay palabras que tardan en llegar a los labios…\n\npero hace mucho tiempo que viven en el corazón.\n\n…\n\nMientras la escuchaba comprendí algo que no voy a olvidar.\n\nNunca volvía a la enfermedad.\n\nSiempre volvía a ti.\n\nA tus manitas.\n\nA tu sonrisa.\n\nA esa palabra que intenta abrirse camino.\n\nY entendí que el amor de una madre siempre encuentra primero a su hija.\n\nNunca a su diagnóstico.\n\n…\n\nSeñor Jesús…\n\nQuédate muy cerca de Claudi.\n\nY cuando el camino se haga demasiado difícil…\n\nhaz que su mamá y su papá nunca dejen de reconocer a la misma hija inmensamente amada.\n\nLa de las pequeñas manitas.\n\nLa que intenta decir «mamá».\n\nLa que sigue llenando de amor su hogar.\n\nPorque hay cosas que ninguna enfermedad podrá tocar jamás.\n\nY el amor es una de ellas.\n\nY a quienes hoy hemos tenido el regalo de conocer un poquito a Claudi…\n\nregálanos un corazón que no la olvide.\n\nHaz que el primer regalo que le hagamos sea una oración.❤️🙏🏻',
+  },
+  {
+    id: 'escuela-de-claudia-solidaria',
+    type: 'instagram',
+    title: {
+      es: 'La escuela de Claudia se llena de solidaridad',
+      en: 'Claudia\'s school fills with solidarity',
+    },
+    description: {
+      es: 'Un día solidario en la escuela de Claudia: gracias a todos los que apostaron por su reto.',
+      en: 'A charity day at Claudia\'s school: thanks to everyone who backed her challenge.',
+    },
+    date: { es: 'Julio 2026', en: 'July 2026' },
+    duration: 'Reel',
+    permalink: 'https://www.instagram.com/reel/DaYA-5rNXyp/',
+    caption: 'Ayer la Escuela de Claudia se llenó de gente solidaria apostando por su Reto, fue un ejemplo maravilloso de cómo cuando algo se quiere y se lucha por ello, es posible.\nMil gracias de corazón a todos los que vinisteis e hicisteis posible que esta tarde fuera posible, aportando cosas, donando, dándonos publicidad, vendiendo, comprando, compartiendo en las redes, cocinando, organizando, con la copistería, haciendo un divertido concierto, pintando, recogiendo… en si, estando.\nFue un orgullo verlo y vivirlo. Ya os contaremos cuánto hemos recaudado por esta bonita causa.\n¡Gracias!\n@elretodeclaudia',
+  },
+  {
+    id: 'rendirse-nunca-opcion',
+    type: 'instagram',
+    title: {
+      es: 'Rendirse nunca ha sido una opción',
+      en: 'Giving up has never been an option',
+    },
+    description: {
+      es: 'Claudia trabaja cada día y nos enseña a no rendirnos.',
+      en: 'Claudia works hard every day and teaches us never to give up.',
+    },
+    date: { es: 'Julio 2026', en: 'July 2026' },
+    duration: 'Reel',
+    permalink: 'https://www.instagram.com/reel/DaSU25jMw97/',
+    caption: 'Hay días que pesan más que otros. Días en los que el camino parece cuesta arriba y cada pequeño paso requiere un esfuerzo inmenso.\n\nPero si algo nos enseña Claudia es que rendirse nunca ha sido una opción. 🩷\n\nAquí la vemos trabajando en la piscina junto a su fisioterapeuta Lucía en @azaquafisio , sumando una sesión más, un esfuerzo más, una oportunidad más para seguir avanzando. Porque detrás de cada ejercicio hay horas de dedicación, cariño y una enorme voluntad de seguir luchando.\n\nSabemos que el camino no es fácil, pero también sabemos que no estamos solos. Gracias a todos los que nos acompañáis, nos apoyáis y creéis en la investigación. Cada gesto, cada mensaje y cada ayuda nos da fuerzas para seguir.\n\nSeguimos. Por Claudia. Por la investigación. Por la esperanza. 🩷\n\n#ElRetoDeClaudia #MásInvestigaciónMásEsperanza  #Fisioterapiainfantil #NuncaNosRendimos #Investigación',
+  },
+  {
+    id: 'reel-tino-parchis',
+    type: 'instagram',
+    title: {
+      es: 'Apoyo a Claudia desde las redes',
+      en: 'Support for Claudia on social media',
+    },
+    description: {
+      es: 'Un reel de @tino.parchis en apoyo a El Reto de Claudia.',
+      en: 'A reel by @tino.parchis supporting El Reto de Claudia.',
+    },
+    date: { es: 'Junio 2026', en: 'June 2026' },
+    duration: 'Reel',
+    permalink: 'https://www.instagram.com/reel/DaKS3IfNi-8/',
+    caption: 'Reel de @tino.parchis en apoyo a @elretodeclaudia',
+  },
+  {
+    id: 'no-dejeis-de-ser-valientes',
+    type: 'instagram',
+    title: {
+      es: '«No dejéis de ser valientes»',
+      en: '"Never stop being brave"',
+    },
+    description: {
+      es: 'Transformar el dolor en esperanza: el mensaje que resume el espíritu del día solidario.',
+      en: 'Turning pain into hope: the message that sums up the spirit of the charity day.',
+    },
+    date: { es: 'Junio 2026', en: 'June 2026' },
+    duration: 'Reel',
+    permalink: 'https://www.instagram.com/reel/DaJDPkZs1mj/',
+    caption: 'Hay personas que, incluso en los momentos más difíciles, son capaces de transformar el dolor en esperanza.\n\nHoy nos quedamos con este mensaje, que resume el verdadero espíritu de este día solidario:\n\n”No dejéis de ser valientes, y ayudad a quienes lo estén pasando peor.”\n\nGracias a todas las personas que habéis estado, colaborado y demostrado que la solidaridad puede cambiar vidas. Sigamos construyendo un mundo donde nadie tenga que luchar solo. ❤️',
+  },
+  {
+    id: 'yo-corro-por-claudia',
+    type: 'instagram',
+    title: {
+      es: 'Marcha solidaria «Yo Corro por Claudia»',
+      en: '"Yo Corro por Claudia" charity walk',
+    },
+    description: {
+      es: 'Un día muy especial: gracias a todos los que hicieron posible la marcha solidaria.',
+      en: 'A very special day: thanks to everyone who made the charity walk possible.',
+    },
+    date: { es: 'Junio 2026', en: 'June 2026' },
+    duration: 'Reel',
+    permalink: 'https://www.instagram.com/reel/DaF7b6XMoY_/',
+    caption: 'Hoy ha sido un día muy especial para nosotros. De verdad, no tenemos palabras para describir todo lo que hemos vivido en la marcha solidaria ”Yo Corro por Claudia” 💚\n\nVeros a cada uno de vosotros mostrándonos vuestra solidaridad, vuestra energía y, sobre todo, vuestro cariño y vuestro amor, nos hace sentir unos auténticos privilegiados. Hoy nos vamos con el corazón lleno y con un chute de energía para seguir luchando, día a día, junto a Claudia.\n\nDesde aquí queremos dar las gracias a cada una de las personas que habéis hecho posible este día.\n\n💚 Gracias a @aaconcepcionitasescorial por organizar esta carrera tan especial.\n\n💚 Gracias a todos los patrocinadores que habéis colaborado y aportado vuestro granito de arena.\n\n💚 Gracias a todos los voluntarios, siempre al pie del cañón, haciendo que todo saliera perfecto.\n\n💚 Y gracias a cada uno de los participantes. Más de 1.000 personas os habéis unido para correr, caminar y apoyar esta causa. Ver esa marea de solidaridad es algo que jamás olvidaremos.\n\nGracias por acompañarnos, por estar a nuestro lado y por demostrar que, juntos, somos mucho más fuertes. 💚',
+  },
+  {
+    id: 'remando-por-claudia',
+    type: 'instagram',
+    title: {
+      es: 'Remando juntos por Claudia',
+      en: 'Rowing together for Claudia',
+    },
+    description: {
+      es: '@el.encantador.de.padres rema por una buena causa y pide ayuda para Claudia.',
+      en: '@el.encantador.de.padres rows for a good cause and asks for help for Claudia.',
+    },
+    date: { es: 'Junio 2026', en: 'June 2026' },
+    duration: 'Reel',
+    permalink: 'https://www.instagram.com/reel/DaBNODls77m/',
+    caption: 'Hoy vamos a remar juntos por una buena causa.\n\nElla es Claudia, y necesita nuestra ayuda para curarse de su enfermedad. Solo hay que entrar en @elretodeclaudia y desde ahí se puede donar y ayudar en lo que se pueda, sin compromiso, sin obligación, solo lo que te salga del 💜💛',
+  },
+  {
+    id: 'necesitamos-tu-ayuda-leal',
+    type: 'instagram',
+    title: {
+      es: 'Necesitamos tu ayuda',
+      en: 'We need your help',
+    },
+    description: {
+      es: '@lealpromanagement pide ayuda para El Reto de Claudia, sin compromiso y en lo que se pueda.',
+      en: '@lealpromanagement asks for help for El Reto de Claudia, no strings attached, however you can.',
+    },
+    date: { es: 'Junio 2026', en: 'June 2026' },
+    duration: 'Reel',
+    permalink: 'https://www.instagram.com/reel/DZ97RAwtjiv/',
+    caption: 'NECESITAMOS TU AYUDA PARA @elretodeclaudia\n\nNO HAY MUCHO QUE EXPLICAR SOLO HAY QUE AYUDAR SIN COMPROMISO EN LO QUE SE PUEDA\n\nGRACIAS DE ANTEMANO EN NOMBRE DE CLAUDIA Y SU FAMILIA\n\n#ayuda #solidaridad #salud #fuerza',
+  },
+  {
     id: 'barcelona-reto-claudia',
     type: 'instagram',
     title: {
@@ -151,6 +519,38 @@ export const VIDEOS = [
     duration: 'Reel',
     permalink: 'https://www.instagram.com/reel/DZ7Hf6aME5F/',
     caption: '💜 Barcelona ha sido una de esas paradas que te dejan el corazón encogido.\n\nLa semada pasada estuvimos en el Hospital Sant Joan de Déu para realizar nuevas pruebas y reunirnos con el equipo que sigue acompañando a Claudia en este camino.\n\nOjalá pudiéramos compartir mejores noticias.\n\nLa resonancia no ha mostrado los resultados que esperabamos.\n\nAdemás, hemos recibido los primeros resultados de las pruebas que se están realizando con un tratamiento experimental en las células de Claudia. De momento, no está dando su fruto.\n\nEsto no significa que se descarte por completo, pero sí que todavía quedan muchas preguntas por responder y más pruebas por realizar antes de saber si realmente podría ayudarla.\n\nEs duro escribir estas palabras.\n\nSin embargo, mientras nosotros intentamos procesar noticias difíciles, Claudia sigue enseñándonos cada día lo que significa luchar.\n\nSigue sonriendo.\nSigue esforzándose.\nSigue trabajando.\nSigue enfrentándose a desafíos que la mayoría ni siquiera imaginamos.\nSigue levantándose una y otra vez.\n\nAdemás, por otro lado, la terapia génica sigue avanzando y eso tambien nos da fuerzas, porque mientras haya una mínima esperanza para Claudia seguiremos luchando.\n\nGracias por seguir caminando a nuestro lado. 💜\n\n#ElRetoDeClaudia #Investigación #TerapiaGénica #EnfermedadesRaras #DBDP',
+  },
+  {
+    id: 'ayuda-a-claudia-bunker',
+    type: 'instagram',
+    title: {
+      es: 'Ayuda a Claudia',
+      en: 'Help Claudia',
+    },
+    description: {
+      es: 'Un reel de @elbunker_jdp para dar visibilidad a El Reto de Claudia.',
+      en: 'A reel by @elbunker_jdp to raise visibility for El Reto de Claudia.',
+    },
+    date: { es: 'Junio 2026', en: 'June 2026' },
+    duration: 'Reel',
+    permalink: 'https://www.instagram.com/reel/DZ5eX2pjBAC/',
+    caption: 'AYUDA A CLAUDIA\n@elretodeclaudia',
+  },
+  {
+    id: 'dale-a-seguir',
+    type: 'instagram',
+    title: {
+      es: 'Dale a seguir a El Reto de Claudia',
+      en: 'Follow El Reto de Claudia',
+    },
+    description: {
+      es: 'Un reel de @elbunker_jdp que invita a seguir el perfil de El Reto de Claudia.',
+      en: 'A reel by @elbunker_jdp inviting people to follow El Reto de Claudia.',
+    },
+    date: { es: 'Junio 2026', en: 'June 2026' },
+    duration: 'Reel',
+    permalink: 'https://www.instagram.com/reel/DZ45hk6M2Cb/',
+    caption: '@elretodeclaudia\nDALE A SEGUIR 🙏🏼',
   },
   {
     id: 'diagnostico-claudia',
@@ -185,6 +585,38 @@ export const VIDEOS = [
     caption: 'La risa de Claudia tiene ese poder mágico de contagiar felicidad. ✨ Los niños no pueden evitar sonreír cuando están con ella, y la verdad es que los mayores tampoco. Gracias por transmitir tanta alegría, ternura y luz en cada momento compartido.',
   },
   {
+    id: 'tratamiento-12-de-octubre',
+    type: 'instagram',
+    title: {
+      es: 'Tratamiento experimental en el 12 de Octubre',
+      en: 'Experimental treatment at 12 de Octubre hospital',
+    },
+    description: {
+      es: 'Claudia ingresa en el Hospital 12 de Octubre para un tratamiento que podría frenar un poco la enfermedad mientras avanza la investigación.',
+      en: 'Claudia is admitted to Hospital 12 de Octubre for a treatment that could slow the disease while research moves forward.',
+    },
+    date: { es: 'Junio 2026', en: 'June 2026' },
+    duration: 'Reel',
+    permalink: 'https://www.instagram.com/reel/DZShEEBsTQX/',
+    caption: 'Mientras avanzamos con la investigación de su cura, desde hace unos días ingresamos en el Hospital 12 de Octubre para recibir un tratamiento experimental que podría contribuir a frenar un poco el avance de la enfermedad y ganar el tiempo que necesitamos para llegar.\n\nSeguimos adelante, con fuerza, esperanza y todo el cariño de quienes la acompañan. 💜\n\n#Elretodeclaudia #dbpdeficiency #geneticdesease',
+  },
+  {
+    id: 'feliz-cumple-mama',
+    type: 'instagram',
+    title: {
+      es: '¡Feliz cumpleaños, mamá!',
+      en: 'Happy birthday, Mum!',
+    },
+    description: {
+      es: 'Claudia felicita a su mamá en su cumpleaños.',
+      en: 'Claudia wishes her mum a happy birthday.',
+    },
+    date: { es: 'Junio 2026', en: 'June 2026' },
+    duration: 'Reel',
+    permalink: 'https://www.instagram.com/reel/DZNQ00VMlRe/',
+    caption: 'Feliz cumpleaños mamá! ❤️\n\nTe queremos mucho mucho mucho 🤌🤌🤌',
+  },
+  {
     id: 'cada-dia-es-un-reto',
     type: 'instagram',
     title: {
@@ -199,6 +631,198 @@ export const VIDEOS = [
     duration: 'Reel',
     permalink: 'https://www.instagram.com/reel/DZM33VaNW45/',
     caption: 'Claudia tiene 2 años y medio y convive con una enfermedad ultrarrara: deficiencia de enzima bifuncional.\n\nCada día es un reto que afronta con valentía, siempre acompañada por sus padres, que luchan a su lado sin soltarle la mano.\n\nSu sonrisa inspira y su lucha nos une ✨\n\n#LaTardeTM',
+  },
+  {
+    id: 'ruido-mental-risa',
+    type: 'instagram',
+    title: {
+      es: 'Su risa, nuestra paz',
+      en: 'Her laughter, our peace',
+    },
+    description: {
+      es: 'En los días que pesan, mirarla a los ojos y escuchar su risa lo cambia todo.',
+      en: 'On the heavy days, looking into her eyes and hearing her laugh changes everything.',
+    },
+    date: { es: 'Junio 2026', en: 'June 2026' },
+    duration: 'Reel',
+    permalink: 'https://www.instagram.com/reel/DZCXKq1ModQ/',
+    caption: 'Hay días que pesan más que otros, días en los que el ruido mental del “qué pasará mañana” intenta ganarle a la paz. En esos momentos, volver a mirarla a los ojos y escuchar su risa es todo lo que necesitamos para recordar qué es lo que de verdad importa.\n\nSu inocencia nos rescata de las preocupaciones de los adultos. Estamos aprendiendo sobre la marcha, cayéndonos y levantándonos, pero siempre juntos y con el norte bien claro: verla crecer feliz. #elretodeclaudia\n\nGracias por estas fotografías @sergiodelcampofotografo',
+  },
+  {
+    id: 'abuelo-juan-cumple',
+    type: 'instagram',
+    title: {
+      es: 'Felicitamos al abuelo Juan',
+      en: 'Happy birthday to Grandpa Juan',
+    },
+    description: {
+      es: 'Una felicitación a dos personas muy importantes, empezando por el abuelo Juan.',
+      en: 'Birthday wishes to two very important people, starting with Grandpa Juan.',
+    },
+    date: { es: 'Mayo 2026', en: 'May 2026' },
+    duration: 'Reel',
+    permalink: 'https://www.instagram.com/reel/DZAAeKzs3-Z/',
+    caption: 'Hoy quermos felicitar a dos personas muy importantes. ❤️\n\nPrimero al abuelo Juan\n\nEl hombre que todo lo arregla.\n\nEl que empezó a contar los días que faltaban para conocer a su primera nieta.\n\nEl que soñaba con construirle una casa en el árbol.\n\nEl que siempre encuentra la manera.\n\nPorque si algo se rompe, lo arregla.\nSi algo falla, lo soluciona.\nSi hay un problema, se pone manos a la obra.\n\nY quizá por eso duele tanto esto.\n\nPorque todos los que le conocemos sabemos una cosa:\n\nSi esta enfermedad pudiera arreglarse, él ya lo habría hecho.\n\nHabría movido cielo y tierra.\nHabría encontrado la forma.\nHabría dedicado cada minuto necesario.\n\nPero hay cosas que ni siquiera él puede arreglar.\n\nY aun así, nunca se ha rendido.\n\nPorque cuando no puede solucionar el problema, hace lo siguiente mejor:\n\nEstar.\n\nEstar para Claudia.\nEstar para su hija.\nEstar para toda la familia.\n\nY hoy también queremos acordarnos del abuelo Fer, porque además de ser su abuelo, es su padrino. ❤️\n\nEs de esas personas que siempre están cuando hace falta. Ayudándonos a empujar la asociación, acompañándonos en reuniones, trámites, papeleos y en todo ese trabajo invisible que hay detrás de la búsqueda de una oportunidad para Claudia.\n\nHoy celebramos un cumpleaños y un santo.\n\nPero sobre todo celebramos la suerte que tiene Claudia de teneros a los dos.\n\nOs queremos mucho. Felicidades abuelos!! ❤️❤️',
+  },
+  {
+    id: 'onda-cero-testimonio',
+    type: 'instagram',
+    title: {
+      es: 'Testimonio en Onda Cero',
+      en: 'Testimony on Onda Cero',
+    },
+    description: {
+      es: 'Un testimonio sobre la deficiencia de enzima D-bifuncional, una enfermedad ultrarrara que necesita ciencia y visibilidad.',
+      en: 'A testimony about D-bifunctional protein deficiency, an ultra-rare disease that needs science and visibility.',
+    },
+    date: { es: 'Mayo 2026', en: 'May 2026' },
+    duration: 'Reel',
+    permalink: 'https://www.instagram.com/reel/DY1UiiBMmoS/',
+    caption: 'Escucha el desgarrador y a la vez inspirador testimonio en Onda Cero sobre la deficiencia de enzima D-bifuncional. Una enfermedad ultrarrara que necesita ciencia, apoyo y, sobre todo, que dejes de ser invisible. 🎗️',
+  },
+  {
+    id: 'sesion-de-fisio',
+    type: 'instagram',
+    title: {
+      es: 'Cada sesión de fisio es esperanza',
+      en: 'Every physio session is hope',
+    },
+    description: {
+      es: 'Esfuerzo, constancia y esperanza detrás de cada pequeño avance de Claudia.',
+      en: 'Effort, perseverance and hope behind each small step forward for Claudia.',
+    },
+    date: { es: 'Mayo 2026', en: 'May 2026' },
+    duration: 'Reel',
+    permalink: 'https://www.instagram.com/reel/DYwn9s2MKN_/',
+    caption: 'Claudia, pequeña, valiente y siempre luchando 💜\nCada sesión de fisio es mucho más que un ejercicio: es esfuerzo, constancia y esperanza.\nDetrás de cada pequeño avance de Claudia hay una enfermedad ultrarrara que necesita investigación, apoyo y visibilidad.\nHoy compartimos este momento para recordar que ninguna familia debería recorrer este camino sola. ✨\n#EnfermedadUltrarrara #FisioterapiaPediátrica #Visibilidad #Investigación #elretodeclaudia',
+  },
+  {
+    id: 'haremos-mucho-ruido',
+    type: 'instagram',
+    title: {
+      es: 'Vamos a seguir haciendo mucho ruido',
+      en: 'We will keep making noise',
+    },
+    description: {
+      es: 'Durante mucho tiempo casi nadie conocía esta enfermedad. Eso va a cambiar.',
+      en: 'For a long time almost nobody had heard of this disease. That is going to change.',
+    },
+    date: { es: 'Mayo 2026', en: 'May 2026' },
+    duration: 'Reel',
+    permalink: 'https://www.instagram.com/reel/DYo1lE2MpkB/',
+    caption: 'Durante mucho tiempo, casi nadie escuchó hablar de esta enfermedad: Deficiencia de enzima D-bifuncional.\n\nY esto va a cambiar.\n\nPorque vamos a seguir haciendo mucho ruido.\n\nDando visibilidad. Impulsando la investigación. Moviéndonos para que Claudia y otros niños tengan más oportunidades.\n\nPorque cada persona que comparte, habla o apoya, ayuda a que esta enfermedad deje de ser invisible 🤍. #elretodeclaudia #familia #enfermedadesraras',
+  },
+  {
+    id: 'sesion-de-fotos',
+    type: 'instagram',
+    title: {
+      es: 'Una sesión de fotos muy especial',
+      en: 'A very special photo shoot',
+    },
+    description: {
+      es: 'Un día mágico y lleno de emociones para Claudia y su familia.',
+      en: 'A magical day full of emotions for Claudia and her family.',
+    },
+    date: { es: 'Mayo 2026', en: 'May 2026' },
+    duration: 'Reel',
+    permalink: 'https://www.instagram.com/reel/DYmUxHAsDZB/',
+    caption: 'Ayer vivimos un día mágico, de esos que se quedan grabados en el corazón para siempre ❤️✨. Fuimos a hacer una sesión de fotos muy especial para nuestra pequeña Claudia y terminó siendo un torbellino de emociones y sensaciones inolvidables.\nQueremos dar las gracias de todo corazón a @sergiodelcampofotografo Desde el primer minuto nos hizo sentir increíblemente cómodos, arropados y en confianza. Fue un proceso tan real y humano que, en un momento de la sesión, la emoción nos superó... y lo más bonito fue ver cómo Sergio también se emocionaba con nosotros. 🥹😭\nLloramos, reímos, revolvimos sentimientos profundos y el resultado unas fotos preciosas que guardaremos como un tesoro eterno.\n\nGracias, Sergio, por este regalo maravilloso. Eres un artista con una sensibilidad única. 📸✨\n¿Os pasa también que una mirada o un momento con vuestros hijos os hace desbordar de emoción? Os leo en comentarios 👇👇\n\n#SesionDeFotos Familiar #FotografiaDeFamilia #MomentosMagico #elretodeclaudia',
+  },
+  {
+    id: 'no-existen-logros-pequenos',
+    type: 'instagram',
+    title: {
+      es: 'En nuestra familia no existen los logros pequeños',
+      en: 'In our family there are no small achievements',
+    },
+    description: {
+      es: 'Cada avance de Claudia es un recordatorio de por qué luchamos por la investigación.',
+      en: 'Every step forward for Claudia is a reminder of why we fight for research.',
+    },
+    date: { es: 'Mayo 2026', en: 'May 2026' },
+    duration: 'Reel',
+    permalink: 'https://www.instagram.com/reel/DYjqUYrsPO9/',
+    caption: 'En nuestra familia no existen los logros pequeños. Cada avance de Claudia es un recordatorio de por qué luchamos cada día por la investigación de enfermedades ultrarraras.\n\nVer su evolución rodeada de tanto amor es nuestro mayor regalo. ¡Gracias por estar ahí y apoyarnos en cada paso de este viaje! 🫂🙌\n\nSi quieres saber más sobre nuestra historia, tienes el link en la bio. 🔗\n\n#InvestigaciónEnfermedadesRaras #SaludInfantil #Solidaridad #elretodeclaudia',
+  },
+  {
+    id: 'cadena-ser-madrid-sierra',
+    type: 'instagram',
+    title: {
+      es: 'Claudia en la SER Madrid Sierra',
+      en: 'Claudia on SER Madrid Sierra',
+    },
+    description: {
+      es: 'La historia de Claudia, de San Lorenzo de El Escorial, en la radio.',
+      en: 'Claudia\'s story, from San Lorenzo de El Escorial, on the radio.',
+    },
+    date: { es: 'Mayo 2026', en: 'May 2026' },
+    duration: 'Reel',
+    permalink: 'https://www.instagram.com/reel/DYhMfghsxW5/',
+    caption: '📻 Claudia, una niña de San Lorenzo de El Escorial, lucha contra una enfermedad ultrarrara mientras su familia impulsa “El Reto de Claudia” para apoyar la investigación.',
+  },
+  {
+    id: 'viaje-a-barcelona-biopsia',
+    type: 'instagram',
+    title: {
+      es: 'El viaje a Barcelona y la primera biopsia',
+      en: 'The trip to Barcelona and the first biopsy',
+    },
+    description: {
+      es: 'En enero viajaron a Sant Joan de Déu, donde se hizo la primera biopsia para probar fármacos experimentales.',
+      en: 'In January they travelled to Sant Joan de Déu, where the first biopsy was taken to test experimental drugs.',
+    },
+    date: { es: 'Mayo 2026', en: 'May 2026' },
+    duration: 'Reel',
+    permalink: 'https://www.instagram.com/reel/DYZGCjKMPxz/',
+    caption: 'Esta foto es un recuerdo de un viaje lleno de esperanza... y un recordatorio de por qué luchamos cada día. ❤️\n\nEn enero’26, nos embarcamos en un viaje muy importante. Por primera vez, viajamos a Barcelona, directos al Hospital Sant Joan de Déu. Parece que ha pasado una eternidad con todo lo que han pasado durante estos 4 meses.\n\nAllí le hicieron la primera biopsia a Claudia. No para curar, pero sí para algo igual de crucial: frenar el avance de su enfermedad. El objetivo es probar fármacos experimentales en sus células y analizar si hay algo que pudiera funcionar en ella para frenar su degeneracion y ganar tiempo para encontrar una cura. Aun estamos esperando resultados.\n\nEsta biopsia es un paso mas y una oportunidad para poder conseguir un futuro.\n\nHoy compartimos este recuerdo para mostrar la fuerza de Claudia y seguir dando visibilidad a su lucha. Cada paso cuenta, cada viaje es una esperanza. 💪\n\n¡Vamos, Claudia! Tu sonrisa es nuestro motor.\n\n#elretodeclaudia #EnfermedadesRaras #Investigación  #SantJoanDeDéu #Barcelona',
+  },
+  {
+    id: 'fisio-domingos',
+    type: 'instagram',
+    title: {
+      es: 'Ni los domingos descansamos',
+      en: 'Not even Sundays off',
+    },
+    description: {
+      es: 'Fisio a las 10:30 para ejercitar las piernas y empezar otra semana de trabajo.',
+      en: 'Physio at 10:30 am to work those legs and start another week of work.',
+    },
+    date: { es: 'Mayo 2026', en: 'May 2026' },
+    duration: 'Reel',
+    permalink: 'https://www.instagram.com/reel/DYKzDYxMuSV/',
+    caption: 'Hoy, como cada día, trabajando duro para ejercitar esas piernas. Empezando el día con la fisio a las 10.30 am, ni los domingos descansamos!\n\nVamos a por otra semana de trabajo!\n\n#dbpdeficiency #enfermedadesraras #investigación #genetictherapy',
+  },
+  {
+    id: 'mi-sobri-y-su-sonrisa',
+    type: 'instagram',
+    title: {
+      es: 'Mi sobri y su sonrisa',
+      en: 'My niece and her smile',
+    },
+    description: {
+      es: 'Sara cuenta el esfuerzo diario de Claudia y su sonrisa contagiosa.',
+      en: 'Sara shares Claudia\'s daily effort and her contagious smile.',
+    },
+    date: { es: 'Mayo 2026', en: 'May 2026' },
+    duration: 'Reel',
+    permalink: 'https://www.instagram.com/reel/DX96Qk6sMNT/',
+    caption: 'Mi sobri y su sonrisa ✨\n\nTodos los días, Claudia trabaja de forma incansable. Hace ejercicios a diario con mucho esfuerzo y constancia.\n\nPese a ello, Claudia sonríe a diario y nos hace reír a los demás. Su sonrisa es contagiosa y siempre está presente 😄\n\nElla no puede andar, pero nosotros seremos su cuerpo hasta que lo consiga💪🏼⚡\n\nClaudia es un ejemplo para todos y nos enseña a afrontar las dificultades de la mejor manera♥️\n\nHagamos que el reto de Claudia alcance su objetivo 📢\n\nPor mi sobri, por Claudia 💕✨\n@elretodeclaudia\n\nhttps://elretodeclaudia.org/\n\n#buscandocuraparaclaudia #bpddeficiency #investigación #perixomaldisorder',
+  },
+  {
+    id: 'mejor-regalo-ganas-de-decir-mama',
+    type: 'instagram',
+    title: {
+      es: 'El mejor regalo que podía recibir',
+      en: 'The best gift she could receive',
+    },
+    description: {
+      es: 'Claudia no habla todavía, pero sus ganas de intentar decir «mamá» llenan más que cualquier regalo.',
+      en: 'Claudia can\'t speak yet, but her effort to try to say "mum" means more than any gift.',
+    },
+    date: { es: 'Mayo 2026', en: 'May 2026' },
+    duration: 'Reel',
+    permalink: 'https://www.instagram.com/reel/DX44Gfas2B2/',
+    caption: 'El mejor regalo que podía recibir hoy. Claudia no sabe hablar ni decir mamá, pero solo sus ganas y esfuerzo por intentarlo llenan mas que cualquier regalo.\n\nLo conseguirás. Te queremos\n\nhttps://elretodeclaudia.org/\n\n#buscandocuraparaClaudia #bpddeficiency #inverigacion #perixomaldisorder',
   },
   {
     id: 'gracias-carino-ayuda',
@@ -216,5 +840,4 @@ export const VIDEOS = [
     permalink: 'https://www.instagram.com/reel/DX2XqwEMPvD/',
     caption: 'Gracias a todos por vuestro cariño y vuestra ayuda! ❤️\nSeguro que con toda vuestra ayuda, encontraremos cura para Claudia\n\nhttps:\/\/elretodeclaudia.org\/',
   },
-
 ]

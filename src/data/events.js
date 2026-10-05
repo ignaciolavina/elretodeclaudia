@@ -1,4 +1,23 @@
 export const EVENTS = [
+  {
+    slug: 'concierto-parroquia-santa-barbara-2026',
+    title: {
+      es: 'Concierto solidario — Parroquia de Santa Bárbara',
+      en: 'Charity Concert — Santa Bárbara Parish',
+    },
+    date: '2026-10-04',
+    location: 'Parroquia de Santa Bárbara, Madrid',
+    description: {
+      es: 'Concierto solidario con música de Telemann, Bach o Haendel, entre otros clásicos, interpretada por grandes músicos a beneficio de El Reto de Claudia.',
+      en: 'Charity concert with music by Telemann, Bach and Handel, among other classics, performed by great musicians in support of El Reto de Claudia.',
+    },
+    image: '/images/events/concierto-parroquia-santa-barbara-2026.webp',
+    status: 'past',
+    category: 'solidarity',
+    registerHref: null,
+    infoHref: 'https://www.instagram.com/p/Dd3gxCeAwuZ/',
+    organizers: [],
+  },
   // ── Upcoming: solidarity events ─────────────────────────────────────────────
   {
     slug: 'concierto-solidario-comillas-2026',
