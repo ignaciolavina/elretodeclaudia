@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { useScrollAnimation } from '../hooks/useScrollAnimation'
 import { useLanguage } from '../context/LanguageContext'
 import { EVENTS } from '../data/events'
+import EventImage from './EventImage'
 
 const CalendarIcon = () => (
   <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -63,9 +64,9 @@ export default function ProximosEventos() {
           <div className="flex flex-col lg:flex-row">
 
             {/* Image */}
-            <div className="lg:w-2/5 flex-shrink-0 overflow-hidden">
+            <div className="lg:w-2/5 flex-shrink-0 overflow-hidden aspect-square lg:aspect-auto lg:min-h-[320px]">
               {next.image
-                ? <img src={next.image} alt={next.title[lang]} loading="lazy" decoding="async" className="w-full h-full object-cover" />
+                ? <EventImage src={next.image} alt={next.title[lang]} />
                 : (
                   <div className="w-full h-full bg-brand-100 flex items-center justify-center min-h-[240px]">
                     <svg className="w-16 h-16 text-brand-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
