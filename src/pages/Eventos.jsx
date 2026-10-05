@@ -73,9 +73,9 @@ function UpcomingCard({ event, badgeLabel, badgeStyle = 'solidarity' }) {
       className={`block bg-white rounded-3xl shadow-sm border border-brand-100 overflow-hidden transition-all duration-700 ${event.pageHref ? 'hover:shadow-md cursor-pointer' : ''} ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
     >
       <div className="flex flex-col lg:flex-row">
-        <div className="lg:w-2/5 flex-shrink-0 overflow-hidden">
+        <div className={`lg:w-2/5 flex-shrink-0 overflow-hidden ${event.imageFit === 'contain' ? 'bg-brand-50' : ''}`}>
           {event.image
-            ? <img src={event.image} alt={event.title[lang]} loading="lazy" decoding="async" className="w-full h-full object-cover" />
+            ? <img src={event.image} alt={event.title[lang]} loading="lazy" decoding="async" className={`w-full h-full ${event.imageFit === 'contain' ? 'object-contain' : 'object-cover'}`} />
             : <ImagePlaceholder />
           }
         </div>
@@ -161,9 +161,9 @@ function PastCard({ event, index }) {
       style={{ transitionDelay: isVisible ? `${index * 100}ms` : '0ms' }}
       className={`block bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden transition-all duration-700 ${event.pageHref ? 'hover:shadow-md hover:-translate-y-1 cursor-pointer' : ''} ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
     >
-      <div className="h-64 overflow-hidden">
+      <div className={`h-64 overflow-hidden ${event.imageFit === 'contain' ? 'bg-brand-50' : ''}`}>
         {event.image
-          ? <img src={event.image} alt={event.title[lang]} loading="lazy" decoding="async" className="w-full h-full object-cover" />
+          ? <img src={event.image} alt={event.title[lang]} loading="lazy" decoding="async" className={`w-full h-full ${event.imageFit === 'contain' ? 'object-contain' : 'object-cover'}`} />
           : <ImagePlaceholder size="sm" />
         }
       </div>
