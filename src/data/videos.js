@@ -9,22 +9,6 @@ export const INSTAGRAM_PROFILE_URL = 'https://www.instagram.com/elretodeclaudia'
 // y deben ir siempre primero, en ese orden, aunque no sean los más recientes.
 export const VIDEOS = [
   {
-    id: 'esta-es-claudia',
-    type: 'instagram',
-    title: {
-      es: 'Esta es Claudia, y este es su reto',
-      en: 'This is Claudia, and this is her challenge',
-    },
-    description: {
-      es: 'Una niña de dos años y medio, una enfermedad ultrarrara y una familia buscando investigación donde hoy casi no la hay.',
-      en: 'A two-and-a-half-year-old girl, an ultra-rare disease and a family searching for research where almost none exists today.',
-    },
-    date: { es: 'Junio 2026', en: 'June 2026' },
-    duration: 'Reel',
-    permalink: 'https://www.instagram.com/reel/DZF5312MKw9/',
-    caption: '❤️ Esta es Claudia.\n\nTiene 2 años y medio y padece una enfermedad genética neurodegenerativa para la que, a día de hoy, no existe una cura conocida.\n\nLa única esperanza real para Claudia es desarrollar una terapia génica: una investigación muy compleja que busca corregir el fallo genético que provoca su enfermedad. Hace poco se ha aprobado una línea de investigación para Claudia, pero para hacerla realidad hace falta un equipo científico especializado... y mucha financiación privada.\n\nPor eso necesitamos tu ayuda de 3 maneras:\n\n1️⃣ Síguenos en redes: @elretodeclaudia\n\nComparte nuestras publicaciones por WhatsApp y otros canales, comenta e interactúa. Cuanta más gente conozca el caso de Claudia, más posibilidades tendremos de encontrar apoyo, colaboradores y financiación.\n\n2️⃣ Dona 💛\n\nAunque sea el equivalente a un café. De verdad. Cada pequeña aportación suma y nos acerca un paso más a la investigación.\n\n🌐 elretodeclaudia.org\/dona\n\n3️⃣ Si eres una empresa, colegio, asociación u organización y quieres ayudar, escríbenos.\n\nToda colaboración cuenta y puede marcar una diferencia real en el futuro de Claudia.\n\nGracias de corazón ❤️ por ayudarnos a darle una oportunidad.\n\nPorque Claudia merece una oportunidad. Y juntos podemos dársela.\n\n#elretodeclaudia #dbpdeficiency #raredesease #dona #investigación',
-  },
-  {
     id: 'pruebas-imposibles',
     type: 'instagram',
     title: {
@@ -55,6 +39,38 @@ export const VIDEOS = [
     duration: 'Reel',
     permalink: 'https://www.instagram.com/reel/DX1Xt74sluB/',
     caption: '20 de febrero de 2025. El día que todo cambió\n\nSi conocieras a Claudia, lo primero que te robaría sería la risa. Esa risa que contagia y que te obliga a sonreír al verla disfrutar.\n\nTiene 2 años y 7 meses, está rodeada de gente que la quiere con locura, y cuando tiene que esforzarse apenas se queja. Como si supiera, a su manera, que hay que seguir adelante.\n\nEn febrero de 2025 recibimos la noticia que ningún padre debería recibir jamás: Claudia tiene Deficiencia de enzima D-Bifuncional. Una enfermedad degenerativa, progresiva y, a día de hoy, sin cura.\n\nEse día el mundo se paró, pero Claudia no. Y nosotros tampoco.\n\nSomos su familia y hemos decidido luchar con todo lo que tenemos. Hemos contactado con investigadores de todo el mundo, estudiado cada línea terapéutica y llamado a cada puerta.\n\nLa única posibilidad real para Claudia es la terapia génica.\n\nNecesitamos encontrar a quien pueda desarrollarla, a alguien que quiera investigar y darnos la esperanza de frenar este avance.\n\nPor eso necesitamos tu acción hoy: ayúdanos a dar visibilidad a esta enfermedad.\n\nLa persona que puede cambiarle la vida a Claudia quizás está al otro lado de la pantalla. Ayúdanos a llegar a ella.\n\n#enfermedadesperoxisomales #enfermedadrara #terapiagenica #investigacion #deficienciadeenzimabifuncional',
+  },
+  {
+    id: 'viaje-a-barcelona-biopsia',
+    type: 'instagram',
+    title: {
+      es: 'El viaje a Barcelona y la primera biopsia',
+      en: 'The trip to Barcelona and the first biopsy',
+    },
+    description: {
+      es: 'En enero viajaron a Sant Joan de Déu, donde se hizo la primera biopsia para probar fármacos experimentales.',
+      en: 'In January they travelled to Sant Joan de Déu, where the first biopsy was taken to test experimental drugs.',
+    },
+    date: { es: 'Mayo 2026', en: 'May 2026' },
+    duration: 'Reel',
+    permalink: 'https://www.instagram.com/reel/DYZGCjKMPxz/',
+    caption: 'Esta foto es un recuerdo de un viaje lleno de esperanza... y un recordatorio de por qué luchamos cada día. ❤️\n\nEn enero’26, nos embarcamos en un viaje muy importante. Por primera vez, viajamos a Barcelona, directos al Hospital Sant Joan de Déu. Parece que ha pasado una eternidad con todo lo que han pasado durante estos 4 meses.\n\nAllí le hicieron la primera biopsia a Claudia. No para curar, pero sí para algo igual de crucial: frenar el avance de su enfermedad. El objetivo es probar fármacos experimentales en sus células y analizar si hay algo que pudiera funcionar en ella para frenar su degeneracion y ganar tiempo para encontrar una cura. Aun estamos esperando resultados.\n\nEsta biopsia es un paso mas y una oportunidad para poder conseguir un futuro.\n\nHoy compartimos este recuerdo para mostrar la fuerza de Claudia y seguir dando visibilidad a su lucha. Cada paso cuenta, cada viaje es una esperanza. 💪\n\n¡Vamos, Claudia! Tu sonrisa es nuestro motor.\n\n#elretodeclaudia #EnfermedadesRaras #Investigación  #SantJoanDeDéu #Barcelona',
+  },
+  {
+    id: 'concierto-santa-barbara',
+    type: 'instagram',
+    title: {
+      es: 'Una tarde de música por Claudia',
+      en: 'An afternoon of music for Claudia',
+    },
+    description: {
+      es: 'El concierto solidario en la Parroquia de Santa Bárbara volvió a unir a muchas personas alrededor de Claudia. Gracias a todos los músicos y a quienes nos acompañasteis.',
+      en: 'The charity concert at Santa Bárbara Parish brought many people together around Claudia once again. Thank you to all the musicians and everyone who joined us.',
+    },
+    date: { es: 'Octubre 2026', en: 'October 2026' },
+    duration: 'Reel',
+    permalink: 'https://www.instagram.com/reel/DeKJw2lspCl/',
+    caption: 'El domingo vivimos una tarde muy especial.\n\nLa música volvió a unir a muchas personas alrededor de Claudia y de un mismo deseo: seguir avanzando para conseguir darle una oportunidad.\n\nQueremos dar las gracias de corazón a todos los músicos que participaron y pusieron su talento al servicio de El Reto de Claudia: @marcos.quesada.trumpet, Coro Matisse, María (@silviaas83), @alvaroalvarado76 y al resto de artistas que nos acompañaron. Gracias también a la @parroquiadesantabarbara por abrirnos sus puertas y acogernos con tanto cariño, y a todas las personas que os acercasteis para acompañarnos.\n\nCada iniciativa, cada persona que se suma y cada gesto de apoyo, nos ayuda a seguir haciendo posible este camino.\n\nNos llevamos muchísimo cariño de esta tarde, fue un concierto precioso y, sobre todo, la sensación de que Claudia sigue rodeada de personas increíbles.\n\nGracias por llenar de música el camino de Claudia.\n\nElretodeclaudia.org\n\n#ElRetoDeClaudia #TerapiaGénica #investigación #EnfermedadesRaras',
   },
   {
     id: 'ayudemos-entre-todos',
@@ -633,6 +649,22 @@ export const VIDEOS = [
     caption: 'Claudia tiene 2 años y medio y convive con una enfermedad ultrarrara: deficiencia de enzima bifuncional.\n\nCada día es un reto que afronta con valentía, siempre acompañada por sus padres, que luchan a su lado sin soltarle la mano.\n\nSu sonrisa inspira y su lucha nos une ✨\n\n#LaTardeTM',
   },
   {
+    id: 'esta-es-claudia',
+    type: 'instagram',
+    title: {
+      es: 'Esta es Claudia, y este es su reto',
+      en: 'This is Claudia, and this is her challenge',
+    },
+    description: {
+      es: 'Una niña de dos años y medio, una enfermedad ultrarrara y una familia buscando investigación donde hoy casi no la hay.',
+      en: 'A two-and-a-half-year-old girl, an ultra-rare disease and a family searching for research where almost none exists today.',
+    },
+    date: { es: 'Junio 2026', en: 'June 2026' },
+    duration: 'Reel',
+    permalink: 'https://www.instagram.com/reel/DZF5312MKw9/',
+    caption: '❤️ Esta es Claudia.\n\nTiene 2 años y medio y padece una enfermedad genética neurodegenerativa para la que, a día de hoy, no existe una cura conocida.\n\nLa única esperanza real para Claudia es desarrollar una terapia génica: una investigación muy compleja que busca corregir el fallo genético que provoca su enfermedad. Hace poco se ha aprobado una línea de investigación para Claudia, pero para hacerla realidad hace falta un equipo científico especializado... y mucha financiación privada.\n\nPor eso necesitamos tu ayuda de 3 maneras:\n\n1️⃣ Síguenos en redes: @elretodeclaudia\n\nComparte nuestras publicaciones por WhatsApp y otros canales, comenta e interactúa. Cuanta más gente conozca el caso de Claudia, más posibilidades tendremos de encontrar apoyo, colaboradores y financiación.\n\n2️⃣ Dona 💛\n\nAunque sea el equivalente a un café. De verdad. Cada pequeña aportación suma y nos acerca un paso más a la investigación.\n\n🌐 elretodeclaudia.org\/dona\n\n3️⃣ Si eres una empresa, colegio, asociación u organización y quieres ayudar, escríbenos.\n\nToda colaboración cuenta y puede marcar una diferencia real en el futuro de Claudia.\n\nGracias de corazón ❤️ por ayudarnos a darle una oportunidad.\n\nPorque Claudia merece una oportunidad. Y juntos podemos dársela.\n\n#elretodeclaudia #dbpdeficiency #raredesease #dona #investigación',
+  },
+  {
     id: 'ruido-mental-risa',
     type: 'instagram',
     title: {
@@ -759,22 +791,6 @@ export const VIDEOS = [
     duration: 'Reel',
     permalink: 'https://www.instagram.com/reel/DYhMfghsxW5/',
     caption: '📻 Claudia, una niña de San Lorenzo de El Escorial, lucha contra una enfermedad ultrarrara mientras su familia impulsa “El Reto de Claudia” para apoyar la investigación.',
-  },
-  {
-    id: 'viaje-a-barcelona-biopsia',
-    type: 'instagram',
-    title: {
-      es: 'El viaje a Barcelona y la primera biopsia',
-      en: 'The trip to Barcelona and the first biopsy',
-    },
-    description: {
-      es: 'En enero viajaron a Sant Joan de Déu, donde se hizo la primera biopsia para probar fármacos experimentales.',
-      en: 'In January they travelled to Sant Joan de Déu, where the first biopsy was taken to test experimental drugs.',
-    },
-    date: { es: 'Mayo 2026', en: 'May 2026' },
-    duration: 'Reel',
-    permalink: 'https://www.instagram.com/reel/DYZGCjKMPxz/',
-    caption: 'Esta foto es un recuerdo de un viaje lleno de esperanza... y un recordatorio de por qué luchamos cada día. ❤️\n\nEn enero’26, nos embarcamos en un viaje muy importante. Por primera vez, viajamos a Barcelona, directos al Hospital Sant Joan de Déu. Parece que ha pasado una eternidad con todo lo que han pasado durante estos 4 meses.\n\nAllí le hicieron la primera biopsia a Claudia. No para curar, pero sí para algo igual de crucial: frenar el avance de su enfermedad. El objetivo es probar fármacos experimentales en sus células y analizar si hay algo que pudiera funcionar en ella para frenar su degeneracion y ganar tiempo para encontrar una cura. Aun estamos esperando resultados.\n\nEsta biopsia es un paso mas y una oportunidad para poder conseguir un futuro.\n\nHoy compartimos este recuerdo para mostrar la fuerza de Claudia y seguir dando visibilidad a su lucha. Cada paso cuenta, cada viaje es una esperanza. 💪\n\n¡Vamos, Claudia! Tu sonrisa es nuestro motor.\n\n#elretodeclaudia #EnfermedadesRaras #Investigación  #SantJoanDeDéu #Barcelona',
   },
   {
     id: 'fisio-domingos',
