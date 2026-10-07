@@ -1,5 +1,29 @@
 export const EVENTS = [
   {
+    slug: 'fiesta-bicicleta-gsd-el-escorial-2026',
+    title: {
+      es: 'XX Fiesta de la Bicicleta — GSD El Escorial',
+      en: '20th Bike Festival — GSD El Escorial',
+    },
+    date: '2026-10-24',
+    time: '10:00',
+    location: 'Colegio GSD El Escorial, El Escorial, Madrid',
+    description: {
+      es: 'GSD El Escorial celebra la 20.ª edición de su Fiesta de la Bicicleta y este año pedalea por El Reto de Claudia. Tres rutas: Imperial (12,5 km, 10:00 h desde la Plaza de El Escorial), Familiar (4,5 km, 12:15 h) y Mini (2 km, 12:30 h), estas dos desde GSD El Escorial. Habrá asesoramiento técnico, circuitos de habilidad y de seguridad vial, y sorteos con una bicicleta BTT. Dorsal solidario: dona en elretodeclaudia.org/donar indicando en el concepto «FIESTA DE LA BICICLETA».',
+      en: 'GSD El Escorial celebrates the 20th edition of its Bike Festival, and this year it rides for El Reto de Claudia. Three routes: Imperial (12.5 km, 10:00 AM from El Escorial Square), Family (4.5 km, 12:15 PM) and Mini (2 km, 12:30 PM), both from GSD El Escorial. There will be technical advice, skills and road-safety circuits, and a prize draw including a mountain bike. Charity bib: donate at elretodeclaudia.org/donar with «FIESTA DE LA BICICLETA» as the payment reference.',
+    },
+    image: '/images/events/fiesta-bicicleta-gsd-el-escorial-2026/1.webp',
+    images: [
+      '/images/events/fiesta-bicicleta-gsd-el-escorial-2026/1.webp',
+      '/images/events/fiesta-bicicleta-gsd-el-escorial-2026/2.webp',
+    ],
+    status: 'upcoming',
+    category: 'solidarity',
+    registerHref: null,
+    infoHref: 'https://www.instagram.com/p/DeJHj-mEfZ2/',
+    organizers: [],
+  },
+  {
     slug: 'concierto-parroquia-santa-barbara-2026',
     title: {
       es: 'Concierto solidario — Parroquia de Santa Bárbara',
